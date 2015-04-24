@@ -17,9 +17,16 @@
 		A746A6BD1AE9D6E800AF0FA5 /* rothrockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A6BC1AE9D6E800AF0FA5 /* rothrockTests.swift */; };
 		A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78622291AEAA10C006B0F76 /* RLMSupport.swift */; };
 		A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786222D1AEAA56E006B0F76 /* Lesson.swift */; };
+		A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */; };
+		A7BA44EE1AEAEC25008514F5 /* IUserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44ED1AEAEC25008514F5 /* IUserDAO.swift */; };
+		A7BA44F01AEAECDB008514F5 /* IVenueDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */; };
+		A7BA44F21AEAED41008514F5 /* BaseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44F11AEAED41008514F5 /* BaseDAO.swift */; };
 		A7D5CFE81AEAC86200370F4A /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A78622271AEA9F69006B0F76 /* libc++.dylib */; };
 		A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFE91AEACBEC00370F4A /* User.swift */; };
 		A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEB1AEAD1C100370F4A /* Venue.swift */; };
+		A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */; };
+		A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */; };
+		A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */; };
 		E34592293B39382235FF4973 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEF411B36336395668B971F /* Pods.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -53,9 +60,16 @@
 		A78622271AEA9F69006B0F76 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		A78622291AEAA10C006B0F76 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		A786222D1AEAA56E006B0F76 /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayNotificationPreference.swift; sourceTree = "<group>"; };
+		A7BA44ED1AEAEC25008514F5 /* IUserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IUserDAO.swift; sourceTree = "<group>"; };
+		A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IVenueDAO.swift; sourceTree = "<group>"; };
+		A7BA44F11AEAED41008514F5 /* BaseDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDAO.swift; sourceTree = "<group>"; };
 		A7D5CFE41AEAC7A000370F4A /* rothrock-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rothrock-Bridging-Header.h"; sourceTree = "<group>"; };
 		A7D5CFE91AEACBEC00370F4A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A7D5CFEB1AEAD1C100370F4A /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILessonDAO.swift; sourceTree = "<group>"; };
+		A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPreferenceDAO.swift; sourceTree = "<group>"; };
+		A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoHourNotificationPreference.swift; sourceTree = "<group>"; };
 		AB487B39E1ADD18545092D96 /* Pods-rothrock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.release.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.release.xcconfig"; sourceTree = "<group>"; };
 		AEF5C00745E3C29669D778DF /* Pods-rothrockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrockTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rothrockTests/Pods-rothrockTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3E5E00603A9C8156E79A2F1 /* Pods-rothrock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.debug.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +185,7 @@
 		A786222B1AEAA54B006B0F76 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A7D5CFED1AEAE53500370F4A /* DAO */,
 				A786222C1AEAA552006B0F76 /* Beans */,
 			);
 			name = Models;
@@ -184,6 +199,28 @@
 				A7D5CFEB1AEAD1C100370F4A /* Venue.swift */,
 			);
 			name = Beans;
+			sourceTree = "<group>";
+		};
+		A7D5CFED1AEAE53500370F4A /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				A7D5CFEE1AEAE53C00370F4A /* Interfaces */,
+				A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */,
+				A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */,
+				A7BA44F11AEAED41008514F5 /* BaseDAO.swift */,
+			);
+			name = DAO;
+			sourceTree = "<group>";
+		};
+		A7D5CFEE1AEAE53C00370F4A /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */,
+				A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */,
+				A7BA44ED1AEAEC25008514F5 /* IUserDAO.swift */,
+				A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */,
+			);
+			name = Interfaces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,10 +391,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A746A6A91AE9D6E800AF0FA5 /* ViewController.swift in Sources */,
+				A7BA44F21AEAED41008514F5 /* BaseDAO.swift in Sources */,
 				A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */,
 				A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */,
+				A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */,
 				A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */,
+				A7BA44EE1AEAEC25008514F5 /* IUserDAO.swift in Sources */,
 				A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */,
+				A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */,
+				A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */,
+				A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */,
+				A7BA44F01AEAECDB008514F5 /* IVenueDAO.swift in Sources */,
 				A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
