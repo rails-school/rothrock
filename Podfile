@@ -1,13 +1,11 @@
 # Uncomment this line to define a global platform for your project
-platform :ios, '8.0'
-use_frameworks!
+platform :ios, '7.0'
 
 target 'rothrock' do
-  pod 'Dollar', '~> 3.0.0'
-  pod 'Cent', '~> 3.0.0'
-  pod 'Realm', '~> 0.91.3'
+  pod 'Realm'
 end
 
-target 'rothrockTests' do
-
+target 'rothrockTests', :exclusive => true do
+  pod "Realm/Headers"
 end
+

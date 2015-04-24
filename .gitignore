@@ -28,10 +28,4 @@ Pods/
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-
-<<<<<<< HEAD
-Carthage/Build
-=======
-Carthage/Build
->>>>>>> 7ac0f78165531b0c45dd09b3770d655b8aa8bbbd
+Carthage/Checkouts

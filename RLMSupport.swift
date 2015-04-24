@@ -18,7 +18,7 @@
 
 // Realm 0.91.3
 //import Realm
-//
+
 //extension RLMObject {
 //    // Swift query convenience functions
 //    public class func objectsWhere(predicateFormat: String, _ args: CVarArgType...) -> RLMResults {
@@ -26,7 +26,7 @@
 //    }
 //
 //    public class func objectsInRealm(realm: RLMRealm, _ predicateFormat: String, _ args: CVarArgType...) -> RLMResults {
-//        return objectsInRealm(realm, withPredicate:NSPredicate(format: predicateFormat, arguments: getVaList(args)))
+//        return objectsInRealm(realm, withPredicate:NSPredi    cate(format: predicateFormat, arguments: getVaList(args)))
 //    }
 //}
 //
