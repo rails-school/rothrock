@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D76DFD9475265D83DF4702D /* libPods-rothrock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B17DC487B63A7FD1656BE81 /* libPods-rothrock.a */; };
-		601494835B225DA4D55B2A6D /* libPods-rothrockTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 250012A2F6FC1C2F7CBB26BE /* libPods-rothrockTests.a */; };
+		9805FD493F8F8FC4D8335ADB /* libPods-rothrock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF9CDC2F07FF0474E1457D8B /* libPods-rothrock.a */; };
 		A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */; };
 		A746A6A91AE9D6E800AF0FA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A6A81AE9D6E800AF0FA5 /* ViewController.swift */; };
 		A746A6AC1AE9D6E800AF0FA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A746A6AA1AE9D6E800AF0FA5 /* Main.storyboard */; };
@@ -21,6 +20,7 @@
 		A7BA44EE1AEAEC25008514F5 /* IUserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44ED1AEAEC25008514F5 /* IUserDAO.swift */; };
 		A7BA44F01AEAECDB008514F5 /* IVenueDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */; };
 		A7BA44F21AEAED41008514F5 /* BaseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44F11AEAED41008514F5 /* BaseDAO.swift */; };
+		A7BA44F41AEAEE02008514F5 /* LessonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44F31AEAEE02008514F5 /* LessonDAO.swift */; };
 		A7D5CFE81AEAC86200370F4A /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A78622271AEA9F69006B0F76 /* libc++.dylib */; };
 		A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFE91AEACBEC00370F4A /* User.swift */; };
 		A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEB1AEAD1C100370F4A /* Venue.swift */; };
@@ -28,6 +28,7 @@
 		A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */; };
 		A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */; };
 		E34592293B39382235FF4973 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEF411B36336395668B971F /* Pods.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		E69F9D066790872869C3CC34 /* libPods-rothrockTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3972FC92F728026736CCC1 /* libPods-rothrockTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B17DC487B63A7FD1656BE81 /* libPods-rothrock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rothrock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		250012A2F6FC1C2F7CBB26BE /* libPods-rothrockTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rothrockTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3533233ADE0D8A7AE76B5D94 /* Pods-rothrockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrockTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rothrockTests/Pods-rothrockTests.release.xcconfig"; sourceTree = "<group>"; };
 		3BEF411B36336395668B971F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC00F4D646796D935E91B68 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		A7BA44ED1AEAEC25008514F5 /* IUserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IUserDAO.swift; sourceTree = "<group>"; };
 		A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IVenueDAO.swift; sourceTree = "<group>"; };
 		A7BA44F11AEAED41008514F5 /* BaseDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDAO.swift; sourceTree = "<group>"; };
+		A7BA44F31AEAEE02008514F5 /* LessonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonDAO.swift; sourceTree = "<group>"; };
 		A7D5CFE41AEAC7A000370F4A /* rothrock-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rothrock-Bridging-Header.h"; sourceTree = "<group>"; };
 		A7D5CFE91AEACBEC00370F4A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A7D5CFEB1AEAD1C100370F4A /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
@@ -72,7 +72,9 @@
 		A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoHourNotificationPreference.swift; sourceTree = "<group>"; };
 		AB487B39E1ADD18545092D96 /* Pods-rothrock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.release.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.release.xcconfig"; sourceTree = "<group>"; };
 		AEF5C00745E3C29669D778DF /* Pods-rothrockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrockTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rothrockTests/Pods-rothrockTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF3972FC92F728026736CCC1 /* libPods-rothrockTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rothrockTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E5E00603A9C8156E79A2F1 /* Pods-rothrock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.debug.xcconfig"; sourceTree = "<group>"; };
+		EF9CDC2F07FF0474E1457D8B /* libPods-rothrock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rothrock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +84,7 @@
 			files = (
 				A7D5CFE81AEAC86200370F4A /* libc++.dylib in Frameworks */,
 				E34592293B39382235FF4973 /* Pods.framework in Frameworks */,
-				5D76DFD9475265D83DF4702D /* libPods-rothrock.a in Frameworks */,
+				9805FD493F8F8FC4D8335ADB /* libPods-rothrock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				601494835B225DA4D55B2A6D /* libPods-rothrockTests.a in Frameworks */,
+				E69F9D066790872869C3CC34 /* libPods-rothrockTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,8 +104,8 @@
 			children = (
 				A78622271AEA9F69006B0F76 /* libc++.dylib */,
 				3BEF411B36336395668B971F /* Pods.framework */,
-				1B17DC487B63A7FD1656BE81 /* libPods-rothrock.a */,
-				250012A2F6FC1C2F7CBB26BE /* libPods-rothrockTests.a */,
+				EF9CDC2F07FF0474E1457D8B /* libPods-rothrock.a */,
+				AF3972FC92F728026736CCC1 /* libPods-rothrockTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -208,6 +210,7 @@
 				A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */,
 				A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */,
 				A7BA44F11AEAED41008514F5 /* BaseDAO.swift */,
+				A7BA44F31AEAEE02008514F5 /* LessonDAO.swift */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 			files = (
 				A746A6A91AE9D6E800AF0FA5 /* ViewController.swift in Sources */,
 				A7BA44F21AEAED41008514F5 /* BaseDAO.swift in Sources */,
+				A7BA44F41AEAEE02008514F5 /* LessonDAO.swift in Sources */,
 				A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */,
 				A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */,
 				A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */,

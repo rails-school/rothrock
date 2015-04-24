@@ -11,7 +11,7 @@ import Foundation
 public protocol ILessonDAO {
     func exists(slug: String) -> Bool
     
-    func find(slug: String) -> Lesson
+    func find(slug: String) -> Lesson?
     
     func save(lesson: Lesson)
 }
