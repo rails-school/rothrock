@@ -11,7 +11,7 @@ import Foundation
 public protocol IVenueDAO {
     func exists(id: Int) -> Bool
     
-    func find(id: Int) -> Venue
+    func find(id: Int) -> Venue?
     
     func save(venue: Venue)
 }

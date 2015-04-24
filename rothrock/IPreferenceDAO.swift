@@ -9,11 +9,11 @@
 import Foundation
 
 public protocol IPreferenceDAO {
-    func getTwoHourNotificationPreference() -> TwoHourNotificationPreference
+    func getTwoHourNotificationPreference() -> TwoHourNotificationPreference?
     
     func setTwoHourNotificationPreference(value: TwoHourNotificationPreference)
     
-    func getDayNotificationPreference() -> DayNotificationPreference
+    func getDayNotificationPreference() -> DayNotificationPreference?
     
     func setDayNotificationPreference(value: DayNotificationPreference)
 }

@@ -14,6 +14,9 @@
 		A746A6AE1AE9D6E800AF0FA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A746A6AD1AE9D6E800AF0FA5 /* Images.xcassets */; };
 		A746A6B11AE9D6E800AF0FA5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A746A6AF1AE9D6E800AF0FA5 /* LaunchScreen.xib */; };
 		A746A6BD1AE9D6E800AF0FA5 /* rothrockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A6BC1AE9D6E800AF0FA5 /* rothrockTests.swift */; };
+		A74F044A1AEB02B700EB8916 /* PreferenceDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F04491AEB02B700EB8916 /* PreferenceDAO.swift */; };
+		A74F044C1AEB04FE00EB8916 /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F044B1AEB04FE00EB8916 /* UserDAO.swift */; };
+		A74F044E1AEB06DE00EB8916 /* VenueDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F044D1AEB06DE00EB8916 /* VenueDAO.swift */; };
 		A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78622291AEAA10C006B0F76 /* RLMSupport.swift */; };
 		A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786222D1AEAA56E006B0F76 /* Lesson.swift */; };
 		A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */; };
@@ -56,6 +59,9 @@
 		A746A6B61AE9D6E800AF0FA5 /* rothrockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rothrockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A746A6BB1AE9D6E800AF0FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A746A6BC1AE9D6E800AF0FA5 /* rothrockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rothrockTests.swift; sourceTree = "<group>"; };
+		A74F04491AEB02B700EB8916 /* PreferenceDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceDAO.swift; sourceTree = "<group>"; };
+		A74F044B1AEB04FE00EB8916 /* UserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
+		A74F044D1AEB06DE00EB8916 /* VenueDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDAO.swift; sourceTree = "<group>"; };
 		A78622271AEA9F69006B0F76 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		A78622291AEAA10C006B0F76 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		A786222D1AEAA56E006B0F76 /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
@@ -211,6 +217,9 @@
 				A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */,
 				A7BA44F11AEAED41008514F5 /* BaseDAO.swift */,
 				A7BA44F31AEAEE02008514F5 /* LessonDAO.swift */,
+				A74F04491AEB02B700EB8916 /* PreferenceDAO.swift */,
+				A74F044B1AEB04FE00EB8916 /* UserDAO.swift */,
+				A74F044D1AEB06DE00EB8916 /* VenueDAO.swift */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -404,7 +413,10 @@
 				A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */,
 				A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */,
 				A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */,
+				A74F044C1AEB04FE00EB8916 /* UserDAO.swift in Sources */,
+				A74F044A1AEB02B700EB8916 /* PreferenceDAO.swift in Sources */,
 				A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */,
+				A74F044E1AEB06DE00EB8916 /* VenueDAO.swift in Sources */,
 				A7BA44F01AEAECDB008514F5 /* IVenueDAO.swift in Sources */,
 				A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */,
 			);

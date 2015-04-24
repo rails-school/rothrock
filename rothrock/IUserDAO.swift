@@ -11,15 +11,15 @@ import Foundation
 public protocol IUserDAO {
     func exists(id: Int) -> Bool
     
-    func find(id: Int) -> User
+    func find(id: Int) -> User?
     
     func save(user: User)
     
-    func getCurrentUsername() -> String
+    func getCurrentUsername() -> String?
     
     func setCurrentUsername(value: String)
     
-    func getCurrentUserToken() -> String
+    func getCurrentUserToken() -> String?
     
     func setCurrentUserToken(value: String)
     
