@@ -1,0 +1,10 @@
+PODS:
+  - Dollar (3.0.0)
+
+DEPENDENCIES:
+  - Dollar (~> 3.0.0)
+
+SPEC CHECKSUMS:
+  Dollar: 4df780ce1baa410d71e423fee07646abb1106909
+
+COCOAPODS: 0.36.0
