@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B4EA545054BB4C5AF14B572 /* Pods_rothrock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3435E392146A1804284D8D0 /* Pods_rothrock.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		A739EDEB1AE9E46A0092402E /* RLMSupport-0.91.3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A739EDEA1AE9E46A0092402E /* RLMSupport-0.91.3.swift */; };
+		1B4EA545054BB4C5AF14B572 /* Pods_rothrock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3435E392146A1804284D8D0 /* Pods_rothrock.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */; };
 		A746A6A91AE9D6E800AF0FA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A6A81AE9D6E800AF0FA5 /* ViewController.swift */; };
 		A746A6AC1AE9D6E800AF0FA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A746A6AA1AE9D6E800AF0FA5 /* Main.storyboard */; };
 		A746A6AE1AE9D6E800AF0FA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A746A6AD1AE9D6E800AF0FA5 /* Images.xcassets */; };
 		A746A6B11AE9D6E800AF0FA5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A746A6AF1AE9D6E800AF0FA5 /* LaunchScreen.xib */; };
 		A746A6BD1AE9D6E800AF0FA5 /* rothrockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A6BC1AE9D6E800AF0FA5 /* rothrockTests.swift */; };
+		A78622281AEA9F69006B0F76 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A78622271AEA9F69006B0F76 /* libc++.dylib */; };
+		A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78622291AEAA10C006B0F76 /* RLMSupport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +31,6 @@
 /* Begin PBXFileReference section */
 		40B629C5A58F59D224430384 /* Pods-rothrock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.release.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.release.xcconfig"; sourceTree = "<group>"; };
 		A3435E392146A1804284D8D0 /* Pods_rothrock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rothrock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A739EDEA1AE9E46A0092402E /* RLMSupport-0.91.3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RLMSupport-0.91.3.swift"; sourceTree = "<group>"; };
 		A746A6A11AE9D6E800AF0FA5 /* rothrock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rothrock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A746A6A51AE9D6E800AF0FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +41,8 @@
 		A746A6B61AE9D6E800AF0FA5 /* rothrockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rothrockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A746A6BB1AE9D6E800AF0FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A746A6BC1AE9D6E800AF0FA5 /* rothrockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rothrockTests.swift; sourceTree = "<group>"; };
+		A78622271AEA9F69006B0F76 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		A78622291AEAA10C006B0F76 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		B63A5830BD458A930FD64327 /* Pods-rothrock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A78622281AEA9F69006B0F76 /* libc++.dylib in Frameworks */,
 				1B4EA545054BB4C5AF14B572 /* Pods_rothrock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +69,7 @@
 		1E2E2C2F462101A5B78EBA36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A78622271AEA9F69006B0F76 /* libc++.dylib */,
 				A3435E392146A1804284D8D0 /* Pods_rothrock.framework */,
 			);
 			name = Frameworks;
@@ -83,6 +87,7 @@
 		A746A6981AE9D6E800AF0FA5 = {
 			isa = PBXGroup;
 			children = (
+				A78622291AEAA10C006B0F76 /* RLMSupport.swift */,
 				A746A6A31AE9D6E800AF0FA5 /* rothrock */,
 				A746A6B91AE9D6E800AF0FA5 /* rothrockTests */,
 				A746A6A21AE9D6E800AF0FA5 /* Products */,
@@ -103,7 +108,6 @@
 		A746A6A31AE9D6E800AF0FA5 /* rothrock */ = {
 			isa = PBXGroup;
 			children = (
-				A739EDEA1AE9E46A0092402E /* RLMSupport-0.91.3.swift */,
 				A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */,
 				A746A6A81AE9D6E800AF0FA5 /* ViewController.swift */,
 				A746A6AA1AE9D6E800AF0FA5 /* Main.storyboard */,
@@ -290,8 +294,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A739EDEB1AE9E46A0092402E /* RLMSupport-0.91.3.swift in Sources */,
 				A746A6A91AE9D6E800AF0FA5 /* ViewController.swift in Sources */,
+				A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */,
 				A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
