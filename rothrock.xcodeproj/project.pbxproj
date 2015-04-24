@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B4EA545054BB4C5AF14B572 /* Pods_rothrock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3435E392146A1804284D8D0 /* Pods_rothrock.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A739EDEB1AE9E46A0092402E /* RLMSupport-0.91.3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A739EDEA1AE9E46A0092402E /* RLMSupport-0.91.3.swift */; };
 		A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */; };
 		A746A6A91AE9D6E800AF0FA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A6A81AE9D6E800AF0FA5 /* ViewController.swift */; };
 		A746A6AC1AE9D6E800AF0FA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A746A6AA1AE9D6E800AF0FA5 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		40B629C5A58F59D224430384 /* Pods-rothrock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.release.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.release.xcconfig"; sourceTree = "<group>"; };
 		A3435E392146A1804284D8D0 /* Pods_rothrock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rothrock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A739EDEA1AE9E46A0092402E /* RLMSupport-0.91.3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RLMSupport-0.91.3.swift"; sourceTree = "<group>"; };
 		A746A6A11AE9D6E800AF0FA5 /* rothrock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rothrock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A746A6A51AE9D6E800AF0FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		A746A6A31AE9D6E800AF0FA5 /* rothrock */ = {
 			isa = PBXGroup;
 			children = (
+				A739EDEA1AE9E46A0092402E /* RLMSupport-0.91.3.swift */,
 				A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */,
 				A746A6A81AE9D6E800AF0FA5 /* ViewController.swift */,
 				A746A6AA1AE9D6E800AF0FA5 /* Main.storyboard */,
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A739EDEB1AE9E46A0092402E /* RLMSupport-0.91.3.swift in Sources */,
 				A746A6A91AE9D6E800AF0FA5 /* ViewController.swift in Sources */,
 				A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */,
 			);
