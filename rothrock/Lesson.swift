@@ -7,15 +7,19 @@
 //
 
 import Foundation
-//
-//public class Lesson: RLMObject {
-//    public dynamic var slug: String?
-//    public dynamic var title: String?
-//    public dynamic var summary: String?
-//    public dynamic var description: String?
-//    public dynamic var startTime: NSDate?
-//    public dynamic var endTime: NSDate?
-//    public dynamic var teacherId: NSNumber?
-//    public dynamic var venueId: NSNumber?
-//    public dynamic var updateDate: NSDate?
-//}
+
+public class Lesson: RLMObject {
+    public dynamic var slug: String?
+    public dynamic var title: String?
+    public dynamic var summary: String?
+    public dynamic var lessonDescription: String?
+    public dynamic var startTime: NSDate?
+    public dynamic var endTime: NSDate?
+    public dynamic var teacherId: Int = 0
+    public dynamic var venueId: Int = 0
+    public dynamic var updateDate: NSDate?
+    
+    public override class func primaryKey() -> String {
+        return "slug"
+    }
+}
