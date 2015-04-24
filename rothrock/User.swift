@@ -10,6 +10,7 @@ import Foundation
 
 public class User: RLMObject {
     public dynamic var id: Int = 0
+    
     public dynamic var name: String?
     public dynamic var email: String?
     public dynamic var teacher: Bool = false
