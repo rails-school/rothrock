@@ -15,9 +15,9 @@ public protocol IUserDAO {
     
     func save(user: User)
     
-    func getCurrentUsername() -> String?
+    func getCurrentUserEmail() -> String?
     
-    func setCurrentUsername(value: String)
+    func setCurrentUserEmail(value: String)
     
     func getCurrentUserToken() -> String?
     

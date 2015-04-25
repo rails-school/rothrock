@@ -9,7 +9,7 @@
 import Foundation
 
 internal class UserDAO: BaseDAO, IUserDAO {
-    private static let USERNAME_KEY = "username",
+    private static let EMAIL_KEY = "email",
         TOKEN_KEY = "token"
     
     private var _preferenceDAL: NSUserDefaults
@@ -39,12 +39,12 @@ internal class UserDAO: BaseDAO, IUserDAO {
         getDAL().commitWriteTransaction()
     }
     
-    func getCurrentUsername() -> String? {
-        return _preferenceDAL.stringForKey(UserDAO.USERNAME_KEY)
+    func getCurrentUserEmail() -> String? {
+        return _preferenceDAL.stringForKey(UserDAO.EMAIL_KEY)
     }
     
-    func setCurrentUsername(value: String) {
-        _preferenceDAL.setObject(value, forKey: UserDAO.USERNAME_KEY)
+    func setCurrentUserEmail(value: String) {
+        _preferenceDAL.setObject(value, forKey: UserDAO.EMAIL_KEY)
     }
     
     func getCurrentUserToken() -> String? {
