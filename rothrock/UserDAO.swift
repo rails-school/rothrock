@@ -15,9 +15,9 @@ internal class UserDAO: BaseDAO, IUserDAO {
     private var _preferenceDAL: NSUserDefaults
     
     override init(dal: RLMRealm) {
-        super.init(dal: dal)
-        
         self._preferenceDAL = NSUserDefaults.standardUserDefaults()
+        
+        super.init(dal: dal)
     }
     
     func exists(id: Int) -> Bool {
@@ -53,5 +53,13 @@ internal class UserDAO: BaseDAO, IUserDAO {
     
     func setCurrentUserToken(value: String) {
         _preferenceDAL.stringForKey(UserDAO.TOKEN_KEY)
+    }
+    
+    func hasCurrentUser() -> Bool {
+        if let e = getCurrentUserEmail() {
+            return true
+        } else {
+            return false
+        }
     }
 }
