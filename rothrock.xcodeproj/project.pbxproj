@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9805FD493F8F8FC4D8335ADB /* libPods-rothrock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF9CDC2F07FF0474E1457D8B /* libPods-rothrock.a */; };
+		18A0992207485A232790F9D8 /* Pods_rothrock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5575745422AE9B1FB00FA044 /* Pods_rothrock.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */; };
 		A746A6A91AE9D6E800AF0FA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A6A81AE9D6E800AF0FA5 /* ViewController.swift */; };
 		A746A6AC1AE9D6E800AF0FA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A746A6AA1AE9D6E800AF0FA5 /* Main.storyboard */; };
@@ -17,6 +17,11 @@
 		A74F044A1AEB02B700EB8916 /* PreferenceDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F04491AEB02B700EB8916 /* PreferenceDAO.swift */; };
 		A74F044C1AEB04FE00EB8916 /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F044B1AEB04FE00EB8916 /* UserDAO.swift */; };
 		A74F044E1AEB06DE00EB8916 /* VenueDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F044D1AEB06DE00EB8916 /* VenueDAO.swift */; };
+		A74F04521AEB208400EB8916 /* IRailsSchoolAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F04511AEB208400EB8916 /* IRailsSchoolAPI.swift */; };
+		A74F04541AEB20BD00EB8916 /* RemoteCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F04531AEB20BD00EB8916 /* RemoteCallback.swift */; };
+		A74F04571AEB25AD00EB8916 /* SchoolClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F04561AEB25AD00EB8916 /* SchoolClass.swift */; };
+		A74F045A1AEB271700EB8916 /* LessonSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F04591AEB271700EB8916 /* LessonSerializer.swift */; };
+		A74F045D1AEB274700EB8916 /* IDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F045C1AEB274700EB8916 /* IDeserializer.swift */; };
 		A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78622291AEAA10C006B0F76 /* RLMSupport.swift */; };
 		A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786222D1AEAA56E006B0F76 /* Lesson.swift */; };
 		A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */; };
@@ -24,14 +29,13 @@
 		A7BA44F01AEAECDB008514F5 /* IVenueDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */; };
 		A7BA44F21AEAED41008514F5 /* BaseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44F11AEAED41008514F5 /* BaseDAO.swift */; };
 		A7BA44F41AEAEE02008514F5 /* LessonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44F31AEAEE02008514F5 /* LessonDAO.swift */; };
-		A7D5CFE81AEAC86200370F4A /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A78622271AEA9F69006B0F76 /* libc++.dylib */; };
 		A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFE91AEACBEC00370F4A /* User.swift */; };
 		A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEB1AEAD1C100370F4A /* Venue.swift */; };
 		A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */; };
 		A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */; };
 		A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */; };
 		E34592293B39382235FF4973 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEF411B36336395668B971F /* Pods.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		E69F9D066790872869C3CC34 /* libPods-rothrockTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3972FC92F728026736CCC1 /* libPods-rothrockTests.a */; };
+		FE6FCA9EDDA79A7556DC9E70 /* Pods_rothrockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA57EFD32C75B4AEA027CF1 /* Pods_rothrockTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,7 @@
 /* Begin PBXFileReference section */
 		3533233ADE0D8A7AE76B5D94 /* Pods-rothrockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrockTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rothrockTests/Pods-rothrockTests.release.xcconfig"; sourceTree = "<group>"; };
 		3BEF411B36336395668B971F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5575745422AE9B1FB00FA044 /* Pods_rothrock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rothrock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC00F4D646796D935E91B68 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9C8967141C7046423621E252 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A746A6A11AE9D6E800AF0FA5 /* rothrock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rothrock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,25 +67,32 @@
 		A74F04491AEB02B700EB8916 /* PreferenceDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceDAO.swift; sourceTree = "<group>"; };
 		A74F044B1AEB04FE00EB8916 /* UserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
 		A74F044D1AEB06DE00EB8916 /* VenueDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDAO.swift; sourceTree = "<group>"; };
+		A74F04511AEB208400EB8916 /* IRailsSchoolAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRailsSchoolAPI.swift; sourceTree = "<group>"; };
+		A74F04531AEB20BD00EB8916 /* RemoteCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteCallback.swift; sourceTree = "<group>"; };
+		A74F04561AEB25AD00EB8916 /* SchoolClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolClass.swift; sourceTree = "<group>"; };
+		A74F04591AEB271700EB8916 /* LessonSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonSerializer.swift; sourceTree = "<group>"; };
+		A74F045C1AEB274700EB8916 /* IDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDeserializer.swift; sourceTree = "<group>"; };
+		A77DB2D41AEB4F0500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
+		A77DB2D61AEB4F2500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A78622271AEA9F69006B0F76 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		A78622291AEAA10C006B0F76 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		A786222D1AEAA56E006B0F76 /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		A7916A891AEB6A5700E1CD4F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayNotificationPreference.swift; sourceTree = "<group>"; };
 		A7BA44ED1AEAEC25008514F5 /* IUserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IUserDAO.swift; sourceTree = "<group>"; };
 		A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IVenueDAO.swift; sourceTree = "<group>"; };
 		A7BA44F11AEAED41008514F5 /* BaseDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDAO.swift; sourceTree = "<group>"; };
 		A7BA44F31AEAEE02008514F5 /* LessonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonDAO.swift; sourceTree = "<group>"; };
-		A7D5CFE41AEAC7A000370F4A /* rothrock-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rothrock-Bridging-Header.h"; sourceTree = "<group>"; };
 		A7D5CFE91AEACBEC00370F4A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A7D5CFEB1AEAD1C100370F4A /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILessonDAO.swift; sourceTree = "<group>"; };
 		A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPreferenceDAO.swift; sourceTree = "<group>"; };
 		A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoHourNotificationPreference.swift; sourceTree = "<group>"; };
+		A7F571E81AEED9DD001084D3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		AB487B39E1ADD18545092D96 /* Pods-rothrock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.release.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.release.xcconfig"; sourceTree = "<group>"; };
+		AEA57EFD32C75B4AEA027CF1 /* Pods_rothrockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rothrockTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF5C00745E3C29669D778DF /* Pods-rothrockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrockTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rothrockTests/Pods-rothrockTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AF3972FC92F728026736CCC1 /* libPods-rothrockTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rothrockTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E5E00603A9C8156E79A2F1 /* Pods-rothrock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.debug.xcconfig"; sourceTree = "<group>"; };
-		EF9CDC2F07FF0474E1457D8B /* libPods-rothrock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rothrock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7D5CFE81AEAC86200370F4A /* libc++.dylib in Frameworks */,
 				E34592293B39382235FF4973 /* Pods.framework in Frameworks */,
-				9805FD493F8F8FC4D8335ADB /* libPods-rothrock.a in Frameworks */,
+				18A0992207485A232790F9D8 /* Pods_rothrock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E69F9D066790872869C3CC34 /* libPods-rothrockTests.a in Frameworks */,
+				FE6FCA9EDDA79A7556DC9E70 /* Pods_rothrockTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,10 +119,13 @@
 		1E2E2C2F462101A5B78EBA36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7916A891AEB6A5700E1CD4F /* Realm.framework */,
+				A77DB2D61AEB4F2500471F68 /* Realm.framework */,
+				A77DB2D41AEB4F0500471F68 /* Realm.framework */,
 				A78622271AEA9F69006B0F76 /* libc++.dylib */,
 				3BEF411B36336395668B971F /* Pods.framework */,
-				EF9CDC2F07FF0474E1457D8B /* libPods-rothrock.a */,
-				AF3972FC92F728026736CCC1 /* libPods-rothrockTests.a */,
+				5575745422AE9B1FB00FA044 /* Pods_rothrock.framework */,
+				AEA57EFD32C75B4AEA027CF1 /* Pods_rothrockTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -138,7 +152,6 @@
 				A746A6A21AE9D6E800AF0FA5 /* Products */,
 				9AAE8269A34CE9615D03FD9A /* Pods */,
 				1E2E2C2F462101A5B78EBA36 /* Frameworks */,
-				A7D5CFE41AEAC7A000370F4A /* rothrock-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,7 +167,8 @@
 		A746A6A31AE9D6E800AF0FA5 /* rothrock */ = {
 			isa = PBXGroup;
 			children = (
-				A786222B1AEAA54B006B0F76 /* Models */,
+				A7F571E81AEED9DD001084D3 /* Bridging-Header.h */,
+				A786222B1AEAA54B006B0F76 /* models */,
 				A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */,
 				A746A6A81AE9D6E800AF0FA5 /* ViewController.swift */,
 				A746A6AA1AE9D6E800AF0FA5 /* Main.storyboard */,
@@ -190,29 +204,66 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A786222B1AEAA54B006B0F76 /* Models */ = {
+		A74F044F1AEB1F6000EB8916 /* bll */ = {
 			isa = PBXGroup;
 			children = (
-				A7D5CFED1AEAE53500370F4A /* DAO */,
-				A786222C1AEAA552006B0F76 /* Beans */,
+				A74F04581AEB269D00EB8916 /* serializers */,
+				A74F04551AEB259E00EB8916 /* structs */,
+				A74F04501AEB1FC800EB8916 /* remote */,
 			);
-			name = Models;
+			name = bll;
 			sourceTree = "<group>";
 		};
-		A786222C1AEAA552006B0F76 /* Beans */ = {
+		A74F04501AEB1FC800EB8916 /* remote */ = {
+			isa = PBXGroup;
+			children = (
+				A74F04511AEB208400EB8916 /* IRailsSchoolAPI.swift */,
+				A74F04531AEB20BD00EB8916 /* RemoteCallback.swift */,
+			);
+			name = remote;
+			sourceTree = "<group>";
+		};
+		A74F04551AEB259E00EB8916 /* structs */ = {
+			isa = PBXGroup;
+			children = (
+				A74F04561AEB25AD00EB8916 /* SchoolClass.swift */,
+			);
+			name = structs;
+			sourceTree = "<group>";
+		};
+		A74F04581AEB269D00EB8916 /* serializers */ = {
+			isa = PBXGroup;
+			children = (
+				A74F04591AEB271700EB8916 /* LessonSerializer.swift */,
+				A74F045C1AEB274700EB8916 /* IDeserializer.swift */,
+			);
+			name = serializers;
+			sourceTree = "<group>";
+		};
+		A786222B1AEAA54B006B0F76 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				A74F044F1AEB1F6000EB8916 /* bll */,
+				A7D5CFED1AEAE53500370F4A /* dao */,
+				A786222C1AEAA552006B0F76 /* beans */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		A786222C1AEAA552006B0F76 /* beans */ = {
 			isa = PBXGroup;
 			children = (
 				A786222D1AEAA56E006B0F76 /* Lesson.swift */,
 				A7D5CFE91AEACBEC00370F4A /* User.swift */,
 				A7D5CFEB1AEAD1C100370F4A /* Venue.swift */,
 			);
-			name = Beans;
+			name = beans;
 			sourceTree = "<group>";
 		};
-		A7D5CFED1AEAE53500370F4A /* DAO */ = {
+		A7D5CFED1AEAE53500370F4A /* dao */ = {
 			isa = PBXGroup;
 			children = (
-				A7D5CFEE1AEAE53C00370F4A /* Interfaces */,
+				A7D5CFEE1AEAE53C00370F4A /* interfaces */,
 				A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */,
 				A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */,
 				A7BA44F11AEAED41008514F5 /* BaseDAO.swift */,
@@ -221,10 +272,10 @@
 				A74F044B1AEB04FE00EB8916 /* UserDAO.swift */,
 				A74F044D1AEB06DE00EB8916 /* VenueDAO.swift */,
 			);
-			name = DAO;
+			name = dao;
 			sourceTree = "<group>";
 		};
-		A7D5CFEE1AEAE53C00370F4A /* Interfaces */ = {
+		A7D5CFEE1AEAE53C00370F4A /* interfaces */ = {
 			isa = PBXGroup;
 			children = (
 				A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */,
@@ -232,7 +283,7 @@
 				A7BA44ED1AEAEC25008514F5 /* IUserDAO.swift */,
 				A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */,
 			);
-			name = Interfaces;
+			name = interfaces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +298,7 @@
 				A746A69E1AE9D6E800AF0FA5 /* Frameworks */,
 				A746A69F1AE9D6E800AF0FA5 /* Resources */,
 				39FB3C5EF10067CCEB458581 /* Copy Pods Resources */,
+				4FEA318EBA4D747AE354EC41 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -266,6 +318,7 @@
 				A746A6B31AE9D6E800AF0FA5 /* Frameworks */,
 				A746A6B41AE9D6E800AF0FA5 /* Resources */,
 				FF1F4BE02E876A4F74BFAE12 /* Copy Pods Resources */,
+				997A655C0B515747BC4036CC /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -365,6 +418,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rothrock/Pods-rothrock-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4FEA318EBA4D747AE354EC41 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rothrock/Pods-rothrock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		69A6B10183254A78767F4207 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -378,6 +446,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		997A655C0B515747BC4036CC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rothrockTests/Pods-rothrockTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FF1F4BE02E876A4F74BFAE12 /* Copy Pods Resources */ = {
@@ -402,14 +485,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A74F04521AEB208400EB8916 /* IRailsSchoolAPI.swift in Sources */,
 				A746A6A91AE9D6E800AF0FA5 /* ViewController.swift in Sources */,
+				A74F04541AEB20BD00EB8916 /* RemoteCallback.swift in Sources */,
 				A7BA44F21AEAED41008514F5 /* BaseDAO.swift in Sources */,
 				A7BA44F41AEAEE02008514F5 /* LessonDAO.swift in Sources */,
+				A74F045A1AEB271700EB8916 /* LessonSerializer.swift in Sources */,
 				A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */,
+				A74F04571AEB25AD00EB8916 /* SchoolClass.swift in Sources */,
 				A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */,
 				A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */,
 				A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */,
 				A7BA44EE1AEAEC25008514F5 /* IUserDAO.swift in Sources */,
+				A74F045D1AEB274700EB8916 /* IDeserializer.swift in Sources */,
 				A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */,
 				A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */,
 				A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */,
@@ -543,17 +631,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B3E5E00603A9C8156E79A2F1 /* Pods-rothrock.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods-rothrock",
 				);
 				INFOPLIST_FILE = rothrock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "rothrock-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "rothrock/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Debug;
 		};
@@ -561,16 +652,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AB487B39E1ADD18545092D96 /* Pods-rothrock.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods-rothrock",
 				);
 				INFOPLIST_FILE = rothrock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "rothrock-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "rothrock/Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Release;
 		};
