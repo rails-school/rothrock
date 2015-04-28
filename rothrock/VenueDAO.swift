@@ -24,6 +24,7 @@ internal class VenueDAO: BaseDAO, IVenueDAO {
     
     func save(venue: Venue) {
         getDAL().beginWriteTransaction()
+        venue.updateDate = NSDate()
         Venue.createOrUpdateInRealm(getDAL(), withObject: venue)
         getDAL().commitWriteTransaction()
     }

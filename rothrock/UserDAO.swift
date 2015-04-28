@@ -35,6 +35,7 @@ internal class UserDAO: BaseDAO, IUserDAO {
     
     func save(user: User) {
         getDAL().beginWriteTransaction()
+        user.updateDate = NSDate()
         User.createOrUpdateInRealm(getDAL(), withObject: user)
         getDAL().commitWriteTransaction()
     }

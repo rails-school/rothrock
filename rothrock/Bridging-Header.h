@@ -7,5 +7,6 @@
 #define Rothrock_Bridging_Header_h
 
 #import <Realm/Realm.h>
+#import <DateTools/DateTools.h>
 
 #endif

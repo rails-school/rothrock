@@ -7,6 +7,7 @@ target 'rothrock' do
   pod 'Cent'
   pod 'SwiftyJSON'
   pod 'Alamofire'
+  pod 'DateTools'
 end
 
 target 'rothrockTests', :exclusive => true do
