@@ -21,7 +21,13 @@
 		A74F04541AEB20BD00EB8916 /* RemoteCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F04531AEB20BD00EB8916 /* RemoteCallback.swift */; };
 		A74F04571AEB25AD00EB8916 /* SchoolClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F04561AEB25AD00EB8916 /* SchoolClass.swift */; };
 		A74F045A1AEB271700EB8916 /* LessonSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F04591AEB271700EB8916 /* LessonSerializer.swift */; };
-		A74F045D1AEB274700EB8916 /* IDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F045C1AEB274700EB8916 /* IDeserializer.swift */; };
+		A74F045D1AEB274700EB8916 /* IJSONDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F045C1AEB274700EB8916 /* IJSONDeserializer.swift */; };
+		A78410641AEF131A006709ED /* CheckCredentialsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */; };
+		A78410661AEF1433006709ED /* CheckCredentialsRequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410651AEF1433006709ED /* CheckCredentialsRequestSerializer.swift */; };
+		A78410681AEF14E0006709ED /* IJSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410671AEF14E0006709ED /* IJSONSerializer.swift */; };
+		A784106A1AEF16FC006709ED /* SchoolClassSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410691AEF16FC006709ED /* SchoolClassSerializer.swift */; };
+		A784106C1AEF1F13006709ED /* UserSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784106B1AEF1F13006709ED /* UserSerializer.swift */; };
+		A784106E1AEF1F96006709ED /* VenueSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784106D1AEF1F96006709ED /* VenueSerializer.swift */; };
 		A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78622291AEAA10C006B0F76 /* RLMSupport.swift */; };
 		A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786222D1AEAA56E006B0F76 /* Lesson.swift */; };
 		A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */; };
@@ -71,9 +77,15 @@
 		A74F04531AEB20BD00EB8916 /* RemoteCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteCallback.swift; sourceTree = "<group>"; };
 		A74F04561AEB25AD00EB8916 /* SchoolClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolClass.swift; sourceTree = "<group>"; };
 		A74F04591AEB271700EB8916 /* LessonSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonSerializer.swift; sourceTree = "<group>"; };
-		A74F045C1AEB274700EB8916 /* IDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDeserializer.swift; sourceTree = "<group>"; };
+		A74F045C1AEB274700EB8916 /* IJSONDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IJSONDeserializer.swift; sourceTree = "<group>"; };
 		A77DB2D41AEB4F0500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A77DB2D61AEB4F2500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
+		A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckCredentialsRequest.swift; sourceTree = "<group>"; };
+		A78410651AEF1433006709ED /* CheckCredentialsRequestSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckCredentialsRequestSerializer.swift; sourceTree = "<group>"; };
+		A78410671AEF14E0006709ED /* IJSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IJSONSerializer.swift; sourceTree = "<group>"; };
+		A78410691AEF16FC006709ED /* SchoolClassSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolClassSerializer.swift; sourceTree = "<group>"; };
+		A784106B1AEF1F13006709ED /* UserSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSerializer.swift; sourceTree = "<group>"; };
+		A784106D1AEF1F96006709ED /* VenueSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueSerializer.swift; sourceTree = "<group>"; };
 		A78622271AEA9F69006B0F76 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		A78622291AEAA10C006B0F76 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		A786222D1AEAA56E006B0F76 /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
@@ -227,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				A74F04561AEB25AD00EB8916 /* SchoolClass.swift */,
+				A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */,
 			);
 			name = structs;
 			sourceTree = "<group>";
@@ -235,7 +248,12 @@
 			isa = PBXGroup;
 			children = (
 				A74F04591AEB271700EB8916 /* LessonSerializer.swift */,
-				A74F045C1AEB274700EB8916 /* IDeserializer.swift */,
+				A74F045C1AEB274700EB8916 /* IJSONDeserializer.swift */,
+				A78410651AEF1433006709ED /* CheckCredentialsRequestSerializer.swift */,
+				A78410671AEF14E0006709ED /* IJSONSerializer.swift */,
+				A78410691AEF16FC006709ED /* SchoolClassSerializer.swift */,
+				A784106B1AEF1F13006709ED /* UserSerializer.swift */,
+				A784106D1AEF1F96006709ED /* VenueSerializer.swift */,
 			);
 			name = serializers;
 			sourceTree = "<group>";
@@ -488,22 +506,28 @@
 				A74F04521AEB208400EB8916 /* IRailsSchoolAPI.swift in Sources */,
 				A746A6A91AE9D6E800AF0FA5 /* ViewController.swift in Sources */,
 				A74F04541AEB20BD00EB8916 /* RemoteCallback.swift in Sources */,
+				A78410681AEF14E0006709ED /* IJSONSerializer.swift in Sources */,
 				A7BA44F21AEAED41008514F5 /* BaseDAO.swift in Sources */,
+				A784106E1AEF1F96006709ED /* VenueSerializer.swift in Sources */,
 				A7BA44F41AEAEE02008514F5 /* LessonDAO.swift in Sources */,
 				A74F045A1AEB271700EB8916 /* LessonSerializer.swift in Sources */,
 				A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */,
 				A74F04571AEB25AD00EB8916 /* SchoolClass.swift in Sources */,
 				A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */,
+				A78410661AEF1433006709ED /* CheckCredentialsRequestSerializer.swift in Sources */,
 				A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */,
+				A78410641AEF131A006709ED /* CheckCredentialsRequest.swift in Sources */,
 				A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */,
 				A7BA44EE1AEAEC25008514F5 /* IUserDAO.swift in Sources */,
-				A74F045D1AEB274700EB8916 /* IDeserializer.swift in Sources */,
+				A74F045D1AEB274700EB8916 /* IJSONDeserializer.swift in Sources */,
 				A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */,
 				A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */,
+				A784106C1AEF1F13006709ED /* UserSerializer.swift in Sources */,
 				A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */,
 				A74F044C1AEB04FE00EB8916 /* UserDAO.swift in Sources */,
 				A74F044A1AEB02B700EB8916 /* PreferenceDAO.swift in Sources */,
 				A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */,
+				A784106A1AEF16FC006709ED /* SchoolClassSerializer.swift in Sources */,
 				A74F044E1AEB06DE00EB8916 /* VenueDAO.swift in Sources */,
 				A7BA44F01AEAECDB008514F5 /* IVenueDAO.swift in Sources */,
 				A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */,

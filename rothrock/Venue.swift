@@ -11,6 +11,7 @@ import Foundation
 public class Venue: RLMObject {
     public dynamic var id: Int = 0
     
+    public dynamic var zip: String?
     public dynamic var latitude: Float = 0.0
     public dynamic var longitude: Float = 0.0
     public dynamic var name: String?

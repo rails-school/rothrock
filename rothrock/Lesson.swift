@@ -9,13 +9,13 @@
 import Foundation
 
 public class Lesson: RLMObject {
+    public dynamic var id: Int = 0
     public dynamic var slug: String?
-    
     public dynamic var title: String?
     public dynamic var summary: String?
     public dynamic var lessonDescription: String?
-    public dynamic var startTime: NSDate?
-    public dynamic var endTime: NSDate?
+    public dynamic var startTime: String?
+    public dynamic var endTime: String?
     public dynamic var teacherId: Int = 0
     public dynamic var venueId: Int = 0
     public dynamic var updateDate: NSDate?

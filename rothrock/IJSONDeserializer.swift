@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-public protocol IDeserializer {
+public protocol IJSONDeserializer {
     typealias T
     
     func deserialize(json: JSON) -> T
