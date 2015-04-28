@@ -14,8 +14,8 @@ internal class PreferenceDAO: IPreferenceDAO {
     
     private var _dal: NSUserDefaults
     
-    init() {
-        self._dal = NSUserDefaults.standardUserDefaults()
+    init(preferenceStorage: NSUserDefaults) {
+        self._dal = preferenceStorage
     }
     
     func getTwoHourNotificationPreference() -> TwoHourNotificationPreference? {

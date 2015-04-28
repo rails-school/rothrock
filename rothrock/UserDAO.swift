@@ -14,8 +14,8 @@ internal class UserDAO: BaseDAO, IUserDAO {
     
     private var _preferenceDAL: NSUserDefaults
     
-    override init(dal: RLMRealm) {
-        self._preferenceDAL = NSUserDefaults.standardUserDefaults()
+    init(dal: RLMRealm, preferenceStorage: NSUserDefaults) {
+        self._preferenceDAL = preferenceStorage
         
         super.init(dal: dal)
     }
