@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 internal class LessonSerializer: IJSONDeserializer {
-    typealias T = Lesson
+    typealias DeserializedType = Lesson
     
     func deserialize(json: JSON) -> Lesson {
         var outcome = Lesson()

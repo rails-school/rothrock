@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 internal class CheckCredentialsRequestSerializer: IJSONSerializer {
-    typealias T = CheckCredentialsRequest
+    typealias SerializedType = CheckCredentialsRequest
     
     func serialize(src: CheckCredentialsRequest) -> JSON {
         var wrapper = JSON(src), content = JSON(src)
