@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 public protocol IJSONSerializer {
-    typealias SerializedType
+    typealias T
     
-    func serialize(t: SerializedType) -> JSON
+    func serialize(t: T) -> JSON
 }

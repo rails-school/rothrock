@@ -9,16 +9,16 @@
 import Foundation
 import SwiftyJSON
 
-public class RemoteCallback<T> {
-    private var _success: (response: NSHTTPURLResponse?, data: T?) -> Void
+public class RemoteCallback<U> {
+    private var _success: (response: NSHTTPURLResponse?, data: U?) -> Void
     private var _failure: (response: NSHTTPURLResponse?, error: NSError?) -> Void
     
-    init(success: (response: NSHTTPURLResponse?, data: T?) -> Void, failure: (response: NSHTTPURLResponse?, error: NSError?) -> Void) {
+    init(success: (response: NSHTTPURLResponse?, data: U?) -> Void, failure: (response: NSHTTPURLResponse?, error: NSError?) -> Void) {
         self._success = success
         self._failure = failure
     }
     
-    internal func asHandler<U: IJSONDeserializer where U.DeserializedType == T>(serializer: U) -> (NSURLRequest, NSHTTPURLResponse?, AnyObject?, NSError?) -> Void {
+    internal func asHandler<A: IJSONDeserializer where A.T == U>(serializer: A) -> (NSURLRequest, NSHTTPURLResponse?, AnyObject?, NSError?) -> Void {
         return { (request, response, data, error) in
             if let e = error {
                 self._failure(response: response, error: error)

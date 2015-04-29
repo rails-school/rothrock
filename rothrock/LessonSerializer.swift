@@ -9,10 +9,17 @@
 import Foundation
 import SwiftyJSON
 
-internal class LessonSerializer: IJSONDeserializer {
-    typealias DeserializedType = Lesson
+public class ILessonDeserializer: IJSONDeserializer {
+    typealias T = Lesson
     
-    func deserialize(json: JSON) -> Lesson {
+    public func deserialize(json: JSON) -> Lesson {
+        return Lesson()
+    }
+}
+
+internal class LessonSerializer: ILessonDeserializer {
+    
+    override func deserialize(json: JSON) -> Lesson {
         var outcome = Lesson()
         
         outcome.id = json["id"].intValue

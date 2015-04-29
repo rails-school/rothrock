@@ -9,14 +9,24 @@
 import Foundation
 
 public class SerializerFactory {
-    private static var _checkCredentialsRequest: CheckCredentialsRequestSerializer?
+    private static var _checkCredentialsRequest: ICheckCredentialsRequestSerializer?
+    private static var _lesson: ILessonDeserializer?
     
-    public class func checkCredentialsRequest<T: IJSONSerializer where T.SerializedType == CheckCredentialsRequest>() -> T {
-        if let t = _checkCredentialsRequest {
-            return t as! T
+    public static var checkCredentialsRequest: ICheckCredentialsRequestSerializer {
+        if let o = _checkCredentialsRequest {
+            return o
         } else {
             _checkCredentialsRequest = CheckCredentialsRequestSerializer()
-            return _checkCredentialsRequest! as! T
+            return self.checkCredentialsRequest
+        }
+    }
+    
+    public static var lesson: ILessonDeserializer {
+        if let o = _lesson {
+            return o
+        } else {
+            _lesson = LessonSerializer()
+            return self.lesson
         }
     }
 }

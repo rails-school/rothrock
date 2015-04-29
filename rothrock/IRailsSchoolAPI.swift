@@ -11,21 +11,21 @@ import Foundation
 public protocol IRailsSchoolAPI {    
     func getFutureLessonSlugs(callback: RemoteCallback<[String]>)
     
-    func getLesson(slug: String, callback: RemoteCallback<Lesson?>)
+    func getLesson(slug: String, callback: RemoteCallback<Lesson>)
     
-    func getSchoolClass(slug: String, callback: RemoteCallback<SchoolClass?>)
+    func getSchoolClass(slug: String, callback: RemoteCallback<SchoolClass>)
     
-    func getUpcomingLesson(callback: RemoteCallback<Lesson?>)
+    func getUpcomingLesson(callback: RemoteCallback<Lesson>)
     
-    func getUser(id: Int, callback: RemoteCallback<User?>)
+    func getUser(id: Int, callback: RemoteCallback<User>)
     
-    func checkCredentials(request: CheckCredentialsRequest, callback: RemoteCallback<Void?>)
+    func checkCredentials(request: CheckCredentialsRequest, callback: RemoteCallback<Void>)
     
-    func getVenue(id: Int, callback: RemoteCallback<Venue?>)
+    func getVenue(id: Int, callback: RemoteCallback<Venue>)
     
-    func isAttending(slug: String, callback: RemoteCallback<Bool?>)
+    func isAttending(slug: String, callback: RemoteCallback<Bool>)
     
-    func attend(lessonId: Int, callback: RemoteCallback<Void?>)
+    func attend(lessonId: Int, callback: RemoteCallback<Void>)
     
-    func removeAttendance(lessonId: Int, callback: RemoteCallback<Void?>)
+    func removeAttendance(lessonId: Int, callback: RemoteCallback<Void>)
 }

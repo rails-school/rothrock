@@ -9,17 +9,23 @@
 import Foundation
 import SwiftyJSON
 
-internal class ArraySerializer<T, A: IJSONDeserializer where A.DeserializedType == T>: IJSONDeserializer {
-    typealias DeserializedType = [T]
+public class IArrayDeserializer<U>: IJSONDeserializer {
+    typealias T = Array<U>
     
+    public func deserialize(json: JSON) -> Array<U> {
+        return Array<U>()
+    }
+}
+
+internal class ArraySerializer<U, A: IJSONDeserializer where A.T == U>: IArrayDeserializer<U> {
     private var _objectSerializer: A
     
     init(objectSerializer: A) {
         self._objectSerializer = objectSerializer
     }
     
-    func deserialize(json: JSON) -> [T] {
-        var outcome = [T]()
+    override func deserialize(json: JSON) -> Array<U> {
+        var outcome = [U]()
         
         for (index: String, subJson: JSON) in json {
             outcome.append(_objectSerializer.deserialize(subJson))

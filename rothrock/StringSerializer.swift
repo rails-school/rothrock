@@ -9,10 +9,16 @@
 import Foundation
 import SwiftyJSON
 
-internal class StringSerializer: IJSONDeserializer {
-    typealias DeserializedType = String
+public class IStringDeserializer: IJSONDeserializer {
+    typealias T = String
     
-    func deserialize(json: JSON) -> String {
+    public func deserialize(json: JSON) -> String {
+        return ""
+    }
+}
+
+internal class StringSerializer: IStringDeserializer {
+    override func deserialize(json: JSON) -> String {
         return json.stringValue
     }
 }

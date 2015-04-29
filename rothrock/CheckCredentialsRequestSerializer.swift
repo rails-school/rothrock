@@ -9,10 +9,17 @@
 import Foundation
 import SwiftyJSON
 
-internal class CheckCredentialsRequestSerializer: IJSONSerializer {
-    typealias SerializedType = CheckCredentialsRequest
+public class ICheckCredentialsRequestSerializer: IJSONSerializer {
+    typealias T = CheckCredentialsRequest
     
-    func serialize(src: CheckCredentialsRequest) -> JSON {
+    public func serialize(t: CheckCredentialsRequest) -> JSON {
+        return nil
+    }
+}
+
+internal class CheckCredentialsRequestSerializer: ICheckCredentialsRequestSerializer {
+    
+    override func serialize(src: CheckCredentialsRequest) -> JSON {
         var wrapper = JSON(src), content = JSON(src)
         
         content["email"] = JSON(src.email!)

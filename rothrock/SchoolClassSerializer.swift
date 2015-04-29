@@ -9,18 +9,24 @@
 import Foundation
 import SwiftyJSON
 
-internal class SchoolClassSeriazlier<D1: IJSONDeserializer, D2: IJSONDeserializer where D1.DeserializedType == Lesson, D2.DeserializedType == [User]>: IJSONDeserializer {
+public class ISchoolClassDeserializer: IJSONDeserializer {
     typealias T = SchoolClass
     
-    private var _lessonDeserializer: D1
-    private var _userArrayDeserializer: D2
+    public func deserialize(json: JSON) -> SchoolClass {
+        return SchoolClass()
+    }
+}
+
+internal class SchoolClassSeriazlier: ISchoolClassDeserializer {
+    private var _lessonDeserializer: ILessonDeserializer
+    private var _userArrayDeserializer: IArrayDeserializer<User>
     
-    init(lessonDeserializer: D1, userArrayDeserializer: D2) {
+    init(lessonDeserializer: ILessonDeserializer, userArrayDeserializer: IArrayDeserializer<User>) {
         self._lessonDeserializer = lessonDeserializer
         self._userArrayDeserializer = userArrayDeserializer
     }
     
-    func deserialize(json: JSON) -> SchoolClass {
+    override func deserialize(json: JSON) -> SchoolClass {
         var outcome = SchoolClass()
         
         outcome.lesson = _lessonDeserializer.deserialize(json)

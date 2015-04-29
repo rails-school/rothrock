@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 public protocol IJSONDeserializer {
-    typealias DeserializedType
+    typealias T
     
-    func deserialize(json: JSON) -> DeserializedType
+    func deserialize(json: JSON) -> T
 }
