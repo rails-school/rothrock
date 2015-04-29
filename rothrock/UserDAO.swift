@@ -35,8 +35,25 @@ internal class UserDAO: BaseDAO, IUserDAO {
     
     func save(user: User) {
         getDAL().beginWriteTransaction()
-        user.updateDate = NSDate()
-        User.createOrUpdateInRealm(getDAL(), withObject: user)
+        
+        if exists(user.id) {
+            var e: User = find(user.id)!
+            
+            if user.name != nil && !user.name!.isEmpty {
+                e.name = user.name
+            }
+            if user.email != nil && !user.email!.isEmpty {
+                e.email = user.email
+            }
+            
+            e.hideLastName = user.hideLastName
+            e.updateDate = NSDate()
+            
+            User.createOrUpdateInRealm(getDAL(), withObject: e)
+        } else {
+            User.createInRealm(getDAL(), withObject: user)
+        }
+        
         getDAL().commitWriteTransaction()
     }
     

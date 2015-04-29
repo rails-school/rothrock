@@ -23,10 +23,11 @@ internal class UserSerializer: IUserDeserializer {
         var outcome = User()
         
         outcome.id = json["id"].intValue
-        outcome.name = json["name"].stringValue
-        outcome.email = json["email"].stringValue
-        outcome.teacher = json["teacher"].boolValue
-        outcome.hideLastName = json["hide_last_name"].boolValue
+        
+        // Optional fields
+        outcome.name = json["name"].string ?? ""
+        outcome.email = json["email"].string ?? ""
+        outcome.hideLastName = json["hide_last_name"].bool ?? true
         
         return outcome
     }

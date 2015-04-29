@@ -13,7 +13,6 @@ public class User: RLMObject {
     
     public dynamic var name: String?
     public dynamic var email: String?
-    public dynamic var teacher: Bool = false
     public dynamic var hideLastName: Bool = false
     public dynamic var updateDate: NSDate?
     
