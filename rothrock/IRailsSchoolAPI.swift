@@ -23,9 +23,9 @@ public protocol IRailsSchoolAPI {
     
     func getVenue(id: Int, callback: RemoteCallback<Venue>)
     
-    func isAttending(slug: String, callback: RemoteCallback<Bool>)
+    func isAttending(slug: String, authenticationCookie: String, callback: RemoteCallback<Bool>)
     
-    func attend(lessonId: Int, callback: RemoteCallback<Void>)
+    func attend(lessonId: Int, authenticationCookie: String, callback: RemoteCallback<Void>)
     
-    func removeAttendance(lessonId: Int, callback: RemoteCallback<Void>)
+    func removeAttendance(lessonId: Int, authenticationCookie: String, callback: RemoteCallback<Void>)
 }

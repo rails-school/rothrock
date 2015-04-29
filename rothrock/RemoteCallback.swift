@@ -23,11 +23,21 @@ public class RemoteCallback<U> {
             if let e = error {
                 self._failure(response: response, error: error)
             } else {
-                if let o = data {
+                if let o: AnyObject = data {
                     self._success(response: response, data: serializer.deserialize(JSON(o)))
                 } else {
                     self._success(response: response, data: nil)
                 }
+            }
+        }
+    }
+    
+    internal func asHandler() -> (NSURLRequest, NSHTTPURLResponse?, AnyObject?, NSError?) -> Void {
+        return { (request, response, data, error) in
+            if let e = error {
+                self._failure(response: response, error: error)
+            } else {
+                self._success(response: response, data: nil)
             }
         }
     }

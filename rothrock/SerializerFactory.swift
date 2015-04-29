@@ -9,10 +9,32 @@
 import Foundation
 
 public class SerializerFactory {
+    private static var _bool: IBoolDeserializer?
+    private static var _string: IStringDeserializer?
+    
     private static var _checkCredentialsRequest: ICheckCredentialsRequestSerializer?
     private static var _lesson: ILessonDeserializer?
     private static var _user: IUserDeserializer?
+    private static var _venue: IVenueDeserializer?
     private static var _schoolClass: ISchoolClassDeserializer?
+    
+    public static var bool: IBoolDeserializer {
+        if let o = _bool {
+            return o
+        } else {
+            _bool = BoolSerializer()
+            return self.bool
+        }
+    }
+    
+    public static var string: IStringDeserializer {
+        if let o = _string {
+            return o
+        } else {
+            _string = StringSerializer()
+            return self.string
+        }
+    }
     
     public static var checkCredentialsRequest: ICheckCredentialsRequestSerializer {
         if let o = _checkCredentialsRequest {
@@ -38,6 +60,15 @@ public class SerializerFactory {
         } else {
             _user = UserSerializer()
             return self.user
+        }
+    }
+    
+    public static var venue: IVenueDeserializer {
+        if let o = _venue {
+            return o
+        } else {
+            _venue = VenueSerializer()
+            return self.venue
         }
     }
     

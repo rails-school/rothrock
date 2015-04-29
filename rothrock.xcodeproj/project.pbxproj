@@ -34,6 +34,7 @@
 		A784106E1AEF1F96006709ED /* VenueSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784106D1AEF1F96006709ED /* VenueSerializer.swift */; };
 		A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78622291AEAA10C006B0F76 /* RLMSupport.swift */; };
 		A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786222D1AEAA56E006B0F76 /* Lesson.swift */; };
+		A794DC1E1AF196BA00D8743F /* BoolSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */; };
 		A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */; };
 		A7BA44EE1AEAEC25008514F5 /* IUserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44ED1AEAEC25008514F5 /* IUserDAO.swift */; };
 		A7BA44F01AEAECDB008514F5 /* IVenueDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */; };
@@ -98,6 +99,7 @@
 		A78622291AEAA10C006B0F76 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		A786222D1AEAA56E006B0F76 /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		A7916A891AEB6A5700E1CD4F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
+		A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolSerializer.swift; sourceTree = "<group>"; };
 		A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayNotificationPreference.swift; sourceTree = "<group>"; };
 		A7BA44ED1AEAEC25008514F5 /* IUserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IUserDAO.swift; sourceTree = "<group>"; };
 		A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IVenueDAO.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				A784106D1AEF1F96006709ED /* VenueSerializer.swift */,
 				A71A7CC41AF00E760094019E /* StringSerializer.swift */,
 				A71A7CC61AF00F440094019E /* SerializerFactory.swift */,
+				A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */,
 			);
 			name = serializers;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				A7BA44F21AEAED41008514F5 /* BaseDAO.swift in Sources */,
 				A784106E1AEF1F96006709ED /* VenueSerializer.swift in Sources */,
 				A7BA44F41AEAEE02008514F5 /* LessonDAO.swift in Sources */,
+				A794DC1E1AF196BA00D8743F /* BoolSerializer.swift in Sources */,
 				A74F045A1AEB271700EB8916 /* LessonSerializer.swift in Sources */,
 				A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */,
 				A74F04571AEB25AD00EB8916 /* SchoolClass.swift in Sources */,

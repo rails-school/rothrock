@@ -25,10 +25,20 @@ internal class RailsSchoolAPI: IRailsSchoolAPI {
         return _getRoute("/users" + path)
     }
     
+    private func _setAuthenticationCookie(cookie: String) -> Alamofire.Manager {
+        var defaultHeaders = Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders ?? [:]
+        var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        
+        defaultHeaders["Cookie"] = "remember_user_token"
+        configuration.HTTPAdditionalHeaders = defaultHeaders
+        
+        return Alamofire.Manager(configuration: configuration)
+    }
+    
     func getFutureLessonSlugs(callback: RemoteCallback<[String]>) {
           Alamofire
             .request(.GET, _getLessonRoute("/future/slugs"))
-            .response(callback.asHandler(ArraySerializer(objectSerializer: StringSerializer())))
+            .response(callback.asHandler(ArraySerializer(objectSerializer: SerializerFactory.string)))
     }
     
     func getLesson(slug: String, callback: RemoteCallback<Lesson>) {
@@ -56,22 +66,34 @@ internal class RailsSchoolAPI: IRailsSchoolAPI {
     }
     
     func checkCredentials(request: CheckCredentialsRequest, callback: RemoteCallback<Void>) {
+        var request: AnyObject = SerializerFactory.checkCredentialsRequest.serialize(request).dictionaryObject as! AnyObject
         
+        Alamofire
+            .request(.POST, _getUserRoute("/sign_in"), parameters: ["user": request], encoding: .JSON)
+            .response(callback.asHandler())
     }
     
     func getVenue(id: Int, callback: RemoteCallback<Venue>) {
-        
+        Alamofire
+            .request(.GET, _getRoute("/venues/\(id)"))
+            .response(callback.asHandler(SerializerFactory.venue))
     }
     
-    func isAttending(slug: String, callback: RemoteCallback<Bool>) {
-        
+    func isAttending(slug: String, authenticationCookie: String, callback: RemoteCallback<Bool>) {
+        _setAuthenticationCookie(authenticationCookie)
+            .request(.GET, _getRoute("/attending_lesson/\(slug)"))
+            .response(callback.asHandler(SerializerFactory.bool))
     }
     
-    func attend(lessonId: Int, callback: RemoteCallback<Void>) {
-        
+    func attend(lessonId: Int, authenticationCookie: String, callback: RemoteCallback<Void>) {
+        _setAuthenticationCookie(authenticationCookie)
+            .request(.GET, _getRoute("/rsvp/\(lessonId)"))
+            .response(callback.asHandler())
     }
     
-    func removeAttendance(lessonId: Int, callback: RemoteCallback<Void>) {
-        
+    func removeAttendance(lessonId: Int, authenticationCookie: String, callback: RemoteCallback<Void>) {
+        _setAuthenticationCookie(authenticationCookie)
+            .request(.GET, _getRoute("/rsvp/\(lessonId)/delete"))
+            .response(callback.asHandler())
     }
 }
