@@ -17,7 +17,7 @@ public class ISchoolClassDeserializer: IJSONDeserializer {
     }
 }
 
-internal class SchoolClassSeriazlier: ISchoolClassDeserializer {
+internal class SchoolClassSerializer: ISchoolClassDeserializer {
     private var _lessonDeserializer: ILessonDeserializer
     private var _userArrayDeserializer: IArrayDeserializer<User>
     
