@@ -15,7 +15,7 @@ internal class BaseDAO {
         self._dal = dal
     }
     
-    internal func getDAL() -> RLMRealm {
+    internal var dal: RLMRealm {
         return _dal
     }
 }

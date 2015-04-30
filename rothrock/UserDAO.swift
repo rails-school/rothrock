@@ -30,11 +30,11 @@ internal class UserDAO: BaseDAO, IUserDAO {
     
     func find(id: Int) -> User? {
         var pred = NSPredicate(format: "id = %@", id)
-        return User.objectsInRealm(getDAL(), withPredicate: pred).firstObject() as! User?
+        return User.objectsInRealm(dal, withPredicate: pred).firstObject() as! User?
     }
     
     func save(user: User) {
-        getDAL().beginWriteTransaction()
+        dal.beginWriteTransaction()
         
         if exists(user.id) {
             var e: User = find(user.id)!
@@ -49,12 +49,12 @@ internal class UserDAO: BaseDAO, IUserDAO {
             e.hideLastName = user.hideLastName
             e.updateDate = NSDate()
             
-            User.createOrUpdateInRealm(getDAL(), withObject: e)
+            User.createOrUpdateInRealm(dal, withObject: e)
         } else {
-            User.createInRealm(getDAL(), withObject: user)
+            User.createInRealm(dal, withObject: user)
         }
         
-        getDAL().commitWriteTransaction()
+        dal.commitWriteTransaction()
     }
     
     func getCurrentUserEmail() -> String? {

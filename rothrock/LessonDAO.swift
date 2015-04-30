@@ -21,13 +21,13 @@ internal class LessonDAO: BaseDAO, ILessonDAO {
     func find(slug: String) -> Lesson? {
         let pred = NSPredicate(format: "slug = %@", slug)
         
-        return Lesson.objectsInRealm(getDAL(), withPredicate: pred).firstObject() as! Lesson?
+        return Lesson.objectsInRealm(dal, withPredicate: pred).firstObject() as! Lesson?
     }
     
     func save(lesson: Lesson) {
-        getDAL().beginWriteTransaction()
+        dal.beginWriteTransaction()
         lesson.updateDate = NSDate()
-        Lesson.createOrUpdateInRealm(getDAL(), withObject: lesson)
-        getDAL().commitWriteTransaction()
+        Lesson.createOrUpdateInRealm(dal, withObject: lesson)
+        dal.commitWriteTransaction()
     }
 }

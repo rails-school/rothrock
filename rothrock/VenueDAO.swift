@@ -19,13 +19,13 @@ internal class VenueDAO: BaseDAO, IVenueDAO {
     
     func find(id: Int) -> Venue? {
         var pred = NSPredicate(format: "id = %@", id)
-        return Venue.objectsInRealm(getDAL(), withPredicate: pred).firstObject() as! Venue?
+        return Venue.objectsInRealm(dal, withPredicate: pred).firstObject() as! Venue?
     }
     
     func save(venue: Venue) {
-        getDAL().beginWriteTransaction()
+        dal.beginWriteTransaction()
         venue.updateDate = NSDate()
-        Venue.createOrUpdateInRealm(getDAL(), withObject: venue)
-        getDAL().commitWriteTransaction()
+        Venue.createOrUpdateInRealm(dal, withObject: venue)
+        dal.commitWriteTransaction()
     }
 }

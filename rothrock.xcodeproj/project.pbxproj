@@ -35,6 +35,13 @@
 		A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78622291AEAA10C006B0F76 /* RLMSupport.swift */; };
 		A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786222D1AEAA56E006B0F76 /* Lesson.swift */; };
 		A794DC1E1AF196BA00D8743F /* BoolSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */; };
+		A794DC211AF1A09800D8743F /* ILessonBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC201AF1A09800D8743F /* ILessonBusiness.swift */; };
+		A794DC231AF1A19600D8743F /* BaseBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC221AF1A19600D8743F /* BaseBusiness.swift */; };
+		A794DC251AF1A24100D8743F /* RailsSchoolAPIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC241AF1A24100D8743F /* RailsSchoolAPIFactory.swift */; };
+		A794DC2E1AF1A6CE00D8743F /* IPreferenceBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC2D1AF1A6CE00D8743F /* IPreferenceBusiness.swift */; };
+		A794DC301AF1A77900D8743F /* IUserBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC2F1AF1A77900D8743F /* IUserBusiness.swift */; };
+		A794DC321AF1A88E00D8743F /* IVenueBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC311AF1A88E00D8743F /* IVenueBusiness.swift */; };
+		A794DC341AF1A8F700D8743F /* LessonBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC331AF1A8F700D8743F /* LessonBusiness.swift */; };
 		A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */; };
 		A7BA44EE1AEAEC25008514F5 /* IUserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44ED1AEAEC25008514F5 /* IUserDAO.swift */; };
 		A7BA44F01AEAECDB008514F5 /* IVenueDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */; };
@@ -100,6 +107,13 @@
 		A786222D1AEAA56E006B0F76 /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		A7916A891AEB6A5700E1CD4F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolSerializer.swift; sourceTree = "<group>"; };
+		A794DC201AF1A09800D8743F /* ILessonBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILessonBusiness.swift; sourceTree = "<group>"; };
+		A794DC221AF1A19600D8743F /* BaseBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBusiness.swift; sourceTree = "<group>"; };
+		A794DC241AF1A24100D8743F /* RailsSchoolAPIFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailsSchoolAPIFactory.swift; sourceTree = "<group>"; };
+		A794DC2D1AF1A6CE00D8743F /* IPreferenceBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPreferenceBusiness.swift; sourceTree = "<group>"; };
+		A794DC2F1AF1A77900D8743F /* IUserBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IUserBusiness.swift; sourceTree = "<group>"; };
+		A794DC311AF1A88E00D8743F /* IVenueBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IVenueBusiness.swift; sourceTree = "<group>"; };
+		A794DC331AF1A8F700D8743F /* LessonBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonBusiness.swift; sourceTree = "<group>"; };
 		A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayNotificationPreference.swift; sourceTree = "<group>"; };
 		A7BA44ED1AEAEC25008514F5 /* IUserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IUserDAO.swift; sourceTree = "<group>"; };
 		A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IVenueDAO.swift; sourceTree = "<group>"; };
@@ -229,9 +243,12 @@
 		A74F044F1AEB1F6000EB8916 /* bll */ = {
 			isa = PBXGroup;
 			children = (
+				A794DC1F1AF19FC300D8743F /* interfaces */,
 				A74F04581AEB269D00EB8916 /* serializers */,
 				A74F04551AEB259E00EB8916 /* structs */,
 				A74F04501AEB1FC800EB8916 /* remote */,
+				A794DC221AF1A19600D8743F /* BaseBusiness.swift */,
+				A794DC331AF1A8F700D8743F /* LessonBusiness.swift */,
 			);
 			name = bll;
 			sourceTree = "<group>";
@@ -242,6 +259,7 @@
 				A74F04511AEB208400EB8916 /* IRailsSchoolAPI.swift */,
 				A74F04531AEB20BD00EB8916 /* RemoteCallback.swift */,
 				A740521B1AEFFC88003ABBE3 /* RailsSchoolAPI.swift */,
+				A794DC241AF1A24100D8743F /* RailsSchoolAPIFactory.swift */,
 			);
 			name = remote;
 			sourceTree = "<group>";
@@ -291,6 +309,17 @@
 				A7D5CFEB1AEAD1C100370F4A /* Venue.swift */,
 			);
 			name = beans;
+			sourceTree = "<group>";
+		};
+		A794DC1F1AF19FC300D8743F /* interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				A794DC311AF1A88E00D8743F /* IVenueBusiness.swift */,
+				A794DC201AF1A09800D8743F /* ILessonBusiness.swift */,
+				A794DC2D1AF1A6CE00D8743F /* IPreferenceBusiness.swift */,
+				A794DC2F1AF1A77900D8743F /* IUserBusiness.swift */,
+			);
+			name = interfaces;
 			sourceTree = "<group>";
 		};
 		A7D5CFED1AEAE53500370F4A /* dao */ = {
@@ -521,21 +550,26 @@
 				A74F04521AEB208400EB8916 /* IRailsSchoolAPI.swift in Sources */,
 				A746A6A91AE9D6E800AF0FA5 /* ViewController.swift in Sources */,
 				A74F04541AEB20BD00EB8916 /* RemoteCallback.swift in Sources */,
+				A794DC251AF1A24100D8743F /* RailsSchoolAPIFactory.swift in Sources */,
 				A78410681AEF14E0006709ED /* IJSONSerializer.swift in Sources */,
 				A71A7CC71AF00F440094019E /* SerializerFactory.swift in Sources */,
+				A794DC2E1AF1A6CE00D8743F /* IPreferenceBusiness.swift in Sources */,
 				A7BA44F21AEAED41008514F5 /* BaseDAO.swift in Sources */,
 				A784106E1AEF1F96006709ED /* VenueSerializer.swift in Sources */,
 				A7BA44F41AEAEE02008514F5 /* LessonDAO.swift in Sources */,
 				A794DC1E1AF196BA00D8743F /* BoolSerializer.swift in Sources */,
 				A74F045A1AEB271700EB8916 /* LessonSerializer.swift in Sources */,
 				A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */,
+				A794DC231AF1A19600D8743F /* BaseBusiness.swift in Sources */,
 				A74F04571AEB25AD00EB8916 /* SchoolClass.swift in Sources */,
 				A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */,
+				A794DC301AF1A77900D8743F /* IUserBusiness.swift in Sources */,
 				A78410661AEF1433006709ED /* CheckCredentialsRequestSerializer.swift in Sources */,
 				A740521C1AEFFC88003ABBE3 /* RailsSchoolAPI.swift in Sources */,
 				A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */,
 				A78410641AEF131A006709ED /* CheckCredentialsRequest.swift in Sources */,
 				A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */,
+				A794DC321AF1A88E00D8743F /* IVenueBusiness.swift in Sources */,
 				A7BA44EE1AEAEC25008514F5 /* IUserDAO.swift in Sources */,
 				A74F045D1AEB274700EB8916 /* IJSONDeserializer.swift in Sources */,
 				A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */,
@@ -545,12 +579,14 @@
 				A74F044C1AEB04FE00EB8916 /* UserDAO.swift in Sources */,
 				A74F044A1AEB02B700EB8916 /* PreferenceDAO.swift in Sources */,
 				A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */,
+				A794DC211AF1A09800D8743F /* ILessonBusiness.swift in Sources */,
 				A784106A1AEF16FC006709ED /* SchoolClassSerializer.swift in Sources */,
 				A74F044E1AEB06DE00EB8916 /* VenueDAO.swift in Sources */,
 				A740521E1AF001AF003ABBE3 /* ArraySerializer.swift in Sources */,
 				A71A7CC51AF00E760094019E /* StringSerializer.swift in Sources */,
 				A7BA44F01AEAECDB008514F5 /* IVenueDAO.swift in Sources */,
 				A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */,
+				A794DC341AF1A8F700D8743F /* LessonBusiness.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
