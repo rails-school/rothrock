@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol IUserBusiness {
-    func get(id: Int, success: (User) -> Void, failure: (String) -> Void)
+    func get(id: Int, success: (User?) -> Void, failure: (String) -> Void)
     
     func isCurrentUserAttendingTo(lessonSlug: String, isAttending: (Bool) -> Void, needToSignIn: () -> Void, failure: (String) -> Void)
     
