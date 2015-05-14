@@ -9,8 +9,9 @@
 import Foundation
 
 internal class UserDAO: BaseDAO, IUserDAO {
-    private static let EMAIL_KEY = "email",
-        TOKEN_KEY = "token"
+    private static let EMAIL_KEY = "current_user_email",
+        SCHOOL_ID_KEY = "current_user_school_id",
+        TOKEN_KEY = "current_user_token"
     
     private var _preferenceDAL: NSUserDefaults
     
@@ -39,6 +40,7 @@ internal class UserDAO: BaseDAO, IUserDAO {
         if exists(user.id) {
             var e: User = find(user.id)!
             
+            // Optional fields from server. If they are blank, do not update local entry.
             if user.name != nil && !user.name!.isEmpty {
                 e.name = user.name
             }
@@ -73,8 +75,16 @@ internal class UserDAO: BaseDAO, IUserDAO {
         _preferenceDAL.stringForKey(UserDAO.TOKEN_KEY)
     }
     
+    func getCurrentUserSchoolId() -> Int? {
+        return _preferenceDAL.integerForKey(UserDAO.SCHOOL_ID_KEY)
+    }
+    
+    func setCurrentUserSchoolId(value: Int) {
+        _preferenceDAL.setInteger(value, forKey: UserDAO.SCHOOL_ID_KEY)
+    }
+    
     func hasCurrentUser() -> Bool {
-        if let e = getCurrentUserEmail() {
+        if getCurrentUserEmail() != nil && getCurrentUserToken() != nil {
             return true
         } else {
             return false

@@ -23,5 +23,9 @@ public protocol IUserDAO {
     
     func setCurrentUserToken(value: String)
     
+    func getCurrentUserSchoolId() -> Int?
+    
+    func setCurrentUserSchoolId(value: Int)
+    
     func hasCurrentUser() -> Bool
 }

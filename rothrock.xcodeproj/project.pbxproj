@@ -47,6 +47,7 @@
 		A7BA44F01AEAECDB008514F5 /* IVenueDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */; };
 		A7BA44F21AEAED41008514F5 /* BaseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44F11AEAED41008514F5 /* BaseDAO.swift */; };
 		A7BA44F41AEAEE02008514F5 /* LessonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44F31AEAEE02008514F5 /* LessonDAO.swift */; };
+		A7BD792E1B0556AB00303751 /* DAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD792D1B0556AB00303751 /* DAOFactory.swift */; };
 		A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFE91AEACBEC00370F4A /* User.swift */; };
 		A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEB1AEAD1C100370F4A /* Venue.swift */; };
 		A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */; };
@@ -119,6 +120,7 @@
 		A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IVenueDAO.swift; sourceTree = "<group>"; };
 		A7BA44F11AEAED41008514F5 /* BaseDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDAO.swift; sourceTree = "<group>"; };
 		A7BA44F31AEAEE02008514F5 /* LessonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonDAO.swift; sourceTree = "<group>"; };
+		A7BD792D1B0556AB00303751 /* DAOFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOFactory.swift; sourceTree = "<group>"; };
 		A7D5CFE91AEACBEC00370F4A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A7D5CFEB1AEAD1C100370F4A /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILessonDAO.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				A74F04491AEB02B700EB8916 /* PreferenceDAO.swift */,
 				A74F044B1AEB04FE00EB8916 /* UserDAO.swift */,
 				A74F044D1AEB06DE00EB8916 /* VenueDAO.swift */,
+				A7BD792D1B0556AB00303751 /* DAOFactory.swift */,
 			);
 			name = dao;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				A78410661AEF1433006709ED /* CheckCredentialsRequestSerializer.swift in Sources */,
 				A740521C1AEFFC88003ABBE3 /* RailsSchoolAPI.swift in Sources */,
 				A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */,
+				A7BD792E1B0556AB00303751 /* DAOFactory.swift in Sources */,
 				A78410641AEF131A006709ED /* CheckCredentialsRequest.swift in Sources */,
 				A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */,
 				A794DC321AF1A88E00D8743F /* IVenueBusiness.swift in Sources */,
