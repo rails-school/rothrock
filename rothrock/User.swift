@@ -14,6 +14,7 @@ public class User: RLMObject {
     public dynamic var name: String?
     public dynamic var email: String?
     public dynamic var hideLastName: Bool = false
+    public dynamic var schoolId: Int = 0
     public dynamic var updateDate: NSDate?
     
      public override class func primaryKey() -> String {
