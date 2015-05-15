@@ -11,12 +11,12 @@ import Foundation
 public class RailsSchoolAPIFactory {
     private static var _api: IRailsSchoolAPI?
     
-    public static var api: IRailsSchoolAPI {
+    public static func provideAPI() -> IRailsSchoolAPI {
         if let o = _api {
             return o
         } else {
             _api = RailsSchoolAPI()
-            return self.api
+            return _api!
         }
     }
 }

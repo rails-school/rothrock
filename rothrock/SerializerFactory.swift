@@ -18,66 +18,66 @@ public class SerializerFactory {
     private static var _venue: IVenueDeserializer?
     private static var _schoolClass: ISchoolClassDeserializer?
     
-    public static var bool: IBoolDeserializer {
+    public static func provideBool() -> IBoolDeserializer {
         if let o = _bool {
             return o
         } else {
             _bool = BoolSerializer()
-            return self.bool
+            return _bool!
         }
     }
     
-    public static var string: IStringDeserializer {
+    public static func provideString() -> IStringDeserializer {
         if let o = _string {
             return o
         } else {
             _string = StringSerializer()
-            return self.string
+            return _string!
         }
     }
     
-    public static var checkCredentialsRequest: ICheckCredentialsRequestSerializer {
+    public static func provideCheckCredentialsRequest() -> ICheckCredentialsRequestSerializer {
         if let o = _checkCredentialsRequest {
             return o
         } else {
             _checkCredentialsRequest = CheckCredentialsRequestSerializer()
-            return self.checkCredentialsRequest
+            return _checkCredentialsRequest!
         }
     }
     
-    public static var lesson: ILessonDeserializer {
+    public static func provideLesson() -> ILessonDeserializer {
         if let o = _lesson {
             return o
         } else {
             _lesson = LessonSerializer()
-            return self.lesson
+            return _lesson!
         }
     }
     
-    public static var user: IUserDeserializer {
+    public static func provideUser() -> IUserDeserializer {
         if let o = _user {
             return o
         } else {
             _user = UserSerializer()
-            return self.user
+            return _user!
         }
     }
     
-    public static var venue: IVenueDeserializer {
+    public static func provideVenue() -> IVenueDeserializer {
         if let o = _venue {
             return o
         } else {
             _venue = VenueSerializer()
-            return self.venue
+            return _venue!
         }
     }
     
-    public static var schoolClass: ISchoolClassDeserializer {
+    public static func provideSchoolClass() -> ISchoolClassDeserializer {
         if let o = _schoolClass {
             return o
         } else {
-            _schoolClass = SchoolClassSerializer(lessonDeserializer: lesson, userArrayDeserializer: ArraySerializer(objectSerializer: user))
-            return self.schoolClass
+            _schoolClass = SchoolClassSerializer(lessonDeserializer: provideLesson(), userArrayDeserializer: ArraySerializer(objectSerializer: provideUser()))
+            return _schoolClass!
         }
     }
 }

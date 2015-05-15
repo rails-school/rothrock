@@ -14,39 +14,39 @@ public class DAOFactory {
     private static var _venue: IVenueDAO?
     private static var _preference: IPreferenceDAO?
     
-    public static var user: IUserDAO {
+    public static func provideUser() -> IUserDAO {
         if let o = _user {
             return o
         } else {
             _user = UserDAO(dal: RLMRealm.defaultRealm(), preferenceStorage: NSUserDefaults.standardUserDefaults())
-            return self.user
+            return _user!
         }
     }
     
-    public static var lesson: ILessonDAO {
+    public static func provideLesson() -> ILessonDAO {
         if let o = _lesson {
             return o
         } else {
             _lesson = LessonDAO(dal: RLMRealm.defaultRealm())
-            return self.lesson
+            return _lesson!
         }
     }
     
-    public static var venue: IVenueDAO {
+    public static func provideVenue() -> IVenueDAO {
         if let o = _venue {
             return o
         } else {
             _venue = VenueDAO(dal: RLMRealm.defaultRealm())
-            return self.venue
+            return _venue!
         }
     }
     
-    public static var preference: IPreferenceDAO {
+    public static func providePreference() -> IPreferenceDAO {
         if let o = _preference {
             return o
         } else {
             _preference = PreferenceDAO(preferenceStorage: NSUserDefaults.standardUserDefaults())
-            return self.preference
+            return _preference!
         }
     }
 }

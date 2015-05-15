@@ -38,63 +38,63 @@ internal class RailsSchoolAPI: IRailsSchoolAPI {
     func getFutureLessonSlugs(callback: RemoteCallback<[String]>) {
           Alamofire
             .request(.GET, _getLessonRoute("/future/slugs"))
-            .response(callback.asHandler(ArraySerializer(objectSerializer: SerializerFactory.string)))
+            .response(callback.asHandler(ArraySerializer(objectSerializer: SerializerFactory.provideString())))
     }
     
     func getFutureLessonSlugs(schoolId: Int, callback: RemoteCallback<[String]>) {
         Alamofire
             .request(.GET, _getLessonRoute("/future/slugs/\(schoolId)"))
-            .response(callback.asHandler(ArraySerializer(objectSerializer: SerializerFactory.string)))
+            .response(callback.asHandler(ArraySerializer(objectSerializer: SerializerFactory.provideString())))
     }
     
     func getLesson(slug: String, callback: RemoteCallback<Lesson>) {
         Alamofire
             .request(.GET, _getLessonRoute("/\(slug)"))
-            .response(callback.asHandler(SerializerFactory.lesson))
+            .response(callback.asHandler(SerializerFactory.provideLesson()))
     }
     
     func getSchoolClass(slug: String, callback: RemoteCallback<SchoolClass>) {
         Alamofire
             .request(.GET, _getLessonRoute("/\(slug)"))
-            .response(callback.asHandler(SerializerFactory.schoolClass))
+            .response(callback.asHandler(SerializerFactory.provideSchoolClass()))
     }
     
     func getUpcomingLesson(callback: RemoteCallback<Lesson>) {
         Alamofire
             .request(.GET, _getLessonRoute("/upcoming"))
-            .response(callback.asHandler(SerializerFactory.lesson))
+            .response(callback.asHandler(SerializerFactory.provideLesson()))
     }
     
     func getUpcomingLesson(schoolId: Int, callback: RemoteCallback<Lesson>) {
         Alamofire
             .request(.GET, _getLessonRoute("/upcoming/\(schoolId)"))
-            .response(callback.asHandler(SerializerFactory.lesson))
+            .response(callback.asHandler(SerializerFactory.provideLesson()))
     }
     
     func getUser(id: Int, callback: RemoteCallback<User>) {
         Alamofire
             .request(.GET, _getUserRoute("/\(id)"))
-            .response(callback.asHandler(SerializerFactory.user))
+            .response(callback.asHandler(SerializerFactory.provideUser()))
     }
     
     func checkCredentials(request: CheckCredentialsRequest, callback: RemoteCallback<User>) {
-        var request: AnyObject = SerializerFactory.checkCredentialsRequest.serialize(request).dictionaryObject as! AnyObject
+        var request: AnyObject = SerializerFactory.provideCheckCredentialsRequest().serialize(request).dictionaryObject as! AnyObject
         
         Alamofire
             .request(.POST, _getUserRoute("/sign_in"), parameters: ["user": request], encoding: .JSON)
-            .response(callback.asHandler(SerializerFactory.user))
+            .response(callback.asHandler(SerializerFactory.provideUser()))
     }
     
     func getVenue(id: Int, callback: RemoteCallback<Venue>) {
         Alamofire
             .request(.GET, _getRoute("/venues/\(id)"))
-            .response(callback.asHandler(SerializerFactory.venue))
+            .response(callback.asHandler(SerializerFactory.provideVenue()))
     }
     
     func isAttending(slug: String, authenticationCookie: String, callback: RemoteCallback<Bool>) {
         _setAuthenticationCookie(authenticationCookie)
             .request(.GET, _getRoute("/attending_lesson/\(slug)"))
-            .response(callback.asHandler(SerializerFactory.bool))
+            .response(callback.asHandler(SerializerFactory.provideBool()))
     }
     
     func attend(lessonId: Int, authenticationCookie: String, callback: RemoteCallback<Void>) {
