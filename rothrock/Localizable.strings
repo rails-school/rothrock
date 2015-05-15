@@ -1,0 +1,44 @@
+/* 
+  Localizable.strings
+  rothrock
+
+  Created by Adrien on 14/05/15.
+  Copyright (c) 2015 RailsSchool. All rights reserved.
+*/
+
+"app_name" = "Rails School";
+
+"api_endpoint" = "https://www.railsschool.org";
+
+"no_attendee" = "Be the first to join this class!";
+"one_attendee" = "1 student will attend this class";
+"multi_attendees" = "%@ students will attend this class";
+
+"processing" = "Processing...";
+"updated_preference" = "Updated!";
+"saved_confirmation" = "Saved!";
+
+"attend_class" = "RSVP!";
+"remove_attendance" = "unRSVP";
+
+"reminder_two_hours" = "In two hours";
+"reminder_next_day" = "Tomorrow";
+
+"settings_account_label" = "Account";
+"settings_email_placeholder" = "Email";
+"settings_password_placeholder" = "Password";
+"settings_submit_credentials" = "Remember me";
+"settings_invalid_credentials" = "Your username or password is invalid.";
+
+"settings_reminder_label" = "Alert settings";
+"settings_reminder_day" = "24 hour reminder";
+"settings_reminder_two_hour" = "2 hour reminder";
+"settings_lesson_alert" = "New lesson alert";
+
+"settings_reminder_frequence_always" = "Always";
+"settings_reminder_frequence_attending" = "Only if attending";
+"settings_reminder_frequence_never" = "Never";
+
+"error_default" = "Whoops! Something wrong happened. Please try again.";
+"error_no_connection" = "You seem to have no Internet connection. Please try again.";
+"error_not_signed_in" = "You need to sign in before attending to any lesson.";

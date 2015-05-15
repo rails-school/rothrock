@@ -16,4 +16,8 @@ public protocol IPreferenceBusiness {
     func updateDayReminderPreference(preference: DayNotificationPreference)
     
     func getDayReminderPreference() -> DayNotificationPreference
+    
+    func updateLessonAlertPreference(value: Bool)
+    
+    func getLessonAlertPreference() -> Bool
 }

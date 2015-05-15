@@ -48,6 +48,10 @@
 		A7BA44F21AEAED41008514F5 /* BaseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44F11AEAED41008514F5 /* BaseDAO.swift */; };
 		A7BA44F41AEAEE02008514F5 /* LessonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44F31AEAEE02008514F5 /* LessonDAO.swift */; };
 		A7BD792E1B0556AB00303751 /* DAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD792D1B0556AB00303751 /* DAOFactory.swift */; };
+		A7BD79301B05728F00303751 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7BD792F1B05728F00303751 /* Localizable.strings */; };
+		A7BD79331B0579E100303751 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD79321B0579E100303751 /* StringExtension.swift */; };
+		A7BD79351B0584BD00303751 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD79341B0584BD00303751 /* DateExtension.swift */; };
+		A7BD79371B058B2700303751 /* BLLCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD79361B058B2700303751 /* BLLCallback.swift */; };
 		A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFE91AEACBEC00370F4A /* User.swift */; };
 		A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEB1AEAD1C100370F4A /* Venue.swift */; };
 		A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */; };
@@ -121,6 +125,10 @@
 		A7BA44F11AEAED41008514F5 /* BaseDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDAO.swift; sourceTree = "<group>"; };
 		A7BA44F31AEAEE02008514F5 /* LessonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonDAO.swift; sourceTree = "<group>"; };
 		A7BD792D1B0556AB00303751 /* DAOFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAOFactory.swift; sourceTree = "<group>"; };
+		A7BD792F1B05728F00303751 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		A7BD79321B0579E100303751 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		A7BD79341B0584BD00303751 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		A7BD79361B058B2700303751 /* BLLCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLLCallback.swift; sourceTree = "<group>"; };
 		A7D5CFE91AEACBEC00370F4A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A7D5CFEB1AEAD1C100370F4A /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILessonDAO.swift; sourceTree = "<group>"; };
@@ -205,6 +213,7 @@
 		A746A6A31AE9D6E800AF0FA5 /* rothrock */ = {
 			isa = PBXGroup;
 			children = (
+				A7BD79311B0579C700303751 /* utils */,
 				A7F571E81AEED9DD001084D3 /* Bridging-Header.h */,
 				A786222B1AEAA54B006B0F76 /* models */,
 				A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */,
@@ -213,6 +222,7 @@
 				A746A6AD1AE9D6E800AF0FA5 /* Images.xcassets */,
 				A746A6AF1AE9D6E800AF0FA5 /* LaunchScreen.xib */,
 				A746A6A41AE9D6E800AF0FA5 /* Supporting Files */,
+				A7BD792F1B05728F00303751 /* Localizable.strings */,
 			);
 			path = rothrock;
 			sourceTree = "<group>";
@@ -245,12 +255,13 @@
 		A74F044F1AEB1F6000EB8916 /* bll */ = {
 			isa = PBXGroup;
 			children = (
-				A794DC1F1AF19FC300D8743F /* interfaces */,
-				A74F04581AEB269D00EB8916 /* serializers */,
-				A74F04551AEB259E00EB8916 /* structs */,
-				A74F04501AEB1FC800EB8916 /* remote */,
 				A794DC221AF1A19600D8743F /* BaseBusiness.swift */,
 				A794DC331AF1A8F700D8743F /* LessonBusiness.swift */,
+				A794DC1F1AF19FC300D8743F /* interfaces */,
+				A74F04501AEB1FC800EB8916 /* remote */,
+				A74F04581AEB269D00EB8916 /* serializers */,
+				A74F04551AEB259E00EB8916 /* structs */,
+				A7BD79361B058B2700303751 /* BLLCallback.swift */,
 			);
 			name = bll;
 			sourceTree = "<group>";
@@ -269,8 +280,8 @@
 		A74F04551AEB259E00EB8916 /* structs */ = {
 			isa = PBXGroup;
 			children = (
-				A74F04561AEB25AD00EB8916 /* SchoolClass.swift */,
 				A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */,
+				A74F04561AEB25AD00EB8916 /* SchoolClass.swift */,
 			);
 			name = structs;
 			sourceTree = "<group>";
@@ -279,16 +290,16 @@
 			isa = PBXGroup;
 			children = (
 				A740521D1AF001AF003ABBE3 /* ArraySerializer.swift */,
+				A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */,
 				A78410651AEF1433006709ED /* CheckCredentialsRequestSerializer.swift */,
 				A74F045C1AEB274700EB8916 /* IJSONDeserializer.swift */,
 				A78410671AEF14E0006709ED /* IJSONSerializer.swift */,
 				A74F04591AEB271700EB8916 /* LessonSerializer.swift */,
 				A78410691AEF16FC006709ED /* SchoolClassSerializer.swift */,
+				A71A7CC61AF00F440094019E /* SerializerFactory.swift */,
+				A71A7CC41AF00E760094019E /* StringSerializer.swift */,
 				A784106B1AEF1F13006709ED /* UserSerializer.swift */,
 				A784106D1AEF1F96006709ED /* VenueSerializer.swift */,
-				A71A7CC41AF00E760094019E /* StringSerializer.swift */,
-				A71A7CC61AF00F440094019E /* SerializerFactory.swift */,
-				A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */,
 			);
 			name = serializers;
 			sourceTree = "<group>";
@@ -316,12 +327,21 @@
 		A794DC1F1AF19FC300D8743F /* interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				A794DC311AF1A88E00D8743F /* IVenueBusiness.swift */,
 				A794DC201AF1A09800D8743F /* ILessonBusiness.swift */,
 				A794DC2D1AF1A6CE00D8743F /* IPreferenceBusiness.swift */,
 				A794DC2F1AF1A77900D8743F /* IUserBusiness.swift */,
+				A794DC311AF1A88E00D8743F /* IVenueBusiness.swift */,
 			);
 			name = interfaces;
+			sourceTree = "<group>";
+		};
+		A7BD79311B0579C700303751 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				A7BD79321B0579E100303751 /* StringExtension.swift */,
+				A7BD79341B0584BD00303751 /* DateExtension.swift */,
+			);
+			name = utils;
 			sourceTree = "<group>";
 		};
 		A7D5CFED1AEAE53500370F4A /* dao */ = {
@@ -438,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A746A6AC1AE9D6E800AF0FA5 /* Main.storyboard in Resources */,
+				A7BD79301B05728F00303751 /* Localizable.strings in Resources */,
 				A746A6B11AE9D6E800AF0FA5 /* LaunchScreen.xib in Resources */,
 				A746A6AE1AE9D6E800AF0FA5 /* Images.xcassets in Resources */,
 			);
@@ -558,6 +579,7 @@
 				A71A7CC71AF00F440094019E /* SerializerFactory.swift in Sources */,
 				A794DC2E1AF1A6CE00D8743F /* IPreferenceBusiness.swift in Sources */,
 				A7BA44F21AEAED41008514F5 /* BaseDAO.swift in Sources */,
+				A7BD79331B0579E100303751 /* StringExtension.swift in Sources */,
 				A784106E1AEF1F96006709ED /* VenueSerializer.swift in Sources */,
 				A7BA44F41AEAEE02008514F5 /* LessonDAO.swift in Sources */,
 				A794DC1E1AF196BA00D8743F /* BoolSerializer.swift in Sources */,
@@ -576,6 +598,7 @@
 				A794DC321AF1A88E00D8743F /* IVenueBusiness.swift in Sources */,
 				A7BA44EE1AEAEC25008514F5 /* IUserDAO.swift in Sources */,
 				A74F045D1AEB274700EB8916 /* IJSONDeserializer.swift in Sources */,
+				A7BD79371B058B2700303751 /* BLLCallback.swift in Sources */,
 				A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */,
 				A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */,
 				A784106C1AEF1F13006709ED /* UserSerializer.swift in Sources */,
@@ -587,6 +610,7 @@
 				A784106A1AEF16FC006709ED /* SchoolClassSerializer.swift in Sources */,
 				A74F044E1AEB06DE00EB8916 /* VenueDAO.swift in Sources */,
 				A740521E1AF001AF003ABBE3 /* ArraySerializer.swift in Sources */,
+				A7BD79351B0584BD00303751 /* DateExtension.swift in Sources */,
 				A71A7CC51AF00E760094019E /* StringSerializer.swift in Sources */,
 				A7BA44F01AEAECDB008514F5 /* IVenueDAO.swift in Sources */,
 				A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */,

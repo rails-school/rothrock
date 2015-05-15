@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 internal class RailsSchoolAPI: IRailsSchoolAPI {
-    private static var ADDRESS = "https://railsschool.org"
+    private static var ADDRESS = "api_endpoint".localized
     private static var FORMAT = ".json"
     
     private func _getRoute(path: String) -> String {
@@ -41,6 +41,12 @@ internal class RailsSchoolAPI: IRailsSchoolAPI {
             .response(callback.asHandler(ArraySerializer(objectSerializer: SerializerFactory.string)))
     }
     
+    func getFutureLessonSlugs(schoolId: Int, callback: RemoteCallback<[String]>) {
+        Alamofire
+            .request(.GET, _getLessonRoute("/future/slugs/\(schoolId)"))
+            .response(callback.asHandler(ArraySerializer(objectSerializer: SerializerFactory.string)))
+    }
+    
     func getLesson(slug: String, callback: RemoteCallback<Lesson>) {
         Alamofire
             .request(.GET, _getLessonRoute("/\(slug)"))
@@ -56,6 +62,12 @@ internal class RailsSchoolAPI: IRailsSchoolAPI {
     func getUpcomingLesson(callback: RemoteCallback<Lesson>) {
         Alamofire
             .request(.GET, _getLessonRoute("/upcoming"))
+            .response(callback.asHandler(SerializerFactory.lesson))
+    }
+    
+    func getUpcomingLesson(schoolId: Int, callback: RemoteCallback<Lesson>) {
+        Alamofire
+            .request(.GET, _getLessonRoute("/upcoming/\(schoolId)"))
             .response(callback.asHandler(SerializerFactory.lesson))
     }
     

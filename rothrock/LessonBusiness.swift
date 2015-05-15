@@ -16,24 +16,33 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
     private var _preferenceBusiness: IPreferenceBusiness
     private var _lessonDAO: ILessonDAO
     
-    internal init(api: IRailsSchoolAPI, userBusiness: IUserBusiness, venueBusiness: IVenueBusiness, preferenceBusiness: IPreferenceBusiness, lessonDao: ILessonDAO) {
+    internal init(api: IRailsSchoolAPI, userBusiness: IUserBusiness, venueBusiness: IVenueBusiness, preferenceBusiness: IPreferenceBusiness, lessonDAO: ILessonDAO) {
         
         self._userBusiness = userBusiness
         self._venueBusiness = venueBusiness
         self._preferenceBusiness = preferenceBusiness
-        self._lessonDAO = lessonDao
+        self._lessonDAO = lessonDAO
         
         super.init(api: api)
     }
     
-    private func _isWithinInterval(lesson: Lesson, hours: Int) -> Bool {
-        var startDate = NSDate().dateBySubtractingHours(hours)
+    private func _shouldBeNotified(periodMilli: Int, lesson: Lesson, hours: Int) -> Bool {
+        var startTime: NSDate = NSDate.fromString(lesson.startTime!)!
+        var now = NSDate()
+        var isInCountdownInterval = now.isInInterval(startTime.dateBySubtractingHours(hours), end: startTime)
+        var isFirstNotification = now.isInInterval(startTime.dateBySubtractingHours(hours), end: startTime.dateBySubtractingHours(hours).dateByAddingSeconds(periodMilli * 1000))
         
-        return lesson.updateDate!.isLaterThanOrEqualTo(startDate) && lesson.updateDate!.isEarlierThanOrEqualTo(NSDate())
+        return isInCountdownInterval && isFirstNotification
     }
     
     func sortFutureSlugsByDate(success: ([String]?) -> Void, failure: (String) -> Void) {
-        api.getFutureLessonSlugs(BLLCallback(success: { success($1) }, failure: failure))
+        var callback = BLLCallback(base: self, success: { success($1) }, failure: failure)
+        
+        if _userBusiness.isSignedIn() {
+            api.getFutureLessonSlugs(_userBusiness.getCurrentUserSchoolId(), callback: callback)
+        } else {
+            api.getFutureLessonSlugs(callback)
+        }
     }
     
     func get(lessonSlug: String, success: (Lesson?) -> Void, failure: (String) -> Void) {
@@ -43,10 +52,10 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
             success(l)
             
             if (NSDate().dateBySubtractingSeconds(l!.updateDate!.second()).second() >= LessonBusiness.COOLDOWN_SEC) {
-                api.getLesson(lessonSlug, callback: BLLCallback(success: { self._lessonDAO.save($1!) }, failure: failure))
+                api.getLesson(lessonSlug, callback: BLLCallback(base: self, success: { self._lessonDAO.save($1!) }, failure: failure))
             }
         } else {
-            api.getLesson(lessonSlug, callback: BLLCallback(success: { success($1); self._lessonDAO.save($1!) }, failure: failure))
+            api.getLesson(lessonSlug, callback: BLLCallback(base: self, success: { success($1); self._lessonDAO.save($1!) }, failure: failure))
         }
     }
     
@@ -76,6 +85,7 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
         api.getSchoolClass(
             lessonSlug,
             callback: BLLCallback<SchoolClass>(
+                base: self,
                 success: { (response, schoolClass) in
                     self._userBusiness.get(
                         schoolClass!.lesson!.teacherId,
@@ -99,15 +109,15 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
     func getUpcoming(success: (Lesson?) -> Void) {
         let failure: (String) -> Void = { NSLog(NSStringFromClass(LessonBusiness.self), $0) }
         
-        api.getUpcomingLesson(BLLCallback(success: { success($1) }, failure: failure))
+        api.getUpcomingLesson(BLLCallback(base: self, success: { success($1) }, failure: failure))
     }
     
-    func engineAlarms(twoHourAlarm: (Lesson?) -> Void, dayAlarm: (Lesson?) -> Void) {
+    func engineAlarms(periodMilli: Int, twoHourAlarm: (Lesson?) -> Void, dayAlarm: (Lesson?) -> Void) {
         getUpcoming({
             if let lesson = $0 { // Only if upcoming lesson
                 let failure: (String) -> Void = { NSLog(NSStringFromClass(LessonBusiness.self), $0) }
                 
-                if self._isWithinInterval(lesson, hours: 2) {
+                if self._shouldBeNotified(periodMilli, lesson: lesson, hours: 2) {
                     let pref = self._preferenceBusiness.getTwoHourReminderPreference()
                     
                     switch (pref) {
@@ -126,10 +136,12 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
                             },
                             failure: failure
                         )
+                    default:
+                        break
                     }
                 }
                 
-                if self._isWithinInterval(lesson, hours: 24) {
+                if self._shouldBeNotified(periodMilli, lesson: lesson, hours: 24) {
                     let pref = self._preferenceBusiness.getDayReminderPreference()
                     
                     switch (pref) {
@@ -148,6 +160,8 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
                             },
                             failure: failure
                         )
+                    default:
+                        break
                     }
                 }
             }

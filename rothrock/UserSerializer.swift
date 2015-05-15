@@ -25,6 +25,7 @@ internal class UserSerializer: IUserDeserializer {
         outcome.id = json["id"].intValue
         
         // Optional fields
+        outcome.schoolId = json["school_id"].int ?? 0
         outcome.name = json["name"].string ?? ""
         outcome.email = json["email"].string ?? ""
         outcome.hideLastName = json["hide_last_name"].bool ?? true

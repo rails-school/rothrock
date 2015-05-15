@@ -20,4 +20,6 @@ public protocol IUserBusiness {
     func isSignedIn() -> Bool
     
     func getCurrentUserEmail() -> String
+    
+    func getCurrentUserSchoolId() -> Int
 }

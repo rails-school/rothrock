@@ -11,11 +11,15 @@ import Foundation
 public protocol IRailsSchoolAPI {    
     func getFutureLessonSlugs(callback: RemoteCallback<[String]>)
     
+    func getFutureLessonSlugs(schoolId: Int, callback: RemoteCallback<[String]>)
+    
     func getLesson(slug: String, callback: RemoteCallback<Lesson>)
     
     func getSchoolClass(slug: String, callback: RemoteCallback<SchoolClass>)
     
     func getUpcomingLesson(callback: RemoteCallback<Lesson>)
+    
+    func getUpcomingLesson(schoolId: Int, callback: RemoteCallback<Lesson>)
     
     func getUser(id: Int, callback: RemoteCallback<User>)
     
