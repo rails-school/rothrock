@@ -9,7 +9,7 @@
 import Foundation
 
 internal class LessonBusiness: BaseBusiness, ILessonBusiness {
-    private static var COOLDOWN_SEC = 5 * 60
+    private static let COOLDOWN_SEC = 5 * 60
     
     private var _userBusiness: IUserBusiness
     private var _venueBusiness: IVenueBusiness
@@ -39,7 +39,7 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
         var callback = BLLCallback(base: self, success: { success($1) }, failure: failure)
         
         if _userBusiness.isSignedIn() {
-            api.getFutureLessonSlugs(_userBusiness.getCurrentUserSchoolId(), callback: callback)
+            api.getFutureLessonSlugs(_userBusiness.getCurrentUserSchoolId()!, callback: callback)
         } else {
             api.getFutureLessonSlugs(callback)
         }
@@ -51,7 +51,7 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
             
             success(l)
             
-            if (NSDate().dateBySubtractingSeconds(l!.updateDate!.second()).second() >= LessonBusiness.COOLDOWN_SEC) {
+            if NSDate().dateBySubtractingSeconds(l!.updateDate!.second()).second() >= LessonBusiness.COOLDOWN_SEC {
                 api.getLesson(lessonSlug, callback: BLLCallback(base: self, success: { self._lessonDAO.save($1!) }, failure: failure))
             }
         } else {
@@ -108,8 +108,13 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
     
     func getUpcoming(success: (Lesson?) -> Void) {
         let failure: (String) -> Void = { NSLog(NSStringFromClass(LessonBusiness.self), $0) }
+        var callback = BLLCallback(base: self, success: { success($1) }, failure: failure)
         
-        api.getUpcomingLesson(BLLCallback(base: self, success: { success($1) }, failure: failure))
+        if _userBusiness.isSignedIn() {
+            api.getUpcomingLesson(_userBusiness.getCurrentUserSchoolId()!, callback: callback)
+        } else {
+            api.getUpcomingLesson(callback)
+        }
     }
     
     func engineAlarms(periodMilli: Int, twoHourAlarm: (Lesson?) -> Void, dayAlarm: (Lesson?) -> Void) {
@@ -120,7 +125,7 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
                 if self._shouldBeNotified(periodMilli, lesson: lesson, hours: 2) {
                     let pref = self._preferenceBusiness.getTwoHourReminderPreference()
                     
-                    switch (pref) {
+                    switch (pref!) {
                     case .Always:
                         twoHourAlarm(lesson)
                     case .IfAttending:
@@ -144,7 +149,7 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
                 if self._shouldBeNotified(periodMilli, lesson: lesson, hours: 24) {
                     let pref = self._preferenceBusiness.getDayReminderPreference()
                     
-                    switch (pref) {
+                    switch (pref!) {
                     case .Always:
                         dayAlarm(lesson)
                     case .IfAttending:

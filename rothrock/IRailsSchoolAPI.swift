@@ -23,7 +23,7 @@ public protocol IRailsSchoolAPI {
     
     func getUser(id: Int, callback: RemoteCallback<User>)
     
-    func checkCredentials(request: CheckCredentialsRequest, callback: RemoteCallback<Void>)
+    func checkCredentials(request: CheckCredentialsRequest, callback: RemoteCallback<User>)
     
     func getVenue(id: Int, callback: RemoteCallback<Venue>)
     

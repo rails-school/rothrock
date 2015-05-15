@@ -17,7 +17,7 @@ public protocol IPreferenceDAO {
     
     func setDayNotificationPreference(value: DayNotificationPreference)
     
-    func getLessonAlertPreference() -> Bool?
+    func getLessonAlertPreference() -> Bool
     
     func setLessonAlertPreference(value: Bool)
 }

@@ -77,12 +77,12 @@ internal class RailsSchoolAPI: IRailsSchoolAPI {
             .response(callback.asHandler(SerializerFactory.user))
     }
     
-    func checkCredentials(request: CheckCredentialsRequest, callback: RemoteCallback<Void>) {
+    func checkCredentials(request: CheckCredentialsRequest, callback: RemoteCallback<User>) {
         var request: AnyObject = SerializerFactory.checkCredentialsRequest.serialize(request).dictionaryObject as! AnyObject
         
         Alamofire
             .request(.POST, _getUserRoute("/sign_in"), parameters: ["user": request], encoding: .JSON)
-            .response(callback.asHandler())
+            .response(callback.asHandler(SerializerFactory.user))
     }
     
     func getVenue(id: Int, callback: RemoteCallback<Venue>) {

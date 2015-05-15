@@ -22,8 +22,8 @@ internal class CheckCredentialsRequestSerializer: ICheckCredentialsRequestSerial
     override func serialize(src: CheckCredentialsRequest) -> JSON {
         var content = JSON(src)
         
-        content["email"] = JSON(src.email!)
-        content["password"] = JSON(src.password!)
+        content["email"] = JSON(src.email)
+        content["password"] = JSON(src.password)
         content["remember_me"] = 1
         
         return content

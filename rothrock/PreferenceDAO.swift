@@ -35,7 +35,7 @@ internal class PreferenceDAO: IPreferenceDAO {
         _dal.setInteger(value.rawValue, forKey: PreferenceDAO.DAY_NOTIFICATION_KEY)
     }
     
-    func getLessonAlertPreference() -> Bool? {
+    func getLessonAlertPreference() -> Bool {
         return _dal.boolForKey(PreferenceDAO.LESSON_ALERT_KEY)
     }
     

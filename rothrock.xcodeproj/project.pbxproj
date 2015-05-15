@@ -26,6 +26,8 @@
 		A74F04571AEB25AD00EB8916 /* SchoolClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F04561AEB25AD00EB8916 /* SchoolClass.swift */; };
 		A74F045A1AEB271700EB8916 /* LessonSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F04591AEB271700EB8916 /* LessonSerializer.swift */; };
 		A74F045D1AEB274700EB8916 /* IJSONDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F045C1AEB274700EB8916 /* IJSONDeserializer.swift */; };
+		A772CBC01B066D390055AF4E /* PreferenceBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CBBF1B066D390055AF4E /* PreferenceBusiness.swift */; };
+		A772CBC21B066EE40055AF4E /* UserBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CBC11B066EE40055AF4E /* UserBusiness.swift */; };
 		A78410641AEF131A006709ED /* CheckCredentialsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */; };
 		A78410661AEF1433006709ED /* CheckCredentialsRequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410651AEF1433006709ED /* CheckCredentialsRequestSerializer.swift */; };
 		A78410681AEF14E0006709ED /* IJSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410671AEF14E0006709ED /* IJSONSerializer.swift */; };
@@ -99,6 +101,8 @@
 		A74F04561AEB25AD00EB8916 /* SchoolClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolClass.swift; sourceTree = "<group>"; };
 		A74F04591AEB271700EB8916 /* LessonSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonSerializer.swift; sourceTree = "<group>"; };
 		A74F045C1AEB274700EB8916 /* IJSONDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IJSONDeserializer.swift; sourceTree = "<group>"; };
+		A772CBBF1B066D390055AF4E /* PreferenceBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceBusiness.swift; sourceTree = "<group>"; };
+		A772CBC11B066EE40055AF4E /* UserBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBusiness.swift; sourceTree = "<group>"; };
 		A77DB2D41AEB4F0500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A77DB2D61AEB4F2500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckCredentialsRequest.swift; sourceTree = "<group>"; };
@@ -256,12 +260,14 @@
 			isa = PBXGroup;
 			children = (
 				A794DC221AF1A19600D8743F /* BaseBusiness.swift */,
+				A7BD79361B058B2700303751 /* BLLCallback.swift */,
 				A794DC331AF1A8F700D8743F /* LessonBusiness.swift */,
 				A794DC1F1AF19FC300D8743F /* interfaces */,
 				A74F04501AEB1FC800EB8916 /* remote */,
 				A74F04581AEB269D00EB8916 /* serializers */,
 				A74F04551AEB259E00EB8916 /* structs */,
-				A7BD79361B058B2700303751 /* BLLCallback.swift */,
+				A772CBBF1B066D390055AF4E /* PreferenceBusiness.swift */,
+				A772CBC11B066EE40055AF4E /* UserBusiness.swift */,
 			);
 			name = bll;
 			sourceTree = "<group>";
@@ -583,11 +589,13 @@
 				A784106E1AEF1F96006709ED /* VenueSerializer.swift in Sources */,
 				A7BA44F41AEAEE02008514F5 /* LessonDAO.swift in Sources */,
 				A794DC1E1AF196BA00D8743F /* BoolSerializer.swift in Sources */,
+				A772CBC21B066EE40055AF4E /* UserBusiness.swift in Sources */,
 				A74F045A1AEB271700EB8916 /* LessonSerializer.swift in Sources */,
 				A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */,
 				A794DC231AF1A19600D8743F /* BaseBusiness.swift in Sources */,
 				A74F04571AEB25AD00EB8916 /* SchoolClass.swift in Sources */,
 				A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */,
+				A772CBC01B066D390055AF4E /* PreferenceBusiness.swift in Sources */,
 				A794DC301AF1A77900D8743F /* IUserBusiness.swift in Sources */,
 				A78410661AEF1433006709ED /* CheckCredentialsRequestSerializer.swift in Sources */,
 				A740521C1AEFFC88003ABBE3 /* RailsSchoolAPI.swift in Sources */,

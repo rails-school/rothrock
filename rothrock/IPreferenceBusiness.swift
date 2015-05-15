@@ -11,11 +11,11 @@ import Foundation
 public protocol IPreferenceBusiness {
     func updateTwoHourReminderPreference(preference: TwoHourNotificationPreference)
     
-    func getTwoHourReminderPreference() -> TwoHourNotificationPreference
+    func getTwoHourReminderPreference() -> TwoHourNotificationPreference?
     
     func updateDayReminderPreference(preference: DayNotificationPreference)
     
-    func getDayReminderPreference() -> DayNotificationPreference
+    func getDayReminderPreference() -> DayNotificationPreference?
     
     func updateLessonAlertPreference(value: Bool)
     
