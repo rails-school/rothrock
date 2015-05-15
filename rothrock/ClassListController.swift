@@ -8,8 +8,11 @@
 
 import UIKit
 
-class ClassListController: UITableViewController {
+class ClassListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private var _slugs: [String]?
+    
+    @IBOutlet weak var _list: UITableView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,7 @@ class ClassListController: UITableViewController {
             .sortFutureSlugsByDate(
                 {
                     self._slugs = $0
+                    self._list.reloadData()
                 },
                 failure: { (error) in }
             )
@@ -30,11 +34,11 @@ class ClassListController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let s = _slugs {
             return s.count
         } else {
@@ -42,7 +46,7 @@ class ClassListController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let s = _slugs {
             var cell = tableView.dequeueReusableCellWithIdentifier("ClassTableViewCell") as! ClassTableViewCell
             

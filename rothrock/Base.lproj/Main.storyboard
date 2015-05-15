@@ -17,19 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BXs-2e-fXO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oKW-bA-BI0">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="tVt-9p-2a3"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="WeG-hd-gtq"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BXs-2e-fXO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="ToY-0B-Q17"/>
-                            <constraint firstItem="BXs-2e-fXO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="a8w-Nk-Fhf"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BXs-2e-fXO" secondAttribute="bottom" id="otS-67-FGf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="BXs-2e-fXO" secondAttribute="trailing" constant="-16" id="yJv-IO-nnj"/>
+                            <constraint firstItem="oKW-bA-BI0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="5Mw-oU-p11"/>
+                            <constraint firstItem="oKW-bA-BI0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="JaV-oU-MuE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oKW-bA-BI0" secondAttribute="bottom" id="cku-DH-6OE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oKW-bA-BI0" secondAttribute="trailing" constant="-16" id="fl7-0D-hno"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="_list" destination="oKW-bA-BI0" id="h8O-0y-b6Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
