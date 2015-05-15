@@ -28,6 +28,8 @@
 		A74F045D1AEB274700EB8916 /* IJSONDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F045C1AEB274700EB8916 /* IJSONDeserializer.swift */; };
 		A772CBC01B066D390055AF4E /* PreferenceBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CBBF1B066D390055AF4E /* PreferenceBusiness.swift */; };
 		A772CBC21B066EE40055AF4E /* UserBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CBC11B066EE40055AF4E /* UserBusiness.swift */; };
+		A772CBC41B0691960055AF4E /* VenueBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CBC31B0691960055AF4E /* VenueBusiness.swift */; };
+		A772CBC61B0692E90055AF4E /* BLLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CBC51B0692E90055AF4E /* BLLFactory.swift */; };
 		A78410641AEF131A006709ED /* CheckCredentialsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */; };
 		A78410661AEF1433006709ED /* CheckCredentialsRequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410651AEF1433006709ED /* CheckCredentialsRequestSerializer.swift */; };
 		A78410681AEF14E0006709ED /* IJSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410671AEF14E0006709ED /* IJSONSerializer.swift */; };
@@ -103,6 +105,8 @@
 		A74F045C1AEB274700EB8916 /* IJSONDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IJSONDeserializer.swift; sourceTree = "<group>"; };
 		A772CBBF1B066D390055AF4E /* PreferenceBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceBusiness.swift; sourceTree = "<group>"; };
 		A772CBC11B066EE40055AF4E /* UserBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBusiness.swift; sourceTree = "<group>"; };
+		A772CBC31B0691960055AF4E /* VenueBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueBusiness.swift; sourceTree = "<group>"; };
+		A772CBC51B0692E90055AF4E /* BLLFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLLFactory.swift; sourceTree = "<group>"; };
 		A77DB2D41AEB4F0500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A77DB2D61AEB4F2500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckCredentialsRequest.swift; sourceTree = "<group>"; };
@@ -261,13 +265,15 @@
 			children = (
 				A794DC221AF1A19600D8743F /* BaseBusiness.swift */,
 				A7BD79361B058B2700303751 /* BLLCallback.swift */,
+				A772CBC51B0692E90055AF4E /* BLLFactory.swift */,
 				A794DC331AF1A8F700D8743F /* LessonBusiness.swift */,
+				A772CBBF1B066D390055AF4E /* PreferenceBusiness.swift */,
+				A772CBC11B066EE40055AF4E /* UserBusiness.swift */,
+				A772CBC31B0691960055AF4E /* VenueBusiness.swift */,
 				A794DC1F1AF19FC300D8743F /* interfaces */,
 				A74F04501AEB1FC800EB8916 /* remote */,
 				A74F04581AEB269D00EB8916 /* serializers */,
 				A74F04551AEB259E00EB8916 /* structs */,
-				A772CBBF1B066D390055AF4E /* PreferenceBusiness.swift */,
-				A772CBC11B066EE40055AF4E /* UserBusiness.swift */,
 			);
 			name = bll;
 			sourceTree = "<group>";
@@ -353,15 +359,15 @@
 		A7D5CFED1AEAE53500370F4A /* dao */ = {
 			isa = PBXGroup;
 			children = (
-				A7D5CFEE1AEAE53C00370F4A /* interfaces */,
-				A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */,
-				A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */,
 				A7BA44F11AEAED41008514F5 /* BaseDAO.swift */,
+				A7BD792D1B0556AB00303751 /* DAOFactory.swift */,
+				A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */,
 				A7BA44F31AEAEE02008514F5 /* LessonDAO.swift */,
 				A74F04491AEB02B700EB8916 /* PreferenceDAO.swift */,
+				A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */,
 				A74F044B1AEB04FE00EB8916 /* UserDAO.swift */,
 				A74F044D1AEB06DE00EB8916 /* VenueDAO.swift */,
-				A7BD792D1B0556AB00303751 /* DAOFactory.swift */,
+				A7D5CFEE1AEAE53C00370F4A /* interfaces */,
 			);
 			name = dao;
 			sourceTree = "<group>";
@@ -580,6 +586,7 @@
 				A74F04521AEB208400EB8916 /* IRailsSchoolAPI.swift in Sources */,
 				A746A6A91AE9D6E800AF0FA5 /* ViewController.swift in Sources */,
 				A74F04541AEB20BD00EB8916 /* RemoteCallback.swift in Sources */,
+				A772CBC41B0691960055AF4E /* VenueBusiness.swift in Sources */,
 				A794DC251AF1A24100D8743F /* RailsSchoolAPIFactory.swift in Sources */,
 				A78410681AEF14E0006709ED /* IJSONSerializer.swift in Sources */,
 				A71A7CC71AF00F440094019E /* SerializerFactory.swift in Sources */,
@@ -621,6 +628,7 @@
 				A7BD79351B0584BD00303751 /* DateExtension.swift in Sources */,
 				A71A7CC51AF00E760094019E /* StringSerializer.swift in Sources */,
 				A7BA44F01AEAECDB008514F5 /* IVenueDAO.swift in Sources */,
+				A772CBC61B0692E90055AF4E /* BLLFactory.swift in Sources */,
 				A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */,
 				A794DC341AF1A8F700D8743F /* LessonBusiness.swift in Sources */,
 			);
