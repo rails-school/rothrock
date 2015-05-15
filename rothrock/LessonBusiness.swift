@@ -130,7 +130,7 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
                         twoHourAlarm(lesson)
                     case .IfAttending:
                         self._userBusiness.isCurrentUserAttendingTo(
-                            lesson.slug!,
+                            lesson.slug,
                             isAttending: {
                                 if $0 {
                                     twoHourAlarm(lesson)
@@ -154,7 +154,7 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
                         dayAlarm(lesson)
                     case .IfAttending:
                         self._userBusiness.isCurrentUserAttendingTo(
-                            lesson.slug!,
+                            lesson.slug,
                             isAttending: {
                                 if $0 {
                                     dayAlarm(lesson)
