@@ -12,9 +12,7 @@ import UIKit
 public class ClassTableViewCell: UITableViewCell {
     
     @IBOutlet weak var _headline: UILabel!
-    
     @IBOutlet weak var _teacher: UILabel!
-    
     @IBOutlet weak var _digest: UILabel!
     
     public func hydrate(slug: String) {

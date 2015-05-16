@@ -18,6 +18,8 @@ class ClassListController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        _list.rowHeight = UITableViewAutomaticDimension
+        _list.estimatedRowHeight = 300.0
         BusinessFactory
             .provideLesson()
             .sortFutureSlugsByDate(
