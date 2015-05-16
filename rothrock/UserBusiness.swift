@@ -27,9 +27,9 @@ internal class UserBusiness: BaseBusiness, IUserBusiness {
             
             if NSDate().dateBySubtractingSeconds(u!.updateDate!.second()).second() >= UserBusiness.COOLDOWN_SEC {
                 api.getUser(id, callback: BLLCallback(base: self, success: { self._userDAO.save($1!) }, failure: failure))
-            } else {
-                api.getUser(id, callback: BLLCallback(base: self, success: { success($1); self._userDAO.save($1!) }, failure: failure))
             }
+        } else {
+            api.getUser(id, callback: BLLCallback(base: self, success: { success($1); self._userDAO.save($1!) }, failure: failure))
         }
     }
     

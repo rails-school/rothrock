@@ -48,11 +48,15 @@ class ClassListController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let s = _slugs {
-            var cell: ClassTableViewCell = (tableView.dequeueReusableCellWithIdentifier("ClassTableViewCell") ?? ClassTableViewCell()) as! ClassTableViewCell
+            var cell: ClassTableViewCell? = tableView.dequeueReusableCellWithIdentifier("ClassTableViewCell") as! ClassTableViewCell?
             
-            cell.hydrate(s[indexPath.row])
+            if cell == nil {
+                cell = NSBundle.mainBundle().loadNibNamed("ClassTableViewCell", owner: self, options: nil)[0] as? ClassTableViewCell
+            }
             
-            return cell
+            cell!.hydrate(s[indexPath.row])
+            
+            return cell!
         } else {
             return UITableViewCell()
         }
