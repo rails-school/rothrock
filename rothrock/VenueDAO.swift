@@ -18,7 +18,7 @@ internal class VenueDAO: BaseDAO, IVenueDAO {
     }
     
     func find(id: Int) -> Venue? {
-        var pred = NSPredicate(format: "id = %@", id)
+        var pred = NSPredicate(format: "id = %d", id)
         return Venue.objectsInRealm(dal, withPredicate: pred).firstObject() as! Venue?
     }
     

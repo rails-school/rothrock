@@ -30,7 +30,7 @@ internal class UserDAO: BaseDAO, IUserDAO {
     }
     
     func find(id: Int) -> User? {
-        var pred = NSPredicate(format: "id = %@", id)
+        var pred = NSPredicate(format: "id = %d", id)
         return User.objectsInRealm(dal, withPredicate: pred).firstObject() as! User?
     }
     
@@ -53,6 +53,7 @@ internal class UserDAO: BaseDAO, IUserDAO {
             
             User.createOrUpdateInRealm(dal, withObject: e)
         } else {
+            user.updateDate = NSDate()
             User.createInRealm(dal, withObject: user)
         }
         
