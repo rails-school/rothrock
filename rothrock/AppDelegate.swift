@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftEventBus
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        SwiftEventBus.onMainThread(self, name: "ForkEvent") { _ in
+        }
+        
         return true
     }
 

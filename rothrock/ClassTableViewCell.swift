@@ -12,8 +12,10 @@ import UIKit
 public class ClassTableViewCell: UITableViewCell {
     
     @IBOutlet weak var _headline: UILabel!
-    @IBOutlet weak var _teacher: UILabel!
+    @IBOutlet weak var _teacherName: UILabel!
     @IBOutlet weak var _digest: UILabel!
+    @IBOutlet weak var _date: UILabel!
+    @IBOutlet weak var _location: UILabel!
     
     public func hydrate(slug: String) {
         BusinessFactory
@@ -23,7 +25,7 @@ public class ClassTableViewCell: UITableViewCell {
                 success: { (lesson, teacher, venue) in
                     self._headline.text = lesson!.title
                     self._digest.text = lesson!.summary
-                    self._teacher.text = teacher!.name
+                    self._teacherName.text = teacher!.name
                 },
                 failure: { (error) in
                 }

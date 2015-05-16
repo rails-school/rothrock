@@ -1,28 +1,40 @@
 PODS:
-  - Alamofire (1.2.1)
-  - Cent (3.0.0):
-    - Dollar (~> 3.0.0)
+  - Alamofire (1.2.2)
   - DateTools (1.5.0)
-  - Dollar (3.0.0)
+  - JLToast (1.2.3)
   - Realm (0.91.5):
     - Realm/Headers (= 0.91.5)
   - Realm/Headers (0.91.5)
+  - SwiftEventBus (1.1.0)
+  - SwiftSpinner (0.6.7)
   - SwiftyJSON (2.2.0)
 
 DEPENDENCIES:
   - Alamofire
-  - Cent
   - DateTools
-  - Realm
+  - JLToast
+  - Realm (= 0.91.5)
   - Realm/Headers
+  - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`)
+  - SwiftSpinner
   - SwiftyJSON
 
+EXTERNAL SOURCES:
+  SwiftEventBus:
+    :git: https://github.com/cesarferreira/SwiftEventBus.git
+
+CHECKOUT OPTIONS:
+  SwiftEventBus:
+    :commit: 7df7098b5aa837f1815fba4a6fd344fa6d6ae0a8
+    :git: https://github.com/cesarferreira/SwiftEventBus.git
+
 SPEC CHECKSUMS:
-  Alamofire: 1acfdf179aff68b41a48dff70c1ac7fa263e2bcb
-  Cent: 305179e6575e71b14a3dfe0f73a1096e3349fb60
+  Alamofire: 11a6022f5089887d92ffb5a3014c97a0a915ab98
   DateTools: b93a2c2017747329c6077c7d7e8a75106e23d0d7
-  Dollar: 4df780ce1baa410d71e423fee07646abb1106909
+  JLToast: fc26885fae255e31ba9bebc0f82ae2ab1140f503
   Realm: 670059efdb212ab939c1745a60aff27820c0a9c4
+  SwiftEventBus: d334f7aecbddbd995c3de5c262cf35c72db550f3
+  SwiftSpinner: 20abe2e2433b8815e1ef39c27630d0910c3c3f35
   SwiftyJSON: 0b3e6c07af17ff745e77e8e9984097b55c956e5c
 
 COCOAPODS: 0.37.1
