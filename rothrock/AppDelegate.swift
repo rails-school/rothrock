@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var _backgroundThreads = 0
     private var _backgroundTimer: NSTimer?
     
-    private func _timerHandler() {
+    func timerHandler() {
         _backgroundTimer = nil
-        SwiftSpinner.show("", animated: false)
+        SwiftSpinner.show("")
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self._backgroundThreads++
             
             if self._backgroundThreads == 1 {
-                self._backgroundTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("_timerHandler"), userInfo: nil, repeats: false)
+                self._backgroundTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("timerHandler"), userInfo: nil, repeats: false)
             }
         }
         
@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self._backgroundThreads--
             
             if let t = self._backgroundTimer {
-                self._backgroundTimer?.invalidate()
+                t.invalidate()
             } else {
                 SwiftSpinner.hide()
             }
