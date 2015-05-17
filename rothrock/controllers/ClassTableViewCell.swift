@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftEventBus
 
 public class ClassTableViewCell: UITableViewCell {
     
@@ -18,6 +19,8 @@ public class ClassTableViewCell: UITableViewCell {
     @IBOutlet weak var _location: UILabel!
     
     public func hydrate(slug: String) {
+        SwiftEventBus.post(ControllerEvents.ProgressForkEvent.rawValue)
+        
         BusinessFactory
             .provideLesson()
             .getTuple(
@@ -25,10 +28,17 @@ public class ClassTableViewCell: UITableViewCell {
                 success: { (lesson, teacher, venue) in
                     self._headline.text = lesson!.title
                     self._digest.text = lesson!.summary
-                    self._teacherName.text = teacher!.name
+                    self._date.text = NSDate.userFriendly(lesson!.startTime!)
+                    
+                    self._teacherName.text = teacher!.displayedName
+                    self._location.text = venue!.name
+                    
+                    SwiftEventBus.post(ControllerEvents.ProgressDoneEvent.rawValue)
                 },
-                failure: { (error) in
+                failure: {
+                    SwiftEventBus.post(ControllerEvents.ErrorEvent.rawValue, sender: $0)
+                    SwiftEventBus.post(ControllerEvents.ProgressDoneEvent.rawValue)
                 }
-            )
+        )
     }
 }

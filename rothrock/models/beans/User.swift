@@ -20,4 +20,20 @@ public class User: RLMObject {
      public override class func primaryKey() -> String {
         return "id"
     }
+    
+    public var displayedName: String {
+        var n = name!
+        
+        if hideLastName {
+            var a: [String] = n.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).componentsSeparatedByString(" ")
+            
+            if a.count > 0 {
+                return a[0]
+            } else {
+                return n
+            }
+        } else {
+            return n
+        }
+    }
 }

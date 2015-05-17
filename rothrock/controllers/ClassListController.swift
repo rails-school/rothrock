@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClassListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ClassListController: BaseController, UITableViewDelegate, UITableViewDataSource {
     private var _slugs: [String]?
     
     @IBOutlet weak var _list: UITableView!
