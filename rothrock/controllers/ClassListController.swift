@@ -12,7 +12,6 @@ class ClassListController: BaseController, UITableViewDelegate, UITableViewDataS
     private var _slugs: [String]?
     
     @IBOutlet weak var _list: UITableView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
