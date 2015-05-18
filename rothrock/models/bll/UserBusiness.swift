@@ -84,7 +84,7 @@ internal class UserBusiness: BaseBusiness, IUserBusiness {
                         self._userDAO.setCurrentUserToken(c)
                         self._userDAO.setCurrentUserSchoolId(user!.schoolId)
                     } else {
-                        NSLog(NSStringFromClass(LessonBusiness.self), "Expected cookie was not found")
+                        NSLog("%@: %@", NSStringFromClass(LessonBusiness.self), "Expected cookie was not found")
                         failure(self.getDefaultErrorMsg())
                     }
                 },

@@ -107,7 +107,9 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
     }
     
     func getUpcoming(success: (Lesson?) -> Void) {
-        let failure: (String) -> Void = { NSLog(NSStringFromClass(LessonBusiness.self), $0) }
+        let failure: (String) -> Void = {
+            NSLog("%@: %@", NSStringFromClass(LessonBusiness.self), $0)
+        }
         var callback = BLLCallback(base: self, success: { success($1) }, failure: failure)
         
         if _userBusiness.isSignedIn() {
@@ -120,7 +122,7 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
     func engineAlarms(periodMilli: Int, twoHourAlarm: (Lesson?) -> Void, dayAlarm: (Lesson?) -> Void) {
         getUpcoming({
             if let lesson = $0 { // Only if upcoming lesson
-                let failure: (String) -> Void = { NSLog(NSStringFromClass(LessonBusiness.self), $0) }
+                let failure: (String) -> Void = { NSLog("%@: %@", NSStringFromClass(LessonBusiness.self), $0) }
                 
                 if self._shouldBeNotified(periodMilli, lesson: lesson, hours: 2) {
                     let pref = self._preferenceBusiness.getTwoHourReminderPreference()

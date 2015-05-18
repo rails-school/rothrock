@@ -99,7 +99,6 @@ internal class RailsSchoolAPI: IRailsSchoolAPI {
     }
     
     func checkCredentials(request: CheckCredentialsRequest, callback: RemoteCallback<User>) {
-        var e = SerializerFactory.provideCheckCredentialsRequest().serialize(request)
         var o: AnyObject = SerializerFactory.provideCheckCredentialsRequest().serialize(request).dictionaryObject as! AnyObject
         
         Alamofire

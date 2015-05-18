@@ -308,7 +308,7 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="settings_email_placeholder" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Pj9-ps-Nm6" customClass="LocalizedTextField" customModule="rothrock" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="584" height="27"/>
                                                     <color key="textColor" red="0.1097885743" green="0.1098146513" blue="0.109785147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                 </textField>
                                             </subviews>
@@ -328,7 +328,7 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="settings_password_placeholder" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ynt-we-oNY" customClass="LocalizedTextField" customModule="rothrock" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="584" height="27"/>
                                                     <color key="textColor" red="0.1097885743" green="0.1098146513" blue="0.109785147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>

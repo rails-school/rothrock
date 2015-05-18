@@ -20,12 +20,12 @@ public class ICheckCredentialsRequestSerializer: IJSONSerializer {
 internal class CheckCredentialsRequestSerializer: ICheckCredentialsRequestSerializer {
     
     override func serialize(src: CheckCredentialsRequest) -> JSON {
-        var content = JSON(src)
-        
-        content["email"] = JSON(src.email)
-        content["password"] = JSON(src.password)
-        content["remember_me"] = 1
-        
-        return content
+        return JSON(
+            [
+                "email": src.email,
+                "password": src.password,
+                "remember_me": 1
+            ]
+        )
     }
 }

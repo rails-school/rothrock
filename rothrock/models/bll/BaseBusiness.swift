@@ -25,7 +25,7 @@ internal class BaseBusiness {
     }
     
     internal func processError(error: NSError?, failure: (String) -> Void) {
-        NSLog(NSStringFromClass(BaseBusiness.self), error!.description)
+        NSLog("%@: %@", NSStringFromClass(BaseBusiness.self), error!.description)
         failure(getDefaultErrorMsg())
     }
 }
