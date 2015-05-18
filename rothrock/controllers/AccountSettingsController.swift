@@ -1,5 +1,5 @@
 //
-//  SettingsController.swift
+//  AccountSettingsController.swift
 //  rothrock
 //
 //  Created by Adrien on 17/05/15.
@@ -9,12 +9,8 @@
 import Foundation
 import UIKit
 
-public class SettingsController: BaseController {
+public class AccountSettingsController: BaseController {
     public override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    @IBAction func prepareToUnwind(sender: UIStoryboardSegue) {
-        
     }
 }

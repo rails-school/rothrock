@@ -35,6 +35,10 @@ class ClassListController: BaseController, UITableViewDelegate, UITableViewDataS
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func prepareToUnwind(sender: UIStoryboardSegue) {
+        
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }

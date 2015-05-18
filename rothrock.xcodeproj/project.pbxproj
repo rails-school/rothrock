@@ -69,6 +69,8 @@
 		A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */; };
 		A7EC14BD1B08158D001981EB /* ControllerEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EC14BC1B08158D001981EB /* ControllerEvents.swift */; };
 		A7EC14BF1B081BA8001981EB /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EC14BE1B081BA8001981EB /* BaseController.swift */; };
+		A7EDB7A41B097B4100244176 /* AccountSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EDB7A31B097B4100244176 /* AccountSettingsController.swift */; };
+		A7EDB7A61B097DAA00244176 /* NotificationSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EDB7A51B097DAA00244176 /* NotificationSettingsController.swift */; };
 		A7F59B491B091D2600F5848F /* LocalizedSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F59B481B091D2600F5848F /* LocalizedSegmentedControl.swift */; };
 		E34592293B39382235FF4973 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEF411B36336395668B971F /* Pods.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		FE6FCA9EDDA79A7556DC9E70 /* Pods_rothrockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA57EFD32C75B4AEA027CF1 /* Pods_rothrockTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -159,6 +161,8 @@
 		A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwoHourNotificationPreference.swift; path = models/dao/TwoHourNotificationPreference.swift; sourceTree = "<group>"; };
 		A7EC14BC1B08158D001981EB /* ControllerEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ControllerEvents.swift; path = controllers/ControllerEvents.swift; sourceTree = "<group>"; };
 		A7EC14BE1B081BA8001981EB /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseController.swift; path = controllers/BaseController.swift; sourceTree = "<group>"; };
+		A7EDB7A31B097B4100244176 /* AccountSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountSettingsController.swift; path = controllers/AccountSettingsController.swift; sourceTree = "<group>"; };
+		A7EDB7A51B097DAA00244176 /* NotificationSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationSettingsController.swift; path = controllers/NotificationSettingsController.swift; sourceTree = "<group>"; };
 		A7F571E81AEED9DD001084D3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		A7F59B481B091D2600F5848F /* LocalizedSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedSegmentedControl.swift; sourceTree = "<group>"; };
 		AB487B39E1ADD18545092D96 /* Pods-rothrock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.release.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.release.xcconfig"; sourceTree = "<group>"; };
@@ -422,6 +426,8 @@
 				A7EC14BC1B08158D001981EB /* ControllerEvents.swift */,
 				A7EC14BE1B081BA8001981EB /* BaseController.swift */,
 				A7770BA61B09117A00F23CD6 /* SettingsController.swift */,
+				A7EDB7A31B097B4100244176 /* AccountSettingsController.swift */,
+				A7EDB7A51B097DAA00244176 /* NotificationSettingsController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -672,7 +678,9 @@
 				A74F044A1AEB02B700EB8916 /* PreferenceDAO.swift in Sources */,
 				A7770BA71B09117A00F23CD6 /* SettingsController.swift in Sources */,
 				A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */,
+				A7EDB7A41B097B4100244176 /* AccountSettingsController.swift in Sources */,
 				A7B63B561B091A850008EAFE /* LocalizedTextField.swift in Sources */,
+				A7EDB7A61B097DAA00244176 /* NotificationSettingsController.swift in Sources */,
 				A794DC211AF1A09800D8743F /* ILessonBusiness.swift in Sources */,
 				A784106A1AEF16FC006709ED /* SchoolClassSerializer.swift in Sources */,
 				A74F044E1AEB06DE00EB8916 /* VenueDAO.swift in Sources */,

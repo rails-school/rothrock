@@ -1,6 +1,5 @@
 PODS:
   - Alamofire (1.2.2)
-  - Cartography (0.5.0)
   - DateTools (1.5.0)
   - JLToast (1.2.3)
   - Realm (0.91.5):
@@ -12,7 +11,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - Cartography
   - DateTools
   - JLToast
   - Realm (= 0.91.5)
@@ -32,7 +30,6 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 11a6022f5089887d92ffb5a3014c97a0a915ab98
-  Cartography: 774e5cc446f5a6bca5d4345c5aa6af9a1fe74dc6
   DateTools: b93a2c2017747329c6077c7d7e8a75106e23d0d7
   JLToast: fc26885fae255e31ba9bebc0f82ae2ab1140f503
   Realm: 670059efdb212ab939c1745a60aff27820c0a9c4
