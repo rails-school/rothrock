@@ -20,7 +20,11 @@ internal class PreferenceDAO: IPreferenceDAO {
     }
     
     func getTwoHourNotificationPreference() -> TwoHourNotificationPreference? {
-        return TwoHourNotificationPreference(rawValue: _dal.integerForKey(PreferenceDAO.TWO_HOUR_NOTIFICATION_KEY))
+        if let o: AnyObject = _dal.objectForKey(PreferenceDAO.TWO_HOUR_NOTIFICATION_KEY) {
+            return TwoHourNotificationPreference(rawValue: o as! Int)
+        } else {
+            return .IfAttending
+        }
     }
     
     func setTwoHourNotificationPreference(value: TwoHourNotificationPreference) {
@@ -28,7 +32,11 @@ internal class PreferenceDAO: IPreferenceDAO {
     }
     
     func getDayNotificationPreference() -> DayNotificationPreference? {
-        return DayNotificationPreference(rawValue: _dal.integerForKey(PreferenceDAO.DAY_NOTIFICATION_KEY))
+        if let o : AnyObject = _dal.objectForKey(PreferenceDAO.DAY_NOTIFICATION_KEY) {
+            return DayNotificationPreference(rawValue: o as! Int)
+        } else {
+            return .Always
+        }
     }
     
     func setDayNotificationPreference(value: DayNotificationPreference) {
@@ -36,7 +44,11 @@ internal class PreferenceDAO: IPreferenceDAO {
     }
     
     func getLessonAlertPreference() -> Bool {
-        return _dal.boolForKey(PreferenceDAO.LESSON_ALERT_KEY)
+        if let o = _dal.objectForKey(PreferenceDAO.LESSON_ALERT_KEY) {
+            return o as! Bool
+        } else {
+            return true
+        }
     }
     
     func setLessonAlertPreference(value: Bool) {
