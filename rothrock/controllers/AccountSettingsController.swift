@@ -29,8 +29,14 @@ public class AccountSettingsController: BaseController, UITableViewDelegate {
     public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
             _emailField = cell.contentView.subviews[0] as? UITextField
+            if BusinessFactory.provideUser().isSignedIn() {
+                _emailField!.text = BusinessFactory.provideUser().getCurrentUserEmail()
+            }
         } else {
             _passwordField = cell.contentView.subviews[0] as? UITextField
+            if BusinessFactory.provideUser().isSignedIn() {
+                _passwordField!.text = "app_name".localized
+            }
         }
     }
     
