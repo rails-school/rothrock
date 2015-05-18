@@ -19,7 +19,7 @@ public class ClassTableViewCell: UITableViewCell {
     @IBOutlet weak var _location: UILabel!
     
     public func hydrate(slug: String) {
-        SwiftEventBus.post(ControllerEvents.ProgressForkEvent.rawValue)
+        SwiftEventBus.post(ProgressForkEvent.NAME)
         
         BusinessFactory
             .provideLesson()
@@ -33,11 +33,11 @@ public class ClassTableViewCell: UITableViewCell {
                     self._teacherName.text = teacher!.displayedName
                     self._location.text = venue!.name
                     
-                    SwiftEventBus.post(ControllerEvents.ProgressDoneEvent.rawValue)
+                    SwiftEventBus.post(ProgressDoneEvent.NAME)
                 },
                 failure: {
-                    SwiftEventBus.post(ControllerEvents.ErrorEvent.rawValue, sender: $0)
-                    SwiftEventBus.post(ControllerEvents.ProgressDoneEvent.rawValue)
+                    SwiftEventBus.post(ErrorEvent.NAME, sender: ErrorEvent(message: $0))
+                    SwiftEventBus.post(ProgressDoneEvent.NAME)
                 }
         )
     }

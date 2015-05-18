@@ -13,14 +13,14 @@ import SwiftEventBus
 public class BaseController: UIViewController {
  
     public func publishError(message: String) {
-        SwiftEventBus.post(ControllerEvents.ErrorEvent.rawValue, sender: message)
+        SwiftEventBus.post(ErrorEvent.NAME, sender: ErrorEvent(message: message))
     }
     
     public func fork() {
-        SwiftEventBus.post(ControllerEvents.ProgressForkEvent.rawValue)
+        SwiftEventBus.post(ProgressForkEvent.NAME)
     }
     
     public func done() {
-        SwiftEventBus.post(ControllerEvents.ProgressDoneEvent.rawValue)
+        SwiftEventBus.post(ProgressDoneEvent.NAME)
     }
 }

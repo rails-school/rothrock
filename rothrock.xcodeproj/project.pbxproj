@@ -62,12 +62,16 @@
 		A7BD79331B0579E100303751 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD79321B0579E100303751 /* StringExtension.swift */; };
 		A7BD79351B0584BD00303751 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD79341B0584BD00303751 /* DateExtension.swift */; };
 		A7BD79371B058B2700303751 /* BLLCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD79361B058B2700303751 /* BLLCallback.swift */; };
+		A7C72EE01B0A5A8F001BA13C /* ProgressForkEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EDF1B0A5A8F001BA13C /* ProgressForkEvent.swift */; };
+		A7C72EE21B0A5B9B001BA13C /* ProgressDoneEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE11B0A5B9B001BA13C /* ProgressDoneEvent.swift */; };
+		A7C72EE41B0A5BB8001BA13C /* ErrorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE31B0A5BB8001BA13C /* ErrorEvent.swift */; };
+		A7C72EE61B0A5CFB001BA13C /* ConfirmationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE51B0A5CFB001BA13C /* ConfirmationEvent.swift */; };
+		A7C72EE81B0A5D4B001BA13C /* InformationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE71B0A5D4B001BA13C /* InformationEvent.swift */; };
 		A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFE91AEACBEC00370F4A /* User.swift */; };
 		A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEB1AEAD1C100370F4A /* Venue.swift */; };
 		A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */; };
 		A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */; };
 		A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */; };
-		A7EC14BD1B08158D001981EB /* ControllerEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EC14BC1B08158D001981EB /* ControllerEvents.swift */; };
 		A7EC14BF1B081BA8001981EB /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EC14BE1B081BA8001981EB /* BaseController.swift */; };
 		A7EDB7A41B097B4100244176 /* AccountSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EDB7A31B097B4100244176 /* AccountSettingsController.swift */; };
 		A7EDB7A61B097DAA00244176 /* NotificationSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EDB7A51B097DAA00244176 /* NotificationSettingsController.swift */; };
@@ -154,17 +158,21 @@
 		A7BD79321B0579E100303751 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = utils/StringExtension.swift; sourceTree = "<group>"; };
 		A7BD79341B0584BD00303751 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = utils/DateExtension.swift; sourceTree = "<group>"; };
 		A7BD79361B058B2700303751 /* BLLCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BLLCallback.swift; path = models/bll/BLLCallback.swift; sourceTree = "<group>"; };
+		A7C72EDF1B0A5A8F001BA13C /* ProgressForkEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressForkEvent.swift; path = controllers/events/ProgressForkEvent.swift; sourceTree = "<group>"; };
+		A7C72EE11B0A5B9B001BA13C /* ProgressDoneEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressDoneEvent.swift; path = controllers/events/ProgressDoneEvent.swift; sourceTree = "<group>"; };
+		A7C72EE31B0A5BB8001BA13C /* ErrorEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorEvent.swift; path = controllers/events/ErrorEvent.swift; sourceTree = "<group>"; };
+		A7C72EE51B0A5CFB001BA13C /* ConfirmationEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfirmationEvent.swift; path = controllers/events/ConfirmationEvent.swift; sourceTree = "<group>"; };
+		A7C72EE71B0A5D4B001BA13C /* InformationEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InformationEvent.swift; path = controllers/events/InformationEvent.swift; sourceTree = "<group>"; };
 		A7D5CFE91AEACBEC00370F4A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = models/beans/User.swift; sourceTree = "<group>"; };
 		A7D5CFEB1AEAD1C100370F4A /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Venue.swift; path = models/beans/Venue.swift; sourceTree = "<group>"; };
 		A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ILessonDAO.swift; path = models/dao/interfaces/ILessonDAO.swift; sourceTree = "<group>"; };
 		A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPreferenceDAO.swift; path = models/dao/interfaces/IPreferenceDAO.swift; sourceTree = "<group>"; };
 		A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwoHourNotificationPreference.swift; path = models/dao/TwoHourNotificationPreference.swift; sourceTree = "<group>"; };
-		A7EC14BC1B08158D001981EB /* ControllerEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ControllerEvents.swift; path = controllers/ControllerEvents.swift; sourceTree = "<group>"; };
 		A7EC14BE1B081BA8001981EB /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseController.swift; path = controllers/BaseController.swift; sourceTree = "<group>"; };
 		A7EDB7A31B097B4100244176 /* AccountSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountSettingsController.swift; path = controllers/AccountSettingsController.swift; sourceTree = "<group>"; };
 		A7EDB7A51B097DAA00244176 /* NotificationSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationSettingsController.swift; path = controllers/NotificationSettingsController.swift; sourceTree = "<group>"; };
 		A7F571E81AEED9DD001084D3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		A7F59B481B091D2600F5848F /* LocalizedSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedSegmentedControl.swift; sourceTree = "<group>"; };
+		A7F59B481B091D2600F5848F /* LocalizedSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizedSegmentedControl.swift; path = utils/LocalizedSegmentedControl.swift; sourceTree = "<group>"; };
 		AB487B39E1ADD18545092D96 /* Pods-rothrock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.release.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.release.xcconfig"; sourceTree = "<group>"; };
 		AEA57EFD32C75B4AEA027CF1 /* Pods_rothrockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rothrockTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF5C00745E3C29669D778DF /* Pods-rothrockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrockTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rothrockTests/Pods-rothrockTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -383,6 +391,18 @@
 			name = utils;
 			sourceTree = "<group>";
 		};
+		A7C72EDC1B0A59F1001BA13C /* events */ = {
+			isa = PBXGroup;
+			children = (
+				A7C72EDF1B0A5A8F001BA13C /* ProgressForkEvent.swift */,
+				A7C72EE11B0A5B9B001BA13C /* ProgressDoneEvent.swift */,
+				A7C72EE31B0A5BB8001BA13C /* ErrorEvent.swift */,
+				A7C72EE51B0A5CFB001BA13C /* ConfirmationEvent.swift */,
+				A7C72EE71B0A5D4B001BA13C /* InformationEvent.swift */,
+			);
+			name = events;
+			sourceTree = "<group>";
+		};
 		A7D5CFED1AEAE53500370F4A /* dao */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,9 +441,9 @@
 		A7EC14BA1B080B5B001981EB /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A7C72EDC1B0A59F1001BA13C /* events */,
 				A746A6A81AE9D6E800AF0FA5 /* ClassListController.swift */,
 				A772CBCA1B06A2870055AF4E /* ClassTableViewCell.swift */,
-				A7EC14BC1B08158D001981EB /* ControllerEvents.swift */,
 				A7EC14BE1B081BA8001981EB /* BaseController.swift */,
 				A7770BA61B09117A00F23CD6 /* SettingsController.swift */,
 				A7EDB7A31B097B4100244176 /* AccountSettingsController.swift */,
@@ -639,7 +659,9 @@
 				A7F59B491B091D2600F5848F /* LocalizedSegmentedControl.swift in Sources */,
 				A772CBC41B0691960055AF4E /* VenueBusiness.swift in Sources */,
 				A794DC251AF1A24100D8743F /* RailsSchoolAPIFactory.swift in Sources */,
+				A7C72EE21B0A5B9B001BA13C /* ProgressDoneEvent.swift in Sources */,
 				A78410681AEF14E0006709ED /* IJSONSerializer.swift in Sources */,
+				A7C72EE61B0A5CFB001BA13C /* ConfirmationEvent.swift in Sources */,
 				A71A7CC71AF00F440094019E /* SerializerFactory.swift in Sources */,
 				A7EC14BF1B081BA8001981EB /* BaseController.swift in Sources */,
 				A794DC2E1AF1A6CE00D8743F /* IPreferenceBusiness.swift in Sources */,
@@ -664,10 +686,11 @@
 				A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */,
 				A7BD792E1B0556AB00303751 /* DAOFactory.swift in Sources */,
 				A78410641AEF131A006709ED /* CheckCredentialsRequest.swift in Sources */,
+				A7C72EE01B0A5A8F001BA13C /* ProgressForkEvent.swift in Sources */,
 				A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */,
 				A794DC321AF1A88E00D8743F /* IVenueBusiness.swift in Sources */,
+				A7C72EE41B0A5BB8001BA13C /* ErrorEvent.swift in Sources */,
 				A7BA44EE1AEAEC25008514F5 /* IUserDAO.swift in Sources */,
-				A7EC14BD1B08158D001981EB /* ControllerEvents.swift in Sources */,
 				A74F045D1AEB274700EB8916 /* IJSONDeserializer.swift in Sources */,
 				A7BD79371B058B2700303751 /* BLLCallback.swift in Sources */,
 				A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */,
@@ -686,6 +709,7 @@
 				A74F044E1AEB06DE00EB8916 /* VenueDAO.swift in Sources */,
 				A740521E1AF001AF003ABBE3 /* ArraySerializer.swift in Sources */,
 				A7BD79351B0584BD00303751 /* DateExtension.swift in Sources */,
+				A7C72EE81B0A5D4B001BA13C /* InformationEvent.swift in Sources */,
 				A71A7CC51AF00E760094019E /* StringSerializer.swift in Sources */,
 				A7BA44F01AEAECDB008514F5 /* IVenueDAO.swift in Sources */,
 				A772CBC61B0692E90055AF4E /* BusinessFactory.swift in Sources */,

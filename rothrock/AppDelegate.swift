@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Progress events
-        SwiftEventBus.onMainThread(self, name: ControllerEvents.ProgressForkEvent.rawValue) { _ in
+        SwiftEventBus.onMainThread(self, name: ProgressForkEvent.NAME) { _ in
             self._backgroundThreads++
             
             if self._backgroundThreads == 1 {
@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        SwiftEventBus.onMainThread(self, name: ControllerEvents.ProgressDoneEvent.rawValue) { _ in
+        SwiftEventBus.onMainThread(self, name: ProgressDoneEvent.NAME) { _ in
             self._backgroundThreads--
             
             if let t = self._backgroundTimer {
@@ -47,14 +47,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // Toaster events
-        SwiftEventBus.onMainThread(self, name: ControllerEvents.ErrorEvent.rawValue) { notif in
-            JLToast.makeText(notif.object as! String).show()
+        SwiftEventBus.onMainThread(self, name: ErrorEvent.NAME) { notif in
+            var e = (notif.object) as! ErrorEvent
+            JLToast.makeText(e.message).show()
         }
-        SwiftEventBus.onMainThread(self, name: ControllerEvents.ConfirmationEvent.rawValue) { notif in
-            JLToast.makeText(notif.object as! String).show()
+        SwiftEventBus.onMainThread(self, name: ConfirmationEvent.NAME) { notif in
+            var e = (notif.object) as! ConfirmationEvent
+            JLToast.makeText(e.message).show()
         }
-        SwiftEventBus.onMainThread(self, name: ControllerEvents.InformationEvent.rawValue) { notif in
-            JLToast.makeText(notif.object as! String).show()
+        SwiftEventBus.onMainThread(self, name: InformationEvent.NAME) { notif in
+            var e = (notif.object) as! InformationEvent
+            JLToast.makeText(e.message).show()
         }
         
         return true
