@@ -77,7 +77,7 @@ internal class UserDAO: BaseDAO, IUserDAO {
     }
     
     func getCurrentUserSchoolId() -> Int? {
-        return _preferenceDAL.integerForKey(UserDAO.SCHOOL_ID_KEY)
+        return _preferenceDAL.objectForKey(UserDAO.SCHOOL_ID_KEY) as? Int
     }
     
     func setCurrentUserSchoolId(value: Int) {
@@ -85,10 +85,6 @@ internal class UserDAO: BaseDAO, IUserDAO {
     }
     
     func hasCurrentUser() -> Bool {
-        if getCurrentUserEmail() != nil && getCurrentUserToken() != nil {
-            return true
-        } else {
-            return false
-        }
+        return getCurrentUserEmail() != nil && getCurrentUserToken() != nil
     }
 }

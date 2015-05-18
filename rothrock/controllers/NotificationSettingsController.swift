@@ -83,8 +83,30 @@ public class NotificationSettingsController: BaseController, UITableViewDelegate
         } else {
             _newLessonAlert = cell.contentView.subviews[0] as? UISwitch
             _newLessonAlert!.on = BusinessFactory.providePreference().getLessonAlertPreference()
+            
+            _newLessonAlert!.addTarget(self, action: Selector("onNewAlertToggle"), forControlEvents: .ValueChanged)
         }
     }
     
+    public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 {
+            BusinessFactory
+                .providePreference()
+                .updateTwoHourReminderPreference(TwoHourNotificationPreference(rawValue: indexPath.row)!)
+            
+            tableView.cellForRowAtIndexPath(NSIndexPath(forRow: _currentTwoHourReminderPreference!.rawValue, inSection: 0))!.accessoryType = .None
+            tableView.cellForRowAtIndexPath(indexPath)!.accessoryType = .Checkmark
+        } else if indexPath.section == 1 {
+            BusinessFactory
+                .providePreference()
+                .updateDayReminderPreference(DayNotificationPreference(rawValue: indexPath.row)!)
+                    
+            tableView.cellForRowAtIndexPath(NSIndexPath(forRow: _currentDayReminderPreference!.rawValue, inSection: 1))!.accessoryType = .None
+            tableView.cellForRowAtIndexPath(indexPath)!.accessoryType = .Checkmark
+        }
+    }
     
+    public func onNewAlertToggle() {
+        BusinessFactory.providePreference().updateLessonAlertPreference(_newLessonAlert!.on)
+    }
 }

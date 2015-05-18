@@ -44,7 +44,7 @@ internal class PreferenceDAO: IPreferenceDAO {
     }
     
     func getLessonAlertPreference() -> Bool {
-        if let o = _dal.objectForKey(PreferenceDAO.LESSON_ALERT_KEY) {
+        if let o: AnyObject = _dal.objectForKey(PreferenceDAO.LESSON_ALERT_KEY) {
             return o as! Bool
         } else {
             return true
