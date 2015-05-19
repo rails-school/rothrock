@@ -33,6 +33,8 @@ public class ClassDetailsController: BaseController, UITableViewDelegate {
                 .getSchoolClassTuple(
                     e.lessonSlug,
                     success: { (schoolClass, teacher, venue) in
+                        self._headline.text = schoolClass!.lesson!.title
+                        self._digest.text = schoolClass!.lesson!.summary
                     },
                     failure: { self.publishError($0) }
                 )
@@ -50,11 +52,23 @@ public class ClassDetailsController: BaseController, UITableViewDelegate {
     
     public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 {
-            
+            switch indexPath.row {
+            case 0:
+                _date = cell
+            case 1:
+                _location = cell
+            default:
+                _teacher = cell
+            }
         } else if indexPath.section == 1 {
-            
+            switch indexPath.row {
+            case 0:
+                _attendees = cell
+            default:
+                _description = cell
+            }
         } else {
-            
+            _attendanceToggle = cell
         }
     }
 }
