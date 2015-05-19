@@ -67,6 +67,8 @@
 		A7C72EE41B0A5BB8001BA13C /* ErrorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE31B0A5BB8001BA13C /* ErrorEvent.swift */; };
 		A7C72EE61B0A5CFB001BA13C /* ConfirmationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE51B0A5CFB001BA13C /* ConfirmationEvent.swift */; };
 		A7C72EE81B0A5D4B001BA13C /* InformationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE71B0A5D4B001BA13C /* InformationEvent.swift */; };
+		A7C72EEA1B0AAEF8001BA13C /* ClassDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE91B0AAEF8001BA13C /* ClassDetailsController.swift */; };
+		A7C72EEC1B0AAFBB001BA13C /* ClassDetailsInitEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EEB1B0AAFBB001BA13C /* ClassDetailsInitEvent.swift */; };
 		A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFE91AEACBEC00370F4A /* User.swift */; };
 		A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEB1AEAD1C100370F4A /* Venue.swift */; };
 		A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */; };
@@ -163,6 +165,8 @@
 		A7C72EE31B0A5BB8001BA13C /* ErrorEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorEvent.swift; path = controllers/events/ErrorEvent.swift; sourceTree = "<group>"; };
 		A7C72EE51B0A5CFB001BA13C /* ConfirmationEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfirmationEvent.swift; path = controllers/events/ConfirmationEvent.swift; sourceTree = "<group>"; };
 		A7C72EE71B0A5D4B001BA13C /* InformationEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InformationEvent.swift; path = controllers/events/InformationEvent.swift; sourceTree = "<group>"; };
+		A7C72EE91B0AAEF8001BA13C /* ClassDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassDetailsController.swift; path = controllers/ClassDetailsController.swift; sourceTree = "<group>"; };
+		A7C72EEB1B0AAFBB001BA13C /* ClassDetailsInitEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassDetailsInitEvent.swift; path = controllers/events/ClassDetailsInitEvent.swift; sourceTree = "<group>"; };
 		A7D5CFE91AEACBEC00370F4A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = models/beans/User.swift; sourceTree = "<group>"; };
 		A7D5CFEB1AEAD1C100370F4A /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Venue.swift; path = models/beans/Venue.swift; sourceTree = "<group>"; };
 		A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ILessonDAO.swift; path = models/dao/interfaces/ILessonDAO.swift; sourceTree = "<group>"; };
@@ -399,6 +403,7 @@
 				A7C72EE31B0A5BB8001BA13C /* ErrorEvent.swift */,
 				A7C72EE51B0A5CFB001BA13C /* ConfirmationEvent.swift */,
 				A7C72EE71B0A5D4B001BA13C /* InformationEvent.swift */,
+				A7C72EEB1B0AAFBB001BA13C /* ClassDetailsInitEvent.swift */,
 			);
 			name = events;
 			sourceTree = "<group>";
@@ -448,6 +453,7 @@
 				A7770BA61B09117A00F23CD6 /* SettingsController.swift */,
 				A7EDB7A31B097B4100244176 /* AccountSettingsController.swift */,
 				A7EDB7A51B097DAA00244176 /* NotificationSettingsController.swift */,
+				A7C72EE91B0AAEF8001BA13C /* ClassDetailsController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -658,8 +664,10 @@
 				A74F04541AEB20BD00EB8916 /* RailsSchoolAPI.swift in Sources */,
 				A7F59B491B091D2600F5848F /* LocalizedSegmentedControl.swift in Sources */,
 				A772CBC41B0691960055AF4E /* VenueBusiness.swift in Sources */,
+				A7C72EEA1B0AAEF8001BA13C /* ClassDetailsController.swift in Sources */,
 				A794DC251AF1A24100D8743F /* RailsSchoolAPIFactory.swift in Sources */,
 				A7C72EE21B0A5B9B001BA13C /* ProgressDoneEvent.swift in Sources */,
+				A7C72EEC1B0AAFBB001BA13C /* ClassDetailsInitEvent.swift in Sources */,
 				A78410681AEF14E0006709ED /* IJSONSerializer.swift in Sources */,
 				A7C72EE61B0A5CFB001BA13C /* ConfirmationEvent.swift in Sources */,
 				A71A7CC71AF00F440094019E /* SerializerFactory.swift in Sources */,

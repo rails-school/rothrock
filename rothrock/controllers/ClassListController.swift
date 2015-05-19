@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftEventBus
 
 class ClassListController: BaseController, UITableViewDelegate, UITableViewDataSource {
     private var _slugs: [String]?
@@ -65,6 +66,11 @@ class ClassListController: BaseController, UITableViewDelegate, UITableViewDataS
         } else {
             return UITableViewCell()
         }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("ShowDetail", sender: nil)
+        SwiftEventBus.post(ClassDetailsInitEvent.NAME, sender: ClassDetailsInitEvent(lessonSlug: _slugs![indexPath.row]))
     }
 }
 
