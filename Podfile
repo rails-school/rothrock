@@ -3,6 +3,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'rothrock' do
+  pod 'SnapKit'
   pod 'Realm', '0.91.5'
   #pod 'Cent'
   pod 'SwiftyJSON'

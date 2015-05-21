@@ -11,9 +11,13 @@ import UIKit
 import SwiftEventBus
 
 public class BaseController: UIViewController {
- 
+    public override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
+    
     public func publishError(message: String) {
         SwiftEventBus.post(ErrorEvent.NAME, sender: ErrorEvent(message: message))
+        done()
     }
     
     public func fork() {
