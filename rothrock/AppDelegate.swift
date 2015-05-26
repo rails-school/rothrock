@@ -9,7 +9,7 @@
 import UIKit
 import SwiftEventBus
 import SwiftSpinner
-import JLToast
+import TSMessages
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -78,15 +78,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Toaster events
         SwiftEventBus.onMainThread(self, name: ErrorEvent.NAME) { notif in
             var e = (notif.object) as! ErrorEvent
-            JLToast.makeText(e.message).show()
+            TSMessage.showNotificationWithTitle("Error", subtitle: e.message, type: TSMessageNotificationType.Error)
         }
         SwiftEventBus.onMainThread(self, name: ConfirmationEvent.NAME) { notif in
             var e = (notif.object) as! ConfirmationEvent
-            JLToast.makeText(e.message).show()
+            TSMessage.showNotificationWithTitle("Confirmation", subtitle: e.message, type: TSMessageNotificationType.Success)
         }
         SwiftEventBus.onMainThread(self, name: InformationEvent.NAME) { notif in
             var e = (notif.object) as! InformationEvent
-            JLToast.makeText(e.message).show()
+            TSMessage.showNotificationWithTitle("Information", subtitle: e.message, type: TSMessageNotificationType.Message)
         }
     }
 

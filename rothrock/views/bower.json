@@ -1,0 +1,20 @@
+{
+  "name": "rothrock",
+  "version": "0.0.0",
+  "homepage": "https://github.com/rails-school/rothrock",
+  "authors": [
+    "Coshx Labs <coshx.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bourbon": "~4.2.3",
+    "framework7": "~1.0.6"
+  }
+}

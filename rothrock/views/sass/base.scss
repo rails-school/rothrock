@@ -1,0 +1,12 @@
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "colors";
+@import "fonts";
+
+.statusbar-overlay {
+  background-color: $red;
+}
+
+.navbar {
+  background-color: $red;
+  color: $white;
+}

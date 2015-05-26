@@ -9,68 +9,38 @@
 import UIKit
 import SwiftEventBus
 
-class ClassListController: BaseController, UITableViewDelegate, UITableViewDataSource {
-    private var _slugs: [String]?
-    
-    @IBOutlet weak var _list: UITableView!
+public class ClassListController: UIViewController {
+    @IBOutlet weak var _webView: UIWebView!
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        _list.rowHeight = UITableViewAutomaticDimension
-        _list.estimatedRowHeight = 300.0
-        BusinessFactory
-            .provideLesson()
-            .sortFutureSlugsByDate(
-                {
-                    self._slugs = $0
-                    self._list.reloadData()
-                },
-                failure: { (error) in }
-            )
+        Caravel.getDefault(_webView).whenReady() { bus in
+            bus.register(ProgressDoneEvent.NAME) { name, data in
+                SwiftEventBus.post(ProgressDoneEvent.NAME)
+            }
+            
+            SwiftEventBus.post(ProgressForkEvent.NAME)
+            BusinessFactory
+                .provideLesson()
+                .sortFutureTuplesByDate(
+                    { tuples in
+                        bus.post("DisplayClassList", anArray: tuples!)
+                    },
+                    failure: { self.publishError($0) }
+                )
+        }
+        
+        _webView.loadRequest(NSURLRequest(URL: NSBundle.mainBundle().URLForResource("class_list", withExtension: "html")!))
     }
 
-    override func didReceiveMemoryWarning() {
+    public override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func prepareToUnwind(sender: UIStoryboardSegue) {
-        
-    }
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let s = _slugs {
-            return s.count
-        } else {
-            return 0
-        }
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let s = _slugs {
-            var cell: ClassTableViewCell? = tableView.dequeueReusableCellWithIdentifier("ClassTableViewCell") as! ClassTableViewCell?
-            
-            if cell == nil {
-                cell = NSBundle.mainBundle().loadNibNamed("ClassTableViewCell", owner: self, options: nil)[0] as? ClassTableViewCell
-            }
-            
-            cell!.hydrate(s[indexPath.row])
-            
-            return cell!
-        } else {
-            return UITableViewCell()
-        }
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("ShowDetail", sender: nil)
-        SwiftEventBus.post(ClassDetailsInitEvent.NAME, sender: ClassDetailsInitEvent(lessonSlug: _slugs![indexPath.row]))
+    public func publishError(message: String) {
+        SwiftEventBus.post(ErrorEvent.NAME, sender: ErrorEvent(message: message))
     }
 }
 

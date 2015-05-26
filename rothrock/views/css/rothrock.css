@@ -1,0 +1,43 @@
+.statusbar-overlay {
+  background-color: #A7000A; }
+
+.navbar {
+  background-color: #A7000A;
+  color: #fff; }
+
+.page-content {
+  background-color: #1c1c1c; }
+
+.class-list-card {
+  padding: 10px;
+  margin: 15px h1, h2;
+    margin-font-weight: normal; }
+  .class-list-card h1, .class-list-card h2, .class-list-card p {
+    margin: 5px; }
+  .class-list-card h1 {
+    font-size: 1.5em;
+    color: #1c1c1c; }
+  .class-list-card h2, .class-list-card p {
+    color: #7A7A7A; }
+  .class-list-card h2 {
+    font-size: 1em; }
+  .class-list-card p {
+    font-size: 0.75em; }
+  .class-list-card .class-list-card-footer {
+    background-color: #eee; }
+    .class-list-card .class-list-card-footer p {
+      display: inline-block;
+      width: 48%;
+      padding: 5px;
+      margin: 0;
+      box-sizing: border-box;
+      color: #7A7A7A; }
+      .class-list-card .class-list-card-footer p:last-child {
+        text-align: right; }
+
+.class-list hr {
+  margin: 20px;
+  border: 1px solid #7A7A7A;
+  display: none; }
+  .class-list hr.visible {
+    display: block; }

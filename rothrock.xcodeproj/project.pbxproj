@@ -10,6 +10,16 @@
 		18A0992207485A232790F9D8 /* Pods_rothrock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5575745422AE9B1FB00FA044 /* Pods_rothrock.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A71A7CC51AF00E760094019E /* StringSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A7CC41AF00E760094019E /* StringSerializer.swift */; };
 		A71A7CC71AF00F440094019E /* SerializerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A7CC61AF00F440094019E /* SerializerFactory.swift */; };
+		A73E62851B13BFF700CAAA8F /* caravel.js in Resources */ = {isa = PBXBuildFile; fileRef = A73E62801B13BFF700CAAA8F /* caravel.js */; };
+		A73E62861B13BFF700CAAA8F /* Caravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E62811B13BFF700CAAA8F /* Caravel.swift */; };
+		A73E62871B13BFF700CAAA8F /* CaravelSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E62821B13BFF700CAAA8F /* CaravelSubscriber.swift */; };
+		A73E62881B13BFF700CAAA8F /* StickyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E62831B13BFF700CAAA8F /* StickyEvent.swift */; };
+		A73E62891B13BFF700CAAA8F /* UIWebViewDelegateMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E62841B13BFF700CAAA8F /* UIWebViewDelegateMediator.swift */; };
+		A73E628F1B13C8C400CAAA8F /* rothrock.css in Resources */ = {isa = PBXBuildFile; fileRef = A73E628E1B13C8C400CAAA8F /* rothrock.css */; };
+		A73E62911B13C8D100CAAA8F /* framework7.min.css in Resources */ = {isa = PBXBuildFile; fileRef = A73E62901B13C8D100CAAA8F /* framework7.min.css */; };
+		A73E62931B13C8DC00CAAA8F /* rothrock.js in Resources */ = {isa = PBXBuildFile; fileRef = A73E62921B13C8DC00CAAA8F /* rothrock.js */; };
+		A73E62951B13C8E500CAAA8F /* framework7.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A73E62941B13C8E500CAAA8F /* framework7.min.js */; };
+		A73E62971B13C8EF00CAAA8F /* class_list.html in Resources */ = {isa = PBXBuildFile; fileRef = A73E62961B13C8EF00CAAA8F /* class_list.html */; };
 		A740521C1AEFFC88003ABBE3 /* RemoteCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A740521B1AEFFC88003ABBE3 /* RemoteCallback.swift */; };
 		A740521E1AF001AF003ABBE3 /* ArraySerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A740521D1AF001AF003ABBE3 /* ArraySerializer.swift */; };
 		A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */; };
@@ -30,7 +40,6 @@
 		A772CBC21B066EE40055AF4E /* UserBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CBC11B066EE40055AF4E /* UserBusiness.swift */; };
 		A772CBC41B0691960055AF4E /* VenueBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CBC31B0691960055AF4E /* VenueBusiness.swift */; };
 		A772CBC61B0692E90055AF4E /* BusinessFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CBC51B0692E90055AF4E /* BusinessFactory.swift */; };
-		A772CBC91B06A2300055AF4E /* ClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A772CBC81B06A2300055AF4E /* ClassTableViewCell.xib */; };
 		A772CBCB1B06A2870055AF4E /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CBCA1B06A2870055AF4E /* ClassTableViewCell.swift */; };
 		A7770BA71B09117A00F23CD6 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7770BA61B09117A00F23CD6 /* SettingsController.swift */; };
 		A7770BA91B09190000F23CD6 /* LocalizedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7770BA81B09190000F23CD6 /* LocalizedLabel.swift */; };
@@ -74,7 +83,6 @@
 		A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */; };
 		A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */; };
 		A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */; };
-		A7EC14BF1B081BA8001981EB /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EC14BE1B081BA8001981EB /* BaseController.swift */; };
 		A7EDB7A41B097B4100244176 /* AccountSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EDB7A31B097B4100244176 /* AccountSettingsController.swift */; };
 		A7EDB7A61B097DAA00244176 /* NotificationSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EDB7A51B097DAA00244176 /* NotificationSettingsController.swift */; };
 		A7F59B491B091D2600F5848F /* LocalizedSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F59B481B091D2600F5848F /* LocalizedSegmentedControl.swift */; };
@@ -100,6 +108,16 @@
 		9C8967141C7046423621E252 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A71A7CC41AF00E760094019E /* StringSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringSerializer.swift; path = models/bll/serializers/StringSerializer.swift; sourceTree = "<group>"; };
 		A71A7CC61AF00F440094019E /* SerializerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SerializerFactory.swift; path = models/bll/serializers/SerializerFactory.swift; sourceTree = "<group>"; };
+		A73E62801B13BFF700CAAA8F /* caravel.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = caravel.js; path = Caravel/caravel.js; sourceTree = "<group>"; };
+		A73E62811B13BFF700CAAA8F /* Caravel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Caravel.swift; path = Caravel/Caravel.swift; sourceTree = "<group>"; };
+		A73E62821B13BFF700CAAA8F /* CaravelSubscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CaravelSubscriber.swift; path = Caravel/CaravelSubscriber.swift; sourceTree = "<group>"; };
+		A73E62831B13BFF700CAAA8F /* StickyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StickyEvent.swift; path = Caravel/StickyEvent.swift; sourceTree = "<group>"; };
+		A73E62841B13BFF700CAAA8F /* UIWebViewDelegateMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIWebViewDelegateMediator.swift; path = Caravel/UIWebViewDelegateMediator.swift; sourceTree = "<group>"; };
+		A73E628E1B13C8C400CAAA8F /* rothrock.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = rothrock.css; path = views/css/rothrock.css; sourceTree = "<group>"; };
+		A73E62901B13C8D100CAAA8F /* framework7.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = framework7.min.css; path = views/bower_components/framework7/dist/css/framework7.min.css; sourceTree = "<group>"; };
+		A73E62921B13C8DC00CAAA8F /* rothrock.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = rothrock.js; path = views/js/rothrock.js; sourceTree = "<group>"; };
+		A73E62941B13C8E500CAAA8F /* framework7.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = framework7.min.js; path = views/bower_components/framework7/dist/js/framework7.min.js; sourceTree = "<group>"; };
+		A73E62961B13C8EF00CAAA8F /* class_list.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = class_list.html; path = views/html/class_list.html; sourceTree = "<group>"; };
 		A740521B1AEFFC88003ABBE3 /* RemoteCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteCallback.swift; path = models/bll/remote/RemoteCallback.swift; sourceTree = "<group>"; };
 		A740521D1AF001AF003ABBE3 /* ArraySerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArraySerializer.swift; path = models/bll/serializers/ArraySerializer.swift; sourceTree = "<group>"; };
 		A746A6A11AE9D6E800AF0FA5 /* rothrock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rothrock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,7 +142,6 @@
 		A772CBC11B066EE40055AF4E /* UserBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserBusiness.swift; path = models/bll/UserBusiness.swift; sourceTree = "<group>"; };
 		A772CBC31B0691960055AF4E /* VenueBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenueBusiness.swift; path = models/bll/VenueBusiness.swift; sourceTree = "<group>"; };
 		A772CBC51B0692E90055AF4E /* BusinessFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessFactory.swift; path = models/bll/BusinessFactory.swift; sourceTree = "<group>"; };
-		A772CBC81B06A2300055AF4E /* ClassTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClassTableViewCell.xib; path = views/ClassTableViewCell.xib; sourceTree = "<group>"; };
 		A772CBCA1B06A2870055AF4E /* ClassTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassTableViewCell.swift; path = controllers/ClassTableViewCell.swift; sourceTree = "<group>"; };
 		A7770BA61B09117A00F23CD6 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = controllers/SettingsController.swift; sourceTree = "<group>"; };
 		A7770BA81B09190000F23CD6 /* LocalizedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizedLabel.swift; path = utils/LocalizedLabel.swift; sourceTree = "<group>"; };
@@ -172,7 +189,6 @@
 		A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ILessonDAO.swift; path = models/dao/interfaces/ILessonDAO.swift; sourceTree = "<group>"; };
 		A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPreferenceDAO.swift; path = models/dao/interfaces/IPreferenceDAO.swift; sourceTree = "<group>"; };
 		A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwoHourNotificationPreference.swift; path = models/dao/TwoHourNotificationPreference.swift; sourceTree = "<group>"; };
-		A7EC14BE1B081BA8001981EB /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseController.swift; path = controllers/BaseController.swift; sourceTree = "<group>"; };
 		A7EDB7A31B097B4100244176 /* AccountSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountSettingsController.swift; path = controllers/AccountSettingsController.swift; sourceTree = "<group>"; };
 		A7EDB7A51B097DAA00244176 /* NotificationSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationSettingsController.swift; path = controllers/NotificationSettingsController.swift; sourceTree = "<group>"; };
 		A7F571E81AEED9DD001084D3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
@@ -231,6 +247,51 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A73E627F1B13BE9300CAAA8F /* Caravel */ = {
+			isa = PBXGroup;
+			children = (
+				A73E62801B13BFF700CAAA8F /* caravel.js */,
+				A73E62811B13BFF700CAAA8F /* Caravel.swift */,
+				A73E62821B13BFF700CAAA8F /* CaravelSubscriber.swift */,
+				A73E62831B13BFF700CAAA8F /* StickyEvent.swift */,
+				A73E62841B13BFF700CAAA8F /* UIWebViewDelegateMediator.swift */,
+			);
+			name = Caravel;
+			sourceTree = "<group>";
+		};
+		A73E628A1B13C85100CAAA8F /* html */ = {
+			isa = PBXGroup;
+			children = (
+				A73E62961B13C8EF00CAAA8F /* class_list.html */,
+			);
+			name = html;
+			sourceTree = "<group>";
+		};
+		A73E628B1B13C85500CAAA8F /* imgs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = imgs;
+			sourceTree = "<group>";
+		};
+		A73E628C1B13C85B00CAAA8F /* js */ = {
+			isa = PBXGroup;
+			children = (
+				A73E62941B13C8E500CAAA8F /* framework7.min.js */,
+				A73E62921B13C8DC00CAAA8F /* rothrock.js */,
+			);
+			name = js;
+			sourceTree = "<group>";
+		};
+		A73E628D1B13C86100CAAA8F /* css */ = {
+			isa = PBXGroup;
+			children = (
+				A73E62901B13C8D100CAAA8F /* framework7.min.css */,
+				A73E628E1B13C8C400CAAA8F /* rothrock.css */,
+			);
+			name = css;
+			sourceTree = "<group>";
+		};
 		A746A6981AE9D6E800AF0FA5 = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +316,7 @@
 		A746A6A31AE9D6E800AF0FA5 /* rothrock */ = {
 			isa = PBXGroup;
 			children = (
+				A73E627F1B13BE9300CAAA8F /* Caravel */,
 				A7F571E81AEED9DD001084D3 /* Bridging-Header.h */,
 				A7BD792F1B05728F00303751 /* Localizable.strings */,
 				A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */,
@@ -438,7 +500,10 @@
 		A7EC14B91B080B47001981EB /* views */ = {
 			isa = PBXGroup;
 			children = (
-				A772CBC81B06A2300055AF4E /* ClassTableViewCell.xib */,
+				A73E628D1B13C86100CAAA8F /* css */,
+				A73E628C1B13C85B00CAAA8F /* js */,
+				A73E628B1B13C85500CAAA8F /* imgs */,
+				A73E628A1B13C85100CAAA8F /* html */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -449,7 +514,6 @@
 				A7C72EDC1B0A59F1001BA13C /* events */,
 				A746A6A81AE9D6E800AF0FA5 /* ClassListController.swift */,
 				A772CBCA1B06A2870055AF4E /* ClassTableViewCell.swift */,
-				A7EC14BE1B081BA8001981EB /* BaseController.swift */,
 				A7770BA61B09117A00F23CD6 /* SettingsController.swift */,
 				A7EDB7A31B097B4100244176 /* AccountSettingsController.swift */,
 				A7EDB7A51B097DAA00244176 /* NotificationSettingsController.swift */,
@@ -544,11 +608,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A772CBC91B06A2300055AF4E /* ClassTableViewCell.xib in Resources */,
 				A746A6AC1AE9D6E800AF0FA5 /* Main.storyboard in Resources */,
 				A7BD79301B05728F00303751 /* Localizable.strings in Resources */,
+				A73E62931B13C8DC00CAAA8F /* rothrock.js in Resources */,
 				A746A6B11AE9D6E800AF0FA5 /* LaunchScreen.xib in Resources */,
+				A73E62851B13BFF700CAAA8F /* caravel.js in Resources */,
 				A746A6AE1AE9D6E800AF0FA5 /* Images.xcassets in Resources */,
+				A73E62911B13C8D100CAAA8F /* framework7.min.css in Resources */,
+				A73E62971B13C8EF00CAAA8F /* class_list.html in Resources */,
+				A73E628F1B13C8C400CAAA8F /* rothrock.css in Resources */,
+				A73E62951B13C8E500CAAA8F /* framework7.min.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,7 +740,6 @@
 				A78410681AEF14E0006709ED /* IJSONSerializer.swift in Sources */,
 				A7C72EE61B0A5CFB001BA13C /* ConfirmationEvent.swift in Sources */,
 				A71A7CC71AF00F440094019E /* SerializerFactory.swift in Sources */,
-				A7EC14BF1B081BA8001981EB /* BaseController.swift in Sources */,
 				A794DC2E1AF1A6CE00D8743F /* IPreferenceBusiness.swift in Sources */,
 				A7BA44F21AEAED41008514F5 /* BaseDAO.swift in Sources */,
 				A7BD79331B0579E100303751 /* StringExtension.swift in Sources */,
@@ -680,6 +748,7 @@
 				A794DC1E1AF196BA00D8743F /* BoolSerializer.swift in Sources */,
 				A772CBC21B066EE40055AF4E /* UserBusiness.swift in Sources */,
 				A772CBCB1B06A2870055AF4E /* ClassTableViewCell.swift in Sources */,
+				A73E62891B13BFF700CAAA8F /* UIWebViewDelegateMediator.swift in Sources */,
 				A74F045A1AEB271700EB8916 /* LessonSerializer.swift in Sources */,
 				A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */,
 				A794DC231AF1A19600D8743F /* BaseBusiness.swift in Sources */,
@@ -703,16 +772,19 @@
 				A7BD79371B058B2700303751 /* BLLCallback.swift in Sources */,
 				A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */,
 				A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */,
+				A73E62871B13BFF700CAAA8F /* CaravelSubscriber.swift in Sources */,
 				A784106C1AEF1F13006709ED /* UserSerializer.swift in Sources */,
 				A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */,
 				A74F044C1AEB04FE00EB8916 /* UserDAO.swift in Sources */,
 				A74F044A1AEB02B700EB8916 /* PreferenceDAO.swift in Sources */,
 				A7770BA71B09117A00F23CD6 /* SettingsController.swift in Sources */,
+				A73E62861B13BFF700CAAA8F /* Caravel.swift in Sources */,
 				A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */,
 				A7EDB7A41B097B4100244176 /* AccountSettingsController.swift in Sources */,
 				A7B63B561B091A850008EAFE /* LocalizedTextField.swift in Sources */,
 				A7EDB7A61B097DAA00244176 /* NotificationSettingsController.swift in Sources */,
 				A794DC211AF1A09800D8743F /* ILessonBusiness.swift in Sources */,
+				A73E62881B13BFF700CAAA8F /* StickyEvent.swift in Sources */,
 				A784106A1AEF16FC006709ED /* SchoolClassSerializer.swift in Sources */,
 				A74F044E1AEB06DE00EB8916 /* VenueDAO.swift in Sources */,
 				A740521E1AF001AF003ABBE3 /* ArraySerializer.swift in Sources */,

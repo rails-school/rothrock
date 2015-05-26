@@ -81,6 +81,36 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
         )
     }
     
+    func sortFutureTuplesByDate(success: ([NSDictionary]?) -> Void, failure: (String) -> Void) {
+        sortFutureSlugsByDate(
+            { slugs in
+                var tuples = [NSDictionary]()
+                
+                if slugs == nil {
+                    success(nil)
+                    return
+                }
+                
+                for s in slugs! {
+                    self.getTuple(
+                        s,
+                        success: { (lesson, teacher, venue) in
+                            tuples.append([
+                                "lesson": lesson!.toDictionary(),
+                                "teacher": teacher!.toDictionary(),
+                                "venue": venue!.toDictionary()
+                            ])
+                        },
+                        failure: failure
+                    )
+                }
+                
+                success(tuples)
+            },
+            failure: failure
+        )
+    }
+    
     func getSchoolClassTuple(lessonSlug: String, success: (SchoolClass?, User?, Venue?) -> Void, failure: (String) -> Void) {
         api.getSchoolClass(
             lessonSlug,

@@ -1,0 +1,66 @@
+@import "base";
+
+.page-content {
+  background-color: $black;
+}
+
+.class-list-card {
+  padding: 10px;
+  margin: 15px
+
+  h1, h2 {
+    font-weight: normal;
+  }
+
+  h1, h2, p {
+    margin: 5px;
+  }
+
+  h1 {
+    font-size: $title;
+
+    color: $black;
+  }
+
+  h2, p {
+    color: $gray
+  }
+
+  h2 {
+    font-size: $subhead;
+  }
+
+  p {
+    font-size: $body;
+  }
+
+  .class-list-card-footer {
+    background-color: $super_soft_gray;
+
+    p {
+      display: inline-block;
+
+      width: 48%;
+      padding: 5px;
+      margin: 0;
+      box-sizing: border-box;
+
+      color: $gray;
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.class-list hr {
+  margin: 20px;
+
+  border: 1px solid $gray;
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+}
