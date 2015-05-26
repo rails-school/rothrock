@@ -40,7 +40,8 @@ public class User: RLMObject {
     public func toDictionary() -> NSDictionary {
         return [
             "id": id,
-            "name": displayedName
+            "name": displayedName,
+            "email": email ?? ""
         ]
     }
 }

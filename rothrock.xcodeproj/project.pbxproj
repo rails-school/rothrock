@@ -51,6 +51,8 @@
 		A784106E1AEF1F96006709ED /* VenueSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784106D1AEF1F96006709ED /* VenueSerializer.swift */; };
 		A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78622291AEAA10C006B0F76 /* RLMSupport.swift */; };
 		A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786222D1AEAA56E006B0F76 /* Lesson.swift */; };
+		A78CD2A21B14D5350086EFF8 /* class_details.html in Resources */ = {isa = PBXBuildFile; fileRef = A78CD2A11B14D5350086EFF8 /* class_details.html */; };
+		A78CD2A41B14DBA50086EFF8 /* jquery.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A78CD2A31B14DBA50086EFF8 /* jquery.min.js */; };
 		A794DC1E1AF196BA00D8743F /* BoolSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */; };
 		A794DC211AF1A09800D8743F /* ILessonBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC201AF1A09800D8743F /* ILessonBusiness.swift */; };
 		A794DC231AF1A19600D8743F /* BaseBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC221AF1A19600D8743F /* BaseBusiness.swift */; };
@@ -84,6 +86,9 @@
 		A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */; };
 		A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */; };
 		A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */; };
+		A7E5CF7D1B15198F002C1458 /* ic_calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E5CF7B1B15198F002C1458 /* ic_calendar.png */; };
+		A7E5CF7E1B15198F002C1458 /* ic_map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E5CF7C1B15198F002C1458 /* ic_map_pin.png */; };
+		A7E5CF801B152981002C1458 /* md5.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A7E5CF7F1B152981002C1458 /* md5.min.js */; };
 		A7EDB7A41B097B4100244176 /* AccountSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EDB7A31B097B4100244176 /* AccountSettingsController.swift */; };
 		A7EDB7A61B097DAA00244176 /* NotificationSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EDB7A51B097DAA00244176 /* NotificationSettingsController.swift */; };
 		A7F59B491B091D2600F5848F /* LocalizedSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F59B481B091D2600F5848F /* LocalizedSegmentedControl.swift */; };
@@ -157,6 +162,8 @@
 		A78622271AEA9F69006B0F76 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		A78622291AEAA10C006B0F76 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		A786222D1AEAA56E006B0F76 /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lesson.swift; path = models/beans/Lesson.swift; sourceTree = "<group>"; };
+		A78CD2A11B14D5350086EFF8 /* class_details.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = class_details.html; path = views/html/class_details.html; sourceTree = "<group>"; };
+		A78CD2A31B14DBA50086EFF8 /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = jquery.min.js; path = views/bower_components/jquery/dist/jquery.min.js; sourceTree = "<group>"; };
 		A7916A891AEB6A5700E1CD4F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoolSerializer.swift; path = models/bll/serializers/BoolSerializer.swift; sourceTree = "<group>"; };
 		A794DC201AF1A09800D8743F /* ILessonBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ILessonBusiness.swift; path = models/bll/interfaces/ILessonBusiness.swift; sourceTree = "<group>"; };
@@ -191,6 +198,9 @@
 		A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ILessonDAO.swift; path = models/dao/interfaces/ILessonDAO.swift; sourceTree = "<group>"; };
 		A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPreferenceDAO.swift; path = models/dao/interfaces/IPreferenceDAO.swift; sourceTree = "<group>"; };
 		A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwoHourNotificationPreference.swift; path = models/dao/TwoHourNotificationPreference.swift; sourceTree = "<group>"; };
+		A7E5CF7B1B15198F002C1458 /* ic_calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_calendar.png; path = views/imgs/ic_calendar.png; sourceTree = "<group>"; };
+		A7E5CF7C1B15198F002C1458 /* ic_map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_map_pin.png; path = views/imgs/ic_map_pin.png; sourceTree = "<group>"; };
+		A7E5CF7F1B152981002C1458 /* md5.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = md5.min.js; path = "views/bower_components/blueimp-md5/js/md5.min.js"; sourceTree = "<group>"; };
 		A7EDB7A31B097B4100244176 /* AccountSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountSettingsController.swift; path = controllers/AccountSettingsController.swift; sourceTree = "<group>"; };
 		A7EDB7A51B097DAA00244176 /* NotificationSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationSettingsController.swift; path = controllers/NotificationSettingsController.swift; sourceTree = "<group>"; };
 		A7F571E81AEED9DD001084D3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
@@ -264,6 +274,7 @@
 		A73E628A1B13C85100CAAA8F /* html */ = {
 			isa = PBXGroup;
 			children = (
+				A78CD2A11B14D5350086EFF8 /* class_details.html */,
 				A73E62961B13C8EF00CAAA8F /* class_list.html */,
 			);
 			name = html;
@@ -272,6 +283,8 @@
 		A73E628B1B13C85500CAAA8F /* imgs */ = {
 			isa = PBXGroup;
 			children = (
+				A7E5CF7B1B15198F002C1458 /* ic_calendar.png */,
+				A7E5CF7C1B15198F002C1458 /* ic_map_pin.png */,
 				A79920A21B1404B000012641 /* ic_action_overflow.png */,
 			);
 			name = imgs;
@@ -280,6 +293,8 @@
 		A73E628C1B13C85B00CAAA8F /* js */ = {
 			isa = PBXGroup;
 			children = (
+				A7E5CF7F1B152981002C1458 /* md5.min.js */,
+				A78CD2A31B14DBA50086EFF8 /* jquery.min.js */,
 				A73E62941B13C8E500CAAA8F /* framework7.min.js */,
 				A73E62921B13C8DC00CAAA8F /* rothrock.js */,
 			);
@@ -618,10 +633,15 @@
 				A746A6B11AE9D6E800AF0FA5 /* LaunchScreen.xib in Resources */,
 				A73E62851B13BFF700CAAA8F /* caravel.js in Resources */,
 				A746A6AE1AE9D6E800AF0FA5 /* Images.xcassets in Resources */,
+				A7E5CF7D1B15198F002C1458 /* ic_calendar.png in Resources */,
 				A73E62911B13C8D100CAAA8F /* framework7.min.css in Resources */,
+				A78CD2A21B14D5350086EFF8 /* class_details.html in Resources */,
 				A73E62971B13C8EF00CAAA8F /* class_list.html in Resources */,
 				A73E628F1B13C8C400CAAA8F /* rothrock.css in Resources */,
+				A78CD2A41B14DBA50086EFF8 /* jquery.min.js in Resources */,
+				A7E5CF801B152981002C1458 /* md5.min.js in Resources */,
 				A73E62951B13C8E500CAAA8F /* framework7.min.js in Resources */,
+				A7E5CF7E1B15198F002C1458 /* ic_map_pin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

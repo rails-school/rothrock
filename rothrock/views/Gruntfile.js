@@ -13,10 +13,7 @@ module.exports = function (grunt) {
                     bare: true
                 },
                 files: {
-                    'js/rothrock.js': [
-                        'coffee/class_list.coffee',
-                        'coffee/main.coffee'
-                    ]
+                    'js/rothrock.js': 'coffee/*.coffee'
                 }
             }
         },
@@ -26,7 +23,7 @@ module.exports = function (grunt) {
                     sourcemap: 'none'
                 },
                 files: {
-                    'css/rothrock.css': 'sass/class_list.scss'
+                    'css/rothrock.css': 'sass/rothrock.scss'
                 }
             }
         },

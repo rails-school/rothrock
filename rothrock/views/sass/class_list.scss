@@ -1,12 +1,15 @@
 @import "base";
 
-.page-content {
+.class-list {
   background-color: $black;
 }
 
 .class-list-card {
-  padding: 10px;
-  margin: 15px
+  margin: 15px;
+
+  a {
+    padding: 10px;
+  }
 
   h1, h2 {
     font-weight: normal;

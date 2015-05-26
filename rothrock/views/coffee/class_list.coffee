@@ -1,9 +1,35 @@
-class ClassList
+class ClassList extends BaseController
     constructor: (app) ->
-        @app = app
+        super app
+        @listSelector = '.js-class-list'
 
-        Caravel.getDefault().register "DisplayClassList", (name, data) =>
-            template = Template7.compile($$('#class-list-template').html())
-            $$('.js-class-list').html(template({ tuples: data }))
-            #$$('.js-class-list li:first-child hr').css('display', 'visible')
-            Caravel.getDefault().post "ProgressDoneEvent"
+        $('.toolbar').hide()
+
+        @getBus().register "DisplayClassList", (name, data) =>
+            @_setContent(data)
+
+            $(@listSelector).on 'refresh', () =>
+                @bus.post "AskForRefreshingClassList"
+
+        @getBus().register "RefreshClassList", (name, data) =>
+            @_setContent(data)
+            @getApp.pullToRefreshDone()
+
+    onBack: () ->
+        $('.toolbar').hide()
+
+    _setContent: (data) ->
+        @fork()
+        $(@listSelector).find('li.card').each (i, e) =>
+            $(e).off('click')
+
+        @template = Template7.compile($('#class-list-template').html()) unless @template?
+        $(@listSelector).html(@template({ tuples: data }))
+
+        $(@listSelector).find('li.card').each (index, e) =>
+            $(e).on 'click', () =>
+                @getBus().post 'RequireClassDetails', $(e).data('slug')
+
+        @done()
+
+

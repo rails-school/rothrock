@@ -1,0 +1,106 @@
+@import "base";
+
+.class-details {
+  background-color: $black;
+  margin: 0;
+  padding: 0;
+
+  .content-block {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.class-details .class-details-header {
+  padding: 10px;
+
+  background-color: $black;
+
+  h1, p {
+    color: $white;
+  }
+
+  h1, h2 {
+    margin: 10px 5px;
+
+    font-weight: normal;
+  }
+
+  h1 {
+    font-size: $headline;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: $subhead;
+    color: $light_white;
+  }
+
+  p {
+    font-size: $body;
+    margin: 5px;
+  }
+
+  .row img {
+    width: 20px;
+    margin: 5px;
+  }
+
+  .row img, .row p {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .row > div:last-child {
+    text-align: right;
+  }
+}
+
+.class-details .class-details-teacher-wrapper {
+  padding: 10px;
+
+  text-align: center;
+
+  background-color: $super_soft_gray;
+
+  img, p {
+    display: inline-block;
+    vertical-align: middle;
+
+    margin: 5px;
+  }
+
+  img.gravatar {
+    width: 35px;
+
+    @include border-top-radius(50%);
+    @include border-right-radius(50%);
+    @include border-bottom-radius(50%);
+    @include border-left-radius(50%);
+  }
+
+  p {
+    color: $black;
+    font-size: $title;
+  }
+}
+
+.class-details .class-details-content {
+  padding: 10px;
+
+  background-color: white;
+
+  p {
+    font-size: $body;
+  }
+
+  .attendees {
+    text-align: center;
+    color: $gray;
+  }
+
+  .description {
+    text-align: justify;
+    color: $black;
+  }
+}
