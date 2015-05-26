@@ -59,6 +59,7 @@
 		A794DC301AF1A77900D8743F /* IUserBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC2F1AF1A77900D8743F /* IUserBusiness.swift */; };
 		A794DC321AF1A88E00D8743F /* IVenueBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC311AF1A88E00D8743F /* IVenueBusiness.swift */; };
 		A794DC341AF1A8F700D8743F /* LessonBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC331AF1A8F700D8743F /* LessonBusiness.swift */; };
+		A79920A31B1404B000012641 /* ic_action_overflow.png in Resources */ = {isa = PBXBuildFile; fileRef = A79920A21B1404B000012641 /* ic_action_overflow.png */; };
 		A7B63B561B091A850008EAFE /* LocalizedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B63B551B091A850008EAFE /* LocalizedTextField.swift */; };
 		A7B63B581B091BA80008EAFE /* LocalizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B63B571B091BA80008EAFE /* LocalizedButton.swift */; };
 		A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */; };
@@ -165,6 +166,7 @@
 		A794DC2F1AF1A77900D8743F /* IUserBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IUserBusiness.swift; path = models/bll/interfaces/IUserBusiness.swift; sourceTree = "<group>"; };
 		A794DC311AF1A88E00D8743F /* IVenueBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IVenueBusiness.swift; path = models/bll/interfaces/IVenueBusiness.swift; sourceTree = "<group>"; };
 		A794DC331AF1A8F700D8743F /* LessonBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LessonBusiness.swift; path = models/bll/LessonBusiness.swift; sourceTree = "<group>"; };
+		A79920A21B1404B000012641 /* ic_action_overflow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_action_overflow.png; path = views/imgs/ic_action_overflow.png; sourceTree = "<group>"; };
 		A7B63B551B091A850008EAFE /* LocalizedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizedTextField.swift; path = utils/LocalizedTextField.swift; sourceTree = "<group>"; };
 		A7B63B571B091BA80008EAFE /* LocalizedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizedButton.swift; path = utils/LocalizedButton.swift; sourceTree = "<group>"; };
 		A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayNotificationPreference.swift; path = models/dao/DayNotificationPreference.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 		A73E628B1B13C85500CAAA8F /* imgs */ = {
 			isa = PBXGroup;
 			children = (
+				A79920A21B1404B000012641 /* ic_action_overflow.png */,
 			);
 			name = imgs;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				A746A6AC1AE9D6E800AF0FA5 /* Main.storyboard in Resources */,
 				A7BD79301B05728F00303751 /* Localizable.strings in Resources */,
 				A73E62931B13C8DC00CAAA8F /* rothrock.js in Resources */,
+				A79920A31B1404B000012641 /* ic_action_overflow.png in Resources */,
 				A746A6B11AE9D6E800AF0FA5 /* LaunchScreen.xib in Resources */,
 				A73E62851B13BFF700CAAA8F /* caravel.js in Resources */,
 				A746A6AE1AE9D6E800AF0FA5 /* Images.xcassets in Resources */,
