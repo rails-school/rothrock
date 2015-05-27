@@ -1,6 +1,6 @@
 @import "base";
 
-.class-details {
+.page-content.class-details {
   background-color: $black;
   margin: 0;
   padding: 0;
@@ -11,7 +11,7 @@
   }
 }
 
-.class-details .class-details-header {
+.page-content.class-details .class-details-header {
   padding: 10px;
 
   background-color: $black;
@@ -56,7 +56,7 @@
   }
 }
 
-.class-details .class-details-teacher-wrapper {
+.page-content.class-details .class-details-teacher-wrapper {
   padding: 10px;
 
   text-align: center;
@@ -102,5 +102,15 @@
   .description {
     text-align: justify;
     color: $black;
+  }
+}
+
+.toolbar.class-details {
+  text-align: center;
+  background-color: $red;
+
+  a {
+    color: white;
+    font-size: $title;
   }
 }

@@ -63,49 +63,49 @@
   .navbar a.link {
     color: #fff; }
 
-.class-details {
+.page-content.class-details {
   background-color: #1c1c1c;
   margin: 0;
   padding: 0; }
-  .class-details .content-block {
+  .page-content.class-details .content-block {
     margin: 0;
     padding: 0; }
 
-.class-details .class-details-header {
+.page-content.class-details .class-details-header {
   padding: 10px;
   background-color: #1c1c1c; }
-  .class-details .class-details-header h1, .class-details .class-details-header p {
+  .page-content.class-details .class-details-header h1, .page-content.class-details .class-details-header p {
     color: #fff; }
-  .class-details .class-details-header h1, .class-details .class-details-header h2 {
+  .page-content.class-details .class-details-header h1, .page-content.class-details .class-details-header h2 {
     margin: 10px 5px;
     font-weight: normal; }
-  .class-details .class-details-header h1 {
+  .page-content.class-details .class-details-header h1 {
     font-size: 2em;
     text-align: center; }
-  .class-details .class-details-header h2 {
+  .page-content.class-details .class-details-header h2 {
     font-size: 1em;
     color: rgba(255, 255, 255, 0.5); }
-  .class-details .class-details-header p {
+  .page-content.class-details .class-details-header p {
     font-size: 0.8em;
     margin: 5px; }
-  .class-details .class-details-header .row img {
+  .page-content.class-details .class-details-header .row img {
     width: 20px;
     margin: 5px; }
-  .class-details .class-details-header .row img, .class-details .class-details-header .row p {
+  .page-content.class-details .class-details-header .row img, .page-content.class-details .class-details-header .row p {
     display: inline-block;
     vertical-align: middle; }
-  .class-details .class-details-header .row > div:last-child {
+  .page-content.class-details .class-details-header .row > div:last-child {
     text-align: right; }
 
-.class-details .class-details-teacher-wrapper {
+.page-content.class-details .class-details-teacher-wrapper {
   padding: 10px;
   text-align: center;
   background-color: #eee; }
-  .class-details .class-details-teacher-wrapper img, .class-details .class-details-teacher-wrapper p {
+  .page-content.class-details .class-details-teacher-wrapper img, .page-content.class-details .class-details-teacher-wrapper p {
     display: inline-block;
     vertical-align: middle;
     margin: 5px; }
-  .class-details .class-details-teacher-wrapper img.gravatar {
+  .page-content.class-details .class-details-teacher-wrapper img.gravatar {
     width: 35px;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
@@ -115,7 +115,7 @@
     border-bottom-right-radius: 50%;
     border-bottom-left-radius: 50%;
     border-top-left-radius: 50%; }
-  .class-details .class-details-teacher-wrapper p {
+  .page-content.class-details .class-details-teacher-wrapper p {
     color: #1c1c1c;
     font-size: 1.5em; }
 
@@ -130,3 +130,10 @@
   .class-details .class-details-content .description {
     text-align: justify;
     color: #1c1c1c; }
+
+.toolbar.class-details {
+  text-align: center;
+  background-color: #A7000A; }
+  .toolbar.class-details a {
+    color: white;
+    font-size: 1.5em; }
