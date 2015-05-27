@@ -9,7 +9,7 @@ target 'rothrock' do
   pod 'Alamofire'
   pod 'DateTools'
   pod 'SwiftEventBus', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
-  pod 'TSMessages'
+  pod 'SCLAlertView', :git => 'https://github.com/vikmeup/SCLAlertView-Swift.git', :tag => '0.3.2'
   pod 'SwiftSpinner'
 end
 

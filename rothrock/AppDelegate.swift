@@ -9,7 +9,7 @@
 import UIKit
 import SwiftEventBus
 import SwiftSpinner
-import TSMessages
+import SCLAlertView
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -78,15 +78,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Toaster events
         SwiftEventBus.onMainThread(self, name: ErrorEvent.NAME) { notif in
             var e = (notif.object) as! ErrorEvent
-            TSMessage.showNotificationWithTitle("Error", subtitle: e.message, type: TSMessageNotificationType.Error)
+            SCLAlertView().showError("Error", subTitle: e.message)
         }
+        
         SwiftEventBus.onMainThread(self, name: ConfirmationEvent.NAME) { notif in
             var e = (notif.object) as! ConfirmationEvent
-            TSMessage.showNotificationWithTitle("Confirmation", subtitle: e.message, type: TSMessageNotificationType.Success)
+            SCLAlertView().showError("Confirmation", subTitle: e.message)
         }
         SwiftEventBus.onMainThread(self, name: InformationEvent.NAME) { notif in
             var e = (notif.object) as! InformationEvent
-            TSMessage.showNotificationWithTitle("Information", subtitle: e.message, type: TSMessageNotificationType.Message)
+            SCLAlertView().showInfo("Info", subTitle: e.message)
         }
     }
 

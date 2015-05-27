@@ -12,6 +12,10 @@ import SwiftEventBus
 public class ClassListController: UIViewController {
     @IBOutlet weak var _webView: UIWebView!
     
+    private var _currentLessonId: Int?
+    private var _currentLessonSlug: String?
+    private var _isAttendingCurrentLesson: Bool?
+    
     private func _setClassListContent(callback: ([NSDictionary]?) -> Void) {
         BusinessFactory
             .provideLesson()
@@ -19,6 +23,10 @@ public class ClassListController: UIViewController {
                 callback,
                 failure: { self.publishError($0) }
         )
+    }
+    
+    private func _sendSetAttendance() {
+        Caravel.getDefault(_webView).post("SetAttendance", aBool: _isAttendingCurrentLesson!)
     }
     
     public func fork() {
@@ -57,6 +65,9 @@ public class ClassListController: UIViewController {
                     .getSchoolClassTuple(
                         slug,
                         success: { (schoolClass, teacher, venue) in
+                            self._currentLessonId = schoolClass!.lesson!.id
+                            self._currentLessonSlug = schoolClass!.lesson!.slug
+                            
                             bus.post(
                                 "DisplayClassDetails",
                                 aDictionary: [
@@ -65,11 +76,49 @@ public class ClassListController: UIViewController {
                                     "venue": venue!.toDictionary()
                                 ]
                             )
+                            
+                            BusinessFactory
+                                .provideUser()
+                                .isCurrentUserAttendingTo(
+                                    self._currentLessonSlug!,
+                                    isAttending: { isAttending in
+                                        bus.post("CanIToggleAttendance", aBool: true)
+                                        self._isAttendingCurrentLesson = isAttending
+                                        self._sendSetAttendance()
+                                    },
+                                    needToSignIn: {
+                                        bus.post("CanIToggleAttendance", aBool: false)
+                                    },
+                                    failure: { self.publishError($0) }
+                            )
                         },
                         failure: { self.publishError($0) }
                 )
             }
             
+            bus.register("UpdateAttendance") { name, data in
+                var newValue = data as! Bool
+                
+                BusinessFactory
+                    .provideUser()
+                    .toggleAttendance(
+                        self._currentLessonId!,
+                        isAttending: !self._isAttendingCurrentLesson!,
+                        success: {
+                            self._isAttendingCurrentLesson = !self._isAttendingCurrentLesson!
+                            self._sendSetAttendance()
+                            
+                            SwiftEventBus.post(ConfirmationEvent.NAME, sender: ConfirmationEvent(message: "saved_confirmation".localized))
+                        },
+                        failure: { self.publishError($0) }
+                        )
+            }
+            
+            bus.register("UnableToToggleAttendance") { name, data in
+                SwiftEventBus.post(ErrorEvent.NAME, sender: ErrorEvent(message: "error_not_signed_in".localized))
+            }
+            
+            // Init part
             self.fork()
             self._setClassListContent({ tuples in
                 bus.post("DisplayClassList", anArray: tuples!)

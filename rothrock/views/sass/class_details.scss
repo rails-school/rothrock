@@ -2,8 +2,6 @@
 
 .page-content.class-details {
   background-color: $black;
-  margin: 0;
-  padding: 0;
 
   .content-block {
     margin: 0;
@@ -106,7 +104,6 @@
 }
 
 .toolbar.class-details {
-  text-align: center;
   background-color: $red;
 
   a {

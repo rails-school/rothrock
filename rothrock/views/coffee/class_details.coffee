@@ -3,20 +3,40 @@ class ClassDetails extends BaseController
         super app
 
         @blockSelector = '.js-class-details'
+        @attendanceToggle = $('.js-toggle-attendance')
+
+        @attendanceToggle.on 'click', () =>
+            if @canIToggleAttendance
+                @getBus().post 'UpdateAttendance', @isAttending
+            else
+                @getBus().post 'UnableToToggleAttendance'
 
         @getBus().register "DisplayClassDetails", (name, data) =>
             @_setContent data
+
+        @getBus().register "CanIToggleAttendance", (name, data) =>
+            @canIToggleAttendance = data
+            @attendanceToggle.text 'RSVP!'
+            @attendanceToggle.addClass 'unsigned'
+
+        @getBus().register "SetAttendance", (name, data) =>
+            @isAttending = data
+            if @isAttending
+                @attendanceToggle.text 'unRSVP'
+                @attendanceToggle.addClass 'attending'
+            else
+                @attendanceToggle.text 'RSVP!'
+                @attendanceToggle.removeClass 'attending'
 
     _setContent: (data) ->
         @fork()
 
         $('.toolbar').show()
-        $('.toolbar-inner').html('<a href="#" class="link">RSVP!</a>')
 
         @template = Template7.compile($('#class-details-template').html()) unless @template?
         data.teacher.gravatar = "http://www.gravatar.com/avatar/#{md5(data.teacher.email)}"
 
-        attendees = data.schoolClass.attendees
+        attendees = data.schoolClass.students
         if attendees > 1
             attendees = "#{attendees} students will attend this class"
         else if attendees == 1

@@ -36,9 +36,38 @@ ClassDetails = (function(superClass) {
   function ClassDetails(app) {
     ClassDetails.__super__.constructor.call(this, app);
     this.blockSelector = '.js-class-details';
+    this.attendanceToggle = $('.js-toggle-attendance');
+    this.attendanceToggle.on('click', (function(_this) {
+      return function() {
+        if (_this.canIToggleAttendance) {
+          return _this.getBus().post('UpdateAttendance', _this.isAttending);
+        } else {
+          return _this.getBus().post('UnableToToggleAttendance');
+        }
+      };
+    })(this));
     this.getBus().register("DisplayClassDetails", (function(_this) {
       return function(name, data) {
         return _this._setContent(data);
+      };
+    })(this));
+    this.getBus().register("CanIToggleAttendance", (function(_this) {
+      return function(name, data) {
+        _this.canIToggleAttendance = data;
+        _this.attendanceToggle.text('RSVP!');
+        return _this.attendanceToggle.addClass('unsigned');
+      };
+    })(this));
+    this.getBus().register("SetAttendance", (function(_this) {
+      return function(name, data) {
+        _this.isAttending = data;
+        if (_this.isAttending) {
+          _this.attendanceToggle.text('unRSVP');
+          return _this.attendanceToggle.addClass('attending');
+        } else {
+          _this.attendanceToggle.text('RSVP!');
+          return _this.attendanceToggle.removeClass('attending');
+        }
       };
     })(this));
   }
@@ -47,12 +76,11 @@ ClassDetails = (function(superClass) {
     var attendees;
     this.fork();
     $('.toolbar').show();
-    $('.toolbar-inner').html('<a href="#" class="link">RSVP!</a>');
     if (this.template == null) {
       this.template = Template7.compile($('#class-details-template').html());
     }
     data.teacher.gravatar = "http://www.gravatar.com/avatar/" + (md5(data.teacher.email));
-    attendees = data.schoolClass.attendees;
+    attendees = data.schoolClass.students;
     if (attendees > 1) {
       attendees = attendees + " students will attend this class";
     } else if (attendees === 1) {
