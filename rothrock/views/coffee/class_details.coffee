@@ -15,6 +15,35 @@ class ClassDetails extends BaseController
         @getBus().register "DisplayClassDetails", (name, data) =>
             @_setContent data
 
+            # Set share features
+            $('.js-class-details-share').on 'click', () =>
+                @getApp().actions [
+                    {
+                        text: 'Text a friend'
+                        onClick: () =>
+                            @getBus().post "ClassDetailsText"
+                    },
+                    {
+                        text: 'Email a friend'
+                        onClick: () =>
+                            @getBus().post "ClassDetailsEmail"
+                    },
+                    {
+                        text: 'Share on Facebook'
+                        onClick: () =>
+                            @getBus().post "ClassDetailsFacebook"
+                    },
+                    {
+                        text: 'Share on Twitter'
+                        onClick: () =>
+                            @getBus().post "ClassDetailsTwitter"
+                    },
+                    {
+                        text: 'Cancel',
+                        color: 'red'
+                    }
+                ]
+
         @getBus().register "CanIToggleAttendance", (name, data) =>
             @canIToggleAttendance = data
             @attendanceToggle.text 'RSVP!'

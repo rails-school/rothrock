@@ -49,7 +49,35 @@ ClassDetails = (function(superClass) {
     })(this));
     this.getBus().register("DisplayClassDetails", (function(_this) {
       return function(name, data) {
-        return _this._setContent(data);
+        _this._setContent(data);
+        return $('.js-class-details-share').on('click', function() {
+          return _this.getApp().actions([
+            {
+              text: 'Text a friend',
+              onClick: function() {
+                return _this.getBus().post("ClassDetailsText");
+              }
+            }, {
+              text: 'Email a friend',
+              onClick: function() {
+                return _this.getBus().post("ClassDetailsEmail");
+              }
+            }, {
+              text: 'Share on Facebook',
+              onClick: function() {
+                return _this.getBus().post("ClassDetailsFacebook");
+              }
+            }, {
+              text: 'Share on Twitter',
+              onClick: function() {
+                return _this.getBus().post("ClassDetailsTwitter");
+              }
+            }, {
+              text: 'Cancel',
+              color: 'red'
+            }
+          ]);
+        });
       };
     })(this));
     this.getBus().register("CanIToggleAttendance", (function(_this) {

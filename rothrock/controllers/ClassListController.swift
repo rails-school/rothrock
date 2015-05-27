@@ -9,8 +9,9 @@
 import UIKit
 import SwiftEventBus
 import EventKit
+import MessageUI
 
-public class ClassListController: UIViewController {
+public class ClassListController: UIViewController, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var _webView: UIWebView!
     
     private var _currentLesson: Lesson?
@@ -28,6 +29,10 @@ public class ClassListController: UIViewController {
     
     private func _sendSetAttendance() {
         Caravel.getDefault(_webView).post("SetAttendance", aBool: _isAttendingCurrentLesson!)
+    }
+    
+    private func _getLessonURL() -> String {
+        return "api_endpoint".localized + "/l/\(_currentLesson!.slug)"
     }
     
     public func fork() {
@@ -148,6 +153,41 @@ public class ClassListController: UIViewController {
                 UIApplication.sharedApplication().openURL(NSURL(string: addressString)!)
             }
             
+            bus.register("ClassDetailsText") { name, data in
+                if MFMessageComposeViewController.canSendText() {
+                    var controller = MFMessageComposeViewController()
+                    var message = NSString(format: "class_share_text".localized, self._currentLesson!.title!)
+                    
+                    controller.body = message.substringToIndex(150) as String
+                    controller.recipients = []
+                    controller.messageComposeDelegate = self
+                    
+                    self.presentViewController(controller, animated: true, completion: nil)
+                }
+            }
+            
+            bus.register("ClassDetailsEmail") { name, data in
+                if MFMailComposeViewController.canSendMail() {
+                    var controller = MFMailComposeViewController()
+                    
+                    controller.setSubject("app_name".localized)
+                    controller.setMessageBody(NSString(format: "class_share_text".localized + "\n\n %@", self._currentLesson!.title!, self._getLessonURL()) as String, isHTML: false)
+                    controller.mailComposeDelegate = self
+                    
+                    self.presentViewController(controller, animated: true, completion: nil)
+                }
+            }
+            
+            bus.register("ClassDetailsFacebook") { name, data in
+                let addressString = "https://www.facebook.com/sharer/sharer.php?u=\(self._getLessonURL())";
+                UIApplication.sharedApplication().openURL(NSURL(string: addressString)!)
+            }
+            
+            bus.register("ClassDetailsTwitter") { name, data in
+                let addressString = "https://twitter.com/intent/tweet?text=\(self._currentLesson!.title!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)%20\(self._getLessonURL())";
+                UIApplication.sharedApplication().openURL(NSURL(string: addressString)!)
+            }
+            
             // Init part
             self.fork()
             self._setClassListContent({ tuples in
@@ -167,6 +207,14 @@ public class ClassListController: UIViewController {
     public func publishError(message: String) {
         SwiftEventBus.post(ErrorEvent.NAME, sender: ErrorEvent(message: message))
         done()
+    }
+    
+    public func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    public func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
