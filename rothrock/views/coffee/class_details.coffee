@@ -4,6 +4,7 @@ class ClassDetails extends BaseController
 
         @blockSelector = '.js-class-details'
         @attendanceToggle = $('.js-toggle-attendance')
+        @toolbar = $('.toolbar')
 
         @attendanceToggle.on 'click', () =>
             if @canIToggleAttendance
@@ -17,21 +18,22 @@ class ClassDetails extends BaseController
         @getBus().register "CanIToggleAttendance", (name, data) =>
             @canIToggleAttendance = data
             @attendanceToggle.text 'RSVP!'
-            @attendanceToggle.addClass 'unsigned'
+            @toolbar.addClass 'unsigned'
 
         @getBus().register "SetAttendance", (name, data) =>
             @isAttending = data
+            @toolbar.removeClass 'unsigned'
             if @isAttending
                 @attendanceToggle.text 'unRSVP'
-                @attendanceToggle.addClass 'attending'
+                @toolbar.addClass 'attending'
             else
                 @attendanceToggle.text 'RSVP!'
-                @attendanceToggle.removeClass 'attending'
+                @toolbar.removeClass 'attending'
 
     _setContent: (data) ->
         @fork()
 
-        $('.toolbar').show()
+        @toolbar.show()
 
         @template = Template7.compile($('#class-details-template').html()) unless @template?
         data.teacher.gravatar = "http://www.gravatar.com/avatar/#{md5(data.teacher.email)}"

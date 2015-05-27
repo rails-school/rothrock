@@ -78,16 +78,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Toaster events
         SwiftEventBus.onMainThread(self, name: ErrorEvent.NAME) { notif in
             var e = (notif.object) as! ErrorEvent
-            SCLAlertView().showError("Error", subTitle: e.message)
+            SCLAlertView().showError("Error", subTitle: e.message, closeButtonTitle: "Ok", duration: 3)
         }
         
         SwiftEventBus.onMainThread(self, name: ConfirmationEvent.NAME) { notif in
             var e = (notif.object) as! ConfirmationEvent
-            SCLAlertView().showError("Confirmation", subTitle: e.message)
+            SCLAlertView().showError("Confirmation", subTitle: e.message, closeButtonTitle: "Ok", duration: 3)
         }
         SwiftEventBus.onMainThread(self, name: InformationEvent.NAME) { notif in
             var e = (notif.object) as! InformationEvent
-            SCLAlertView().showInfo("Info", subTitle: e.message)
+            SCLAlertView().showError("Information", subTitle: e.message, closeButtonTitle: "Ok", duration: 3)
         }
     }
 

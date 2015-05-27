@@ -131,6 +131,10 @@
 
 .toolbar.class-details {
   background-color: #A7000A; }
+  .toolbar.class-details.unsigned {
+    background-color: #7A7A7A; }
+  .toolbar.class-details.attending {
+    background-color: #68B744; }
   .toolbar.class-details a {
     color: white;
     font-size: 1.5em; }

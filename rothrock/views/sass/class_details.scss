@@ -106,6 +106,14 @@
 .toolbar.class-details {
   background-color: $red;
 
+  &.unsigned {
+    background-color: $gray;
+  }
+
+  &.attending {
+    background-color: $green;
+  }
+
   a {
     color: white;
     font-size: $title;

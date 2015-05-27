@@ -37,6 +37,7 @@ ClassDetails = (function(superClass) {
     ClassDetails.__super__.constructor.call(this, app);
     this.blockSelector = '.js-class-details';
     this.attendanceToggle = $('.js-toggle-attendance');
+    this.toolbar = $('.toolbar');
     this.attendanceToggle.on('click', (function(_this) {
       return function() {
         if (_this.canIToggleAttendance) {
@@ -55,18 +56,19 @@ ClassDetails = (function(superClass) {
       return function(name, data) {
         _this.canIToggleAttendance = data;
         _this.attendanceToggle.text('RSVP!');
-        return _this.attendanceToggle.addClass('unsigned');
+        return _this.toolbar.addClass('unsigned');
       };
     })(this));
     this.getBus().register("SetAttendance", (function(_this) {
       return function(name, data) {
         _this.isAttending = data;
+        _this.toolbar.removeClass('unsigned');
         if (_this.isAttending) {
           _this.attendanceToggle.text('unRSVP');
-          return _this.attendanceToggle.addClass('attending');
+          return _this.toolbar.addClass('attending');
         } else {
           _this.attendanceToggle.text('RSVP!');
-          return _this.attendanceToggle.removeClass('attending');
+          return _this.toolbar.removeClass('attending');
         }
       };
     })(this));
@@ -75,7 +77,7 @@ ClassDetails = (function(superClass) {
   ClassDetails.prototype._setContent = function(data) {
     var attendees;
     this.fork();
-    $('.toolbar').show();
+    this.toolbar.show();
     if (this.template == null) {
       this.template = Template7.compile($('#class-details-template').html());
     }

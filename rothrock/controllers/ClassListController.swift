@@ -115,7 +115,7 @@ public class ClassListController: UIViewController {
             }
             
             bus.register("UnableToToggleAttendance") { name, data in
-                SwiftEventBus.post(ErrorEvent.NAME, sender: ErrorEvent(message: "error_not_signed_in".localized))
+                SwiftEventBus.post(InformationEvent.NAME, sender: InformationEvent(message: "error_not_signed_in".localized))
             }
             
             // Init part
