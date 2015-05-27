@@ -99,6 +99,11 @@ ClassDetails = (function(superClass) {
         return _this.getBus().post("RequestClassDetailsMap");
       };
     })(this));
+    $(this.blockSelector).find('.js-class-details-calendar').on('click', (function(_this) {
+      return function() {
+        return _this.getBus().post("RequestClassDetailsCalendar");
+      };
+    })(this));
     return this.done();
   };
 

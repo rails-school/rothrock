@@ -83,11 +83,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         SwiftEventBus.onMainThread(self, name: ConfirmationEvent.NAME) { notif in
             var e = (notif.object) as! ConfirmationEvent
-            SCLAlertView().showError("Confirmation", subTitle: e.message, closeButtonTitle: "Ok", duration: 3)
+            SCLAlertView().showSuccess("Confirmation", subTitle: e.message, closeButtonTitle: "Ok", duration: 3)
         }
         SwiftEventBus.onMainThread(self, name: InformationEvent.NAME) { notif in
             var e = (notif.object) as! InformationEvent
-            SCLAlertView().showError("Information", subTitle: e.message, closeButtonTitle: "Ok", duration: 3)
+            SCLAlertView().showInfo("Information", subTitle: e.message, closeButtonTitle: "Ok", duration: 3)
         }
     }
 

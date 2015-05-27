@@ -17,6 +17,7 @@
 "processing" = "Processing...";
 "updated_preference" = "Updated!";
 "saved_confirmation" = "Saved!";
+"added_to_calendar" = "Added to calendar!";
 
 "attend_class" = "RSVP!";
 "remove_attendance" = "unRSVP";

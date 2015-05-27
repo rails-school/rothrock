@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftEventBus
+import EventKit
 
 public class ClassListController: UIViewController {
     @IBOutlet weak var _webView: UIWebView!
@@ -116,6 +117,30 @@ public class ClassListController: UIViewController {
             
             bus.register("UnableToToggleAttendance") { name, data in
                 SwiftEventBus.post(InformationEvent.NAME, sender: InformationEvent(message: "error_not_signed_in".localized))
+            }
+            
+            bus.register("RequestClassDetailsCalendar") { name, data in
+                var eventStore = EKEventStore()
+                
+                eventStore.requestAccessToEntityType(EKEntityTypeEvent) { granted, error in
+                    if !granted {
+                        return
+                    }
+                    
+                    dispatch_async(dispatch_get_main_queue()) {
+                        var event = EKEvent(eventStore: eventStore)
+                        event.title = self._currentLesson!.title
+                        event.startDate = NSDate.fromString(self._currentLesson!.startTime!)!
+                        event.endDate = NSDate.fromString(self._currentLesson!.endTime!)!
+                        event.notes = self._currentLesson!.summary!
+                        event.location = self._currentVenue!.name!
+                        event.calendar = eventStore.defaultCalendarForNewEvents
+                        
+                        eventStore.saveEvent(event, span: EKSpanThisEvent, error: NSErrorPointer())
+                        
+                        SwiftEventBus.post(ConfirmationEvent.NAME, sender: ConfirmationEvent(message: "added_to_calendar".localized))
+                    }
+                }
             }
             
             bus.register("RequestClassDetailsMap") { name, data in

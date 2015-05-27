@@ -52,4 +52,7 @@ class ClassDetails extends BaseController
         $(@blockSelector).find('.js-class-details-map').on 'click', () =>
             @getBus().post "RequestClassDetailsMap"
 
+        $(@blockSelector).find('.js-class-details-calendar').on 'click', () =>
+            @getBus().post "RequestClassDetailsCalendar"
+
         @done()
