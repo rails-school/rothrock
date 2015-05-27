@@ -49,4 +49,7 @@ class ClassDetails extends BaseController
         data.schoolClass.attendees = attendees
         $(@blockSelector).html(@template({ data: data }))
 
+        $(@blockSelector).find('.js-class-details-map').on 'click', () =>
+            @getBus().post "RequestClassDetailsMap"
+
         @done()

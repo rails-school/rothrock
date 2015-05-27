@@ -94,6 +94,11 @@ ClassDetails = (function(superClass) {
     $(this.blockSelector).html(this.template({
       data: data
     }));
+    $(this.blockSelector).find('.js-class-details-map').on('click', (function(_this) {
+      return function() {
+        return _this.getBus().post("RequestClassDetailsMap");
+      };
+    })(this));
     return this.done();
   };
 

@@ -12,8 +12,8 @@ import SwiftEventBus
 public class ClassListController: UIViewController {
     @IBOutlet weak var _webView: UIWebView!
     
-    private var _currentLessonId: Int?
-    private var _currentLessonSlug: String?
+    private var _currentLesson: Lesson?
+    private var _currentVenue: Venue?
     private var _isAttendingCurrentLesson: Bool?
     
     private func _setClassListContent(callback: ([NSDictionary]?) -> Void) {
@@ -65,8 +65,8 @@ public class ClassListController: UIViewController {
                     .getSchoolClassTuple(
                         slug,
                         success: { (schoolClass, teacher, venue) in
-                            self._currentLessonId = schoolClass!.lesson!.id
-                            self._currentLessonSlug = schoolClass!.lesson!.slug
+                            self._currentLesson = schoolClass!.lesson
+                            self._currentVenue = venue
                             
                             bus.post(
                                 "DisplayClassDetails",
@@ -80,7 +80,7 @@ public class ClassListController: UIViewController {
                             BusinessFactory
                                 .provideUser()
                                 .isCurrentUserAttendingTo(
-                                    self._currentLessonSlug!,
+                                    self._currentLesson!.slug,
                                     isAttending: { isAttending in
                                         bus.post("CanIToggleAttendance", aBool: true)
                                         self._isAttendingCurrentLesson = isAttending
@@ -102,7 +102,7 @@ public class ClassListController: UIViewController {
                 BusinessFactory
                     .provideUser()
                     .toggleAttendance(
-                        self._currentLessonId!,
+                        self._currentLesson!.id,
                         isAttending: !self._isAttendingCurrentLesson!,
                         success: {
                             self._isAttendingCurrentLesson = !self._isAttendingCurrentLesson!
@@ -116,6 +116,11 @@ public class ClassListController: UIViewController {
             
             bus.register("UnableToToggleAttendance") { name, data in
                 SwiftEventBus.post(InformationEvent.NAME, sender: InformationEvent(message: "error_not_signed_in".localized))
+            }
+            
+            bus.register("RequestClassDetailsMap") { name, data in
+                let addressString = "http://maps.apple.com/?q=\(self._currentVenue!.latitude),\(self._currentVenue!.longitude)";
+                UIApplication.sharedApplication().openURL(NSURL(string: addressString)!)
             }
             
             // Init part
