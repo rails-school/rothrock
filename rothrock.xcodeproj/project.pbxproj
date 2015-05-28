@@ -22,6 +22,7 @@
 		A73E62971B13C8EF00CAAA8F /* class_list.html in Resources */ = {isa = PBXBuildFile; fileRef = A73E62961B13C8EF00CAAA8F /* class_list.html */; };
 		A740521C1AEFFC88003ABBE3 /* RemoteCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A740521B1AEFFC88003ABBE3 /* RemoteCallback.swift */; };
 		A740521E1AF001AF003ABBE3 /* ArraySerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A740521D1AF001AF003ABBE3 /* ArraySerializer.swift */; };
+		A741CFFB1B166895001C9272 /* settings.html in Resources */ = {isa = PBXBuildFile; fileRef = A741CFFA1B166895001C9272 /* settings.html */; };
 		A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */; };
 		A746A6A91AE9D6E800AF0FA5 /* ClassListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A6A81AE9D6E800AF0FA5 /* ClassListController.swift */; };
 		A746A6AC1AE9D6E800AF0FA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A746A6AA1AE9D6E800AF0FA5 /* Main.storyboard */; };
@@ -126,6 +127,7 @@
 		A73E62961B13C8EF00CAAA8F /* class_list.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = class_list.html; path = views/html/class_list.html; sourceTree = "<group>"; };
 		A740521B1AEFFC88003ABBE3 /* RemoteCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteCallback.swift; path = models/bll/remote/RemoteCallback.swift; sourceTree = "<group>"; };
 		A740521D1AF001AF003ABBE3 /* ArraySerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArraySerializer.swift; path = models/bll/serializers/ArraySerializer.swift; sourceTree = "<group>"; };
+		A741CFFA1B166895001C9272 /* settings.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = settings.html; path = views/html/settings.html; sourceTree = "<group>"; };
 		A746A6A11AE9D6E800AF0FA5 /* rothrock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rothrock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A746A6A51AE9D6E800AF0FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 		A73E628A1B13C85100CAAA8F /* html */ = {
 			isa = PBXGroup;
 			children = (
+				A741CFFA1B166895001C9272 /* settings.html */,
 				A78CD2A11B14D5350086EFF8 /* class_details.html */,
 				A73E62961B13C8EF00CAAA8F /* class_list.html */,
 			);
@@ -639,6 +642,7 @@
 				A73E62971B13C8EF00CAAA8F /* class_list.html in Resources */,
 				A73E628F1B13C8C400CAAA8F /* rothrock.css in Resources */,
 				A78CD2A41B14DBA50086EFF8 /* jquery.min.js in Resources */,
+				A741CFFB1B166895001C9272 /* settings.html in Resources */,
 				A7E5CF801B152981002C1458 /* md5.min.js in Resources */,
 				A73E62951B13C8E500CAAA8F /* framework7.min.js in Resources */,
 				A7E5CF7E1B15198F002C1458 /* ic_map_pin.png in Resources */,
