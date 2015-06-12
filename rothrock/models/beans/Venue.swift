@@ -24,4 +24,13 @@ public class Venue: RLMObject {
     public override class func primaryKey() -> String {
         return "id"
     }
+    
+    public func toDictionary() -> NSDictionary {
+        return [
+            "id": id,
+            "latitude": latitude,
+            "longitude": longitude,
+            "name": name ?? ""
+        ]
+    }
 }

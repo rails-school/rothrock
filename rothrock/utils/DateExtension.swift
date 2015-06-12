@@ -22,17 +22,13 @@ extension NSDate {
     }
     
     public func userFriendly() -> String {
-        if self.isLaterThan(NSDate()) {
-            var minutes = "\(self.minute())"
-            
-            if self.minute() < 10 {
-                minutes = "0" + minutes
-            }
-            
-            return "\(self.month())/\(self.day())/\(self.year()) - \(self.hour()):\(minutes)"
-        } else {
-            return self.timeAgoSinceNow()
+        var minutes = "\(self.minute())"
+        
+        if self.minute() < 10 {
+            minutes = "0" + minutes
         }
+        
+        return "\(self.month())/\(self.day())/\(self.year()) - \(self.hour()):\(minutes)"
     }
     
     public class func userFriendly(value: String) -> String {

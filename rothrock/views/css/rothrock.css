@@ -1,0 +1,140 @@
+.navbar-icon {
+  max-width: 80%;
+  max-height: 80%;
+  padding: 5px; }
+
+.statusbar-overlay {
+  background-color: #A7000A; }
+
+.navbar {
+  background-color: #A7000A; }
+  .navbar a.link {
+    color: #fff; }
+
+.class-list {
+  background-color: #1c1c1c; }
+
+.class-list-card {
+  margin: 15px; }
+  .class-list-card a {
+    padding: 10px; }
+  .class-list-card h1, .class-list-card h2 {
+    font-weight: normal; }
+  .class-list-card h1, .class-list-card h2, .class-list-card p {
+    margin: 5px; }
+  .class-list-card h1 {
+    font-size: 1.5em;
+    color: #1c1c1c; }
+  .class-list-card h2, .class-list-card p {
+    color: #7A7A7A; }
+  .class-list-card h2 {
+    font-size: 1em; }
+  .class-list-card p {
+    font-size: 0.8em; }
+  .class-list-card .class-list-card-footer {
+    background-color: #eee; }
+    .class-list-card .class-list-card-footer p {
+      display: inline-block;
+      width: 48%;
+      padding: 5px;
+      margin: 0;
+      box-sizing: border-box;
+      color: #7A7A7A; }
+      .class-list-card .class-list-card-footer p:last-child {
+        text-align: right; }
+
+.class-list hr {
+  margin: 20px;
+  border: 1px solid #7A7A7A;
+  display: none; }
+  .class-list hr.visible {
+    display: block; }
+
+.navbar-icon {
+  max-width: 80%;
+  max-height: 80%;
+  padding: 5px; }
+
+.statusbar-overlay {
+  background-color: #A7000A; }
+
+.navbar {
+  background-color: #A7000A; }
+  .navbar a.link {
+    color: #fff; }
+
+.page-content.class-details {
+  background-color: #1c1c1c; }
+  .page-content.class-details .content-block {
+    margin: 0;
+    padding: 0; }
+
+.page-content.class-details .class-details-header {
+  padding: 10px;
+  background-color: #1c1c1c; }
+  .page-content.class-details .class-details-header h1, .page-content.class-details .class-details-header p {
+    color: #fff; }
+  .page-content.class-details .class-details-header h1, .page-content.class-details .class-details-header h2 {
+    margin: 10px 5px;
+    font-weight: normal; }
+  .page-content.class-details .class-details-header h1 {
+    font-size: 2em;
+    text-align: center; }
+  .page-content.class-details .class-details-header h2 {
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.5); }
+  .page-content.class-details .class-details-header p {
+    font-size: 0.8em;
+    margin: 5px; }
+  .page-content.class-details .class-details-header .row img {
+    width: 20px;
+    margin: 5px; }
+  .page-content.class-details .class-details-header .row img, .page-content.class-details .class-details-header .row p {
+    display: inline-block;
+    vertical-align: middle; }
+  .page-content.class-details .class-details-header .row > div:last-child {
+    text-align: right; }
+
+.page-content.class-details .class-details-teacher-wrapper {
+  padding: 10px;
+  text-align: center;
+  background-color: #eee; }
+  .page-content.class-details .class-details-teacher-wrapper img, .page-content.class-details .class-details-teacher-wrapper p {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px; }
+  .page-content.class-details .class-details-teacher-wrapper img.gravatar {
+    width: 35px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%; }
+  .page-content.class-details .class-details-teacher-wrapper p {
+    color: #1c1c1c;
+    font-size: 1.5em; }
+
+.class-details .class-details-content {
+  padding: 10px;
+  background-color: white; }
+  .class-details .class-details-content p {
+    font-size: 0.8em; }
+  .class-details .class-details-content .attendees {
+    text-align: center;
+    color: #7A7A7A; }
+  .class-details .class-details-content .description {
+    text-align: justify;
+    color: #1c1c1c; }
+
+.toolbar.class-details {
+  background-color: #A7000A; }
+  .toolbar.class-details.unsigned {
+    background-color: #7A7A7A; }
+  .toolbar.class-details.attending {
+    background-color: #68B744; }
+  .toolbar.class-details a {
+    color: white;
+    font-size: 1.5em; }

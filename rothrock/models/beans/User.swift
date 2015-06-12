@@ -36,4 +36,12 @@ public class User: RLMObject {
             return n
         }
     }
+    
+    public func toDictionary() -> NSDictionary {
+        return [
+            "id": id,
+            "name": displayedName,
+            "email": email ?? ""
+        ]
+    }
 }

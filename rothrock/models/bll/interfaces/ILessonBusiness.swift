@@ -15,6 +15,8 @@ public protocol ILessonBusiness {
     
     func getTuple(lessongSlug: String, success: (Lesson?, User?, Venue?) -> Void, failure: (String) -> Void)
     
+    func sortFutureTuplesByDate(success: ([NSDictionary]?) -> Void, failure: (String) -> Void)
+    
     func getSchoolClassTuple(lessonSlug: String, success: (SchoolClass?, User?, Venue?) -> Void, failure: (String) -> Void)
     
     func getUpcoming(success: (Lesson?) -> Void)

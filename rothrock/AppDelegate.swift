@@ -9,7 +9,7 @@
 import UIKit
 import SwiftEventBus
 import SwiftSpinner
-import JLToast
+import SCLAlertView
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -78,15 +78,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Toaster events
         SwiftEventBus.onMainThread(self, name: ErrorEvent.NAME) { notif in
             var e = (notif.object) as! ErrorEvent
-            JLToast.makeText(e.message).show()
+            SCLAlertView().showError("Error", subTitle: e.message, closeButtonTitle: "Ok", duration: 3)
         }
+        
         SwiftEventBus.onMainThread(self, name: ConfirmationEvent.NAME) { notif in
             var e = (notif.object) as! ConfirmationEvent
-            JLToast.makeText(e.message).show()
+            SCLAlertView().showSuccess("Confirmation", subTitle: e.message, closeButtonTitle: "Ok", duration: 3)
         }
         SwiftEventBus.onMainThread(self, name: InformationEvent.NAME) { notif in
             var e = (notif.object) as! InformationEvent
-            JLToast.makeText(e.message).show()
+            SCLAlertView().showInfo("Information", subTitle: e.message, closeButtonTitle: "Ok", duration: 3)
         }
     }
 

@@ -1,0 +1,46 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">Back</a>
+    </div>
+    <div class="right">
+      <a href="#" class="link js-class-details-share">Share</a>
+    </div>
+  </div>
+</div>
+
+<div class="pages">
+  <div data-page="class-details" class="page">
+    <div class="page-content class-details">
+      <div class="content-block js-class-details">
+        <script id="class-details-template" type="text/template7">
+          {{#with data}}
+          <div class="class-details-header">
+            <h1>{{schoolClass.lesson.title}}</h1>
+            <h2>{{schoolClass.lesson.summary}}</h2>
+
+            <div class="row no-gutter">
+              <div class="col-50 js-class-details-calendar">
+                <img src="ic_calendar.png" />
+                <p>{{schoolClass.lesson.startTime}}</p>
+              </div>
+              <div class="col-50 js-class-details-map">
+                <img src="ic_map_pin.png" />
+                <p>{{venue.name}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="class-details-teacher-wrapper">
+            <img class="gravatar" src="{{teacher.gravatar}}" />
+            <p>{{teacher.name}}</p>
+          </div>
+          <div class="class-details-content">
+            <p class="attendees">{{schoolClass.attendees}}</p>
+            <p class="description">{{schoolClass.lesson.lessonDescription}}</p>
+          </div>
+          {{/with}}
+        </script>
+      </div>
+    </div>
+  </div>
+</div>

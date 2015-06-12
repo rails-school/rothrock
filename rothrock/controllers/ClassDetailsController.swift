@@ -10,65 +10,100 @@ import Foundation
 import UIKit
 import SwiftEventBus
 
-public class ClassDetailsController: BaseController, UITableViewDelegate {
+public class ClassDetailsController: UIViewController {
     
-    @IBOutlet weak var _headline: UILabel!
-    @IBOutlet weak var _digest: UILabel!
-    
-    private var _date: UITableViewCell?
-    private var _location: UITableViewCell?
-    private var _teacher: UITableViewCell?
-    private var _attendees: UITableViewCell?
-    private var _description: UITableViewCell?
-    private var _attendanceToggle: UITableViewCell?
-    
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        SwiftEventBus.onMainThread(self, name: ClassDetailsInitEvent.NAME) { notif in
-            var e = notif.object as! ClassDetailsInitEvent
-            
-            BusinessFactory
-                .provideLesson()
-                .getSchoolClassTuple(
-                    e.lessonSlug,
-                    success: { (schoolClass, teacher, venue) in
-                        self._headline.text = schoolClass!.lesson!.title
-                        self._digest.text = schoolClass!.lesson!.summary
-                    },
-                    failure: { self.publishError($0) }
-                )
-        }
-    }
-    
-    public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier != nil && segue.identifier! == "Embed" {
-            var controller = segue.destinationViewController as! UITableViewController
-            var tableView = controller.view as! UITableView
-            
-            tableView.delegate = self
-        }
-    }
-    
-    public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 {
-            switch indexPath.row {
-            case 0:
-                _date = cell
-            case 1:
-                _location = cell
-            default:
-                _teacher = cell
-            }
-        } else if indexPath.section == 1 {
-            switch indexPath.row {
-            case 0:
-                _attendees = cell
-            default:
-                _description = cell
-            }
-        } else {
-            _attendanceToggle = cell
-        }
-    }
 }
+//public class ClassDetailsController: BaseController {
+//    
+//    @IBOutlet weak var _header: UIView!
+//    @IBOutlet weak var _headline: UILabel!
+//    @IBOutlet weak var _digest: UILabel!
+//    @IBOutlet weak var _dateIcon: UIImageView!
+//    @IBOutlet weak var _date: UILabel!
+//    @IBOutlet weak var _locationIcon: UIImageView!
+//    @IBOutlet weak var _location: UILabel!
+//    
+//    private func _layout() {
+//        _header.snp_remakeConstraints { make in
+//            make.top.equalTo(self._header.superview!)
+//            make.left.equalTo(self._header.superview!)
+//            make.right.equalTo(self._header.superview!)
+//            
+//            make.width.equalTo(self._header.superview!.superview!)
+//        }
+//        
+//        _headline.snp_remakeConstraints { make in
+//            make.top.equalTo(self._headline.superview!).offset(8)
+//            make.left.equalTo(self._headline.superview!).offset(8)
+//            make.right.equalTo(self._headline.superview!).offset(8)
+//            
+//            make.width.equalTo(self._headline.superview!)
+//        }
+//        
+//        _digest.snp_remakeConstraints { make in
+//            make.top.equalTo(self._headline.snp_bottom).offset(8)
+//            make.left.equalTo(self._digest.superview!).offset(8)
+//            make.right.equalTo(self._digest.superview!).offset(8)
+//            
+//            make.width.equalTo(self._digest.superview!)
+//            //make.height.greaterThanOrEqualTo(20)
+//        }
+//        
+//        _dateIcon.snp_remakeConstraints { make in
+//            make.top.equalTo(self._digest.snp_bottom).offset(8)
+//            make.left.equalTo(self._dateIcon.superview!).offset(8 * 2)
+//            
+//            make.width.equalTo(35)
+//            make.height.equalTo(35)
+//        }
+//        
+//        _date.snp_remakeConstraints { make in
+//            make.top.equalTo(self._digest.snp_bottom).offset(8)
+//            make.left.equalTo(self._dateIcon).offset(8)
+//            
+//            make.width.lessThanOrEqualTo(100)
+//            //make.width.lessThanOrEqualTo(self._date.superview!.snp_width).offset(CGSizeMake(-(50 * 2 - 8 * 2 * 2), 0))
+//        }
+//        
+//        _location.snp_remakeConstraints { make in
+//            make.top.equalTo(self._digest.snp_bottom).offset(8)
+//            make.right.equalTo(self._location.superview!).offset(8 * 2)
+//            
+//            make.width.equalTo(self._date)
+//        }
+//        
+//        _locationIcon.snp_remakeConstraints { make in
+//            make.top.equalTo(self._digest.snp_bottom).offset(8)
+//            make.right.equalTo(self._location).offset(8)
+//            
+//            make.width.equalTo(35)
+//            make.height.equalTo(35)
+//        }
+//    }
+//    
+//    public override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        SwiftEventBus.post(ProgressForkEvent.NAME)
+//        SwiftEventBus.onMainThread(self, name: ClassDetailsInitEvent.NAME) { notif in
+//            var e = notif.object as! ClassDetailsInitEvent
+//            
+//            BusinessFactory
+//                .provideLesson()
+//                .getSchoolClassTuple(
+//                    e.lessonSlug,
+//                    success: { (schoolClass, teacher, venue) in
+//                        self._headline.text = schoolClass!.lesson!.title
+//                        self._digest.text = schoolClass!.lesson!.summary
+//                        
+//                        self._layout()
+//                        
+//                        SwiftEventBus.post(ProgressDoneEvent.NAME)
+//                    },
+//                    failure: {
+//                        self.publishError($0)
+//                    }
+//                )
+//        }
+//    }
+//}

@@ -17,12 +17,15 @@
 "processing" = "Processing...";
 "updated_preference" = "Updated!";
 "saved_confirmation" = "Saved!";
+"added_to_calendar" = "Added to calendar!";
 
 "attend_class" = "RSVP!";
 "remove_attendance" = "unRSVP";
 
 "reminder_two_hours" = "In two hours";
 "reminder_next_day" = "Tomorrow";
+
+"class_share_text" = "Hey, I am going to that class: %@. Join me!";
 
 "settings_account_label" = "Account";
 "settings_email_placeholder" = "Email";

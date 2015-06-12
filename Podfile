@@ -9,8 +9,9 @@ target 'rothrock' do
   pod 'Alamofire'
   pod 'DateTools'
   pod 'SwiftEventBus', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
-  pod 'JLToast'
+  pod 'SCLAlertView', :git => 'https://github.com/vikmeup/SCLAlertView-Swift.git', :tag => '0.3.2'
   pod 'SwiftSpinner'
+  pod 'Caravel'
 end
 
 target 'rothrockTests', :exclusive => true do
