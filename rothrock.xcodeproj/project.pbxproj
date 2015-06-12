@@ -10,11 +10,6 @@
 		18A0992207485A232790F9D8 /* Pods_rothrock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5575745422AE9B1FB00FA044 /* Pods_rothrock.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A71A7CC51AF00E760094019E /* StringSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A7CC41AF00E760094019E /* StringSerializer.swift */; };
 		A71A7CC71AF00F440094019E /* SerializerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A7CC61AF00F440094019E /* SerializerFactory.swift */; };
-		A73E62851B13BFF700CAAA8F /* caravel.js in Resources */ = {isa = PBXBuildFile; fileRef = A73E62801B13BFF700CAAA8F /* caravel.js */; };
-		A73E62861B13BFF700CAAA8F /* Caravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E62811B13BFF700CAAA8F /* Caravel.swift */; };
-		A73E62871B13BFF700CAAA8F /* CaravelSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E62821B13BFF700CAAA8F /* CaravelSubscriber.swift */; };
-		A73E62881B13BFF700CAAA8F /* StickyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E62831B13BFF700CAAA8F /* StickyEvent.swift */; };
-		A73E62891B13BFF700CAAA8F /* UIWebViewDelegateMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73E62841B13BFF700CAAA8F /* UIWebViewDelegateMediator.swift */; };
 		A73E628F1B13C8C400CAAA8F /* rothrock.css in Resources */ = {isa = PBXBuildFile; fileRef = A73E628E1B13C8C400CAAA8F /* rothrock.css */; };
 		A73E62911B13C8D100CAAA8F /* framework7.min.css in Resources */ = {isa = PBXBuildFile; fileRef = A73E62901B13C8D100CAAA8F /* framework7.min.css */; };
 		A73E62931B13C8DC00CAAA8F /* rothrock.js in Resources */ = {isa = PBXBuildFile; fileRef = A73E62921B13C8DC00CAAA8F /* rothrock.js */; };
@@ -93,6 +88,7 @@
 		A7EDB7A41B097B4100244176 /* AccountSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EDB7A31B097B4100244176 /* AccountSettingsController.swift */; };
 		A7EDB7A61B097DAA00244176 /* NotificationSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EDB7A51B097DAA00244176 /* NotificationSettingsController.swift */; };
 		A7F59B491B091D2600F5848F /* LocalizedSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F59B481B091D2600F5848F /* LocalizedSegmentedControl.swift */; };
+		A7F7A5781B1CC192009A3951 /* caravel.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A7F7A5771B1CC192009A3951 /* caravel.min.js */; };
 		E34592293B39382235FF4973 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEF411B36336395668B971F /* Pods.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		FE6FCA9EDDA79A7556DC9E70 /* Pods_rothrockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA57EFD32C75B4AEA027CF1 /* Pods_rothrockTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -115,11 +111,6 @@
 		9C8967141C7046423621E252 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A71A7CC41AF00E760094019E /* StringSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringSerializer.swift; path = models/bll/serializers/StringSerializer.swift; sourceTree = "<group>"; };
 		A71A7CC61AF00F440094019E /* SerializerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SerializerFactory.swift; path = models/bll/serializers/SerializerFactory.swift; sourceTree = "<group>"; };
-		A73E62801B13BFF700CAAA8F /* caravel.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = caravel.js; path = Caravel/caravel.js; sourceTree = "<group>"; };
-		A73E62811B13BFF700CAAA8F /* Caravel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Caravel.swift; path = Caravel/Caravel.swift; sourceTree = "<group>"; };
-		A73E62821B13BFF700CAAA8F /* CaravelSubscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CaravelSubscriber.swift; path = Caravel/CaravelSubscriber.swift; sourceTree = "<group>"; };
-		A73E62831B13BFF700CAAA8F /* StickyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StickyEvent.swift; path = Caravel/StickyEvent.swift; sourceTree = "<group>"; };
-		A73E62841B13BFF700CAAA8F /* UIWebViewDelegateMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIWebViewDelegateMediator.swift; path = Caravel/UIWebViewDelegateMediator.swift; sourceTree = "<group>"; };
 		A73E628E1B13C8C400CAAA8F /* rothrock.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = rothrock.css; path = views/css/rothrock.css; sourceTree = "<group>"; };
 		A73E62901B13C8D100CAAA8F /* framework7.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = framework7.min.css; path = views/bower_components/framework7/dist/css/framework7.min.css; sourceTree = "<group>"; };
 		A73E62921B13C8DC00CAAA8F /* rothrock.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = rothrock.js; path = views/js/rothrock.js; sourceTree = "<group>"; };
@@ -207,6 +198,7 @@
 		A7EDB7A51B097DAA00244176 /* NotificationSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationSettingsController.swift; path = controllers/NotificationSettingsController.swift; sourceTree = "<group>"; };
 		A7F571E81AEED9DD001084D3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		A7F59B481B091D2600F5848F /* LocalizedSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizedSegmentedControl.swift; path = utils/LocalizedSegmentedControl.swift; sourceTree = "<group>"; };
+		A7F7A5771B1CC192009A3951 /* caravel.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = caravel.min.js; path = Pods/Caravel/caravel/js/caravel.min.js; sourceTree = SOURCE_ROOT; };
 		AB487B39E1ADD18545092D96 /* Pods-rothrock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.release.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.release.xcconfig"; sourceTree = "<group>"; };
 		AEA57EFD32C75B4AEA027CF1 /* Pods_rothrockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rothrockTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF5C00745E3C29669D778DF /* Pods-rothrockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrockTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rothrockTests/Pods-rothrockTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -261,18 +253,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A73E627F1B13BE9300CAAA8F /* Caravel */ = {
-			isa = PBXGroup;
-			children = (
-				A73E62801B13BFF700CAAA8F /* caravel.js */,
-				A73E62811B13BFF700CAAA8F /* Caravel.swift */,
-				A73E62821B13BFF700CAAA8F /* CaravelSubscriber.swift */,
-				A73E62831B13BFF700CAAA8F /* StickyEvent.swift */,
-				A73E62841B13BFF700CAAA8F /* UIWebViewDelegateMediator.swift */,
-			);
-			name = Caravel;
-			sourceTree = "<group>";
-		};
 		A73E628A1B13C85100CAAA8F /* html */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +276,7 @@
 		A73E628C1B13C85B00CAAA8F /* js */ = {
 			isa = PBXGroup;
 			children = (
+				A7F7A5771B1CC192009A3951 /* caravel.min.js */,
 				A7E5CF7F1B152981002C1458 /* md5.min.js */,
 				A78CD2A31B14DBA50086EFF8 /* jquery.min.js */,
 				A73E62941B13C8E500CAAA8F /* framework7.min.js */,
@@ -337,7 +318,6 @@
 		A746A6A31AE9D6E800AF0FA5 /* rothrock */ = {
 			isa = PBXGroup;
 			children = (
-				A73E627F1B13BE9300CAAA8F /* Caravel */,
 				A7F571E81AEED9DD001084D3 /* Bridging-Header.h */,
 				A7BD792F1B05728F00303751 /* Localizable.strings */,
 				A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */,
@@ -634,10 +614,10 @@
 				A73E62931B13C8DC00CAAA8F /* rothrock.js in Resources */,
 				A79920A31B1404B000012641 /* ic_action_overflow.png in Resources */,
 				A746A6B11AE9D6E800AF0FA5 /* LaunchScreen.xib in Resources */,
-				A73E62851B13BFF700CAAA8F /* caravel.js in Resources */,
 				A746A6AE1AE9D6E800AF0FA5 /* Images.xcassets in Resources */,
 				A7E5CF7D1B15198F002C1458 /* ic_calendar.png in Resources */,
 				A73E62911B13C8D100CAAA8F /* framework7.min.css in Resources */,
+				A7F7A5781B1CC192009A3951 /* caravel.min.js in Resources */,
 				A78CD2A21B14D5350086EFF8 /* class_details.html in Resources */,
 				A73E62971B13C8EF00CAAA8F /* class_list.html in Resources */,
 				A73E628F1B13C8C400CAAA8F /* rothrock.css in Resources */,
@@ -776,7 +756,6 @@
 				A794DC1E1AF196BA00D8743F /* BoolSerializer.swift in Sources */,
 				A772CBC21B066EE40055AF4E /* UserBusiness.swift in Sources */,
 				A772CBCB1B06A2870055AF4E /* ClassTableViewCell.swift in Sources */,
-				A73E62891B13BFF700CAAA8F /* UIWebViewDelegateMediator.swift in Sources */,
 				A74F045A1AEB271700EB8916 /* LessonSerializer.swift in Sources */,
 				A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */,
 				A794DC231AF1A19600D8743F /* BaseBusiness.swift in Sources */,
@@ -800,19 +779,16 @@
 				A7BD79371B058B2700303751 /* BLLCallback.swift in Sources */,
 				A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */,
 				A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */,
-				A73E62871B13BFF700CAAA8F /* CaravelSubscriber.swift in Sources */,
 				A784106C1AEF1F13006709ED /* UserSerializer.swift in Sources */,
 				A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */,
 				A74F044C1AEB04FE00EB8916 /* UserDAO.swift in Sources */,
 				A74F044A1AEB02B700EB8916 /* PreferenceDAO.swift in Sources */,
 				A7770BA71B09117A00F23CD6 /* SettingsController.swift in Sources */,
-				A73E62861B13BFF700CAAA8F /* Caravel.swift in Sources */,
 				A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */,
 				A7EDB7A41B097B4100244176 /* AccountSettingsController.swift in Sources */,
 				A7B63B561B091A850008EAFE /* LocalizedTextField.swift in Sources */,
 				A7EDB7A61B097DAA00244176 /* NotificationSettingsController.swift in Sources */,
 				A794DC211AF1A09800D8743F /* ILessonBusiness.swift in Sources */,
-				A73E62881B13BFF700CAAA8F /* StickyEvent.swift in Sources */,
 				A784106A1AEF16FC006709ED /* SchoolClassSerializer.swift in Sources */,
 				A74F044E1AEB06DE00EB8916 /* VenueDAO.swift in Sources */,
 				A740521E1AF001AF003ABBE3 /* ArraySerializer.swift in Sources */,

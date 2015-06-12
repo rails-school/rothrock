@@ -10,6 +10,7 @@ import UIKit
 import SwiftEventBus
 import EventKit
 import MessageUI
+import Caravel
 
 public class ClassListController: UIViewController, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var _webView: UIWebView!
