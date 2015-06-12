@@ -78,7 +78,6 @@
 		A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */; };
 		A7E5CF7D1B15198F002C1458 /* ic_calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E5CF7B1B15198F002C1458 /* ic_calendar.png */; };
 		A7E5CF7E1B15198F002C1458 /* ic_map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E5CF7C1B15198F002C1458 /* ic_map_pin.png */; };
-		A7E5CF801B152981002C1458 /* md5.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A7E5CF7F1B152981002C1458 /* md5.min.js */; };
 		A7F7A5781B1CC192009A3951 /* caravel.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A7F7A5771B1CC192009A3951 /* caravel.min.js */; };
 		E34592293B39382235FF4973 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEF411B36336395668B971F /* Pods.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		FE6FCA9EDDA79A7556DC9E70 /* Pods_rothrockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA57EFD32C75B4AEA027CF1 /* Pods_rothrockTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -178,7 +177,6 @@
 		A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwoHourNotificationPreference.swift; path = models/dao/TwoHourNotificationPreference.swift; sourceTree = "<group>"; };
 		A7E5CF7B1B15198F002C1458 /* ic_calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_calendar.png; path = views/imgs/ic_calendar.png; sourceTree = "<group>"; };
 		A7E5CF7C1B15198F002C1458 /* ic_map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_map_pin.png; path = views/imgs/ic_map_pin.png; sourceTree = "<group>"; };
-		A7E5CF7F1B152981002C1458 /* md5.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = md5.min.js; path = "views/bower_components/blueimp-md5/js/md5.min.js"; sourceTree = "<group>"; };
 		A7F571E81AEED9DD001084D3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		A7F7A5771B1CC192009A3951 /* caravel.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = caravel.min.js; path = Pods/Caravel/caravel/js/caravel.min.js; sourceTree = SOURCE_ROOT; };
 		AB487B39E1ADD18545092D96 /* Pods-rothrock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.release.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.release.xcconfig"; sourceTree = "<group>"; };
@@ -259,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				A7F7A5771B1CC192009A3951 /* caravel.min.js */,
-				A7E5CF7F1B152981002C1458 /* md5.min.js */,
 				A78CD2A31B14DBA50086EFF8 /* jquery.min.js */,
 				A73E62941B13C8E500CAAA8F /* framework7.min.js */,
 				A73E62921B13C8DC00CAAA8F /* rothrock.js */,
@@ -596,7 +593,6 @@
 				A73E628F1B13C8C400CAAA8F /* rothrock.css in Resources */,
 				A78CD2A41B14DBA50086EFF8 /* jquery.min.js in Resources */,
 				A741CFFB1B166895001C9272 /* settings.html in Resources */,
-				A7E5CF801B152981002C1458 /* md5.min.js in Resources */,
 				A73E62951B13C8E500CAAA8F /* framework7.min.js in Resources */,
 				A7E5CF7E1B15198F002C1458 /* ic_map_pin.png in Resources */,
 			);
