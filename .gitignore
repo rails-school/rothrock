@@ -34,3 +34,4 @@ Carthage/Checkouts
 **/node_modules/
 **/.sass-cache
 **/.yo-rc.json
+.idea/
