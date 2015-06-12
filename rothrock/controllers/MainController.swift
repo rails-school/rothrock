@@ -12,7 +12,7 @@ import EventKit
 import MessageUI
 import Caravel
 
-public class ClassListController: UIViewController, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
+public class MainController: UIViewController, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var _webView: UIWebView!
     
     private var _currentLesson: Lesson?

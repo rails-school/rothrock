@@ -80,7 +80,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var e = (notif.object) as! ErrorEvent
             SCLAlertView().showError("Error", subTitle: e.message, closeButtonTitle: "Ok", duration: 3)
         }
-        
         SwiftEventBus.onMainThread(self, name: ConfirmationEvent.NAME) { notif in
             var e = (notif.object) as! ConfirmationEvent
             SCLAlertView().showSuccess("Confirmation", subTitle: e.message, closeButtonTitle: "Ok", duration: 3)
@@ -94,7 +93,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 
