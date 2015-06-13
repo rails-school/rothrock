@@ -1,0 +1,35 @@
+script#class-list-template(type='text/template7')
+  | {{#each classes}}
+  .class-wrapper
+    .class-bordered-wrapper
+      img.class-going-pin.js-class-going-pin(src='going-pin')
+      p.class-countdown.js-class-countdown {{lesson.countdown}}
+
+      //- Details wrapper
+      .details-wrapper
+        h1 {{lesson.title}}
+        p {{lesson.summary}}
+
+        ul
+          li
+            p.ic-ruby
+            p {{teacher.name}}
+          li
+            p.ic-venue
+            p {{venue.name}}
+          li
+            p.ic-calendar
+            p {{lesson.date}} {{lesson.countdown}}
+          li
+            p.ic-clock
+            p {{lesson.hour}}
+
+      //- RSVP button
+      .class-rsvp-button
+
+    p.class-attendees
+    .class-share-wrapper
+      img(src='ic_share')
+      p Share
+
+  | {{/each}}

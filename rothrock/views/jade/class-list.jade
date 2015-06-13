@@ -1,1 +1,12 @@
+header.js-header
+  .logo-wrapper
+    img.logo.js-logo
+    p.upcoming-classes.js-upcoming-classes
+  .settings
+    p.ic-settings
+    p Settings
 
+- var slickConfig = { accessibility: false, edgeFriction: 0.30, infinite: false, variableWidth: true }
+section.js-class-list&attributes({ 'data-slick': slickConfig })
+
+include ./templates/class-list.template.jade
