@@ -3,12 +3,19 @@ myApp = new Framework7()
 $$ = Dom7
 
 mainView = myApp.addView '.view-main', {
-    dynamicNavbar: true
+  dynamicNavbar: true
 }
 
-classListController = new ClassList myApp
+classListController = new ClassListController myApp
+singleClassController = new SingleClassController myApp
+settingsController = new SettingsController myApp
 
-myApp.onPageBack 'class-details', (page) =>
-    classListController.onBack()
+myApp.onPageBack 'single-class', (page) =>
+  singleClassController.onPause()
+  classListController.onResume()
 
-new ClassDetails myApp
+myApp.onPageBack 'settings', (page) =>
+  settingsController.onPause()
+  classListController.onResume()
+
+classListController.onStart()

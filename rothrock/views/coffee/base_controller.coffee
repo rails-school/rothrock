@@ -1,16 +1,22 @@
 class BaseController
-    constructor: (app) ->
-        @app = app
-        @bus = Caravel.getDefault()
+  constructor: (app) ->
+    @app = app
+    @bus = Caravel.getDefault()
 
-    getBus: () ->
-        @bus
+  getBus: () ->
+    @bus
 
-    getApp: () ->
-        @app
+  getApp: () ->
+    @app
 
-    fork: () ->
-        @bus.post "ProgressForkEvent"
+  onStart: () ->
 
-    done: () ->
-        @bus.post "ProgressDoneEvent"
+  onResume: () ->
+
+  onPause: () ->
+
+  fork: () ->
+    @bus.post "ProgressForkEvent"
+
+  done: () ->
+    @bus.post "ProgressDoneEvent"
