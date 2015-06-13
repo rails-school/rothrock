@@ -1,69 +1,172 @@
 @import "base";
 
 .class-list {
-  background-color: $black;
+  width: 100%;
+
+  padding: 10px 20px;
 }
 
-.class-list-card {
-  margin: 15px;
+.class-list header {
+  width: 100%;
 
-  a {
-    padding: 10px;
+  margin: 0 0 15px 0;
+
+  > {
+    display: inline-block;
+    vertical-align: middle;
   }
 
-  h1, h2 {
-    font-weight: normal;
+  .logo-wrapper {
+    .logo {
+      margin: 0 0 5px 0;
+    }
+
+    .upcoming-classes {
+      font-size: 11px;
+      color: $gray;
+    }
   }
 
-  h1, h2, p {
-    margin: 5px;
-  }
-
-  h1 {
-    font-size: $title;
-
-    color: $black;
-  }
-
-  h2, p {
-    color: $gray
-  }
-
-  h2 {
-    font-size: $subhead;
-  }
-
-  p {
-    font-size: $body;
-  }
-
-  .class-list-card-footer {
-    background-color: $super_soft_gray;
+  .settings {
+    width: 150px;
 
     p {
-      display: inline-block;
-
-      width: 48%;
-      padding: 5px;
-      margin: 0;
-      box-sizing: border-box;
-
+      font-size: 13px;
       color: $gray;
+    }
 
-      &:last-child {
-        text-align: right;
-      }
+    .ic-settings {
+
+    }
+
+    .label {
     }
   }
 }
 
-.class-list hr {
-  margin: 20px;
+// Class cards
+.class-list section .class-wrapper {
+  width: 90%;
+
+  margin: 0 20px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .class-attendees {
+    padding: 5px;
+
+    text-align: center;
+    font-size: 13px;
+    color: $red;
+  }
+
+  .class-share-wrapper {
+    padding: 5px;
+
+    > {
+      display: inline-block;
+    }
+
+    p {
+      font-size: 13px;
+    }
+
+    p:first-child {
+      padding: 0 10px 0 0;
+
+      color: $gray;
+    }
+
+    p:last-child {
+      color: $black;
+    }
+  }
+}
+
+.class-list section .class-wrapper .class-bordered-wrapper {
+  width: 100%;
 
   border: 1px solid $gray;
-  display: none;
 
-  &.visible {
-    display: block;
+  .class-going-pin {
+    position: absolute;
+    top: -34px;
+    left: -34px;
+  }
+
+  .class-countdown {
+    position: absolute;
+    top: -16px;
+    left: 0;
+
+    border: 1px solid $red;
+  }
+
+  .details-wrapper {
+    width: 100%;
+
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .class-rsvp-button {
+    font-size: 32px;
+    color: $white;
+    text-shadow: 0 3px 3px $black;
+    text-align: center;
+
+    background-color: $white;
+    background-position: 2px;
+
+    &.rsvp {
+      background-image: url('rsvp.png');
+    }
+
+    &.unrsvp {
+      background-image: url('rsvp.png');
+    }
+  }
+}
+
+.class-list section .class-wrapper .class-bordered-wrapper .details-wrapper {
+  h1 {
+    color: $blue;
+    font-size: 32px;
+  }
+
+  h2 {
+    color: $black;
+    font-size: 18px;
+  }
+
+  ul {
+    margin: 15px 0;
+    padding: 0;
+
+    list-style-type: none;
+
+    li {
+      padding: 0;
+
+      p {
+        font-size: 15px;
+      }
+
+      p:first-child {
+        padding: 5px 10px 5px 0;
+
+        color: $gray;
+      }
+
+      p:last-child {
+        color: $black;
+      }
+    }
   }
 }

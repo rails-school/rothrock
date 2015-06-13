@@ -2,26 +2,26 @@ script#class-list-template(type='text/template7')
   | {{#each classes}}
   .class-wrapper
     .class-bordered-wrapper
-      img.class-going-pin.js-class-going-pin(src='going-pin')
+      img.class-going-pin.hidden.js-class-going-pin(src='going-pin')
       p.class-countdown.js-class-countdown {{lesson.countdown}}
 
       //- Details wrapper
       .details-wrapper
         h1 {{lesson.title}}
-        p {{lesson.summary}}
+        h2 {{lesson.summary}}
 
         ul
           li
-            p.ic-ruby
+            p.ic-ruby &#xf219;
             p {{teacher.name}}
           li
-            p.ic-venue
+            p.ic-venue &#xf041;
             p {{venue.name}}
           li
-            p.ic-calendar
+            p.ic-calendar &#xf133;
             p {{lesson.date}} {{lesson.countdown}}
           li
-            p.ic-clock
+            p.ic-clock &#xf017;
             p {{lesson.hour}}
 
       //- RSVP button
@@ -29,7 +29,7 @@ script#class-list-template(type='text/template7')
 
     p.class-attendees
     .class-share-wrapper
-      img(src='ic_share')
+      p.ic-share &#xf1e0;
       p Share
 
   | {{/each}}

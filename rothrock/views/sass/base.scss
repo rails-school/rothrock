@@ -2,20 +2,10 @@
 @import "colors";
 @import "fonts";
 
-.navbar-icon {
-  max-width: 80%;
-  max-height: 80%;
-  padding: 5px;
+.shown {
+  display: block;
 }
 
-.statusbar-overlay {
-  background-color: $red;
-}
-
-.navbar {
-  background-color: $red;
-
-  a.link {
-    color: $white;
-  }
+.hidden {
+  display: none;
 }
