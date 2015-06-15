@@ -2,10 +2,10 @@ module.exports = function (grunt) {
     'use strict';
 
     grunt.loadNpmTasks('grunt-contrib-coffee');
-    grunt.loadNpmTasks('grunt-contrib-coffeelint');
+    grunt.loadNpmTasks('grunt-coffeelint');
     grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-contrib-sasslint');
+    grunt.loadNpmTasks('grunt-scss-lint');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Project configuration
@@ -31,6 +31,16 @@ module.exports = function (grunt) {
                 }
             }
         },
+        jade: {
+            dist: {
+                options: {
+                    pretty: true
+                },
+                files: {
+                    "html/main.html": ['jade/main.jade']
+                }
+            }
+        },
         sass: {
             dist: {
                 options: {
@@ -42,17 +52,29 @@ module.exports = function (grunt) {
             }
         },
         scsslint: {
-            options: {
-                config: 'config/scsslint-default.json'
-            },
             dist: {
-                allFiles: ['sass/*.scss']
+                options: {
+                    colorizeOutput: true,
+                    config: 'config/scsslint-default.yml',
+                    force: true
+                },
+                files: {
+                    src: ['sass/*.scss']
+                }
             }
         },
         watch: {
             coffee: {
                 files: 'coffee/*.coffee',
                 tasks: ['coffeelint', 'coffee'],
+                options: {
+                    interrupt: true,
+                    atBegin: true
+                }
+            },
+            jade: {
+                files: 'jade/**.jade',
+                tasks: ['jade'],
                 options: {
                     interrupt: true,
                     atBegin: true
@@ -73,12 +95,14 @@ module.exports = function (grunt) {
     grunt.registerTask('default', [
         'coffeelint',
         'coffee',
+        'jade',
         'scsslint',
         'sass'
     ]);
 
     grunt.registerTask('fast', [
         'coffee',
+        'jade',
         'sass'
     ]);
 };

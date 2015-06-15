@@ -1,4 +1,6 @@
-var BaseController;
+var $$, BaseController, ClassListController, SingleClassController, classListController, mainView, myApp, settingsController, singleClassController,
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
 
 BaseController = (function() {
   function BaseController(app) {
@@ -6,13 +8,19 @@ BaseController = (function() {
     this.bus = Caravel.getDefault();
   }
 
-  BaseController.prototype.getBus = function() {
+  BaseController.prototype.getDefaultBus = function() {
     return this.bus;
   };
 
   BaseController.prototype.getApp = function() {
     return this.app;
   };
+
+  BaseController.prototype.onStart = function() {};
+
+  BaseController.prototype.onResume = function() {};
+
+  BaseController.prototype.onPause = function() {};
 
   BaseController.prototype.fork = function() {
     return this.bus.post("ProgressForkEvent");
@@ -26,15 +34,84 @@ BaseController = (function() {
 
 })();
 
-var ClassDetails,
-  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
-  hasProp = {}.hasOwnProperty;
+ClassListController = (function(superClass) {
+  extend(ClassListController, superClass);
 
-ClassDetails = (function(superClass) {
-  extend(ClassDetails, superClass);
+  function ClassListController(app) {
+    ClassListController.__super__.constructor.call(this, app);
+    this.listSelector = '.js-class-list';
+    this.logoSelector = '.js-logo';
+  }
 
-  function ClassDetails(app) {
-    ClassDetails.__super__.constructor.call(this, app);
+  ClassListController.prototype.getBus = function() {
+    return Caravel.get('ClassListController');
+  };
+
+  ClassListController.prototype.onResume = function() {
+    this.fork();
+    if (this.cardTemplate == null) {
+      this.cardTemplate = Template7.compile($('#class-card-template').html());
+    }
+    this.getBus().register('ReceiveClasses', (function(_this) {
+      return function(name, data) {
+        $(_this.listSelector).html(_this.cardTemplate({
+          classes: data
+        }));
+        return _this.done();
+      };
+    })(this));
+    return this.getBus().register('ReceiveSchool', (function(_this) {
+      return function(name, data) {
+        if (data === 1) {
+          return $(_this.logoSelector).attr('src', 'logo-charlottesville.png');
+        } else {
+          return $(_this.logoSelector).attr('src', 'logo-sf.png');
+        }
+      };
+    })(this));
+  };
+
+  return ClassListController;
+
+})(BaseController);
+
+myApp = new Framework7();
+
+$$ = Dom7;
+
+mainView = myApp.addView('.view-main', {
+  dynamicNavbar: true
+});
+
+classListController = new ClassListController(myApp);
+
+singleClassController = new SingleClassController(myApp);
+
+settingsController = new SettingsController(myApp);
+
+myApp.onPageBack('single-class', (function(_this) {
+  return function(page) {
+    singleClassController.onPause();
+    return classListController.onResume();
+  };
+})(this));
+
+myApp.onPageBack('settings', (function(_this) {
+  return function(page) {
+    settingsController.onPause();
+    return classListController.onResume();
+  };
+})(this));
+
+classListController.onStart();
+
+classListController.onResume();
+
+SingleClassController = (function(superClass) {
+  extend(SingleClassController, superClass);
+
+  function SingleClassController(app) {
+    SingleClassController.__super__.constructor.call(this, app);
     this.blockSelector = '.js-class-details';
     this.attendanceToggle = $('.js-toggle-attendance');
     this.toolbar = $('.toolbar');
@@ -102,7 +179,7 @@ ClassDetails = (function(superClass) {
     })(this));
   }
 
-  ClassDetails.prototype._setContent = function(data) {
+  SingleClassController.prototype._setContent = function(data) {
     var attendees;
     this.fork();
     this.toolbar.show();
@@ -135,84 +212,6 @@ ClassDetails = (function(superClass) {
     return this.done();
   };
 
-  return ClassDetails;
+  return SingleClassController;
 
 })(BaseController);
-
-var ClassList,
-  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
-  hasProp = {}.hasOwnProperty;
-
-ClassList = (function(superClass) {
-  extend(ClassList, superClass);
-
-  function ClassList(app) {
-    ClassList.__super__.constructor.call(this, app);
-    this.listSelector = '.js-class-list';
-    $('.toolbar').hide();
-    this.getBus().register("DisplayClassList", (function(_this) {
-      return function(name, data) {
-        _this._setContent(data);
-        return $(_this.listSelector).on('refresh', function() {
-          return _this.bus.post("AskForRefreshingClassList");
-        });
-      };
-    })(this));
-    this.getBus().register("RefreshClassList", (function(_this) {
-      return function(name, data) {
-        _this._setContent(data);
-        return _this.getApp.pullToRefreshDone();
-      };
-    })(this));
-  }
-
-  ClassList.prototype.onBack = function() {
-    return $('.toolbar').hide();
-  };
-
-  ClassList.prototype._setContent = function(data) {
-    this.fork();
-    $(this.listSelector).find('li.card').each((function(_this) {
-      return function(i, e) {
-        return $(e).off('click');
-      };
-    })(this));
-    if (this.template == null) {
-      this.template = Template7.compile($('#class-list-template').html());
-    }
-    $(this.listSelector).html(this.template({
-      tuples: data
-    }));
-    $(this.listSelector).find('li.card').each((function(_this) {
-      return function(index, e) {
-        return $(e).on('click', function() {
-          return _this.getBus().post('RequireClassDetails', $(e).data('slug'));
-        });
-      };
-    })(this));
-    return this.done();
-  };
-
-  return ClassList;
-
-})(BaseController);
-
-var $$, classListController, mainView, myApp;
-
-myApp = new Framework7();
-
-$$ = Dom7;
-
-mainView = myApp.addView('.view-main', {
-  dynamicNavbar: true
-});
-
-classListController = new ClassList(myApp);
-
-myApp.onPageBack('class-details', (function(_this) {
-  return function(page) {
-    return classListController.onBack();
-  };
-})(this));
-
-new ClassDetails(myApp);

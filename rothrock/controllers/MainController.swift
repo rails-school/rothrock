@@ -28,7 +28,7 @@ public class MainController: UIViewController {
             }
         }
         
-        _webView.loadRequest(NSURLRequest(URL: NSBundle.mainBundle().URLForResource("class_list", withExtension: "html")!))
+        _webView.loadRequest(NSURLRequest(URL: NSBundle.mainBundle().URLForResource("main", withExtension: "html")!))
     }
 
     public override func didReceiveMemoryWarning() {

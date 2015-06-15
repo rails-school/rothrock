@@ -14,7 +14,6 @@
 		A73E62911B13C8D100CAAA8F /* framework7.min.css in Resources */ = {isa = PBXBuildFile; fileRef = A73E62901B13C8D100CAAA8F /* framework7.min.css */; };
 		A73E62931B13C8DC00CAAA8F /* rothrock.js in Resources */ = {isa = PBXBuildFile; fileRef = A73E62921B13C8DC00CAAA8F /* rothrock.js */; };
 		A73E62951B13C8E500CAAA8F /* framework7.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A73E62941B13C8E500CAAA8F /* framework7.min.js */; };
-		A73E62971B13C8EF00CAAA8F /* class_list.html in Resources */ = {isa = PBXBuildFile; fileRef = A73E62961B13C8EF00CAAA8F /* class_list.html */; };
 		A740521C1AEFFC88003ABBE3 /* RemoteCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A740521B1AEFFC88003ABBE3 /* RemoteCallback.swift */; };
 		A740521E1AF001AF003ABBE3 /* ArraySerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A740521D1AF001AF003ABBE3 /* ArraySerializer.swift */; };
 		A741CFFB1B166895001C9272 /* settings.html in Resources */ = {isa = PBXBuildFile; fileRef = A741CFFA1B166895001C9272 /* settings.html */; };
@@ -47,6 +46,7 @@
 		A77BCC571B2F54E7006FCBFE /* unrsvp.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC501B2F54E7006FCBFE /* unrsvp.png */; };
 		A77BCC591B2F5573006FCBFE /* ClassListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77BCC581B2F5573006FCBFE /* ClassListController.swift */; };
 		A77BCC5B1B2F55BB006FCBFE /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77BCC5A1B2F55BB006FCBFE /* BaseController.swift */; };
+		A77BCC5D1B2F5A6E006FCBFE /* main.html in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC5C1B2F5A6E006FCBFE /* main.html */; };
 		A78410641AEF131A006709ED /* CheckCredentialsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */; };
 		A78410661AEF1433006709ED /* CheckCredentialsRequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410651AEF1433006709ED /* CheckCredentialsRequestSerializer.swift */; };
 		A78410681AEF14E0006709ED /* IJSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410671AEF14E0006709ED /* IJSONSerializer.swift */; };
@@ -112,7 +112,6 @@
 		A73E62901B13C8D100CAAA8F /* framework7.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = framework7.min.css; path = views/bower_components/framework7/dist/css/framework7.min.css; sourceTree = "<group>"; };
 		A73E62921B13C8DC00CAAA8F /* rothrock.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = rothrock.js; path = views/js/rothrock.js; sourceTree = "<group>"; };
 		A73E62941B13C8E500CAAA8F /* framework7.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = framework7.min.js; path = views/bower_components/framework7/dist/js/framework7.min.js; sourceTree = "<group>"; };
-		A73E62961B13C8EF00CAAA8F /* class_list.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = class_list.html; path = views/html/class_list.html; sourceTree = "<group>"; };
 		A740521B1AEFFC88003ABBE3 /* RemoteCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteCallback.swift; path = models/bll/remote/RemoteCallback.swift; sourceTree = "<group>"; };
 		A740521D1AF001AF003ABBE3 /* ArraySerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArraySerializer.swift; path = models/bll/serializers/ArraySerializer.swift; sourceTree = "<group>"; };
 		A741CFFA1B166895001C9272 /* settings.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = settings.html; path = views/html/settings.html; sourceTree = "<group>"; };
@@ -149,6 +148,7 @@
 		A77BCC501B2F54E7006FCBFE /* unrsvp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unrsvp.png; path = views/imgs/unrsvp.png; sourceTree = "<group>"; };
 		A77BCC581B2F5573006FCBFE /* ClassListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassListController.swift; path = controllers/ClassListController.swift; sourceTree = "<group>"; };
 		A77BCC5A1B2F55BB006FCBFE /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		A77BCC5C1B2F5A6E006FCBFE /* main.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = main.html; path = views/html/main.html; sourceTree = "<group>"; };
 		A77DB2D41AEB4F0500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A77DB2D61AEB4F2500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckCredentialsRequest.swift; path = models/bll/structs/CheckCredentialsRequest.swift; sourceTree = "<group>"; };
@@ -250,9 +250,9 @@
 		A73E628A1B13C85100CAAA8F /* html */ = {
 			isa = PBXGroup;
 			children = (
+				A77BCC5C1B2F5A6E006FCBFE /* main.html */,
 				A741CFFA1B166895001C9272 /* settings.html */,
 				A78CD2A11B14D5350086EFF8 /* class_details.html */,
-				A73E62961B13C8EF00CAAA8F /* class_list.html */,
 			);
 			name = html;
 			sourceTree = "<group>";
@@ -616,12 +616,12 @@
 				A7F7A5781B1CC192009A3951 /* caravel.min.js in Resources */,
 				A78CD2A21B14D5350086EFF8 /* class_details.html in Resources */,
 				A77BCC541B2F54E7006FCBFE /* rsvp-active.png in Resources */,
-				A73E62971B13C8EF00CAAA8F /* class_list.html in Resources */,
 				A73E628F1B13C8C400CAAA8F /* rothrock.css in Resources */,
 				A78CD2A41B14DBA50086EFF8 /* jquery.min.js in Resources */,
 				A741CFFB1B166895001C9272 /* settings.html in Resources */,
 				A77BCC561B2F54E7006FCBFE /* unrsvp-active.png in Resources */,
 				A73E62951B13C8E500CAAA8F /* framework7.min.js in Resources */,
+				A77BCC5D1B2F5A6E006FCBFE /* main.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
