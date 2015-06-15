@@ -1,6 +1,6 @@
 script#class-card-template(type='text/template7')
   | {{#each classes}}
-  .class-card-wrapper
+  .class-card-wrapper.js-class-card-wrapper
     .class-card
       img.class-going-pin.hidden.js-class-going-pin(src='going-pin.png')
       p.class-countdown.js-class-countdown {{lesson.countdown}}
@@ -28,9 +28,10 @@ script#class-card-template(type='text/template7')
       .class-rsvp-button
 
     p.class-attendees
-      | {{#js_compare "attendees == 0"}} Be the first join to join this class!
-      | {{else}}{{#js_compare "attendees == 1"}} 1 student is going
-      | {{else}}{{attendees}} are going{{/js_compare}}{{/js_compare}}
+      | {{#js_compare "self.attendees == 0"}} Be the first join to join this class! {{/js_compare}}
+      | {{#js_compare "self.attendees == 1"}} 1 student is going{{/js_compare}}
+      | {{#js_compare "self.attendees > 1"}}{{attendees}} are going{{/js_compare}}{{/js_compare}}
+
     .class-share-wrapper
       p.ic-share &#xf1e0;
       p Share

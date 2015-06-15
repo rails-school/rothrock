@@ -1,4 +1,4 @@
-var $$, BaseController, ClassListController, SingleClassController, classListController, mainView, myApp, settingsController, singleClassController,
+var $$, BaseController, ClassListController, SingleClassController, classListController, mainView, myApp,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
 
@@ -47,16 +47,26 @@ ClassListController = (function(superClass) {
     return Caravel.get('ClassListController');
   };
 
-  ClassListController.prototype.onResume = function() {
-    this.fork();
-    if (this.cardTemplate == null) {
-      this.cardTemplate = Template7.compile($('#class-card-template').html());
-    }
+  ClassListController.prototype.onStart = function() {
+    this.cardTemplate = Template7.compile($('#class-card-template').html());
     this.getBus().register('ReceiveClasses', (function(_this) {
       return function(name, data) {
+        var w;
+        _this.fork();
         $(_this.listSelector).html(_this.cardTemplate({
           classes: data
         }));
+        w = $(_this.listSelector).width() * 0.8;
+        console.log(w);
+        $(_this.listSelector).find('.js-class-card-wrapper').each(function(i, e) {
+          return $(e).css('width', w);
+        });
+        $(_this.listSelector).slick({
+          accessibility: false,
+          edgeFriction: 0.15,
+          infinite: false,
+          variableWidth: true
+        });
         return _this.done();
       };
     })(this));
@@ -74,38 +84,6 @@ ClassListController = (function(superClass) {
   return ClassListController;
 
 })(BaseController);
-
-myApp = new Framework7();
-
-$$ = Dom7;
-
-mainView = myApp.addView('.view-main', {
-  dynamicNavbar: true
-});
-
-classListController = new ClassListController(myApp);
-
-singleClassController = new SingleClassController(myApp);
-
-settingsController = new SettingsController(myApp);
-
-myApp.onPageBack('single-class', (function(_this) {
-  return function(page) {
-    singleClassController.onPause();
-    return classListController.onResume();
-  };
-})(this));
-
-myApp.onPageBack('settings', (function(_this) {
-  return function(page) {
-    settingsController.onPause();
-    return classListController.onResume();
-  };
-})(this));
-
-classListController.onStart();
-
-classListController.onResume();
 
 SingleClassController = (function(superClass) {
   extend(SingleClassController, superClass);
@@ -215,3 +193,31 @@ SingleClassController = (function(superClass) {
   return SingleClassController;
 
 })(BaseController);
+
+myApp = new Framework7();
+
+$$ = Dom7;
+
+mainView = myApp.addView('.view-main', {
+  dynamicNavbar: true
+});
+
+classListController = new ClassListController(myApp);
+
+myApp.onPageBack('single-class', (function(_this) {
+  return function(page) {
+    singleClassController.onPause();
+    return classListController.onResume();
+  };
+})(this));
+
+myApp.onPageBack('settings', (function(_this) {
+  return function(page) {
+    settingsController.onPause();
+    return classListController.onResume();
+  };
+})(this));
+
+classListController.onStart();
+
+classListController.onResume();

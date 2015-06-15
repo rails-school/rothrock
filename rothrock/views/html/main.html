@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>RailsSchool</title>
+    <title>Rails School</title>
     <link rel="stylesheet" href="framework7.min.css">
     <link rel="stylesheet" href="slick.css">
     <link rel="stylesheet" href="rothrock.css">
@@ -18,7 +18,7 @@
           <div data-page="class-list" class="page">
             <div class="page-content class-list">
               <header class="js-header">
-                <div class="logo-wrapper"><img class="logo js-logo">
+                <div class="logo-wrapper"><img src="logo-default.png" class="logo js-logo">
                   <p class="upcoming-classes js-upcoming-classes"></p>
                 </div>
                 <div class="settings">
@@ -26,9 +26,9 @@
                   <p class="label">Settings</p>
                 </div>
               </header>
-              <section class="js-class-list" data-slick='{"accessibility":false,"edgeFriction":0.3,"infinite":false,"variableWidth":true}'></section>
+              <section class="js-class-list"></section>
               <script id="class-card-template" type="text/template7">{{#each classes}}
-                <div class="class-card-wrapper">
+                <div class="class-card-wrapper js-class-card-wrapper">
                   <div class="class-card"><img src="going-pin.png" class="class-going-pin hidden js-class-going-pin">
                     <p class="class-countdown js-class-countdown">{{lesson.countdown}}</p>
                     <div data-slug="{{lesson.slug}}" class="class-card-content">
@@ -56,9 +56,9 @@
                     <div class="class-rsvp-button"></div>
                   </div>
                   <p class="class-attendees">
-                    {{#js_compare "attendees == 0"}} Be the first join to join this class!
-                    {{else}}{{#js_compare "attendees == 1"}} 1 student is going
-                    {{else}}{{attendees}} are going{{/js_compare}}{{/js_compare}}
+                    {{#js_compare "self.attendees == 0"}} Be the first join to join this class! {{/js_compare}}
+                    {{#js_compare "self.attendees == 1"}} 1 student is going{{/js_compare}}
+                    {{#js_compare "self.attendees > 1"}}{{attendees}} are going{{/js_compare}}{{/js_compare}}
                   </p>
                   <div class="class-share-wrapper">
                     <p class="ic-share">&#xf1e0;</p>

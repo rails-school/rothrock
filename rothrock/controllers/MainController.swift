@@ -14,6 +14,8 @@ import Caravel
 
 public class MainController: UIViewController {
     @IBOutlet weak var _webView: UIWebView!
+    
+    private var _classListController: BaseController?
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,12 @@ public class MainController: UIViewController {
             }
         }
         
+        _classListController = ClassListController(webView: _webView)
+        
         _webView.loadRequest(NSURLRequest(URL: NSBundle.mainBundle().URLForResource("main", withExtension: "html")!))
+        
+        _classListController!.onStart()
+        _classListController!.onResume()
     }
 
     public override func didReceiveMemoryWarning() {

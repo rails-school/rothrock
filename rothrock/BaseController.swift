@@ -7,9 +7,20 @@
 //
 
 import Foundation
+import UIKit
 import SwiftEventBus
 
 public class BaseController {
+    private var _webView: UIWebView
+    
+    public init(webView: UIWebView) {
+        self._webView = webView
+    }
+    
+    public var webView: UIWebView {
+        return _webView
+    }
+    
     public func fork() {
         SwiftEventBus.post(ProgressForkEvent.NAME)
     }
@@ -21,5 +32,17 @@ public class BaseController {
     public func publishError(message: String) {
         SwiftEventBus.post(ErrorEvent.NAME, sender: ErrorEvent(message: message))
         done()
+    }
+    
+    public func onStart() {
+        
+    }
+    
+    public func onResume() {
+        
+    }
+    
+    public func onPause() {
+        
     }
 }

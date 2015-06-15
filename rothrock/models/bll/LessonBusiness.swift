@@ -35,6 +35,23 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
         return isInCountdownInterval && isFirstNotification
     }
     
+    private func _sortFutureSchoolClassesByDateAsDictionary(slugs: [String], cursor: Int, outcome: [NSDictionary], success: ([NSDictionary]?) -> Void, failure: (String) -> Void) {
+        if cursor == slugs.count {
+            success(outcome)
+        } else {
+            getSchoolClassTupleAsDictionary(
+                slugs[cursor],
+                success: { dict in
+                    var o = outcome
+                    
+                    o.append(dict!)
+                    self._sortFutureSchoolClassesByDateAsDictionary(slugs, cursor: cursor + 1, outcome: o, success: success, failure: failure)
+                },
+                failure: failure
+            )
+        }
+    }
+    
     func sortFutureSlugsByDate(success: ([String]?) -> Void, failure: (String) -> Void) {
         var callback = BLLCallback(base: self, success: { success($1) }, failure: failure)
         
@@ -43,6 +60,25 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
         } else {
             api.getFutureLessonSlugs(callback)
         }
+    }
+    
+    func sortFutureSchoolClassesByDateAsDictionary(success: ([NSDictionary]?) -> Void, failure: (String) -> Void) {
+        sortFutureSlugsByDate(
+            { slugs in
+                if slugs == nil {
+                    success(nil)
+                } else {
+                    self._sortFutureSchoolClassesByDateAsDictionary(
+                        slugs!,
+                        cursor: 0,
+                        outcome: [NSDictionary](),
+                        success: success,
+                        failure: failure
+                    )
+                }
+            },
+            failure: failure
+        )
     }
     
     func get(lessonSlug: String, success: (Lesson?) -> Void, failure: (String) -> Void) {
@@ -81,31 +117,29 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
         )
     }
     
-    func sortFutureTuplesByDate(success: ([NSDictionary]?) -> Void, failure: (String) -> Void) {
-        sortFutureSlugsByDate(
-            { slugs in
-                var tuples = [NSDictionary]()
+    func getSchoolClassTupleAsDictionary(lessonSlug: String, success: (NSDictionary?) -> Void, failure: (String) -> Void) {
+        getSchoolClassTuple(
+            lessonSlug,
+            success: { schoolClass, teacher, venue in
+                var dict = [
+                    "lesson": [
+                        "slug": schoolClass!.lesson!.slug,
+                        "title": schoolClass!.lesson!.title!,
+                        "summary": schoolClass!.lesson!.summary!,
+                        "date": "",
+                        "hour": "",
+                        "countdown": ""
+                    ],
+                    "teacher": [
+                        "name": teacher!.displayedName
+                    ],
+                    "venue": [
+                        "name": venue!.name!
+                    ],
+                    "attendees": "\(schoolClass!.students!.count)"
+                ]
                 
-                if slugs == nil {
-                    success(nil)
-                    return
-                }
-                
-                for s in slugs! {
-                    self.getTuple(
-                        s,
-                        success: { (lesson, teacher, venue) in
-                            tuples.append([
-                                "lesson": lesson!.toDictionary(),
-                                "teacher": teacher!.toDictionary(),
-                                "venue": venue!.toDictionary()
-                            ])
-                        },
-                        failure: failure
-                    )
-                }
-                
-                success(tuples)
+                success(dict)
             },
             failure: failure
         )

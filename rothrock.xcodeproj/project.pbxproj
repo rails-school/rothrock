@@ -47,6 +47,7 @@
 		A77BCC591B2F5573006FCBFE /* ClassListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77BCC581B2F5573006FCBFE /* ClassListController.swift */; };
 		A77BCC5B1B2F55BB006FCBFE /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77BCC5A1B2F55BB006FCBFE /* BaseController.swift */; };
 		A77BCC5D1B2F5A6E006FCBFE /* main.html in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC5C1B2F5A6E006FCBFE /* main.html */; };
+		A77BCC5F1B2F81E8006FCBFE /* logo-default.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC5E1B2F81E8006FCBFE /* logo-default.png */; };
 		A78410641AEF131A006709ED /* CheckCredentialsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */; };
 		A78410661AEF1433006709ED /* CheckCredentialsRequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410651AEF1433006709ED /* CheckCredentialsRequestSerializer.swift */; };
 		A78410681AEF14E0006709ED /* IJSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410671AEF14E0006709ED /* IJSONSerializer.swift */; };
@@ -149,6 +150,7 @@
 		A77BCC581B2F5573006FCBFE /* ClassListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassListController.swift; path = controllers/ClassListController.swift; sourceTree = "<group>"; };
 		A77BCC5A1B2F55BB006FCBFE /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		A77BCC5C1B2F5A6E006FCBFE /* main.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = main.html; path = views/html/main.html; sourceTree = "<group>"; };
+		A77BCC5E1B2F81E8006FCBFE /* logo-default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-default.png"; path = "views/imgs/logo-default.png"; sourceTree = "<group>"; };
 		A77DB2D41AEB4F0500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A77DB2D61AEB4F2500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckCredentialsRequest.swift; path = models/bll/structs/CheckCredentialsRequest.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		A73E628B1B13C85500CAAA8F /* imgs */ = {
 			isa = PBXGroup;
 			children = (
+				A77BCC5E1B2F81E8006FCBFE /* logo-default.png */,
 				A77BCC4A1B2F54E7006FCBFE /* going-pin.png */,
 				A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */,
 				A77BCC4C1B2F54E7006FCBFE /* logo-sf.png */,
@@ -607,6 +610,7 @@
 				A77BCC471B2F53E6006FCBFE /* slick.css in Resources */,
 				A77BCC531B2F54E7006FCBFE /* logo-sf.png in Resources */,
 				A77BCC551B2F54E7006FCBFE /* rsvp.png in Resources */,
+				A77BCC5F1B2F81E8006FCBFE /* logo-default.png in Resources */,
 				A77BCC491B2F5417006FCBFE /* slick.min.js in Resources */,
 				A746A6B11AE9D6E800AF0FA5 /* LaunchScreen.xib in Resources */,
 				A746A6AE1AE9D6E800AF0FA5 /* Images.xcassets in Resources */,

@@ -17,7 +17,12 @@ module.exports = function (grunt) {
                     join: true
                 },
                 files: {
-                    'js/rothrock.js': 'coffee/*.coffee'
+                    'js/rothrock.js': [
+                        'coffee/base_controller.coffee',
+                        'coffee/class_list_controller.coffee',
+                        'coffee/single_class_controller.coffee',
+                        'coffee/main.coffee'
+                    ]
                 }
             }
         },
@@ -65,7 +70,7 @@ module.exports = function (grunt) {
         },
         watch: {
             coffee: {
-                files: 'coffee/*.coffee',
+                files: 'coffee/**/*.coffee',
                 tasks: ['coffeelint', 'coffee'],
                 options: {
                     interrupt: true,
@@ -73,7 +78,7 @@ module.exports = function (grunt) {
                 }
             },
             jade: {
-                files: 'jade/**.jade',
+                files: 'jade/**/*.jade',
                 tasks: ['jade'],
                 options: {
                     interrupt: true,

@@ -1,12 +1,11 @@
 header.js-header
   .logo-wrapper
-    img.logo.js-logo
+    img.logo.js-logo(src='logo-default.png')
     p.upcoming-classes.js-upcoming-classes
   .settings
     p.ic-settings &#xf013;
     p.label Settings
 
-- var slickConfig = { accessibility: false, edgeFriction: 0.30, infinite: false, variableWidth: true }
-section.js-class-list&attributes({'data-slick': slickConfig})
+section.js-class-list
 
 include ./templates/class-list-template.jade
