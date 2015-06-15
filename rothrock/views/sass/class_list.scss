@@ -153,10 +153,18 @@ $class-list-selector: "class-list";
 
     &.rsvp {
       background-image: url('rsvp.png');
+
+      &:active {
+        background-image: url('rsvp-active.png');
+      }
     }
 
     &.unrsvp {
       background-image: url('unrsvp.png');
+
+      &:active {
+        background-image: url('unrsvp-active.png');
+      }
     }
   }
 }

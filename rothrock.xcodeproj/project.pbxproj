@@ -36,6 +36,17 @@
 		A772CBC21B066EE40055AF4E /* UserBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CBC11B066EE40055AF4E /* UserBusiness.swift */; };
 		A772CBC41B0691960055AF4E /* VenueBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CBC31B0691960055AF4E /* VenueBusiness.swift */; };
 		A772CBC61B0692E90055AF4E /* BusinessFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CBC51B0692E90055AF4E /* BusinessFactory.swift */; };
+		A77BCC471B2F53E6006FCBFE /* slick.css in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC461B2F53E6006FCBFE /* slick.css */; };
+		A77BCC491B2F5417006FCBFE /* slick.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC481B2F5417006FCBFE /* slick.min.js */; };
+		A77BCC511B2F54E7006FCBFE /* going-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4A1B2F54E7006FCBFE /* going-pin.png */; };
+		A77BCC521B2F54E7006FCBFE /* logo-charlottesville.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */; };
+		A77BCC531B2F54E7006FCBFE /* logo-sf.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4C1B2F54E7006FCBFE /* logo-sf.png */; };
+		A77BCC541B2F54E7006FCBFE /* rsvp-active.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4D1B2F54E7006FCBFE /* rsvp-active.png */; };
+		A77BCC551B2F54E7006FCBFE /* rsvp.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4E1B2F54E7006FCBFE /* rsvp.png */; };
+		A77BCC561B2F54E7006FCBFE /* unrsvp-active.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4F1B2F54E7006FCBFE /* unrsvp-active.png */; };
+		A77BCC571B2F54E7006FCBFE /* unrsvp.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC501B2F54E7006FCBFE /* unrsvp.png */; };
+		A77BCC591B2F5573006FCBFE /* ClassListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77BCC581B2F5573006FCBFE /* ClassListController.swift */; };
+		A77BCC5B1B2F55BB006FCBFE /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77BCC5A1B2F55BB006FCBFE /* BaseController.swift */; };
 		A78410641AEF131A006709ED /* CheckCredentialsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */; };
 		A78410661AEF1433006709ED /* CheckCredentialsRequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410651AEF1433006709ED /* CheckCredentialsRequestSerializer.swift */; };
 		A78410681AEF14E0006709ED /* IJSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410671AEF14E0006709ED /* IJSONSerializer.swift */; };
@@ -54,7 +65,6 @@
 		A794DC301AF1A77900D8743F /* IUserBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC2F1AF1A77900D8743F /* IUserBusiness.swift */; };
 		A794DC321AF1A88E00D8743F /* IVenueBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC311AF1A88E00D8743F /* IVenueBusiness.swift */; };
 		A794DC341AF1A8F700D8743F /* LessonBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC331AF1A8F700D8743F /* LessonBusiness.swift */; };
-		A79920A31B1404B000012641 /* ic_action_overflow.png in Resources */ = {isa = PBXBuildFile; fileRef = A79920A21B1404B000012641 /* ic_action_overflow.png */; };
 		A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */; };
 		A7BA44EE1AEAEC25008514F5 /* IUserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44ED1AEAEC25008514F5 /* IUserDAO.swift */; };
 		A7BA44F01AEAECDB008514F5 /* IVenueDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */; };
@@ -70,14 +80,11 @@
 		A7C72EE41B0A5BB8001BA13C /* ErrorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE31B0A5BB8001BA13C /* ErrorEvent.swift */; };
 		A7C72EE61B0A5CFB001BA13C /* ConfirmationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE51B0A5CFB001BA13C /* ConfirmationEvent.swift */; };
 		A7C72EE81B0A5D4B001BA13C /* InformationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE71B0A5D4B001BA13C /* InformationEvent.swift */; };
-		A7C72EEC1B0AAFBB001BA13C /* ClassDetailsInitEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EEB1B0AAFBB001BA13C /* ClassDetailsInitEvent.swift */; };
 		A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFE91AEACBEC00370F4A /* User.swift */; };
 		A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEB1AEAD1C100370F4A /* Venue.swift */; };
 		A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */; };
 		A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */; };
 		A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */; };
-		A7E5CF7D1B15198F002C1458 /* ic_calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E5CF7B1B15198F002C1458 /* ic_calendar.png */; };
-		A7E5CF7E1B15198F002C1458 /* ic_map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E5CF7C1B15198F002C1458 /* ic_map_pin.png */; };
 		A7F7A5781B1CC192009A3951 /* caravel.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A7F7A5771B1CC192009A3951 /* caravel.min.js */; };
 		E34592293B39382235FF4973 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEF411B36336395668B971F /* Pods.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		FE6FCA9EDDA79A7556DC9E70 /* Pods_rothrockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA57EFD32C75B4AEA027CF1 /* Pods_rothrockTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -131,6 +138,17 @@
 		A772CBC11B066EE40055AF4E /* UserBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserBusiness.swift; path = models/bll/UserBusiness.swift; sourceTree = "<group>"; };
 		A772CBC31B0691960055AF4E /* VenueBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenueBusiness.swift; path = models/bll/VenueBusiness.swift; sourceTree = "<group>"; };
 		A772CBC51B0692E90055AF4E /* BusinessFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessFactory.swift; path = models/bll/BusinessFactory.swift; sourceTree = "<group>"; };
+		A77BCC461B2F53E6006FCBFE /* slick.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = slick.css; path = views/bower_components/slick.js/slick/slick.css; sourceTree = "<group>"; };
+		A77BCC481B2F5417006FCBFE /* slick.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = slick.min.js; path = views/bower_components/slick.js/slick/slick.min.js; sourceTree = "<group>"; };
+		A77BCC4A1B2F54E7006FCBFE /* going-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "going-pin.png"; path = "views/imgs/going-pin.png"; sourceTree = "<group>"; };
+		A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-charlottesville.png"; path = "views/imgs/logo-charlottesville.png"; sourceTree = "<group>"; };
+		A77BCC4C1B2F54E7006FCBFE /* logo-sf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-sf.png"; path = "views/imgs/logo-sf.png"; sourceTree = "<group>"; };
+		A77BCC4D1B2F54E7006FCBFE /* rsvp-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rsvp-active.png"; path = "views/imgs/rsvp-active.png"; sourceTree = "<group>"; };
+		A77BCC4E1B2F54E7006FCBFE /* rsvp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rsvp.png; path = views/imgs/rsvp.png; sourceTree = "<group>"; };
+		A77BCC4F1B2F54E7006FCBFE /* unrsvp-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "unrsvp-active.png"; path = "views/imgs/unrsvp-active.png"; sourceTree = "<group>"; };
+		A77BCC501B2F54E7006FCBFE /* unrsvp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unrsvp.png; path = views/imgs/unrsvp.png; sourceTree = "<group>"; };
+		A77BCC581B2F5573006FCBFE /* ClassListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassListController.swift; path = controllers/ClassListController.swift; sourceTree = "<group>"; };
+		A77BCC5A1B2F55BB006FCBFE /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		A77DB2D41AEB4F0500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A77DB2D61AEB4F2500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckCredentialsRequest.swift; path = models/bll/structs/CheckCredentialsRequest.swift; sourceTree = "<group>"; };
@@ -153,7 +171,6 @@
 		A794DC2F1AF1A77900D8743F /* IUserBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IUserBusiness.swift; path = models/bll/interfaces/IUserBusiness.swift; sourceTree = "<group>"; };
 		A794DC311AF1A88E00D8743F /* IVenueBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IVenueBusiness.swift; path = models/bll/interfaces/IVenueBusiness.swift; sourceTree = "<group>"; };
 		A794DC331AF1A8F700D8743F /* LessonBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LessonBusiness.swift; path = models/bll/LessonBusiness.swift; sourceTree = "<group>"; };
-		A79920A21B1404B000012641 /* ic_action_overflow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_action_overflow.png; path = views/imgs/ic_action_overflow.png; sourceTree = "<group>"; };
 		A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayNotificationPreference.swift; path = models/dao/DayNotificationPreference.swift; sourceTree = "<group>"; };
 		A7BA44ED1AEAEC25008514F5 /* IUserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IUserDAO.swift; path = models/dao/interfaces/IUserDAO.swift; sourceTree = "<group>"; };
 		A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IVenueDAO.swift; path = models/dao/interfaces/IVenueDAO.swift; sourceTree = "<group>"; };
@@ -169,14 +186,11 @@
 		A7C72EE31B0A5BB8001BA13C /* ErrorEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorEvent.swift; path = controllers/events/ErrorEvent.swift; sourceTree = "<group>"; };
 		A7C72EE51B0A5CFB001BA13C /* ConfirmationEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfirmationEvent.swift; path = controllers/events/ConfirmationEvent.swift; sourceTree = "<group>"; };
 		A7C72EE71B0A5D4B001BA13C /* InformationEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InformationEvent.swift; path = controllers/events/InformationEvent.swift; sourceTree = "<group>"; };
-		A7C72EEB1B0AAFBB001BA13C /* ClassDetailsInitEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassDetailsInitEvent.swift; path = controllers/events/ClassDetailsInitEvent.swift; sourceTree = "<group>"; };
 		A7D5CFE91AEACBEC00370F4A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = models/beans/User.swift; sourceTree = "<group>"; };
 		A7D5CFEB1AEAD1C100370F4A /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Venue.swift; path = models/beans/Venue.swift; sourceTree = "<group>"; };
 		A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ILessonDAO.swift; path = models/dao/interfaces/ILessonDAO.swift; sourceTree = "<group>"; };
 		A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPreferenceDAO.swift; path = models/dao/interfaces/IPreferenceDAO.swift; sourceTree = "<group>"; };
 		A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwoHourNotificationPreference.swift; path = models/dao/TwoHourNotificationPreference.swift; sourceTree = "<group>"; };
-		A7E5CF7B1B15198F002C1458 /* ic_calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_calendar.png; path = views/imgs/ic_calendar.png; sourceTree = "<group>"; };
-		A7E5CF7C1B15198F002C1458 /* ic_map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_map_pin.png; path = views/imgs/ic_map_pin.png; sourceTree = "<group>"; };
 		A7F571E81AEED9DD001084D3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		A7F7A5771B1CC192009A3951 /* caravel.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = caravel.min.js; path = Pods/Caravel/caravel/js/caravel.min.js; sourceTree = SOURCE_ROOT; };
 		AB487B39E1ADD18545092D96 /* Pods-rothrock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.release.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.release.xcconfig"; sourceTree = "<group>"; };
@@ -246,9 +260,13 @@
 		A73E628B1B13C85500CAAA8F /* imgs */ = {
 			isa = PBXGroup;
 			children = (
-				A7E5CF7B1B15198F002C1458 /* ic_calendar.png */,
-				A7E5CF7C1B15198F002C1458 /* ic_map_pin.png */,
-				A79920A21B1404B000012641 /* ic_action_overflow.png */,
+				A77BCC4A1B2F54E7006FCBFE /* going-pin.png */,
+				A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */,
+				A77BCC4C1B2F54E7006FCBFE /* logo-sf.png */,
+				A77BCC4D1B2F54E7006FCBFE /* rsvp-active.png */,
+				A77BCC4E1B2F54E7006FCBFE /* rsvp.png */,
+				A77BCC4F1B2F54E7006FCBFE /* unrsvp-active.png */,
+				A77BCC501B2F54E7006FCBFE /* unrsvp.png */,
 			);
 			name = imgs;
 			sourceTree = "<group>";
@@ -256,6 +274,7 @@
 		A73E628C1B13C85B00CAAA8F /* js */ = {
 			isa = PBXGroup;
 			children = (
+				A77BCC481B2F5417006FCBFE /* slick.min.js */,
 				A7F7A5771B1CC192009A3951 /* caravel.min.js */,
 				A78CD2A31B14DBA50086EFF8 /* jquery.min.js */,
 				A73E62941B13C8E500CAAA8F /* framework7.min.js */,
@@ -267,6 +286,7 @@
 		A73E628D1B13C86100CAAA8F /* css */ = {
 			isa = PBXGroup;
 			children = (
+				A77BCC461B2F53E6006FCBFE /* slick.css */,
 				A73E62901B13C8D100CAAA8F /* framework7.min.css */,
 				A73E628E1B13C8C400CAAA8F /* rothrock.css */,
 			);
@@ -441,7 +461,6 @@
 				A7C72EE31B0A5BB8001BA13C /* ErrorEvent.swift */,
 				A7C72EE51B0A5CFB001BA13C /* ConfirmationEvent.swift */,
 				A7C72EE71B0A5D4B001BA13C /* InformationEvent.swift */,
-				A7C72EEB1B0AAFBB001BA13C /* ClassDetailsInitEvent.swift */,
 			);
 			name = events;
 			sourceTree = "<group>";
@@ -489,6 +508,8 @@
 			children = (
 				A7C72EDC1B0A59F1001BA13C /* events */,
 				A746A6A81AE9D6E800AF0FA5 /* MainController.swift */,
+				A77BCC581B2F5573006FCBFE /* ClassListController.swift */,
+				A77BCC5A1B2F55BB006FCBFE /* BaseController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -580,21 +601,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				A746A6AC1AE9D6E800AF0FA5 /* Main.storyboard in Resources */,
+				A77BCC521B2F54E7006FCBFE /* logo-charlottesville.png in Resources */,
 				A7BD79301B05728F00303751 /* Localizable.strings in Resources */,
 				A73E62931B13C8DC00CAAA8F /* rothrock.js in Resources */,
-				A79920A31B1404B000012641 /* ic_action_overflow.png in Resources */,
+				A77BCC471B2F53E6006FCBFE /* slick.css in Resources */,
+				A77BCC531B2F54E7006FCBFE /* logo-sf.png in Resources */,
+				A77BCC551B2F54E7006FCBFE /* rsvp.png in Resources */,
+				A77BCC491B2F5417006FCBFE /* slick.min.js in Resources */,
 				A746A6B11AE9D6E800AF0FA5 /* LaunchScreen.xib in Resources */,
 				A746A6AE1AE9D6E800AF0FA5 /* Images.xcassets in Resources */,
-				A7E5CF7D1B15198F002C1458 /* ic_calendar.png in Resources */,
 				A73E62911B13C8D100CAAA8F /* framework7.min.css in Resources */,
+				A77BCC571B2F54E7006FCBFE /* unrsvp.png in Resources */,
+				A77BCC511B2F54E7006FCBFE /* going-pin.png in Resources */,
 				A7F7A5781B1CC192009A3951 /* caravel.min.js in Resources */,
 				A78CD2A21B14D5350086EFF8 /* class_details.html in Resources */,
+				A77BCC541B2F54E7006FCBFE /* rsvp-active.png in Resources */,
 				A73E62971B13C8EF00CAAA8F /* class_list.html in Resources */,
 				A73E628F1B13C8C400CAAA8F /* rothrock.css in Resources */,
 				A78CD2A41B14DBA50086EFF8 /* jquery.min.js in Resources */,
 				A741CFFB1B166895001C9272 /* settings.html in Resources */,
+				A77BCC561B2F54E7006FCBFE /* unrsvp-active.png in Resources */,
 				A73E62951B13C8E500CAAA8F /* framework7.min.js in Resources */,
-				A7E5CF7E1B15198F002C1458 /* ic_map_pin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,7 +738,6 @@
 				A772CBC41B0691960055AF4E /* VenueBusiness.swift in Sources */,
 				A794DC251AF1A24100D8743F /* RailsSchoolAPIFactory.swift in Sources */,
 				A7C72EE21B0A5B9B001BA13C /* ProgressDoneEvent.swift in Sources */,
-				A7C72EEC1B0AAFBB001BA13C /* ClassDetailsInitEvent.swift in Sources */,
 				A78410681AEF14E0006709ED /* IJSONSerializer.swift in Sources */,
 				A7C72EE61B0A5CFB001BA13C /* ConfirmationEvent.swift in Sources */,
 				A71A7CC71AF00F440094019E /* SerializerFactory.swift in Sources */,
@@ -740,6 +766,7 @@
 				A7C72EE41B0A5BB8001BA13C /* ErrorEvent.swift in Sources */,
 				A7BA44EE1AEAEC25008514F5 /* IUserDAO.swift in Sources */,
 				A74F045D1AEB274700EB8916 /* IJSONDeserializer.swift in Sources */,
+				A77BCC591B2F5573006FCBFE /* ClassListController.swift in Sources */,
 				A7BD79371B058B2700303751 /* BLLCallback.swift in Sources */,
 				A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */,
 				A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */,
@@ -747,6 +774,7 @@
 				A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */,
 				A74F044C1AEB04FE00EB8916 /* UserDAO.swift in Sources */,
 				A74F044A1AEB02B700EB8916 /* PreferenceDAO.swift in Sources */,
+				A77BCC5B1B2F55BB006FCBFE /* BaseController.swift in Sources */,
 				A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */,
 				A794DC211AF1A09800D8743F /* ILessonBusiness.swift in Sources */,
 				A784106A1AEF16FC006709ED /* SchoolClassSerializer.swift in Sources */,
