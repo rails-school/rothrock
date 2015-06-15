@@ -3,7 +3,7 @@ class BaseController
     @app = app
     @bus = Caravel.getDefault()
 
-  getBus: () ->
+  getDefaultBus: () ->
     @bus
 
   getApp: () ->

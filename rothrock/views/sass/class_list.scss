@@ -1,23 +1,30 @@
 @import "base";
 
-.class-list {
-  width: 100%;
+$class-list-selector: "class-list";
 
+.#{$class-list-selector} {
+  @include display(flex);
+  @include flex-direction(colum);
+
+  width: 100%;
+  height: 100%;
   padding: 10px 20px;
+  box-sizing: border-box;
 }
 
-.class-list header {
+.#{$class-list-selector} header {
+  @include display(flex);
+  @include flex-direction(row);
+  @include flex-flow(space-between);
+
   width: 100%;
 
-  margin: 0 0 15px 0;
-
-  > {
-    display: inline-block;
-    vertical-align: middle;
-  }
-
   .logo-wrapper {
+    @include flex(1);
+    margin: 0 5px 5px 0;
+
     .logo {
+      max-width: 100%;
       margin: 0 0 5px 0;
     }
 
@@ -28,7 +35,7 @@
   }
 
   .settings {
-    width: 150px;
+    margin: 0 0 5px 5px;
 
     p {
       font-size: 13px;
@@ -36,30 +43,36 @@
     }
 
     .ic-settings {
-
-    }
-
-    .label {
+      margin: 0 0 3px 0;
     }
   }
 }
 
-// Class cards
-.class-list section .class-wrapper {
-  width: 90%;
+.#{$class-list-selector} section {
+  @include flex(1);
 
-  margin: 0 20px;
+  .class-card-wrapper {
+    @include display(flex);
+    @include flex-direction(column);
 
-  &:first-child {
-    margin-left: 0;
+    width: 90%;
+    margin: 0 20px;
+
+    // Remove margins for first and last elements
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
+}
 
-  &:last-child {
-    margin-right: 0;
-  }
-
+// Class card list
+.#{$class-list-selector} section .class-card-wrapper {
   .class-attendees {
-    padding: 5px;
+    margin: 5px;
 
     text-align: center;
     font-size: 13px;
@@ -67,7 +80,7 @@
   }
 
   .class-share-wrapper {
-    padding: 5px;
+    margin: 5px;
 
     > {
       display: inline-block;
@@ -77,8 +90,8 @@
       font-size: 13px;
     }
 
-    p:first-child {
-      padding: 0 10px 0 0;
+    .ic-share {
+      padding: 0 5px 0 0;
 
       color: $gray;
     }
@@ -89,7 +102,10 @@
   }
 }
 
-.class-list section .class-wrapper .class-bordered-wrapper {
+// Class card + floating elements
+.#{$class-list-selector} section .class-card-wrapper .class-card {
+  @include flex(1);
+
   width: 100%;
 
   border: 1px solid $gray;
@@ -98,6 +114,8 @@
     position: absolute;
     top: -34px;
     left: -34px;
+
+    max-width: 100%;
   }
 
   .class-countdown {
@@ -105,10 +123,13 @@
     top: -16px;
     left: 0;
 
-    border: 1px solid $red;
+    border-bottom: 1px solid $red;
+
+    color: $black;
+    font-size: 13px;
   }
 
-  .details-wrapper {
+  .class-card-content {
     width: 100%;
 
     padding: 10px;
@@ -116,6 +137,12 @@
   }
 
   .class-rsvp-button {
+    position: absolute;
+    bottom: 50px;
+
+    width: 290px;
+    height: 100px;
+
     font-size: 32px;
     color: $white;
     text-shadow: 0 3px 3px $black;
@@ -129,12 +156,13 @@
     }
 
     &.unrsvp {
-      background-image: url('rsvp.png');
+      background-image: url('unrsvp.png');
     }
   }
 }
 
-.class-list section .class-wrapper .class-bordered-wrapper .details-wrapper {
+// Class card inner content
+.#{$class-list-selector} section .class-card-wrapper .class-card .class-card-content {
   h1 {
     color: $blue;
     font-size: 32px;

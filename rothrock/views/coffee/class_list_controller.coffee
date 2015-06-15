@@ -3,33 +3,17 @@ class ClassListController extends BaseController
     super app
     @listSelector = '.js-class-list'
 
-    $('.toolbar').hide()
+  getBus: () ->
+    Caravel.get('ClassListController')
 
-    @getBus().register "DisplayClassList", (name, data) =>
-      @_setContent(data)
-
-      $(@listSelector).on 'refresh', () =>
-        @bus.post "AskForRefreshingClassList"
-
-    @getBus().register "RefreshClassList", (name, data) =>
-      @_setContent(data)
-      @getApp.pullToRefreshDone()
-
-  onBack: () ->
-    $('.toolbar').hide()
-
-  _setContent: (data) ->
+  onResume: () ->
     @fork()
-    $(@listSelector).find('li.card').each (i, e) =>
-      $(e).off('click')
+    @cardTemplate = Template7.compile($('#class-card-template').html()) unless @cardTemplate?
 
-    @template = Template7.compile($('#class-list-template').html()) unless @template?
-    $(@listSelector).html(@template({ tuples: data }))
+    @getBus().register 'ReceiveClasses', (name, data) =>
+      $(@listSelector).html(@cardTemplate({ classes: data }))
+      @done()
 
-    $(@listSelector).find('li.card').each (index, e) =>
-      $(e).on 'click', () =>
-        @getBus().post 'RequireClassDetails', $(e).data('slug')
-
-    @done()
+    @getBus().post('RequireClasses')
 
 

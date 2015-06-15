@@ -1,12 +1,12 @@
-script#class-list-template(type='text/template7')
+script#class-card-template(type='text/template7')
   | {{#each classes}}
-  .class-wrapper
-    .class-bordered-wrapper
+  .class-card-wrapper
+    .class-card
       img.class-going-pin.hidden.js-class-going-pin(src='going-pin')
       p.class-countdown.js-class-countdown {{lesson.countdown}}
 
       //- Details wrapper
-      .details-wrapper
+      .class-card-content(data-slug="{{lesson.slug}}")
         h1 {{lesson.title}}
         h2 {{lesson.summary}}
 

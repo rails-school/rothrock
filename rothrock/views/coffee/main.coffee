@@ -19,3 +19,4 @@ myApp.onPageBack 'settings', (page) =>
   classListController.onResume()
 
 classListController.onStart()
+classListController.onResume()
