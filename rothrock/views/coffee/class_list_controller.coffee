@@ -2,6 +2,7 @@ class ClassListController extends BaseController
   constructor: (app) ->
     super app
     @listSelector = '.js-class-list'
+    @logoSelector = '.js-logo'
 
   getBus: () ->
     Caravel.get('ClassListController')
@@ -14,6 +15,10 @@ class ClassListController extends BaseController
       $(@listSelector).html(@cardTemplate({ classes: data }))
       @done()
 
-    @getBus().post('RequireClasses')
+    @getBus().register 'ReceiveSchool', (name, data) =>
+      if data == 1
+        $(@logoSelector).attr('src', 'logo-charlottesville.png')
+      else
+        $(@logoSelector).attr('src', 'logo-sf.png')
 
 
