@@ -27,7 +27,7 @@ module.exports = function (grunt) {
                     configFile: 'config/coffeelint-default.json'
                 },
                 files: {
-                    src: [ 'coffee/*.coffee' ]
+                    src: ['coffee/*.coffee']
                 }
             }
         },
@@ -46,13 +46,13 @@ module.exports = function (grunt) {
                 config: 'config/scsslint-default.json'
             },
             dist: {
-                allFiles: [ 'sass/*.scss' ]
+                allFiles: ['sass/*.scss']
             }
         },
         watch: {
             coffee: {
                 files: 'coffee/*.coffee',
-                tasks: [ 'coffee' ],
+                tasks: ['coffeelint', 'coffee'],
                 options: {
                     interrupt: true,
                     atBegin: true
@@ -60,7 +60,7 @@ module.exports = function (grunt) {
             },
             sass: {
                 files: 'sass/**/*.scss',
-                tasks: [ 'sass' ],
+                tasks: ['scsslint', 'sass'],
                 options: {
                     interrupt: true,
                     atBegin: true
