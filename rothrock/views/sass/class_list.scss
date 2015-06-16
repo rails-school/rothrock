@@ -10,6 +10,8 @@ $class-list-selector: "class-list";
   height: 100%;
   padding: 10px 20px;
   box-sizing: border-box;
+
+  background-color: $white;
 }
 
 .#{$class-list-selector} header {
@@ -33,7 +35,10 @@ $class-list-selector: "class-list";
     }
 
     .upcoming-classes {
-      font-size: 11px;
+      font: {
+        family: $body-font;
+        size: 11px;
+      }
       color: $gray;
     }
   }
@@ -44,12 +49,17 @@ $class-list-selector: "class-list";
     text-align: center;
 
     p {
-      font-size: 13px;
+      font: {
+        family: $body-font;
+        size: 13px;
+      }
       color: $gray;
+
+      margin: 0;
     }
 
     .ic-settings {
-      margin: 0 0 3px 0;
+      margin: 0 0 5px 0;
     }
   }
 }
@@ -80,7 +90,10 @@ $class-list-selector: "class-list";
     margin: 5px;
 
     text-align: center;
-    font-size: 13px;
+    font: {
+      family: $body-font;
+      size: 13px;
+    }
     color: $red;
   }
 
@@ -102,6 +115,7 @@ $class-list-selector: "class-list";
     }
 
     p:last-child {
+      font-family: $body-font;
       color: $black;
     }
   }
@@ -131,7 +145,10 @@ $class-list-selector: "class-list";
     border-bottom: 1px solid $red;
 
     color: $black;
-    font-size: 13px;
+    font: {
+      family: $body-font;
+      size: 13px;
+    }
   }
 
   .class-card-content {
@@ -148,7 +165,10 @@ $class-list-selector: "class-list";
     width: 290px;
     height: 100px;
 
-    font-size: 32px;
+    font: {
+      family: $headline-font;
+      size: 32px;
+    }
     color: $white;
     text-shadow: 0 3px 3px $black;
     text-align: center;
@@ -178,12 +198,18 @@ $class-list-selector: "class-list";
 .#{$class-list-selector} section .class-card-wrapper .class-card .class-card-content {
   h1 {
     color: $blue;
-    font-size: 32px;
+    font: {
+      family: $headline-font;
+      size: 32px;
+    }
   }
 
   h2 {
     color: $black;
-    font-size: 18px;
+    font: {
+      family: $body-font;
+      size: 18px;
+    }
   }
 
   ul {
@@ -199,7 +225,10 @@ $class-list-selector: "class-list";
         display: inline-block;
         vertical-align: middle;
 
-        font-size: 15px;
+        font: {
+          family: $body-font;
+          size: 15px;
+        }
       }
 
       p:first-child {

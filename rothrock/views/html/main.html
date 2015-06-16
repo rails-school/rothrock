@@ -37,19 +37,19 @@
                       <h2>{{lesson.summary}}</h2>
                       <ul>
                         <li>
-                          <p class="ic-ruby">&#xf219;</p>
+                          <p class="ic-ruby"><i class="fa fa-diamond"></i></p>
                           <p>{{teacher.name}}</p>
                         </li>
                         <li>
-                          <p class="ic-venue">&#xf041;</p>
+                          <p class="ic-venue"><i class="fa fa-map-marker"></i></p>
                           <p>{{venue.name}}</p>
                         </li>
                         <li>
-                          <p class="ic-calendar">&#xf133;</p>
+                          <p class="ic-calendar"><i class="fa fa-calendar-o"></i></p>
                           <p>{{lesson.date}} {{lesson.countdown}}</p>
                         </li>
                         <li>
-                          <p class="ic-clock">&#xf017;</p>
+                          <p class="ic-clock"><i class="fa fa-clock-o"></i></p>
                           <p>{{lesson.hour}}</p>
                         </li>
                       </ul>
@@ -62,7 +62,7 @@
                     {{#js_compare "self.attendees > 1"}}{{attendees}} are going{{/js_compare}}{{/js_compare}}
                   </p>
                   <div class="class-share-wrapper">
-                    <p class="ic-share">&#xf1e0;</p>
+                    <p class="ic-share"><i class="fa fa-share-alt"></i></p>
                     <p>Share</p>
                   </div>
                 </div>{{/each}}

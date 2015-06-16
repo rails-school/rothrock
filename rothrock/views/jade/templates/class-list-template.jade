@@ -12,16 +12,20 @@ script#class-card-template(type='text/template7')
 
         ul
           li
-            p.ic-ruby &#xf219;
+            p.ic-ruby
+              i.fa.fa-diamond
             p {{teacher.name}}
           li
-            p.ic-venue &#xf041;
+            p.ic-venue
+              i.fa.fa-map-marker
             p {{venue.name}}
           li
-            p.ic-calendar &#xf133;
+            p.ic-calendar
+              i.fa.fa-calendar-o
             p {{lesson.date}} {{lesson.countdown}}
           li
-            p.ic-clock &#xf017;
+            p.ic-clock
+              i.fa.fa-clock-o
             p {{lesson.hour}}
 
       //- RSVP button
@@ -33,7 +37,8 @@ script#class-card-template(type='text/template7')
       | {{#js_compare "self.attendees > 1"}}{{attendees}} are going{{/js_compare}}{{/js_compare}}
 
     .class-share-wrapper
-      p.ic-share &#xf1e0;
+      p.ic-share
+        i.fa.fa-share-alt
       p Share
 
   | {{/each}}
