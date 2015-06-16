@@ -47,10 +47,7 @@
 		A773955F1B30A78A00004169 /* YanoneKaffeesatz-Regular.svg in Resources */ = {isa = PBXBuildFile; fileRef = A77395531B30A78A00004169 /* YanoneKaffeesatz-Regular.svg */; };
 		A77395601B30A78A00004169 /* YanoneKaffeesatz-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A77395541B30A78A00004169 /* YanoneKaffeesatz-Regular.ttf */; };
 		A77395611B30A78A00004169 /* YanoneKaffeesatz-Regular.woff in Resources */ = {isa = PBXBuildFile; fileRef = A77395551B30A78A00004169 /* YanoneKaffeesatz-Regular.woff */; };
-		A77395631B30D0E700004169 /* owl.carousel.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A77395621B30D0E700004169 /* owl.carousel.min.js */; };
-		A77395651B30D0EE00004169 /* owl.carousel.css in Resources */ = {isa = PBXBuildFile; fileRef = A77395641B30D0EE00004169 /* owl.carousel.css */; };
-		A77BCC471B2F53E6006FCBFE /* slick.css in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC461B2F53E6006FCBFE /* slick.css */; };
-		A77BCC491B2F5417006FCBFE /* slick.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC481B2F5417006FCBFE /* slick.min.js */; };
+		A77395671B30E4DE00004169 /* hammer.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A77395661B30E4DE00004169 /* hammer.min.js */; };
 		A77BCC511B2F54E7006FCBFE /* going-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4A1B2F54E7006FCBFE /* going-pin.png */; };
 		A77BCC521B2F54E7006FCBFE /* logo-charlottesville.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */; };
 		A77BCC531B2F54E7006FCBFE /* logo-sf.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4C1B2F54E7006FCBFE /* logo-sf.png */; };
@@ -171,10 +168,7 @@
 		A77395531B30A78A00004169 /* YanoneKaffeesatz-Regular.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "YanoneKaffeesatz-Regular.svg"; path = "views/fonts/YanoneKaffeesatz-Regular.svg"; sourceTree = "<group>"; };
 		A77395541B30A78A00004169 /* YanoneKaffeesatz-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "YanoneKaffeesatz-Regular.ttf"; path = "views/fonts/YanoneKaffeesatz-Regular.ttf"; sourceTree = "<group>"; };
 		A77395551B30A78A00004169 /* YanoneKaffeesatz-Regular.woff */ = {isa = PBXFileReference; lastKnownFileType = file; name = "YanoneKaffeesatz-Regular.woff"; path = "views/fonts/YanoneKaffeesatz-Regular.woff"; sourceTree = "<group>"; };
-		A77395621B30D0E700004169 /* owl.carousel.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = owl.carousel.min.js; path = "views/bower_components/owlcarousel/owl-carousel/owl.carousel.min.js"; sourceTree = "<group>"; };
-		A77395641B30D0EE00004169 /* owl.carousel.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = owl.carousel.css; path = "views/bower_components/owlcarousel/owl-carousel/owl.carousel.css"; sourceTree = "<group>"; };
-		A77BCC461B2F53E6006FCBFE /* slick.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = slick.css; path = views/bower_components/slick.js/slick/slick.css; sourceTree = "<group>"; };
-		A77BCC481B2F5417006FCBFE /* slick.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = slick.min.js; path = views/bower_components/slick.js/slick/slick.min.js; sourceTree = "<group>"; };
+		A77395661B30E4DE00004169 /* hammer.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = hammer.min.js; path = views/bower_components/hammer.js/hammer.min.js; sourceTree = "<group>"; };
 		A77BCC4A1B2F54E7006FCBFE /* going-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "going-pin.png"; path = "views/imgs/going-pin.png"; sourceTree = "<group>"; };
 		A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-charlottesville.png"; path = "views/imgs/logo-charlottesville.png"; sourceTree = "<group>"; };
 		A77BCC4C1B2F54E7006FCBFE /* logo-sf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-sf.png"; path = "views/imgs/logo-sf.png"; sourceTree = "<group>"; };
@@ -319,8 +313,7 @@
 		A73E628C1B13C85B00CAAA8F /* js */ = {
 			isa = PBXGroup;
 			children = (
-				A77395621B30D0E700004169 /* owl.carousel.min.js */,
-				A77BCC481B2F5417006FCBFE /* slick.min.js */,
+				A77395661B30E4DE00004169 /* hammer.min.js */,
 				A7F7A5771B1CC192009A3951 /* caravel.min.js */,
 				A78CD2A31B14DBA50086EFF8 /* jquery.min.js */,
 				A73E62941B13C8E500CAAA8F /* framework7.min.js */,
@@ -332,9 +325,7 @@
 		A73E628D1B13C86100CAAA8F /* css */ = {
 			isa = PBXGroup;
 			children = (
-				A77395641B30D0EE00004169 /* owl.carousel.css */,
 				A77BCC601B2FB7C8006FCBFE /* font-awesome.min.css */,
-				A77BCC461B2F53E6006FCBFE /* slick.css */,
 				A73E62901B13C8D100CAAA8F /* framework7.min.css */,
 				A73E628E1B13C8C400CAAA8F /* rothrock.css */,
 			);
@@ -680,26 +671,22 @@
 				A7BD79301B05728F00303751 /* Localizable.strings in Resources */,
 				A73E62931B13C8DC00CAAA8F /* rothrock.js in Resources */,
 				A773955C1B30A78A00004169 /* Muli-Regular.ttf in Resources */,
-				A77BCC471B2F53E6006FCBFE /* slick.css in Resources */,
 				A773955A1B30A78A00004169 /* Muli-Regular.eot in Resources */,
 				A77BCC531B2F54E7006FCBFE /* logo-sf.png in Resources */,
 				A773955B1B30A78A00004169 /* Muli-Regular.svg in Resources */,
 				A77395611B30A78A00004169 /* YanoneKaffeesatz-Regular.woff in Resources */,
 				A77395571B30A78A00004169 /* Muli-Italic.svg in Resources */,
 				A77BCC6C1B2FB93A006FCBFE /* fontawesome-webfont.woff in Resources */,
-				A77395631B30D0E700004169 /* owl.carousel.min.js in Resources */,
 				A77BCC551B2F54E7006FCBFE /* rsvp.png in Resources */,
 				A773955D1B30A78A00004169 /* Muli-Regular.woff in Resources */,
 				A77BCC6A1B2FB93A006FCBFE /* fontawesome-webfont.svg in Resources */,
 				A77BCC5F1B2F81E8006FCBFE /* logo-default.png in Resources */,
-				A77BCC491B2F5417006FCBFE /* slick.min.js in Resources */,
 				A77395601B30A78A00004169 /* YanoneKaffeesatz-Regular.ttf in Resources */,
 				A746A6B11AE9D6E800AF0FA5 /* LaunchScreen.xib in Resources */,
 				A746A6AE1AE9D6E800AF0FA5 /* Images.xcassets in Resources */,
 				A73E62911B13C8D100CAAA8F /* framework7.min.css in Resources */,
 				A77BCC571B2F54E7006FCBFE /* unrsvp.png in Resources */,
 				A77BCC691B2FB93A006FCBFE /* fontawesome-webfont.eot in Resources */,
-				A77395651B30D0EE00004169 /* owl.carousel.css in Resources */,
 				A77BCC511B2F54E7006FCBFE /* going-pin.png in Resources */,
 				A773955F1B30A78A00004169 /* YanoneKaffeesatz-Regular.svg in Resources */,
 				A7F7A5781B1CC192009A3951 /* caravel.min.js in Resources */,
@@ -709,6 +696,7 @@
 				A77395581B30A78A00004169 /* Muli-Italic.ttf in Resources */,
 				A73E628F1B13C8C400CAAA8F /* rothrock.css in Resources */,
 				A77BCC6D1B2FB93A006FCBFE /* fontawesome-webfont.woff2 in Resources */,
+				A77395671B30E4DE00004169 /* hammer.min.js in Resources */,
 				A77BCC611B2FB7C8006FCBFE /* font-awesome.min.css in Resources */,
 				A77BCC6B1B2FB93A006FCBFE /* fontawesome-webfont.ttf in Resources */,
 				A78CD2A41B14DBA50086EFF8 /* jquery.min.js in Resources */,

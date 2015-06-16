@@ -17,6 +17,6 @@
     "bourbon": "~4.2.3",
     "framework7": "~1.0.6",
     "jquery": "~2.1.4",
-    "slick.js": "~1.5.5"
+    "hammer.js": "~2.0.4"
   }
 }
