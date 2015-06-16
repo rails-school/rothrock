@@ -9,11 +9,3 @@
 .hidden {
   display: none;
 }
-
-%ic {
-  font-family: 'Serif'; // FIXME
-}
-
-.ic-ruby, .ic-venue, .ic-calendar, .ic-clock {
-  @extend %ic;
-}

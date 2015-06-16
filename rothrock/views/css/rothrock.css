@@ -4,9 +4,6 @@
 .hidden {
   display: none; }
 
-.ic-ruby, .ic-venue, .ic-calendar, .ic-clock {
-  font-family: 'Serif'; }
-
 .class-list {
   display: -webkit-box;
   display: -moz-box;
@@ -73,7 +70,8 @@
       font-size: 11px;
       color: #999; }
   .class-list header .settings {
-    margin: 0 0 5px 5px; }
+    margin: 0 0 5px 5px;
+    text-align: center; }
     .class-list header .settings p {
       font-size: 13px;
       color: #999; }

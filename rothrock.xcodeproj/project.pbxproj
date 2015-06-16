@@ -48,6 +48,13 @@
 		A77BCC5B1B2F55BB006FCBFE /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77BCC5A1B2F55BB006FCBFE /* BaseController.swift */; };
 		A77BCC5D1B2F5A6E006FCBFE /* main.html in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC5C1B2F5A6E006FCBFE /* main.html */; };
 		A77BCC5F1B2F81E8006FCBFE /* logo-default.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC5E1B2F81E8006FCBFE /* logo-default.png */; };
+		A77BCC611B2FB7C8006FCBFE /* font-awesome.min.css in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC601B2FB7C8006FCBFE /* font-awesome.min.css */; };
+		A77BCC691B2FB93A006FCBFE /* fontawesome-webfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC631B2FB93A006FCBFE /* fontawesome-webfont.eot */; };
+		A77BCC6A1B2FB93A006FCBFE /* fontawesome-webfont.svg in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC641B2FB93A006FCBFE /* fontawesome-webfont.svg */; };
+		A77BCC6B1B2FB93A006FCBFE /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC651B2FB93A006FCBFE /* fontawesome-webfont.ttf */; };
+		A77BCC6C1B2FB93A006FCBFE /* fontawesome-webfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC661B2FB93A006FCBFE /* fontawesome-webfont.woff */; };
+		A77BCC6D1B2FB93A006FCBFE /* fontawesome-webfont.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC671B2FB93A006FCBFE /* fontawesome-webfont.woff2 */; };
+		A77BCC6E1B2FB93A006FCBFE /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC681B2FB93A006FCBFE /* FontAwesome.otf */; };
 		A78410641AEF131A006709ED /* CheckCredentialsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */; };
 		A78410661AEF1433006709ED /* CheckCredentialsRequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410651AEF1433006709ED /* CheckCredentialsRequestSerializer.swift */; };
 		A78410681AEF14E0006709ED /* IJSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410671AEF14E0006709ED /* IJSONSerializer.swift */; };
@@ -151,6 +158,13 @@
 		A77BCC5A1B2F55BB006FCBFE /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		A77BCC5C1B2F5A6E006FCBFE /* main.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = main.html; path = views/html/main.html; sourceTree = "<group>"; };
 		A77BCC5E1B2F81E8006FCBFE /* logo-default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-default.png"; path = "views/imgs/logo-default.png"; sourceTree = "<group>"; };
+		A77BCC601B2FB7C8006FCBFE /* font-awesome.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = "font-awesome.min.css"; path = "views/bower_components/fontawesome/css/font-awesome.min.css"; sourceTree = "<group>"; };
+		A77BCC631B2FB93A006FCBFE /* fontawesome-webfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fontawesome-webfont.eot"; path = "views/bower_components/fontawesome/fonts/fontawesome-webfont.eot"; sourceTree = "<group>"; };
+		A77BCC641B2FB93A006FCBFE /* fontawesome-webfont.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "fontawesome-webfont.svg"; path = "views/bower_components/fontawesome/fonts/fontawesome-webfont.svg"; sourceTree = "<group>"; };
+		A77BCC651B2FB93A006FCBFE /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fontawesome-webfont.ttf"; path = "views/bower_components/fontawesome/fonts/fontawesome-webfont.ttf"; sourceTree = "<group>"; };
+		A77BCC661B2FB93A006FCBFE /* fontawesome-webfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fontawesome-webfont.woff"; path = "views/bower_components/fontawesome/fonts/fontawesome-webfont.woff"; sourceTree = "<group>"; };
+		A77BCC671B2FB93A006FCBFE /* fontawesome-webfont.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fontawesome-webfont.woff2"; path = "views/bower_components/fontawesome/fonts/fontawesome-webfont.woff2"; sourceTree = "<group>"; };
+		A77BCC681B2FB93A006FCBFE /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.otf; path = views/bower_components/fontawesome/fonts/FontAwesome.otf; sourceTree = "<group>"; };
 		A77DB2D41AEB4F0500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A77DB2D61AEB4F2500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckCredentialsRequest.swift; path = models/bll/structs/CheckCredentialsRequest.swift; sourceTree = "<group>"; };
@@ -289,6 +303,7 @@
 		A73E628D1B13C86100CAAA8F /* css */ = {
 			isa = PBXGroup;
 			children = (
+				A77BCC601B2FB7C8006FCBFE /* font-awesome.min.css */,
 				A77BCC461B2F53E6006FCBFE /* slick.css */,
 				A73E62901B13C8D100CAAA8F /* framework7.min.css */,
 				A73E628E1B13C8C400CAAA8F /* rothrock.css */,
@@ -416,6 +431,19 @@
 			name = serializers;
 			sourceTree = "<group>";
 		};
+		A77BCC621B2FB92E006FCBFE /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A77BCC631B2FB93A006FCBFE /* fontawesome-webfont.eot */,
+				A77BCC641B2FB93A006FCBFE /* fontawesome-webfont.svg */,
+				A77BCC651B2FB93A006FCBFE /* fontawesome-webfont.ttf */,
+				A77BCC661B2FB93A006FCBFE /* fontawesome-webfont.woff */,
+				A77BCC671B2FB93A006FCBFE /* fontawesome-webfont.woff2 */,
+				A77BCC681B2FB93A006FCBFE /* FontAwesome.otf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
 		A786222B1AEAA54B006B0F76 /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +526,7 @@
 		A7EC14B91B080B47001981EB /* views */ = {
 			isa = PBXGroup;
 			children = (
+				A77BCC621B2FB92E006FCBFE /* fonts */,
 				A73E628D1B13C86100CAAA8F /* css */,
 				A73E628C1B13C85B00CAAA8F /* js */,
 				A73E628B1B13C85500CAAA8F /* imgs */,
@@ -609,20 +638,27 @@
 				A73E62931B13C8DC00CAAA8F /* rothrock.js in Resources */,
 				A77BCC471B2F53E6006FCBFE /* slick.css in Resources */,
 				A77BCC531B2F54E7006FCBFE /* logo-sf.png in Resources */,
+				A77BCC6C1B2FB93A006FCBFE /* fontawesome-webfont.woff in Resources */,
 				A77BCC551B2F54E7006FCBFE /* rsvp.png in Resources */,
+				A77BCC6A1B2FB93A006FCBFE /* fontawesome-webfont.svg in Resources */,
 				A77BCC5F1B2F81E8006FCBFE /* logo-default.png in Resources */,
 				A77BCC491B2F5417006FCBFE /* slick.min.js in Resources */,
 				A746A6B11AE9D6E800AF0FA5 /* LaunchScreen.xib in Resources */,
 				A746A6AE1AE9D6E800AF0FA5 /* Images.xcassets in Resources */,
 				A73E62911B13C8D100CAAA8F /* framework7.min.css in Resources */,
 				A77BCC571B2F54E7006FCBFE /* unrsvp.png in Resources */,
+				A77BCC691B2FB93A006FCBFE /* fontawesome-webfont.eot in Resources */,
 				A77BCC511B2F54E7006FCBFE /* going-pin.png in Resources */,
 				A7F7A5781B1CC192009A3951 /* caravel.min.js in Resources */,
 				A78CD2A21B14D5350086EFF8 /* class_details.html in Resources */,
 				A77BCC541B2F54E7006FCBFE /* rsvp-active.png in Resources */,
 				A73E628F1B13C8C400CAAA8F /* rothrock.css in Resources */,
+				A77BCC6D1B2FB93A006FCBFE /* fontawesome-webfont.woff2 in Resources */,
+				A77BCC611B2FB7C8006FCBFE /* font-awesome.min.css in Resources */,
+				A77BCC6B1B2FB93A006FCBFE /* fontawesome-webfont.ttf in Resources */,
 				A78CD2A41B14DBA50086EFF8 /* jquery.min.js in Resources */,
 				A741CFFB1B166895001C9272 /* settings.html in Resources */,
+				A77BCC6E1B2FB93A006FCBFE /* FontAwesome.otf in Resources */,
 				A77BCC561B2F54E7006FCBFE /* unrsvp-active.png in Resources */,
 				A73E62951B13C8E500CAAA8F /* framework7.min.js in Resources */,
 				A77BCC5D1B2F5A6E006FCBFE /* main.html in Resources */,

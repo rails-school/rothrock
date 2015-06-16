@@ -56,13 +56,12 @@ ClassListController = (function(superClass) {
         $(_this.listSelector).html(_this.cardTemplate({
           classes: data
         }));
-        w = $(_this.listSelector).width() * 0.8;
-        console.log(w);
+        w = $(_this.listSelector).width() * 0.9;
         $(_this.listSelector).find('.js-class-card-wrapper').each(function(i, e) {
           return $(e).css('width', w);
         });
         $(_this.listSelector).slick({
-          accessibility: false,
+          arrows: false,
           edgeFriction: 0.15,
           infinite: false,
           variableWidth: true
