@@ -8,7 +8,8 @@
     <title>Rails School</title>
     <link rel="stylesheet" href="framework7.min.css">
     <link rel="stylesheet" href="font-awesome.min.css">
-    <link rel="stylesheet" href="slick.css">
+    <!--link(rel='stylesheet', href='slick.css')-->
+    <link rel="stylesheet" href="owl.carousel.css">
     <link rel="stylesheet" href="rothrock.css">
   </head>
   <body>
@@ -27,12 +28,12 @@
                   <p class="label">Settings</p>
                 </div>
               </header>
-              <section class="js-class-list"></section>
+              <section class="js-class-list owl-carousel"></section>
               <script id="class-card-template" type="text/template7">{{#each classes}}
                 <div class="class-card-wrapper js-class-card-wrapper">
-                  <div class="class-card"><img src="going-pin.png" class="class-going-pin hidden js-class-going-pin">
+                  <div class="class-card-relative-wrapper"><img src="going-pin.png" class="class-going-pin hidden js-class-going-pin">
                     <p class="class-countdown js-class-countdown">{{lesson.countdown}}</p>
-                    <div data-slug="{{lesson.slug}}" class="class-card-content">
+                    <div data-slug="{{lesson.slug}}" class="class-card">
                       <h1>{{lesson.title}}</h1>
                       <h2>{{lesson.summary}}</h2>
                       <ul>
@@ -74,7 +75,8 @@
     </div>
     <script type="text/javascript" src="framework7.min.js"></script>
     <script type="text/javascript" src="jquery.min.js"></script>
-    <script type="text/javascript" src="slick.min.js"></script>
+    <!--script(type='text/javascript', src='slick.min.js')-->
+    <script type="text/javascript" src="owl.carousel.min.js"></script>
     <script type="text/javascript" src="caravel.min.js"></script>
     <script type="text/javascript" src="rothrock.js"></script>
   </body>

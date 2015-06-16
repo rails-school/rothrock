@@ -87,7 +87,8 @@ module.exports = function (grunt) {
             },
             sass: {
                 files: 'sass/**/*.scss',
-                tasks: ['scsslint', 'sass'],
+                //tasks: ['scsslint', 'sass'],
+                tasks: ['sass'],
                 options: {
                     interrupt: true,
                     atBegin: true

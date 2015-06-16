@@ -48,7 +48,7 @@
   -ms-flex-direction: column;
   width: 100%;
   height: 100%;
-  padding: 10px 20px;
+  padding: 20px !important;
   box-sizing: border-box;
   background-color: #fff; }
 
@@ -80,7 +80,7 @@
   justify-content: space-between;
   -ms-flex-pack: justify;
   width: 100%; }
-  .class-list header > {
+  .class-list header > * {
     -webkit-flex-grow: 1;
     -moz-flex-grow: 1;
     flex-grow: 1;
@@ -132,32 +132,32 @@
     -moz-flex-direction: column;
     flex-direction: column;
     -ms-flex-direction: column;
+    height: 100%;
     margin: 0 10px; }
     .class-list section .class-card-wrapper:first-child {
       margin-left: 0; }
     .class-list section .class-card-wrapper:last-child {
       margin-right: 0; }
+    .class-list section .class-card-wrapper .class-attendees {
+      margin: 5px;
+      text-align: center;
+      font-family: "Yanone Kaffeesatz";
+      font-size: 13px;
+      color: #ab1818; }
+    .class-list section .class-card-wrapper .class-share-wrapper {
+      margin: 5px; }
+      .class-list section .class-card-wrapper .class-share-wrapper > * {
+        display: inline-block; }
+      .class-list section .class-card-wrapper .class-share-wrapper p {
+        font-size: 13px; }
+      .class-list section .class-card-wrapper .class-share-wrapper .ic-share {
+        padding: 0 5px 0 0;
+        color: #999; }
+      .class-list section .class-card-wrapper .class-share-wrapper p:last-child {
+        font-family: "Yanone Kaffeesatz";
+        color: #333; }
 
-.class-list section .class-card-wrapper .class-attendees {
-  margin: 5px;
-  text-align: center;
-  font-family: "Yanone Kaffeesatz";
-  font-size: 13px;
-  color: #ab1818; }
-.class-list section .class-card-wrapper .class-share-wrapper {
-  margin: 5px; }
-  .class-list section .class-card-wrapper .class-share-wrapper > {
-    display: inline-block; }
-  .class-list section .class-card-wrapper .class-share-wrapper p {
-    font-size: 13px; }
-  .class-list section .class-card-wrapper .class-share-wrapper .ic-share {
-    padding: 0 5px 0 0;
-    color: #999; }
-  .class-list section .class-card-wrapper .class-share-wrapper p:last-child {
-    font-family: "Yanone Kaffeesatz";
-    color: #333; }
-
-.class-list section .class-card-wrapper .class-card {
+.class-list section .class-card-wrapper .class-card-relative-wrapper {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   box-flex: 1;
@@ -165,67 +165,70 @@
   -moz-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  width: 100%;
-  border: 1px solid #999; }
-  .class-list section .class-card-wrapper .class-card .class-going-pin {
-    position: absolute;
-    top: -34px;
-    left: -34px;
-    max-width: 100%; }
-  .class-list section .class-card-wrapper .class-card .class-countdown {
-    position: absolute;
-    top: -16px;
+  width: 100%; }
+  .class-list section .class-card-wrapper .class-card-relative-wrapper .class-going-pin {
+    top: 0;
     left: 0;
+    width: 30px;
+    z-index: 3; }
+  .class-list section .class-card-wrapper .class-card-relative-wrapper .class-countdown {
+    top: 2px;
+    left: 35px;
     border-bottom: 1px solid #ab1818;
     color: #333;
     font-family: "Yanone Kaffeesatz";
-    font-size: 13px; }
-  .class-list section .class-card-wrapper .class-card .class-card-content {
+    font-size: 13px;
+    z-index: 2; }
+  .class-list section .class-card-wrapper .class-card-relative-wrapper .class-card {
+    top: 15px;
+    left: 15px;
     width: 100%;
+    height: 100%;
     padding: 10px;
-    box-sizing: border-box; }
-  .class-list section .class-card-wrapper .class-card .class-rsvp-button {
-    position: absolute;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    z-index: 1; }
+  .class-list section .class-card-wrapper .class-card-relative-wrapper .class-rsvp-button {
     bottom: 50px;
-    width: 290px;
-    height: 100px;
+    width: 100px;
     font-family: "Muli";
     font-size: 32px;
     color: #fff;
     text-shadow: 0 3px 3px #333;
     text-align: center;
     background-color: #fff;
-    background-position: 2px; }
-    .class-list section .class-card-wrapper .class-card .class-rsvp-button.rsvp {
+    background-position: 2px;
+    z-index: 2; }
+    .class-list section .class-card-wrapper .class-card-relative-wrapper .class-rsvp-button.rsvp {
       background-image: url("rsvp.png"); }
-      .class-list section .class-card-wrapper .class-card .class-rsvp-button.rsvp:active {
+      .class-list section .class-card-wrapper .class-card-relative-wrapper .class-rsvp-button.rsvp:active {
         background-image: url("rsvp-active.png"); }
-    .class-list section .class-card-wrapper .class-card .class-rsvp-button.unrsvp {
+    .class-list section .class-card-wrapper .class-card-relative-wrapper .class-rsvp-button.unrsvp {
       background-image: url("unrsvp.png"); }
-      .class-list section .class-card-wrapper .class-card .class-rsvp-button.unrsvp:active {
+      .class-list section .class-card-wrapper .class-card-relative-wrapper .class-rsvp-button.unrsvp:active {
         background-image: url("unrsvp-active.png"); }
 
-.class-list section .class-card-wrapper .class-card .class-card-content h1 {
+.class-list section .class-card-wrapper .class-card h1 {
   color: #0f3344;
   font-family: "Muli";
   font-size: 32px; }
-.class-list section .class-card-wrapper .class-card .class-card-content h2 {
+.class-list section .class-card-wrapper .class-card h2 {
   color: #333;
   font-family: "Yanone Kaffeesatz";
   font-size: 18px; }
-.class-list section .class-card-wrapper .class-card .class-card-content ul {
+.class-list section .class-card-wrapper .class-card ul {
   margin: 15px 0;
   padding: 0;
   list-style-type: none; }
-  .class-list section .class-card-wrapper .class-card .class-card-content ul li {
+  .class-list section .class-card-wrapper .class-card ul li {
     padding: 0; }
-    .class-list section .class-card-wrapper .class-card .class-card-content ul li p {
+    .class-list section .class-card-wrapper .class-card ul li p {
       display: inline-block;
       vertical-align: middle;
       font-family: "Yanone Kaffeesatz";
       font-size: 15px; }
-    .class-list section .class-card-wrapper .class-card .class-card-content ul li p:first-child {
+    .class-list section .class-card-wrapper .class-card ul li p:first-child {
       padding: 5px 10px 5px 0;
       color: #999; }
-    .class-list section .class-card-wrapper .class-card .class-card-content ul li p:last-child {
+    .class-list section .class-card-wrapper .class-card ul li p:last-child {
       color: #333; }

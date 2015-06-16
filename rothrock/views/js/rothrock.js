@@ -60,12 +60,7 @@ ClassListController = (function(superClass) {
         $(_this.listSelector).find('.js-class-card-wrapper').each(function(i, e) {
           return $(e).css('width', w);
         });
-        $(_this.listSelector).slick({
-          arrows: false,
-          edgeFriction: 0.15,
-          infinite: false,
-          variableWidth: true
-        });
+        $(_this.listSelector).owlCarousel();
         return _this.done();
       };
     })(this));

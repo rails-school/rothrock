@@ -16,7 +16,8 @@ class ClassListController extends BaseController
       w = $(@listSelector).width() * 0.9
       $(@listSelector).find('.js-class-card-wrapper').each (i, e) =>
         $(e).css('width', w)
-      $(@listSelector).slick({ arrows: false, edgeFriction: 0.15, infinite: false, variableWidth: true })
+      #$(@listSelector).slick({ arrows: false, edgeFriction: 0.15, infinite: false, variableWidth: true })
+      $(@listSelector).owlCarousel()
       @done()
 
     @getBus().register 'ReceiveSchool', (name, data) =>
