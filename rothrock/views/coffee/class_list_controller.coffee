@@ -13,12 +13,16 @@ class ClassListController extends BaseController
     @getBus().register 'ReceiveClasses', (name, data) =>
       @fork()
       $(@listSelector).html(@cardTemplate({ classes: data }))
-      w = $(@listSelector).width() * 0.9
-      $(@listSelector).find('.js-class-card-wrapper').each (i, e) =>
-        $(e).css('width', w)
       new Slider
         slideWrapper: $(@listSelector)
         cardWrapperClass: 'js-class-card-wrapper'
+        goingPinClass: 'js-class-going-pin'
+        countDownClass: 'js-class-countdown'
+        cardClass: 'js-class-card'
+        rsvpClass: 'js-class-rsvp-button'
+        attendeesClass: 'js-class-attendees'
+        shareClass: 'js-class-share'
+        gutter: 10
       @done()
 
     @getBus().register 'ReceiveSchool', (name, data) =>

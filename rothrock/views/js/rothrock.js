@@ -10,6 +10,8 @@ Slider = (function() {
     this.countdownClass = options.countdownClass;
     this.cardClass = options.cardClass;
     this.rsvpClass = options.rsvpClass;
+    this.attendeesClass = options.attendeesClass;
+    this.shareClass = options.shareClass;
     this.gutter = options.gutter;
     this.cards = [];
     this.slideWrapper.find("." + this.cardWrapperClass).each((function(_this) {
@@ -23,12 +25,13 @@ Slider = (function() {
           });
         } else {
           $(e).css({
-            left: $(e).width(),
+            left: $(e).width() + _this.gutter,
             zIndex: (ref = i === 1) != null ? ref : {
               2: 1
             }
           });
         }
+        _this._setCardDesign($(e));
         hammertime = new Hammer(e);
         hammertime.on('panleft', function(ev) {
           if (i === _this.cards.length - 1) {
@@ -39,7 +42,7 @@ Slider = (function() {
           }
           _this.isAnimating = true;
           _this.cards[i].animate({
-            left: -_this.cards[i].width()
+            left: -_this.cards[i].width() - _this.gutter
           }, 500);
           _this.cards[i + 1].animate({
             left: 0
@@ -64,7 +67,7 @@ Slider = (function() {
             _this.cards[i + 1].css('z-index', 1);
           }
           _this.cards[i].animate({
-            left: _this.cards[i].width()
+            left: _this.cards[i].width() + _this.gutter
           }, 500);
           return _this.cards[i - 1].animate({
             left: 0
@@ -78,12 +81,12 @@ Slider = (function() {
 
   Slider.prototype._setCardDesign = function(wrapper) {
     var attendees, card, cardHeight, cardTop, countdown, pin, rsvp, share;
-    pin = wrapper.find("." + this.goingPinClass).get(0);
-    countdown = wrapper.find("." + this.countdownClass).get(0);
-    card = wrapper.find("." + this.cardClass).get(0);
-    rsvp = wrapper.find("." + this.rsvpClass).get(0);
-    attendees = wrapper.find("." + this.attendeesClass).get(0);
-    share = wrapper.find("." + this.shareClass).get(0);
+    pin = wrapper.find("." + this.goingPinClass).first();
+    countdown = wrapper.find("." + this.countdownClass).first();
+    card = wrapper.find("." + this.cardClass).first();
+    rsvp = wrapper.find("." + this.rsvpClass).first();
+    attendees = wrapper.find("." + this.attendeesClass).first();
+    share = wrapper.find("." + this.shareClass).first();
     pin.css({
       top: 0,
       left: 0
@@ -97,11 +100,20 @@ Slider = (function() {
     card.css({
       top: cardTop,
       left: pin.outerWidth(true) / 2,
+      width: wrapper.outerWidth() - (pin.outerWidth(true) / 2),
       height: cardHeight
     });
-    return rsvp.css({
+    rsvp.css({
       top: cardTop + cardHeight - rsvp.outerHeight(true) / 2,
       left: (wrapper.width() - rsvp.outerWidth(true)) / 2
+    });
+    attendees.css({
+      top: card.position().top + card.outerHeight(true),
+      left: (wrapper.outerWidth() - attendees.outerWidth(true)) / 2
+    });
+    return share.css({
+      top: attendees.position().top + attendees.outerHeight(true),
+      left: (wrapper.outerWidth() - share.outerWidth(true)) / 2
     });
   };
 
@@ -158,18 +170,20 @@ ClassListController = (function(superClass) {
     this.cardTemplate = Template7.compile($('#class-card-template').html());
     this.getBus().register('ReceiveClasses', (function(_this) {
       return function(name, data) {
-        var w;
         _this.fork();
         $(_this.listSelector).html(_this.cardTemplate({
           classes: data
         }));
-        w = $(_this.listSelector).width() * 0.9;
-        $(_this.listSelector).find('.js-class-card-wrapper').each(function(i, e) {
-          return $(e).css('width', w);
-        });
         new Slider({
           slideWrapper: $(_this.listSelector),
-          cardWrapperClass: 'js-class-card-wrapper'
+          cardWrapperClass: 'js-class-card-wrapper',
+          goingPinClass: 'js-class-going-pin',
+          countDownClass: 'js-class-countdown',
+          cardClass: 'js-class-card',
+          rsvpClass: 'js-class-rsvp-button',
+          attendeesClass: 'js-class-attendees',
+          shareClass: 'js-class-share',
+          gutter: 10
         });
         return _this.done();
       };

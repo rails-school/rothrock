@@ -28,39 +28,37 @@
               </header>
               <section class="js-class-list owl-carousel"></section>
               <script id="class-card-template" type="text/template7">{{#each classes}}
-                <div class="class-card-wrapper js-class-card-wrapper">
-                  <div class="class-card-relative-wrapper"><img src="going-pin.png" class="class-going-pin hidden js-class-going-pin">
-                    <p class="class-countdown js-class-countdown">{{lesson.countdown}}</p>
-                    <div data-slug="{{lesson.slug}}" class="class-card">
-                      <h1>{{lesson.title}}</h1>
-                      <h2>{{lesson.summary}}</h2>
-                      <ul>
-                        <li>
-                          <p class="ic-ruby"><i class="fa fa-diamond"></i></p>
-                          <p>{{teacher.name}}</p>
-                        </li>
-                        <li>
-                          <p class="ic-venue"><i class="fa fa-map-marker"></i></p>
-                          <p>{{venue.name}}</p>
-                        </li>
-                        <li>
-                          <p class="ic-calendar"><i class="fa fa-calendar-o"></i></p>
-                          <p>{{lesson.date}} {{lesson.countdown}}</p>
-                        </li>
-                        <li>
-                          <p class="ic-clock"><i class="fa fa-clock-o"></i></p>
-                          <p>{{lesson.hour}}</p>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="class-rsvp-button"></div>
+                <div class="class-card-wrapper js-class-card-wrapper"><img src="going-pin.png" class="class-going-pin invisible js-class-going-pin">
+                  <p class="class-countdown js-class-countdown">{{lesson.countdown}}</p>
+                  <div data-slug="{{lesson.slug}}" class="class-card js-class-card">
+                    <h1>{{lesson.title}}</h1>
+                    <h2>{{lesson.summary}}</h2>
+                    <ul>
+                      <li>
+                        <p class="ic-ruby"><i class="fa fa-diamond"></i></p>
+                        <p>{{teacher.name}}</p>
+                      </li>
+                      <li>
+                        <p class="ic-venue"><i class="fa fa-map-marker"></i></p>
+                        <p>{{venue.name}}</p>
+                      </li>
+                      <li>
+                        <p class="ic-calendar"><i class="fa fa-calendar-o"></i></p>
+                        <p>{{lesson.date}} {{lesson.countdown}}</p>
+                      </li>
+                      <li>
+                        <p class="ic-clock"><i class="fa fa-clock-o"></i></p>
+                        <p>{{lesson.hour}}</p>
+                      </li>
+                    </ul>
                   </div>
-                  <p class="class-attendees">
+                  <div class="class-rsvp-button js-class-rsvp-button"></div>
+                  <p class="class-attendees js-class-attendees">
                     {{#js_compare "self.attendees == 0"}} Be the first join to join this class! {{/js_compare}}
                     {{#js_compare "self.attendees == 1"}} 1 student is going{{/js_compare}}
                     {{#js_compare "self.attendees > 1"}}{{attendees}} are going{{/js_compare}}{{/js_compare}}
                   </p>
-                  <div class="class-share-wrapper">
+                  <div class="class-share-wrapper js-class-share">
                     <p class="ic-share"><i class="fa fa-share-alt"></i></p>
                     <p>Share</p>
                   </div>

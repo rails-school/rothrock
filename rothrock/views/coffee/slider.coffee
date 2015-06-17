@@ -6,6 +6,8 @@ class Slider
     @countdownClass = options.countdownClass
     @cardClass = options.cardClass
     @rsvpClass = options.rsvpClass
+    @attendeesClass = options.attendeesClass
+    @shareClass = options.shareClass
     @gutter = options.gutter
 
     @cards = []
@@ -18,10 +20,10 @@ class Slider
           zIndex: 1
       else
         $(e).css
-          left: $(e).width()
+          left: $(e).width() + @gutter
           zIndex: (i == 1) ? 2: 1
 
-      #@_setCardDesign($(e))
+      @_setCardDesign($(e))
 
       hammertime = new Hammer(e)
       hammertime.on 'panleft', (ev) =>
@@ -29,7 +31,7 @@ class Slider
         return if @isAnimating
 
         @isAnimating = true
-        @cards[i].animate { left: -@cards[i].width() }, 500
+        @cards[i].animate { left: -@cards[i].width() - @gutter }, 500
         @cards[i + 1].animate { left: 0 }, 500, null, (e) =>
           $(e).css('z-index', 1)
           @isAnimating = false
@@ -42,17 +44,17 @@ class Slider
         @isAnimating = true
         @cards[i].css('z-index', 2)
         @cards[i + 1].css('z-index', 1) if i < @cards.length - 1
-        @cards[i].animate { left: @cards[i].width() }, 500
+        @cards[i].animate { left: @cards[i].width() + @gutter }, 500
         @cards[i - 1].animate { left: 0 }, 500, null, () =>
           @isAnimating = false
 
   _setCardDesign: (wrapper) ->
-    pin = wrapper.find(".#{@goingPinClass}").get(0)
-    countdown = wrapper.find(".#{@countdownClass}").get(0)
-    card = wrapper.find(".#{@cardClass}").get(0)
-    rsvp = wrapper.find(".#{@rsvpClass}").get(0)
-    attendees = wrapper.find(".#{@attendeesClass}").get(0)
-    share = wrapper.find(".#{@shareClass}").get(0)
+    pin = wrapper.find(".#{@goingPinClass}").first()
+    countdown = wrapper.find(".#{@countdownClass}").first()
+    card = wrapper.find(".#{@cardClass}").first()
+    rsvp = wrapper.find(".#{@rsvpClass}").first()
+    attendees = wrapper.find(".#{@attendeesClass}").first()
+    share = wrapper.find(".#{@shareClass}").first()
 
     pin.css
       top: 0
@@ -67,8 +69,17 @@ class Slider
     card.css
       top: cardTop
       left: pin.outerWidth(true) / 2
+      width: wrapper.outerWidth() - (pin.outerWidth(true) / 2)
       height: cardHeight
 
     rsvp.css
       top: cardTop + cardHeight - rsvp.outerHeight(true) / 2
       left: (wrapper.width() - rsvp.outerWidth(true)) / 2
+
+    attendees.css
+      top: card.position().top + card.outerHeight(true)
+      left: (wrapper.outerWidth() - attendees.outerWidth(true)) / 2
+
+    share.css
+      top: attendees.position().top + attendees.outerHeight(true)
+      left: (wrapper.outerWidth() - share.outerWidth(true)) / 2
