@@ -159,6 +159,7 @@ ClassListController = (function(superClass) {
   function ClassListController(app) {
     ClassListController.__super__.constructor.call(this, app);
     this.listSelector = '.js-class-list';
+    this.upcomingCounterSelector = '.js-upcoming-classes';
     this.logoSelector = '.js-logo';
   }
 
@@ -171,6 +172,7 @@ ClassListController = (function(superClass) {
     this.getBus().register('ReceiveClasses', (function(_this) {
       return function(name, data) {
         _this.fork();
+        $(_this.upcomingCounterSelector).text("Upcoming Classes: " + data.length);
         $(_this.listSelector).html(_this.cardTemplate({
           classes: data
         }));
