@@ -31,9 +31,9 @@ script#class-card-template(type='text/template7')
     .class-rsvp-button.js-class-rsvp-button
 
     p.class-attendees.js-class-attendees
-      | {{#js_compare "self.attendees == 0"}} Be the first join to join this class! {{/js_compare}}
-      | {{#js_compare "self.attendees == 1"}} 1 student is going{{/js_compare}}
-      | {{#js_compare "self.attendees > 1"}}{{attendees}} are going{{/js_compare}}{{/js_compare}}
+      | {{#js_compare "this.attendees == 0"}} Be the first join to join this class! {{/js_compare}}
+      | {{#js_compare "this.attendees == 1"}} 1 student is going {{/js_compare}}
+      | {{#js_compare "this.attendees > 1"}}{{attendees}} students are going {{/js_compare}}
 
     .class-share-wrapper.js-class-share
       p.ic-share
