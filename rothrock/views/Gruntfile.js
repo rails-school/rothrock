@@ -18,6 +18,7 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'js/rothrock.js': [
+                        'coffee/slider.coffee',
                         'coffee/base_controller.coffee',
                         'coffee/class_list_controller.coffee',
                         'coffee/single_class_controller.coffee',

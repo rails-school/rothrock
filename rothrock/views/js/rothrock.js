@@ -1,6 +1,113 @@
-var $$, BaseController, ClassListController, SingleClassController, classListController, mainView, myApp,
+var $$, BaseController, ClassListController, SingleClassController, Slider, classListController, mainView, myApp,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
+
+Slider = (function() {
+  function Slider(options) {
+    this.slideWrapper = options.slideWrapper;
+    this.cardWrapperClass = options.cardWrapperClass;
+    this.goingPinClass = options.goingPinClass;
+    this.countdownClass = options.countdownClass;
+    this.cardClass = options.cardClass;
+    this.rsvpClass = options.rsvpClass;
+    this.gutter = options.gutter;
+    this.cards = [];
+    this.slideWrapper.find("." + this.cardWrapperClass).each((function(_this) {
+      return function(i, e) {
+        var hammertime, ref;
+        _this.cards.push($(e));
+        if (i === 0) {
+          $(e).css({
+            left: 0,
+            zIndex: 1
+          });
+        } else {
+          $(e).css({
+            left: $(e).width(),
+            zIndex: (ref = i === 1) != null ? ref : {
+              2: 1
+            }
+          });
+        }
+        hammertime = new Hammer(e);
+        hammertime.on('panleft', function(ev) {
+          if (i === _this.cards.length - 1) {
+            return;
+          }
+          if (_this.isAnimating) {
+            return;
+          }
+          _this.isAnimating = true;
+          _this.cards[i].animate({
+            left: -_this.cards[i].width()
+          }, 500);
+          _this.cards[i + 1].animate({
+            left: 0
+          }, 500, null, function(e) {
+            $(e).css('z-index', 1);
+            return _this.isAnimating = false;
+          });
+          if (i < _this.cards.length - 2) {
+            return _this.cards[i + 2].css('z-index', 2);
+          }
+        });
+        return hammertime.on('panright', function(ev) {
+          if (i === 0) {
+            return;
+          }
+          if (_this.isAnimating) {
+            return;
+          }
+          _this.isAnimating = true;
+          _this.cards[i].css('z-index', 2);
+          if (i < _this.cards.length - 1) {
+            _this.cards[i + 1].css('z-index', 1);
+          }
+          _this.cards[i].animate({
+            left: _this.cards[i].width()
+          }, 500);
+          return _this.cards[i - 1].animate({
+            left: 0
+          }, 500, null, function() {
+            return _this.isAnimating = false;
+          });
+        });
+      };
+    })(this));
+  }
+
+  Slider.prototype._setCardDesign = function(wrapper) {
+    var attendees, card, cardHeight, cardTop, countdown, pin, rsvp, share;
+    pin = wrapper.find("." + this.goingPinClass).get(0);
+    countdown = wrapper.find("." + this.countdownClass).get(0);
+    card = wrapper.find("." + this.cardClass).get(0);
+    rsvp = wrapper.find("." + this.rsvpClass).get(0);
+    attendees = wrapper.find("." + this.attendeesClass).get(0);
+    share = wrapper.find("." + this.shareClass).get(0);
+    pin.css({
+      top: 0,
+      left: 0
+    });
+    countdown.css({
+      top: pin.outerHeight(true) / 2 - countdown.outerHeight(true),
+      left: pin.outerWidth(true) / 2
+    });
+    cardTop = pin.outerHeight(true) / 2;
+    cardHeight = wrapper.height() - attendees.outerHeight(true) - share.outerHeight(true);
+    card.css({
+      top: cardTop,
+      left: pin.outerWidth(true) / 2,
+      height: cardHeight
+    });
+    return rsvp.css({
+      top: cardTop + cardHeight - rsvp.outerHeight(true) / 2,
+      left: (wrapper.width() - rsvp.outerWidth(true)) / 2
+    });
+  };
+
+  return Slider;
+
+})();
 
 BaseController = (function() {
   function BaseController(app) {
@@ -60,7 +167,10 @@ ClassListController = (function(superClass) {
         $(_this.listSelector).find('.js-class-card-wrapper').each(function(i, e) {
           return $(e).css('width', w);
         });
-        $(_this.listSelector).owlCarousel();
+        new Slider({
+          slideWrapper: $(_this.listSelector),
+          cardWrapperClass: 'js-class-card-wrapper'
+        });
         return _this.done();
       };
     })(this));

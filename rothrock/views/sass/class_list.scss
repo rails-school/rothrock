@@ -66,13 +66,18 @@ $class-list-selector: "class-list";
 
 .#{$class-list-selector} section {
   @include flex(1);
+  position: relative;
+
+  overflow: hidden;
 
   .class-card-wrapper {
-    @include display(flex);
-    @include flex-direction(column);
+    position: absolute;
 
+    width: 100%;
     height: 100%;
     margin: 0 10px;
+
+    background-color: $white;
 
     // Remove margins for first and last elements
     &:first-child {
@@ -121,13 +126,13 @@ $class-list-selector: "class-list";
 
 // Class card + floating elements
 .#{$class-list-selector} section .class-card-wrapper .class-card-relative-wrapper {
-  @include flex(1);
-  //position: relative;
+  //@include flex(1);
+  position: relative;
 
   width: 100%;
 
   > * {
-    //position: absolute;
+    position: absolute;
   }
 
   $pin-size: 30px;
