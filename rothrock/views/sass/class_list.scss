@@ -22,10 +22,11 @@ $going-pin-size: 30px;
   @include align-items(center);
 
   width: 100%;
-  margin: 20px 20px 15px 20px;
+  padding: 20px 20px 15px 20px;
+  box-sizing: border-box;
 
   .logo-wrapper {
-    max-width: 50%;
+    max-width: 40%;
     margin: 0 5px 5px 0;
 
     .logo {
@@ -38,7 +39,7 @@ $going-pin-size: 30px;
 
       font: {
         family: $body-font;
-        size: 11px;
+        size: 8px;
       }
       text-align: center;
       color: $gray;
@@ -51,13 +52,13 @@ $going-pin-size: 30px;
     text-align: center;
 
     p {
+      margin: 0;
+
       font: {
         family: $body-font;
-        size: 13px;
+        size: 9px;
       }
       color: $gray;
-
-      margin: 0;
     }
 
     .ic-settings {
@@ -88,7 +89,7 @@ $going-pin-size: 30px;
       text-align: center;
       font: {
         family: $body-font;
-        size: 13px;
+        size: 9px;
       }
       color: $red;
     }
@@ -101,7 +102,7 @@ $going-pin-size: 30px;
       }
 
       p {
-        font-size: 13px;
+        font-size: 9px;
       }
 
       .ic-share {
@@ -137,7 +138,7 @@ $going-pin-size: 30px;
     color: $black;
     font: {
       family: $body-font;
-      size: 13px;
+      size: 9px;
     }
 
     z-index: 2;
@@ -158,7 +159,7 @@ $going-pin-size: 30px;
 
     font: {
       family: $body-font;
-      size: 32px;
+      size: 20px;
     }
     color: $white;
     text-shadow: 0 3px 3px $black;
@@ -201,7 +202,7 @@ $going-pin-size: 30px;
     color: $blue;
     font: {
       family: $headline-font;
-      size: 32px;
+      size: 24px;
     }
   }
 
@@ -209,7 +210,7 @@ $going-pin-size: 30px;
     color: $black;
     font: {
       family: $body-font;
-      size: 18px;
+      size: 12px;
     }
   }
 
@@ -231,13 +232,15 @@ $going-pin-size: 30px;
 
         font: {
           family: $body-font;
-          size: 15px;
+          size: 10px;
         }
       }
 
       p:first-child {
-        padding: 5px 10px 5px 0;
+        width: 25px;
+        padding: 0 5px 0 0;
 
+        text-align: center;1
         color: $gray;
       }
 

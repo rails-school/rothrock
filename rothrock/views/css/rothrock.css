@@ -1,221 +1,84 @@
-@font-face {
-  font-family: "Muli";
-  src: url("Muli-Regular.eot");
-  /* IE9 Compat Modes */
-  src: url("Muli-Regular.eot?#iefix") format("embedded-opentype"), url("Muli-Regular.woff") format("woff"), url("Muli-Regular.ttf") format("truetype"), url("Muli-Regular.svg#c85b2458fecc0dfe933a4fc2cd098850") format("svg");
-  /* Legacy iOS */
-  font-style: normal;
-  font-weight: 400; }
-@font-face {
-  font-family: "Muli-Italic";
-  src: url("Muli-Italic.eot");
-  /* IE9 Compat Modes */
-  src: url("Muli-Italic.eot?#iefix") format("embedded-opentype"), url("Muli-Italic.woff") format("woff"), url("Muli-Italic.ttf") format("truetype"), url("Muli-Italic.svg#44cf9b31f9dde2efac9c52707f676b32") format("svg");
-  /* Legacy iOS */
-  font-style: italic;
-  font-weight: 400; }
-@font-face {
-  font-family: "Yanone Kaffeesatz";
-  src: url("YanoneKaffeesatz-Regular.eot");
-  /* IE9 Compat Modes */
-  src: url("YanoneKaffeesatz-Regular.eot?#iefix") format("embedded-opentype"), url("YanoneKaffeesatz-Regular.woff") format("woff"), url("YanoneKaffeesatz-Regular.ttf") format("truetype"), url("YanoneKaffeesatz-Regular.svg#d05230b1b2f3ce3e90471620c9faac8c") format("svg");
-  /* Legacy iOS */
-  font-style: normal;
-  font-weight: 400; }
-.shown {
-  display: block; }
+/*
+Error: Invalid CSS after "...   color: $gray": expected "{", was ";"
+        on line 244 of sass/class_list.scss
+        from line 1 of sass/rothrock.scss
 
-.hidden {
-  display: none; }
+239:       p:first-child {
+240:         width: 25px;
+241:         padding: 0 5px 0 0;
+242: 
+243:         text-align: center;1
+244:         color: $gray;
+245:       }
+246: 
+247:       p:last-child {
+248:         color: $black;
+249:       }
 
-.visible {
-  visibility: visible; }
-
-.invisible {
-  visibility: hidden; }
-
-.class-list {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  box-orient: vertical;
-  -webkit-box-direction: normal;
-  -moz-box-direction: normal;
-  box-direction: normal;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-direction: column;
-  width: 100%;
-  height: 100%;
-  padding: 0 !important;
-  box-sizing: border-box;
-  background-color: #fff; }
-
-.class-list header {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -moz-box-orient: horizontal;
-  box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -moz-box-direction: normal;
-  box-direction: normal;
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-direction: row;
-  -webkit-box-pack: justify;
-  -moz-box-pack: justify;
-  box-pack: justify;
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -o-justify-content: space-between;
-  justify-content: space-between;
-  -ms-flex-pack: justify;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  box-align: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -o-align-items: center;
-  align-items: center;
-  -ms-flex-align: center;
-  width: 100%;
-  margin: 20px 20px 15px 20px; }
-  .class-list header .logo-wrapper {
-    max-width: 50%;
-    margin: 0 5px 5px 0; }
-    .class-list header .logo-wrapper .logo {
-      max-width: 100%;
-      margin: 0 0 5px 0; }
-    .class-list header .logo-wrapper .upcoming-classes {
-      margin: 0;
-      font-family: "Muli";
-      font-size: 11px;
-      text-align: center;
-      color: #999; }
-  .class-list header .settings {
-    margin: 0 0 5px 5px;
-    text-align: center; }
-    .class-list header .settings p {
-      font-family: "Muli";
-      font-size: 13px;
-      color: #999;
-      margin: 0; }
-    .class-list header .settings .ic-settings {
-      margin: 0 0 5px 0; }
-
-.class-list section {
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1;
-  -webkit-flex: 1;
-  -moz-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  position: relative;
-  padding: 0 0 0 10px;
-  overflow: hidden; }
-  .class-list section .class-card-wrapper {
-    position: absolute;
-    width: 80%;
-    height: 100%;
-    background-color: #fff; }
-    .class-list section .class-card-wrapper .class-attendees {
-      margin: 5px;
-      text-align: center;
-      font-family: "Muli";
-      font-size: 13px;
-      color: #ab1818; }
-    .class-list section .class-card-wrapper .class-share-wrapper {
-      margin: 5px; }
-      .class-list section .class-card-wrapper .class-share-wrapper > * {
-        display: inline-block; }
-      .class-list section .class-card-wrapper .class-share-wrapper p {
-        font-size: 13px; }
-      .class-list section .class-card-wrapper .class-share-wrapper .ic-share {
-        padding: 0 5px 0 0;
-        color: #999; }
-      .class-list section .class-card-wrapper .class-share-wrapper p:last-child {
-        font-family: "Muli";
-        color: #333; }
-
-.class-list section .class-card-wrapper > * {
-  position: absolute; }
-.class-list section .class-card-wrapper .class-going-pin {
-  width: 30px;
-  z-index: 3; }
-.class-list section .class-card-wrapper .class-countdown {
-  border-bottom: 1px solid #ab1818;
-  color: #333;
-  font-family: "Muli";
-  font-size: 13px;
-  z-index: 2; }
-.class-list section .class-card-wrapper .class-card {
-  padding: 10px;
-  box-sizing: border-box;
-  border: 1px solid #999;
-  overflow: auto;
-  z-index: 1; }
-.class-list section .class-card-wrapper .class-rsvp-button {
-  width: 100px;
-  font-family: "Muli";
-  font-size: 32px;
-  color: #fff;
-  text-shadow: 0 3px 3px #333;
-  text-align: center;
-  background-color: #fff;
-  background-position: 2px;
-  z-index: 2; }
-  .class-list section .class-card-wrapper .class-rsvp-button.rsvp {
-    background-image: url("rsvp.png"); }
-    .class-list section .class-card-wrapper .class-rsvp-button.rsvp:active {
-      background-image: url("rsvp-active.png"); }
-  .class-list section .class-card-wrapper .class-rsvp-button.unrsvp {
-    background-image: url("unrsvp.png"); }
-    .class-list section .class-card-wrapper .class-rsvp-button.unrsvp:active {
-      background-image: url("unrsvp-active.png"); }
-
-.class-list section .class-card-wrapper .class-card h1, .class-list section .class-card-wrapper .class-card h2 {
-  margin: 5px 0;
-  font-weight: normal; }
-.class-list section .class-card-wrapper .class-card h1 {
-  color: #0f3344;
-  font-family: "Yanone Kaffeesatz";
-  font-size: 32px; }
-.class-list section .class-card-wrapper .class-card h2 {
-  color: #333;
-  font-family: "Muli";
-  font-size: 18px; }
-.class-list section .class-card-wrapper .class-card ul {
-  margin: 15px 0;
-  padding: 0;
-  list-style-type: none; }
-  .class-list section .class-card-wrapper .class-card ul li {
-    margin: 5px 0;
-    padding: 0; }
-    .class-list section .class-card-wrapper .class-card ul li p {
-      display: inline-block;
-      vertical-align: middle;
-      margin: 0;
-      font-family: "Muli";
-      font-size: 15px; }
-    .class-list section .class-card-wrapper .class-card ul li p:first-child {
-      padding: 5px 10px 5px 0;
-      color: #999; }
-    .class-list section .class-card-wrapper .class-card ul li p:last-child {
-      color: #333; }
+Backtrace:
+sass/class_list.scss:244
+sass/rothrock.scss:1
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:1165:in `expected'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:1101:in `expected'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:1096:in `tok!'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:641:in `block'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:661:in `block_child'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:653:in `block_contents'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:642:in `block'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:661:in `block_child'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:653:in `block_contents'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:642:in `block'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:661:in `block_child'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:653:in `block_contents'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:642:in `block'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:661:in `block_child'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:653:in `block_contents'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:642:in `block'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:635:in `ruleset'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:660:in `block_child'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:653:in `block_contents'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:117:in `stylesheet'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:42:in `parse'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/engine.rb:393:in `_to_tree'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/engine.rb:299:in `to_tree'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:323:in `block in visit_import'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:88:in `block in with_import'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:88:in `with_import'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `block in with_base'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/tree/root_node.rb:20:in `render'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/engine.rb:268:in `render'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/exec/sass_scss.rb:415:in `run'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/exec/base.rb:52:in `parse'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/lib/sass/exec/base.rb:19:in `parse!'
+/Users/acadet/.rvm/gems/ruby-2.2.0/gems/sass-3.4.13/bin/sass:13:in `<top (required)>'
+/Users/acadet/.rvm/gems/ruby-2.2.0/bin/sass:23:in `load'
+/Users/acadet/.rvm/gems/ruby-2.2.0/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...   color: $gray\": expected \"{\", was \";\"\A         on line 244 of sass/class_list.scss\A         from line 1 of sass/rothrock.scss\A \A 239:       p:first-child {\A 240:         width: 25px;\A 241:         padding: 0 5px 0 0;\A 242: \A 243:         text-align: center;1\A 244:         color: $gray;\A 245:       }\A 246: \A 247:       p:last-child {\A 248:         color: $black;\A 249:       }"; }
