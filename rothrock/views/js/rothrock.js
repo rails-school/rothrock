@@ -175,8 +175,9 @@ ClassListController = (function(superClass) {
   function ClassListController(app) {
     ClassListController.__super__.constructor.call(this, app);
     this.listSelector = '.js-class-list';
-    this.upcomingCounterSelector = '.js-upcoming-classes';
     this.logoSelector = '.js-logo';
+    this.upcomingCounterSelector = '.js-upcoming-classes';
+    this.settingsSelector = '.js-settings';
     this.cardWrapperSelector = '.js-class-card-wrapper';
     this.cardSelector = '.js-class-card';
     this.shareSelector = '.js-class-share';
@@ -213,7 +214,7 @@ ClassListController = (function(superClass) {
             return _this.getBus().post('TriggerInsight', slug);
           });
           return $(e).find(_this.shareSelector).first().on('click', function() {
-            _this.getApp().actions([
+            return _this.getApp().actions([
               {
                 text: 'Text',
                 onClick: function() {
@@ -239,10 +240,14 @@ ClassListController = (function(superClass) {
                 color: 'red'
               }
             ]);
-            return _this.getBus().post('TriggerShare', slug);
           });
         });
         return _this.done();
+      };
+    })(this));
+    $(this.settingsSelector).on('click', (function(_this) {
+      return function() {
+        return _this.getBus().post("TriggerSettings");
       };
     })(this));
     return this.getBus().register('ReceiveSchool', (function(_this) {

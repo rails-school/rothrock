@@ -22,8 +22,13 @@ internal class ClassListController: BaseController, MFMessageComposeViewControll
         Caravel.get("ClassListController", webView: webView).whenReady() { bus in
             self._bus = bus
             
+            bus.register("TriggerSettings") { name, data in
+                // TODO
+            }
+            
             bus.register("TriggerInsight") { name, data in
                 var slug = data as! String
+                //TODO
             }
             
             bus.register("TriggerShareText") { name, data in

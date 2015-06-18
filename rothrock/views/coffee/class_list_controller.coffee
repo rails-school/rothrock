@@ -2,8 +2,12 @@ class ClassListController extends BaseController
   constructor: (app) ->
     super app
     @listSelector = '.js-class-list'
-    @upcomingCounterSelector = '.js-upcoming-classes'
+
     @logoSelector = '.js-logo'
+    @upcomingCounterSelector = '.js-upcoming-classes'
+
+    @settingsSelector = '.js-settings'
+
     @cardWrapperSelector = '.js-class-card-wrapper'
     @cardSelector = '.js-class-card'
     @shareSelector = '.js-class-share'
@@ -61,9 +65,10 @@ class ClassListController extends BaseController
                               }
                             ]
 
-          @getBus().post('TriggerShare', slug)
-
       @done()
+
+    $(@settingsSelector).on 'click', () =>
+      @getBus().post("TriggerSettings")
 
     @getBus().register 'ReceiveSchool', (name, data) =>
       if data == "cville"
