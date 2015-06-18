@@ -180,6 +180,7 @@ ClassListController = (function(superClass) {
     this.settingsSelector = '.js-settings';
     this.cardWrapperSelector = '.js-class-card-wrapper';
     this.cardSelector = '.js-class-card';
+    this.rsvpSelector = '.js-class-rsvp-button';
     this.shareSelector = '.js-class-share';
   }
 
@@ -202,7 +203,7 @@ ClassListController = (function(superClass) {
           goingPinClass: 'js-class-going-pin',
           countdownClass: 'js-class-countdown',
           cardClass: _this.cardSelector.slice(1),
-          rsvpClass: 'js-class-rsvp-button',
+          rsvpClass: _this.rsvpSelector.slice(1),
           attendeesClass: 'js-class-attendees',
           shareClass: _this.shareSelector.slice(1),
           gutter: 10
@@ -213,7 +214,7 @@ ClassListController = (function(superClass) {
           $(e).find(_this.cardSelector).first().on('click', function() {
             return _this.getBus().post('TriggerInsight', slug);
           });
-          return $(e).find(_this.shareSelector).first().on('click', function() {
+          $(e).find(_this.shareSelector).first().on('click', function() {
             return _this.getApp().actions([
               {
                 text: 'Text',
@@ -241,6 +242,10 @@ ClassListController = (function(superClass) {
               }
             ]);
           });
+          return $(e).find(_this.rsvpSelector).first().on('click', function() {
+            slug = $(e).data('slug');
+            return _this.getBus().post("ToggleAttendance", slug);
+          });
         });
         return _this.done();
       };
@@ -250,12 +255,25 @@ ClassListController = (function(superClass) {
         return _this.getBus().post("TriggerSettings");
       };
     })(this));
-    return this.getBus().register('ReceiveSchool', (function(_this) {
+    this.getBus().register('ReceiveSchool', (function(_this) {
       return function(name, data) {
         if (data === "cville") {
           return $(_this.logoSelector).attr('src', 'logo-charlottesville.png');
         } else {
           return $(_this.logoSelector).attr('src', 'logo-sf.png');
+        }
+      };
+    })(this));
+    return this.getBus().register("SetAttendance", (function(_this) {
+      return function(name, data) {
+        var cardWrapper, isAttending, rsvpButton;
+        isAttending = data.isAttending;
+        cardWrapper = $(_this.listSelector).find(_this.cardWrapperSelector + "[data-slug='" + data.slug + "']").first();
+        rsvpButton = cardWrapper.find(_this.rsvpSelector).first();
+        if (isAttending) {
+          return cardWrapper.addClass('unrsvp');
+        } else {
+          return cardWrapper.removeClass('unrsvp');
         }
       };
     })(this));

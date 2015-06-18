@@ -45,13 +45,13 @@ internal class UserBusiness: BaseBusiness, IUserBusiness {
         }
     }
     
-    func toggleAttendance(lessonId: Int, isAttending: Bool, success: () -> Void, failure: (String) -> Void) {
+    func toggleAttendance(lessonId: Int, newValue: Bool, success: () -> Void, failure: (String) -> Void) {
         if !isSignedIn() {
             failure("error_not_signed_in".localized)
         } else {
             var callback = BLLCallback<Void>(base: self, success: { (response, o) in success() }, failure: failure)
             
-            if isAttending {
+            if newValue {
                 api.attend(lessonId, authenticationCookie: _userDAO.getCurrentUserToken()!, callback: callback)
             } else {
                 api.removeAttendance(lessonId, authenticationCookie: _userDAO.getCurrentUserToken()!, callback: callback)

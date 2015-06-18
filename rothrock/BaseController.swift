@@ -35,6 +35,18 @@ public class BaseController: NSObject {
         SwiftEventBus.post(ProgressDoneEvent.NAME)
     }
     
+    public func inform(message: String) {
+        SwiftEventBus.post(InformationEvent.NAME, sender: InformationEvent(message: message))
+    }
+    
+    public func confirm(message: String) {
+        SwiftEventBus.post(ConfirmationEvent.NAME, sender: ConfirmationEvent(message: message))
+    }
+    
+    public func alert(message: String) {
+        SwiftEventBus.post(ErrorEvent.NAME, sender: ErrorEvent(message: message))
+    }
+    
     public func publishError(message: String) {
         SwiftEventBus.post(ErrorEvent.NAME, sender: ErrorEvent(message: message))
         done()

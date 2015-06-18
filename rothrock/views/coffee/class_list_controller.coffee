@@ -10,6 +10,7 @@ class ClassListController extends BaseController
 
     @cardWrapperSelector = '.js-class-card-wrapper'
     @cardSelector = '.js-class-card'
+    @rsvpSelector = '.js-class-rsvp-button'
     @shareSelector = '.js-class-share'
 
   getBus: () ->
@@ -28,15 +29,19 @@ class ClassListController extends BaseController
         goingPinClass: 'js-class-going-pin'
         countdownClass: 'js-class-countdown'
         cardClass: @cardSelector[1..]
-        rsvpClass: 'js-class-rsvp-button'
+        rsvpClass: @rsvpSelector[1..]
         attendeesClass: 'js-class-attendees'
         shareClass: @shareSelector[1..]
         gutter: 10
 
       $(@listSelector).find(@cardWrapperSelector).each (i, e) =>
         slug = $(e).data('slug')
+
+        # Trigger insight
         $(e).find(@cardSelector).first().on 'click', () =>
           @getBus().post('TriggerInsight', slug)
+
+        # Trigger share menu
         $(e).find(@shareSelector).first().on 'click', () =>
           @getApp().actions [
                               {
@@ -65,6 +70,11 @@ class ClassListController extends BaseController
                               }
                             ]
 
+        # Toggle rsvp
+        $(e).find(@rsvpSelector).first().on 'click', () =>
+          slug = $(e).data('slug')
+          @getBus().post("ToggleAttendance", slug)
+
       @done()
 
     $(@settingsSelector).on 'click', () =>
@@ -76,4 +86,13 @@ class ClassListController extends BaseController
       else
         $(@logoSelector).attr('src', 'logo-sf.png')
 
+    @getBus().register "SetAttendance", (name, data) =>
+      isAttending = data.isAttending
+      cardWrapper = $(@listSelector).find("#{@cardWrapperSelector}[data-slug='#{data.slug}']").first()
 
+      # TODO: going pin to set
+      rsvpButton = cardWrapper.find(@rsvpSelector).first()
+      if isAttending
+        cardWrapper.addClass('unrsvp')
+      else
+        cardWrapper.removeClass('unrsvp')

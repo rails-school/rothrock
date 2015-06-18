@@ -31,6 +31,42 @@ internal class ClassListController: BaseController, MFMessageComposeViewControll
                 //TODO
             }
             
+            bus.register("ToggleAttendance") { name, data in
+                var slug = data as! String
+                
+                BusinessFactory
+                    .provideUser()
+                    .isCurrentUserAttendingTo(
+                        slug,
+                        isAttending: { isAttending in
+                            BusinessFactory
+                                .provideLesson()
+                                .get(
+                                    slug,
+                                    success: { lesson in
+                                        BusinessFactory
+                                            .provideUser()
+                                            .toggleAttendance(
+                                                lesson!.id,
+                                                newValue: !isAttending,
+                                                success: {
+                                                    bus.post(
+                                                        "SetAttendance",
+                                                        aDictionary: ["slug": slug, "isAttending": !isAttending]
+                                                    )
+                                                    self.confirm("saved_confirmation".localized)
+                                                },
+                                                failure: { self.publishError($0) }
+                                            )
+                                    },
+                                    failure: { self.publishError($0) }
+                                )
+                        },
+                        needToSignIn: { self.alert("error_not_signed_in".localized) },
+                        failure: { self.publishError($0) }
+                    )
+            }
+            
             bus.register("TriggerShareText") { name, data in
                 var slug = data as! String
                 
