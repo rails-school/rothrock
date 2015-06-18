@@ -1,4 +1,4 @@
-var $$, BaseController, ClassListController, SingleClassController, Slider, classListController, mainView, myApp,
+var $$, BaseController, ClassListController, SettingsController, SingleClassController, Slider, classListController, mainView, myApp, settingsController,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
 
@@ -292,6 +292,10 @@ ClassListController = (function(superClass) {
     })(this));
   };
 
+  ClassListController.prototype.onResume = function() {
+    return $('.navbar').addClass('hidden');
+  };
+
   return ClassListController;
 
 })(BaseController);
@@ -405,6 +409,23 @@ SingleClassController = (function(superClass) {
 
 })(BaseController);
 
+SettingsController = (function(superClass) {
+  extend(SettingsController, superClass);
+
+  function SettingsController(app) {
+    SettingsController.__super__.constructor.call(this, app);
+  }
+
+  SettingsController.prototype.onStart = function() {};
+
+  SettingsController.prototype.onResume = function() {
+    return $('.navbar').removeClass('hidden');
+  };
+
+  return SettingsController;
+
+})(BaseController);
+
 myApp = new Framework7();
 
 $$ = Dom7;
@@ -414,6 +435,15 @@ mainView = myApp.addView('.view-main', {
 });
 
 classListController = new ClassListController(myApp);
+
+settingsController = new SettingsController(myApp);
+
+myApp.onPageBeforeInit('settings', (function(_this) {
+  return function(page) {
+    classListController.onPause();
+    return settingsController.onResume();
+  };
+})(this));
 
 myApp.onPageBack('single-class', (function(_this) {
   return function(page) {

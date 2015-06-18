@@ -116,6 +116,8 @@
   .class-list header .settings {
     margin: 0 0 5px 5px;
     text-align: center; }
+    .class-list header .settings a {
+      display: block; }
     .class-list header .settings p {
       margin: 0;
       font-family: "Muli";
@@ -239,3 +241,39 @@
         color: #999; }
       .class-list section .class-card-wrapper .class-card ul li p:last-child {
         color: #333; }
+
+@font-face {
+  font-family: "Muli";
+  src: url("Muli-Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("Muli-Regular.eot?#iefix") format("embedded-opentype"), url("Muli-Regular.woff") format("woff"), url("Muli-Regular.ttf") format("truetype"), url("Muli-Regular.svg#c85b2458fecc0dfe933a4fc2cd098850") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400; }
+@font-face {
+  font-family: "Muli-Italic";
+  src: url("Muli-Italic.eot");
+  /* IE9 Compat Modes */
+  src: url("Muli-Italic.eot?#iefix") format("embedded-opentype"), url("Muli-Italic.woff") format("woff"), url("Muli-Italic.ttf") format("truetype"), url("Muli-Italic.svg#44cf9b31f9dde2efac9c52707f676b32") format("svg");
+  /* Legacy iOS */
+  font-style: italic;
+  font-weight: 400; }
+@font-face {
+  font-family: "Yanone Kaffeesatz";
+  src: url("YanoneKaffeesatz-Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("YanoneKaffeesatz-Regular.eot?#iefix") format("embedded-opentype"), url("YanoneKaffeesatz-Regular.woff") format("woff"), url("YanoneKaffeesatz-Regular.ttf") format("truetype"), url("YanoneKaffeesatz-Regular.svg#d05230b1b2f3ce3e90471620c9faac8c") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400; }
+.shown {
+  display: block; }
+
+.hidden {
+  display: none; }
+
+.visible {
+  visibility: visible; }
+
+.invisible {
+  visibility: hidden; }

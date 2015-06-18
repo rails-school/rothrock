@@ -8,7 +8,11 @@ mainView = myApp.addView '.view-main', {
 
 classListController = new ClassListController myApp
 #singleClassController = new SingleClassController myApp
-#settingsController = new SettingsController myApp
+settingsController = new SettingsController myApp
+
+myApp.onPageBeforeInit 'settings', (page) =>
+  classListController.onPause()
+  settingsController.onResume()
 
 myApp.onPageBack 'single-class', (page) =>
   singleClassController.onPause()
