@@ -56,7 +56,11 @@
   height: 100%;
   padding: 0 !important;
   box-sizing: border-box;
-  background-color: #fff; }
+  background-color: #fff;
+  background-image: url("main-background-corner.png");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 30%; }
 
 .class-list header {
   display: -webkit-box;
@@ -134,8 +138,7 @@
   .class-list section .class-card-wrapper {
     position: absolute;
     width: 80%;
-    height: 100%;
-    background-color: #fff; }
+    height: 100%; }
     .class-list section .class-card-wrapper .class-attendees {
       margin: 5px;
       text-align: center;
@@ -173,7 +176,7 @@
 .class-list section .class-card-wrapper .class-card {
   padding: 10px 15px;
   box-sizing: border-box;
-  border: 1px solid #999;
+  border: 1px solid #ccc;
   overflow: auto;
   z-index: 1; }
 .class-list section .class-card-wrapper .class-rsvp-button {
@@ -197,35 +200,37 @@
     .class-list section .class-card-wrapper .class-rsvp-button.unrsvp:active {
       background-image: url("unrsvp-active.png"); }
 
-.class-list section .class-card-wrapper .class-card h1, .class-list section .class-card-wrapper .class-card h2 {
-  margin: 5px 0;
-  font-weight: normal; }
-.class-list section .class-card-wrapper .class-card h1 {
-  color: #0f3344;
-  font-family: "Yanone Kaffeesatz";
-  font-size: 24px;
-  line-height: 1.2em; }
-.class-list section .class-card-wrapper .class-card h2 {
-  color: #333;
-  font-family: "Muli";
-  font-size: 12px; }
-.class-list section .class-card-wrapper .class-card ul {
-  margin: 15px 0;
-  padding: 0;
-  list-style-type: none; }
-  .class-list section .class-card-wrapper .class-card ul li {
+.class-list section .class-card-wrapper .class-card {
+  background-color: #fff; }
+  .class-list section .class-card-wrapper .class-card h1, .class-list section .class-card-wrapper .class-card h2 {
     margin: 5px 0;
-    padding: 0; }
-    .class-list section .class-card-wrapper .class-card ul li p {
-      display: inline-block;
-      vertical-align: middle;
-      margin: 0;
-      font-family: "Muli";
-      font-size: 10px; }
-    .class-list section .class-card-wrapper .class-card ul li p:first-child {
-      width: 25px;
-      padding: 0 5px 0 0;
-      text-align: center;
-      color: #999; }
-    .class-list section .class-card-wrapper .class-card ul li p:last-child {
-      color: #333; }
+    font-weight: normal; }
+  .class-list section .class-card-wrapper .class-card h1 {
+    color: #0f3344;
+    font-family: "Yanone Kaffeesatz";
+    font-size: 24px;
+    line-height: 1.2em; }
+  .class-list section .class-card-wrapper .class-card h2 {
+    color: #333;
+    font-family: "Muli";
+    font-size: 12px; }
+  .class-list section .class-card-wrapper .class-card ul {
+    margin: 15px 0;
+    padding: 0;
+    list-style-type: none; }
+    .class-list section .class-card-wrapper .class-card ul li {
+      margin: 5px 0;
+      padding: 0; }
+      .class-list section .class-card-wrapper .class-card ul li p {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        font-family: "Muli";
+        font-size: 10px; }
+      .class-list section .class-card-wrapper .class-card ul li p:first-child {
+        width: 25px;
+        padding: 0 5px 0 0;
+        text-align: center;
+        color: #999; }
+      .class-list section .class-card-wrapper .class-card ul li p:last-child {
+        color: #333; }

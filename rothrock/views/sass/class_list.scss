@@ -12,7 +12,13 @@ $going-pin-size: 50px;
   padding: 0 !important;
   box-sizing: border-box;
 
-  background-color: $white;
+  background: {
+    color: $white;
+    image: url('main-background-corner.png');
+    position: top right;
+    repeat: no-repeat;
+    size: 30%;
+  }
 }
 
 .#{$class-list-selector} header {
@@ -80,8 +86,6 @@ $going-pin-size: 50px;
 
     width: 80%;
     height: 100%;
-
-    background-color: $white;
 
     .class-attendees {
       margin: 5px;
@@ -153,7 +157,7 @@ $going-pin-size: 50px;
     padding: 10px 15px;
     box-sizing: border-box;
 
-    border: 1px solid $gray;
+    border: 1px solid $soft-gray;
 
     overflow: auto;
     z-index: 1;
@@ -200,6 +204,7 @@ $going-pin-size: 50px;
 
 // Class card inner content
 .#{$class-list-selector} section .class-card-wrapper .class-card {
+  background-color: $white;
 
   h1, h2 {
     margin: 5px 0;

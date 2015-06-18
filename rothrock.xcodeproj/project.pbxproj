@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18A0992207485A232790F9D8 /* Pods_rothrock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5575745422AE9B1FB00FA044 /* Pods_rothrock.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A716CE491B3340A100420F67 /* main-background-corner.png in Resources */ = {isa = PBXBuildFile; fileRef = A716CE481B3340A100420F67 /* main-background-corner.png */; };
 		A71A7CC51AF00E760094019E /* StringSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A7CC41AF00E760094019E /* StringSerializer.swift */; };
 		A71A7CC71AF00F440094019E /* SerializerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A7CC61AF00F440094019E /* SerializerFactory.swift */; };
 		A73E628F1B13C8C400CAAA8F /* rothrock.css in Resources */ = {isa = PBXBuildFile; fileRef = A73E628E1B13C8C400CAAA8F /* rothrock.css */; };
@@ -125,6 +126,7 @@
 		5575745422AE9B1FB00FA044 /* Pods_rothrock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rothrock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC00F4D646796D935E91B68 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9C8967141C7046423621E252 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A716CE481B3340A100420F67 /* main-background-corner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main-background-corner.png"; path = "views/imgs/main-background-corner.png"; sourceTree = "<group>"; };
 		A71A7CC41AF00E760094019E /* StringSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringSerializer.swift; path = models/bll/serializers/StringSerializer.swift; sourceTree = "<group>"; };
 		A71A7CC61AF00F440094019E /* SerializerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SerializerFactory.swift; path = models/bll/serializers/SerializerFactory.swift; sourceTree = "<group>"; };
 		A73E628E1B13C8C400CAAA8F /* rothrock.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = rothrock.css; path = views/css/rothrock.css; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 		A73E628B1B13C85500CAAA8F /* imgs */ = {
 			isa = PBXGroup;
 			children = (
+				A716CE481B3340A100420F67 /* main-background-corner.png */,
 				A77BCC5E1B2F81E8006FCBFE /* logo-default.png */,
 				A77BCC4A1B2F54E7006FCBFE /* going-pin.png */,
 				A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */,
@@ -672,6 +675,7 @@
 				A73E62931B13C8DC00CAAA8F /* rothrock.js in Resources */,
 				A773955C1B30A78A00004169 /* Muli-Regular.ttf in Resources */,
 				A773955A1B30A78A00004169 /* Muli-Regular.eot in Resources */,
+				A716CE491B3340A100420F67 /* main-background-corner.png in Resources */,
 				A77BCC531B2F54E7006FCBFE /* logo-sf.png in Resources */,
 				A773955B1B30A78A00004169 /* Muli-Regular.svg in Resources */,
 				A77395611B30A78A00004169 /* YanoneKaffeesatz-Regular.woff in Resources */,
