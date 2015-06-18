@@ -95,13 +95,15 @@ $going-pin-size: 50px;
     }
 
     .class-share-wrapper {
-      margin: 5px;
+      margin: 0 5px 30px 5px;
 
       > * {
         display: inline-block;
       }
 
       p {
+        margin: 0;
+
         font-size: 9px;
       }
 
@@ -158,25 +160,30 @@ $going-pin-size: 50px;
   }
 
   .class-rsvp-button {
-    width: 100px;
+    $rsvp-original-ratio: 290 / 100;
+    $rsvp-width: 100px;
+
+    width: $rsvp-width;
+    height: ($rsvp-width / $rsvp-original-ratio);
+    padding: 3px 0;
 
     font: {
-      family: $body-font;
+      family: $headline-font;
       size: 20px;
     }
     color: $white;
-    text-shadow: 0 3px 3px $black;
+    text-shadow: 0 1px 1px $black;
     text-align: center;
 
-    background-color: $white;
-    background-position: 2px;
+    background: {
+      color: $white;
+      image: url('rsvp.png');
+      size: $rsvp-width;
+      repeat: no-repeat;
+    }
 
-    &.rsvp {
-      background-image: url('rsvp.png');
-
-      &:active {
-        background-image: url('rsvp-active.png');
-      }
+    &:active {
+      background-image: url('rsvp-active.png');
     }
 
     &.unrsvp {

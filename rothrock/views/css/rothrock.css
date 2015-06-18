@@ -143,10 +143,11 @@
       font-size: 9px;
       color: #ab1818; }
     .class-list section .class-card-wrapper .class-share-wrapper {
-      margin: 5px; }
+      margin: 0 5px 30px 5px; }
       .class-list section .class-card-wrapper .class-share-wrapper > * {
         display: inline-block; }
       .class-list section .class-card-wrapper .class-share-wrapper p {
+        margin: 0;
         font-size: 9px; }
       .class-list section .class-card-wrapper .class-share-wrapper .ic-share {
         padding: 0 5px 0 0;
@@ -177,18 +178,20 @@
   z-index: 1; }
 .class-list section .class-card-wrapper .class-rsvp-button {
   width: 100px;
-  font-family: "Muli";
+  height: 34.48276px;
+  padding: 3px 0;
+  font-family: "Yanone Kaffeesatz";
   font-size: 20px;
   color: #fff;
-  text-shadow: 0 3px 3px #333;
+  text-shadow: 0 1px 1px #333;
   text-align: center;
   background-color: #fff;
-  background-position: 2px;
+  background-image: url("rsvp.png");
+  background-size: 100px;
+  background-repeat: no-repeat;
   z-index: 2; }
-  .class-list section .class-card-wrapper .class-rsvp-button.rsvp {
-    background-image: url("rsvp.png"); }
-    .class-list section .class-card-wrapper .class-rsvp-button.rsvp:active {
-      background-image: url("rsvp-active.png"); }
+  .class-list section .class-card-wrapper .class-rsvp-button:active {
+    background-image: url("rsvp-active.png"); }
   .class-list section .class-card-wrapper .class-rsvp-button.unrsvp {
     background-image: url("unrsvp.png"); }
     .class-list section .class-card-wrapper .class-rsvp-button.unrsvp:active {

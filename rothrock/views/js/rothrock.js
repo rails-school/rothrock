@@ -80,7 +80,7 @@ Slider = (function() {
   }
 
   Slider.prototype._setCardDesign = function(wrapper) {
-    var attendees, card, cardHeight, cardTop, countdown, pin, rsvp, share;
+    var attendees, card, cardHeight, cardLeft, cardTop, countdown, pin, rsvp, share;
     pin = wrapper.find("." + this.goingPinClass).first();
     countdown = wrapper.find("." + this.countdownClass).first();
     card = wrapper.find("." + this.cardClass).first();
@@ -92,10 +92,12 @@ Slider = (function() {
       left: 0
     });
     cardTop = pin.outerHeight(true) / 2;
-    cardHeight = wrapper.height() - attendees.outerHeight(true) - share.outerHeight(true) - cardTop;
+    cardLeft = pin.outerWidth(true) / 2;
+    cardHeight = wrapper.height() - attendees.outerHeight(true) - share.outerHeight(true);
+    cardHeight = cardHeight - cardTop - rsvp.outerHeight(true) / 2;
     card.css({
       top: cardTop,
-      left: pin.outerWidth(true) / 2,
+      left: cardLeft,
       width: wrapper.outerWidth() - (pin.outerWidth(true) / 2),
       height: cardHeight
     });
@@ -105,15 +107,15 @@ Slider = (function() {
     });
     rsvp.css({
       top: cardTop + cardHeight - rsvp.outerHeight(true) / 2,
-      left: (wrapper.width() - rsvp.outerWidth(true)) / 2
+      left: (card.outerWidth(true) - rsvp.outerWidth(true)) / 2 + cardLeft
     });
     attendees.css({
-      top: card.position().top + card.outerHeight(true),
-      left: (wrapper.outerWidth() - attendees.outerWidth(true)) / 2
+      top: card.position().top + card.outerHeight(true) + rsvp.outerHeight(true) / 2,
+      left: (card.outerWidth(true) - attendees.outerWidth(true)) / 2 + cardLeft
     });
     return share.css({
       top: attendees.position().top + attendees.outerHeight(true),
-      left: (wrapper.outerWidth() - share.outerWidth(true)) / 2
+      left: (card.outerWidth(true) - share.outerWidth(true)) / 2 + cardLeft
     });
   };
 

@@ -32,7 +32,11 @@ script#class-card-template(type='text/template7')
           p {{lesson.hour}}
 
     //- RSVP button
-    .class-rsvp-button.js-class-rsvp-button
+    | {{#js_compare "this.isAttending == 'true'"}}
+    .class-rsvp-button.unrsvp.js-class-rsvp-button unRSVP
+    | {{else}}
+    .class-rsvp-button.js-class-rsvp-button RSVP
+    | {{/js_compare}}
 
     p.class-attendees.js-class-attendees
       | {{#js_compare "this.attendees == 0"}} Be the first join to join this class! {{/js_compare}}

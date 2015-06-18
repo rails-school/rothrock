@@ -51,8 +51,9 @@
                         <p>{{lesson.hour}}</p>
                       </li>
                     </ul>
-                  </div>
-                  <div class="class-rsvp-button js-class-rsvp-button"></div>
+                  </div>{{#js_compare "this.isAttending == 'true'"}}
+                  <div class="class-rsvp-button unrsvp js-class-rsvp-button">unRSVP</div>{{else}}
+                  <div class="class-rsvp-button js-class-rsvp-button">RSVP</div>{{/js_compare}}
                   <p class="class-attendees js-class-attendees">
                     {{#js_compare "this.attendees == 0"}} Be the first join to join this class! {{/js_compare}}
                     {{#js_compare "this.attendees == 1"}} 1 student is going {{/js_compare}}

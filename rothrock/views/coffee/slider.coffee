@@ -61,10 +61,12 @@ class Slider
       left: 0
 
     cardTop = pin.outerHeight(true) / 2
-    cardHeight = wrapper.height() - attendees.outerHeight(true) - share.outerHeight(true) - cardTop
+    cardLeft = pin.outerWidth(true) / 2
+    cardHeight = wrapper.height() - attendees.outerHeight(true) - share.outerHeight(true)
+    cardHeight = cardHeight - cardTop - rsvp.outerHeight(true) / 2
     card.css
       top: cardTop
-      left: pin.outerWidth(true) / 2
+      left: cardLeft
       width: wrapper.outerWidth() - (pin.outerWidth(true) / 2)
       height: cardHeight
 
@@ -74,12 +76,12 @@ class Slider
 
     rsvp.css
       top: cardTop + cardHeight - rsvp.outerHeight(true) / 2
-      left: (wrapper.width() - rsvp.outerWidth(true)) / 2
+      left: (card.outerWidth(true) - rsvp.outerWidth(true)) / 2 + cardLeft
 
     attendees.css
-      top: card.position().top + card.outerHeight(true)
-      left: (wrapper.outerWidth() - attendees.outerWidth(true)) / 2
+      top: card.position().top + card.outerHeight(true) + rsvp.outerHeight(true) / 2
+      left: (card.outerWidth(true) - attendees.outerWidth(true)) / 2 + cardLeft
 
     share.css
       top: attendees.position().top + attendees.outerHeight(true)
-      left: (wrapper.outerWidth() - share.outerWidth(true)) / 2
+      left: (card.outerWidth(true) - share.outerWidth(true)) / 2 + cardLeft
