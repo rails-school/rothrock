@@ -194,7 +194,7 @@ ClassListController = (function(superClass) {
     })(this));
     return this.getBus().register('ReceiveSchool', (function(_this) {
       return function(name, data) {
-        if (data === 1) {
+        if (data === "cville") {
           return $(_this.logoSelector).attr('src', 'logo-charlottesville.png');
         } else {
           return $(_this.logoSelector).attr('src', 'logo-sf.png');

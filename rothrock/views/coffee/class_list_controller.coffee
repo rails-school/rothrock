@@ -28,7 +28,7 @@ class ClassListController extends BaseController
       @done()
 
     @getBus().register 'ReceiveSchool', (name, data) =>
-      if data == 1
+      if data == "cville"
         $(@logoSelector).attr('src', 'logo-charlottesville.png')
       else
         $(@logoSelector).attr('src', 'logo-sf.png')

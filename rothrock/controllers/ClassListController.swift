@@ -39,5 +39,9 @@ internal class ClassListController: BaseController {
                 },
                 failure: { self.publishError($0) }
             )
+        
+        if BusinessFactory.provideUser().isSignedIn() {
+            self._bus!.post("ReceiveSchool", aString: BusinessFactory.provideUser().getCurrentUserSchoolSlug())            
+        }
     }
 }

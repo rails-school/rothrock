@@ -22,4 +22,6 @@ public protocol IUserBusiness {
     func getCurrentUserEmail() -> String?
     
     func getCurrentUserSchoolId() -> Int?
+    
+    func getCurrentUserSchoolSlug() -> String
 }

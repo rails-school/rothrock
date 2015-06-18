@@ -110,4 +110,8 @@ internal class UserBusiness: BaseBusiness, IUserBusiness {
     func getCurrentUserSchoolId() -> Int? {
         return _userDAO.getCurrentUserSchoolId()
     }
+    
+    func getCurrentUserSchoolSlug() -> String {
+        return (getCurrentUserSchoolId() == 1) ? "sf" : "cville"
+    }
 }
