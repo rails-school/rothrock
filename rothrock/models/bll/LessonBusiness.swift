@@ -52,6 +52,10 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
         }
     }
     
+    func getLessonURL(lesson: Lesson) -> String {
+        return "api_endpoint".localized + "/l/\(lesson.slug)"
+    }
+    
     func sortFutureSlugsByDate(success: ([String]?) -> Void, failure: (String) -> Void) {
         var callback = BLLCallback(base: self, success: { success($1) }, failure: failure)
         

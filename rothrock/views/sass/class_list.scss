@@ -169,7 +169,7 @@ $going-pin-size: 50px;
 
     width: $rsvp-width;
     height: ($rsvp-width / $rsvp-original-ratio);
-    padding: 3px 0;
+    padding: 2px 0;
 
     font: {
       family: $headline-font;
@@ -185,6 +185,7 @@ $going-pin-size: 50px;
       size: $rsvp-width;
       repeat: no-repeat;
     }
+    cursor: pointer;
 
     &:active {
       background-image: url('rsvp-active.png');

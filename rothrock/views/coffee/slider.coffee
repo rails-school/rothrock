@@ -29,8 +29,8 @@ class Slider
       @_setCardDesign($(e))
 
       hammertime = new Hammer.Manager(e)
-      hammertime.add(new Hammer.Pan({ event: 'customPanLeft', threshold: 50, direction: Hammer.DIRECTION_LEFT }))
-      hammertime.add(new Hammer.Pan({ event: 'customPanRight', threshold: 50, direction: Hammer.DIRECTION_RIGHT }))
+      hammertime.add(new Hammer.Pan({ event: 'customPanLeft', threshold: 30, direction: Hammer.DIRECTION_LEFT }))
+      hammertime.add(new Hammer.Pan({ event: 'customPanRight', threshold: 30, direction: Hammer.DIRECTION_RIGHT }))
       hammertime.on 'customPanLeft', (ev) =>
         return if i == @cards.length - 1
         return if @isAnimating

@@ -9,6 +9,8 @@
 import Foundation
 
 public protocol ILessonBusiness {
+    func getLessonURL(lesson: Lesson) -> String
+    
     func sortFutureSlugsByDate(success: ([String]?) -> Void, failure: (String) -> Void)
     
     func sortFutureSchoolClassesByDateAsDictionary(success: ([NSDictionary]?) -> Void, failure: (String) -> Void)

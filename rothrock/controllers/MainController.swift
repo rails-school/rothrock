@@ -30,7 +30,7 @@ public class MainController: UIViewController {
             }
         }
         
-        _classListController = ClassListController(webView: _webView)
+        _classListController = ClassListController(parentController: self, webView: _webView)
         
         _webView.loadRequest(NSURLRequest(URL: NSBundle.mainBundle().URLForResource("main", withExtension: "html")!))
         

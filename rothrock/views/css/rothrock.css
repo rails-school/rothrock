@@ -182,7 +182,7 @@
 .class-list section .class-card-wrapper .class-rsvp-button {
   width: 100px;
   height: 34.48276px;
-  padding: 3px 0;
+  padding: 2px 0;
   font-family: "Yanone Kaffeesatz";
   font-size: 20px;
   color: #fff;
@@ -192,6 +192,7 @@
   background-image: url("rsvp.png");
   background-size: 100px;
   background-repeat: no-repeat;
+  cursor: pointer;
   z-index: 2; }
   .class-list section .class-card-wrapper .class-rsvp-button:active {
     background-image: url("rsvp-active.png"); }

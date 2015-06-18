@@ -37,12 +37,12 @@ Slider = (function() {
         hammertime = new Hammer.Manager(e);
         hammertime.add(new Hammer.Pan({
           event: 'customPanLeft',
-          threshold: 50,
+          threshold: 30,
           direction: Hammer.DIRECTION_LEFT
         }));
         hammertime.add(new Hammer.Pan({
           event: 'customPanRight',
-          threshold: 50,
+          threshold: 30,
           direction: Hammer.DIRECTION_RIGHT
         }));
         hammertime.on('customPanLeft', function(ev) {
@@ -177,6 +177,9 @@ ClassListController = (function(superClass) {
     this.listSelector = '.js-class-list';
     this.upcomingCounterSelector = '.js-upcoming-classes';
     this.logoSelector = '.js-logo';
+    this.cardWrapperSelector = '.js-class-card-wrapper';
+    this.cardSelector = '.js-class-card';
+    this.shareSelector = '.js-class-share';
   }
 
   ClassListController.prototype.getBus = function() {
@@ -194,14 +197,50 @@ ClassListController = (function(superClass) {
         }));
         new Slider({
           slideWrapper: $(_this.listSelector),
-          cardWrapperClass: 'js-class-card-wrapper',
+          cardWrapperClass: _this.cardWrapperSelector.slice(1),
           goingPinClass: 'js-class-going-pin',
           countdownClass: 'js-class-countdown',
-          cardClass: 'js-class-card',
+          cardClass: _this.cardSelector.slice(1),
           rsvpClass: 'js-class-rsvp-button',
           attendeesClass: 'js-class-attendees',
-          shareClass: 'js-class-share',
+          shareClass: _this.shareSelector.slice(1),
           gutter: 10
+        });
+        $(_this.listSelector).find(_this.cardWrapperSelector).each(function(i, e) {
+          var slug;
+          slug = $(e).data('slug');
+          $(e).find(_this.cardSelector).first().on('click', function() {
+            return _this.getBus().post('TriggerInsight', slug);
+          });
+          return $(e).find(_this.shareSelector).first().on('click', function() {
+            _this.getApp().actions([
+              {
+                text: 'Text',
+                onClick: function() {
+                  return _this.getBus().post('TriggerShareText', slug);
+                }
+              }, {
+                text: 'Email',
+                onClick: function() {
+                  return _this.getBus().post('TriggerShareEmail', slug);
+                }
+              }, {
+                text: 'Facebook',
+                onClick: function() {
+                  return _this.getBus().post('TriggerShareFacebook', slug);
+                }
+              }, {
+                text: 'Twitter',
+                onClick: function() {
+                  return _this.getBus().post('TriggerShareTwitter', slug);
+                }
+              }, {
+                text: 'Cancel',
+                color: 'red'
+              }
+            ]);
+            return _this.getBus().post('TriggerShare', slug);
+          });
         });
         return _this.done();
       };

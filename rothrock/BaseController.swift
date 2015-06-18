@@ -10,11 +10,17 @@ import Foundation
 import UIKit
 import SwiftEventBus
 
-public class BaseController {
+public class BaseController: NSObject {
     private var _webView: UIWebView
+    private var _parentController: UIViewController
     
-    public init(webView: UIWebView) {
+    public init(parentController: UIViewController, webView: UIWebView) {
+        self._parentController = parentController
         self._webView = webView
+    }
+    
+    public var parentController: UIViewController {
+        return _parentController
     }
     
     public var webView: UIWebView {
