@@ -3,10 +3,11 @@ script#class-card-template(type='text/template7')
   .class-card-wrapper.js-class-card-wrapper(data-slug="{{lesson.slug}}")
     | {{#js_compare "this.isAttending == 'true'"}}
     img.class-going-pin.js-class-going-pin(src='going-pin.png')
+    p.class-countdown.going.js-class-countdown {{lesson.countdown}}
     | {{else}}
     img.class-going-pin.invisible.js-class-going-pin(src='going-pin.png')
-    | {{/js_compare}}
     p.class-countdown.js-class-countdown {{lesson.countdown}}
+    | {{/js_compare}}
 
     //- Details wrapper
     .class-card.js-class-card

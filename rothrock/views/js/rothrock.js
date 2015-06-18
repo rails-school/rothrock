@@ -180,6 +180,8 @@ ClassListController = (function(superClass) {
     this.settingsSelector = '.js-settings';
     this.cardWrapperSelector = '.js-class-card-wrapper';
     this.cardSelector = '.js-class-card';
+    this.goingPinSelector = '.js-class-going-pin';
+    this.countdownSelector = '.js-class-countdown';
     this.rsvpSelector = '.js-class-rsvp-button';
     this.shareSelector = '.js-class-share';
   }
@@ -197,11 +199,11 @@ ClassListController = (function(superClass) {
         $(_this.listSelector).html(_this.cardTemplate({
           classes: data
         }));
-        new Slider({
+        _this.slider = new Slider({
           slideWrapper: $(_this.listSelector),
           cardWrapperClass: _this.cardWrapperSelector.slice(1),
-          goingPinClass: 'js-class-going-pin',
-          countdownClass: 'js-class-countdown',
+          goingPinClass: _this.goingPinSelector.slice(1),
+          countdownClass: _this.countdownSelector.slice(1),
           cardClass: _this.cardSelector.slice(1),
           rsvpClass: _this.rsvpSelector.slice(1),
           attendeesClass: 'js-class-attendees',
@@ -266,14 +268,25 @@ ClassListController = (function(superClass) {
     })(this));
     return this.getBus().register("SetAttendance", (function(_this) {
       return function(name, data) {
-        var cardWrapper, isAttending, rsvpButton;
+        var cardWrapper, countdown, goingPin, isAttending, rsvpButton;
         isAttending = data.isAttending;
         cardWrapper = $(_this.listSelector).find(_this.cardWrapperSelector + "[data-slug='" + data.slug + "']").first();
         rsvpButton = cardWrapper.find(_this.rsvpSelector).first();
         if (isAttending) {
-          return cardWrapper.addClass('unrsvp');
+          rsvpButton.addClass('unrsvp');
+          rsvpButton.text('unRSVP');
         } else {
-          return cardWrapper.removeClass('unrsvp');
+          rsvpButton.removeClass('unrsvp');
+          rsvpButton.text('RSVP');
+        }
+        goingPin = cardWrapper.find(_this.goingPinSelector).first();
+        countdown = cardWrapper.find(_this.countdownSelector).first();
+        if (isAttending) {
+          goingPin.removeClass('invisible');
+          return countdown.addClass('going');
+        } else {
+          goingPin.addClass('visible');
+          return countdown.removeClass('going');
         }
       };
     })(this));

@@ -10,6 +10,8 @@ class ClassListController extends BaseController
 
     @cardWrapperSelector = '.js-class-card-wrapper'
     @cardSelector = '.js-class-card'
+    @goingPinSelector = '.js-class-going-pin'
+    @countdownSelector = '.js-class-countdown'
     @rsvpSelector = '.js-class-rsvp-button'
     @shareSelector = '.js-class-share'
 
@@ -23,11 +25,11 @@ class ClassListController extends BaseController
       @fork()
       $(@upcomingCounterSelector).text("Upcoming Classes: #{data.length}")
       $(@listSelector).html(@cardTemplate({ classes: data }))
-      new Slider
+      @slider = new Slider
         slideWrapper: $(@listSelector)
         cardWrapperClass: @cardWrapperSelector[1..]
-        goingPinClass: 'js-class-going-pin'
-        countdownClass: 'js-class-countdown'
+        goingPinClass: @goingPinSelector[1..]
+        countdownClass: @countdownSelector[1..]
         cardClass: @cardSelector[1..]
         rsvpClass: @rsvpSelector[1..]
         attendeesClass: 'js-class-attendees'
@@ -90,9 +92,19 @@ class ClassListController extends BaseController
       isAttending = data.isAttending
       cardWrapper = $(@listSelector).find("#{@cardWrapperSelector}[data-slug='#{data.slug}']").first()
 
-      # TODO: going pin to set
       rsvpButton = cardWrapper.find(@rsvpSelector).first()
       if isAttending
-        cardWrapper.addClass('unrsvp')
+        rsvpButton.addClass('unrsvp')
+        rsvpButton.text('unRSVP')
       else
-        cardWrapper.removeClass('unrsvp')
+        rsvpButton.removeClass('unrsvp')
+        rsvpButton.text('RSVP')
+
+      goingPin = cardWrapper.find(@goingPinSelector).first()
+      countdown = cardWrapper.find(@countdownSelector).first()
+      if isAttending
+        goingPin.removeClass('invisible')
+        countdown.addClass('going')
+      else
+        goingPin.addClass('visible')
+        countdown.removeClass('going')

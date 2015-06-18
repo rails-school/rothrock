@@ -151,6 +151,14 @@ $going-pin-size: 50px;
 
     border-bottom: 2px solid $red;
     z-index: 2;
+
+    &.going {
+      margin-left: $going-pin-size;
+
+      color: $green;
+
+      border-color: $green;
+    }
   }
 
   .class-card {
