@@ -16,7 +16,7 @@ Slider = (function() {
     this.cards = [];
     this.slideWrapper.find("." + this.cardWrapperClass).each((function(_this) {
       return function(i, e) {
-        var hammertime, ref;
+        var hammertime;
         _this.cards.push($(e));
         if (i === 0) {
           $(e).css({
@@ -26,14 +26,22 @@ Slider = (function() {
         } else {
           $(e).css({
             left: $(e).width() + _this.gutter,
-            zIndex: (ref = i === 1) != null ? ref : {
-              2: 1
-            }
+            zIndex: i === 1 ? 2 : 1
           });
         }
         _this._setCardDesign($(e));
-        hammertime = new Hammer(e);
-        hammertime.on('panleft', function(ev) {
+        hammertime = new Hammer.Manager(e);
+        hammertime.add(new Hammer.Pan({
+          event: 'customPanLeft',
+          threshold: 50,
+          direction: Hammer.DIRECTION_LEFT
+        }));
+        hammertime.add(new Hammer.Pan({
+          event: 'customPanRight',
+          threshold: 50,
+          direction: Hammer.DIRECTION_RIGHT
+        }));
+        hammertime.on('customPanLeft', function(ev) {
           if (i === _this.cards.length - 1) {
             return;
           }
@@ -54,7 +62,7 @@ Slider = (function() {
             return _this.isAnimating = false;
           });
         });
-        return hammertime.on('panright', function(ev) {
+        return hammertime.on('customPanRight', function(ev) {
           if (i === 0) {
             return;
           }

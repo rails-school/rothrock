@@ -21,12 +21,14 @@ class Slider
       else
         $(e).css
           left: $(e).width() + @gutter
-          zIndex: (i == 1) ? 2: 1
+          zIndex: if (i == 1) then 2 else 1
 
       @_setCardDesign($(e))
 
-      hammertime = new Hammer(e)
-      hammertime.on 'panleft', (ev) =>
+      hammertime = new Hammer.Manager(e)
+      hammertime.add(new Hammer.Pan({ event: 'customPanLeft', threshold: 50, direction: Hammer.DIRECTION_LEFT }))
+      hammertime.add(new Hammer.Pan({ event: 'customPanRight', threshold: 50, direction: Hammer.DIRECTION_RIGHT }))
+      hammertime.on 'customPanLeft', (ev) =>
         return if i == @cards.length - 1
         return if @isAnimating
 
@@ -37,7 +39,7 @@ class Slider
           @cards[i + 2].css('z-index', 2) if i < @cards.length - 2
           @isAnimating = false
 
-      hammertime.on 'panright', (ev) =>
+      hammertime.on 'customPanRight', (ev) =>
         return if i == 0
         return if @isAnimating
 
