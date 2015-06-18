@@ -2,18 +2,48 @@ module.exports = function (grunt) {
     'use strict';
 
     grunt.loadNpmTasks('grunt-contrib-coffee');
+    grunt.loadNpmTasks('grunt-coffeelint');
+    grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-scss-lint');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Project configuration
     grunt.initConfig({
         coffee: {
-            joinedBuild: {
+            dist: {
                 options: {
-                    bare: true
+                    bare: true,
+                    join: true
                 },
                 files: {
-                    'js/rothrock.js': 'coffee/*.coffee'
+                    'js/rothrock.js': [
+                        'coffee/slider.coffee',
+                        'coffee/base_controller.coffee',
+                        'coffee/class_list_controller.coffee',
+                        'coffee/single_class_controller.coffee',
+                        'coffee/main.coffee'
+                    ]
+                }
+            }
+        },
+        coffeelint: {
+            dist: {
+                options: {
+                    configFile: 'config/coffeelint-default.json'
+                },
+                files: {
+                    src: ['coffee/*.coffee']
+                }
+            }
+        },
+        jade: {
+            dist: {
+                options: {
+                    pretty: true
+                },
+                files: {
+                    "html/main.html": ['jade/main.jade']
                 }
             }
         },
@@ -27,10 +57,30 @@ module.exports = function (grunt) {
                 }
             }
         },
+        scsslint: {
+            dist: {
+                options: {
+                    colorizeOutput: true,
+                    config: 'config/scsslint-default.yml',
+                    force: true
+                },
+                files: {
+                    src: ['sass/*.scss']
+                }
+            }
+        },
         watch: {
             coffee: {
-                files: 'coffee/*.coffee',
-                tasks: [ 'coffee:joinedBuild' ],
+                files: 'coffee/**/*.coffee',
+                tasks: ['coffeelint', 'coffee'],
+                options: {
+                    interrupt: true,
+                    atBegin: true
+                }
+            },
+            jade: {
+                files: 'jade/**/*.jade',
+                tasks: ['jade'],
                 options: {
                     interrupt: true,
                     atBegin: true
@@ -38,7 +88,8 @@ module.exports = function (grunt) {
             },
             sass: {
                 files: 'sass/**/*.scss',
-                tasks: [ 'sass' ],
+                //tasks: ['scsslint', 'sass'],
+                tasks: ['sass'],
                 options: {
                     interrupt: true,
                     atBegin: true
@@ -49,7 +100,16 @@ module.exports = function (grunt) {
 
     // Default task
     grunt.registerTask('default', [
-        'coffee:joinedBuild',
+        'coffeelint',
+        'coffee',
+        'jade',
+        'scsslint',
+        'sass'
+    ]);
+
+    grunt.registerTask('fast', [
+        'coffee',
+        'jade',
         'sass'
     ]);
 };

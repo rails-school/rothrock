@@ -11,11 +11,4 @@ import Foundation
 public class SchoolClass {
     public var lesson: Lesson?
     public var students: [User]?
-    
-    public func toDictionary() -> NSDictionary {
-        return [
-            "lesson": lesson!.toDictionary(),
-            "students": students!.count
-        ]
-    }
 }

@@ -1,11 +1,30 @@
-$display4: 7em;
-$display3: 5em;
-$display2: 4em;
-$display1: 3em;
+$body-font: 'Muli';
 
-$headline: 2em;
-$title: 1.5em;
-$subhead: 1em;
-$body: .8em;
-$caption: .5em;
-$button: $body;
+@font-face {
+  font-family: $body-font;
+  src: url('Muli-Regular.eot'); /* IE9 Compat Modes */
+  src: url('Muli-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('Muli-Regular.woff') format('woff'), /* Modern Browsers */ url('Muli-Regular.ttf') format('truetype'), /* Safari, Android, iOS */ url('Muli-Regular.svg#c85b2458fecc0dfe933a4fc2cd098850') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400;
+}
+
+$body-italic-font: 'Muli-Italic';
+
+@font-face {
+  font-family: $body-italic-font;
+  src: url('Muli-Italic.eot'); /* IE9 Compat Modes */
+  src: url('Muli-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('Muli-Italic.woff') format('woff'), /* Modern Browsers */ url('Muli-Italic.ttf') format('truetype'), /* Safari, Android, iOS */ url('Muli-Italic.svg#44cf9b31f9dde2efac9c52707f676b32') format('svg'); /* Legacy iOS */
+  font-style: italic;
+  font-weight: 400;
+}
+
+$headline-font: 'Yanone Kaffeesatz';
+
+@font-face {
+  font-family: $headline-font;
+  src: url('YanoneKaffeesatz-Regular.eot'); /* IE9 Compat Modes */
+  src: url('YanoneKaffeesatz-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('YanoneKaffeesatz-Regular.woff') format('woff'), /* Modern Browsers */ url('YanoneKaffeesatz-Regular.ttf') format('truetype'), /* Safari, Android, iOS */ url('YanoneKaffeesatz-Regular.svg#d05230b1b2f3ce3e90471620c9faac8c') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400;
+}
+

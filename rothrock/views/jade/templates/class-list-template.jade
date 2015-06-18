@@ -1,0 +1,52 @@
+script#class-card-template(type='text/template7')
+  | {{#each classes}}
+  .class-card-wrapper.js-class-card-wrapper(data-slug="{{lesson.slug}}")
+    | {{#js_compare "this.isAttending == 'true'"}}
+    img.class-going-pin.js-class-going-pin(src='going-pin.png')
+    p.class-countdown.going.js-class-countdown {{lesson.countdown}}
+    | {{else}}
+    img.class-going-pin.invisible.js-class-going-pin(src='going-pin.png')
+    p.class-countdown.js-class-countdown {{lesson.countdown}}
+    | {{/js_compare}}
+
+    //- Details wrapper
+    .class-card.js-class-card
+      h1 {{lesson.title}}
+      h2 {{lesson.summary}}
+
+      ul
+        li
+          p.ic-ruby
+            i.fa.fa-diamond
+          p {{teacher.name}}
+        li
+          p.ic-venue
+            i.fa.fa-map-marker
+          p {{venue.name}}
+        li
+          p.ic-calendar
+            i.fa.fa-calendar-o
+          p {{lesson.date}} ({{lesson.countdown}})
+        li
+          p.ic-clock
+            i.fa.fa-clock-o
+          p {{lesson.hour}}
+
+    //- RSVP button
+    | {{#js_compare "this.isAttending == 'true'"}}
+    .class-rsvp-button.unrsvp.js-class-rsvp-button unRSVP
+    | {{else}}
+    .class-rsvp-button.js-class-rsvp-button RSVP
+    | {{/js_compare}}
+
+    p.class-attendees.js-class-attendees
+      | {{#js_compare "this.attendees == 0"}} Be the first join to join this class! {{/js_compare}}
+      | {{#js_compare "this.attendees == 1"}} 1 student is going {{/js_compare}}
+      | {{#js_compare "this.attendees > 1"}}{{attendees}} students are going {{/js_compare}}
+
+    .class-share-wrapper.js-class-share
+      p.ic-share
+        i.fa.fa-share-alt
+      p Share
+
+  | {{/each}}

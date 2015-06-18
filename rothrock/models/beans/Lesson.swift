@@ -23,16 +23,4 @@ public class Lesson: RLMObject {
     public override class func primaryKey() -> String {
         return "slug"
     }
-    
-    public func toDictionary() -> NSDictionary {
-        return [
-            "id": id,
-            "slug": slug,
-            "title": title ?? "",
-            "summary": summary ?? "",
-            "lessonDescription": lessonDescription ?? "",
-            "startTime": NSDate.userFriendly(startTime!),
-            "endTime": NSDate.userFriendly(endTime!)
-        ]
-    }
 }

@@ -9,13 +9,17 @@
 import Foundation
 
 public protocol ILessonBusiness {
+    func getLessonURL(lesson: Lesson) -> String
+    
     func sortFutureSlugsByDate(success: ([String]?) -> Void, failure: (String) -> Void)
+    
+    func sortFutureSchoolClassesByDateAsDictionary(success: ([NSDictionary]?) -> Void, failure: (String) -> Void)
     
     func get(lessonSlug: String, success: (Lesson?) -> Void, failure: (String) -> Void)
     
     func getTuple(lessongSlug: String, success: (Lesson?, User?, Venue?) -> Void, failure: (String) -> Void)
     
-    func sortFutureTuplesByDate(success: ([NSDictionary]?) -> Void, failure: (String) -> Void)
+    func getSchoolClassTupleAsDictionary(lessonSlug: String, success: (NSDictionary?) -> Void, failure: (String) -> Void)
     
     func getSchoolClassTuple(lessonSlug: String, success: (SchoolClass?, User?, Venue?) -> Void, failure: (String) -> Void)
     

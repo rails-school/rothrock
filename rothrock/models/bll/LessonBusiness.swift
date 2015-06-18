@@ -35,6 +35,27 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
         return isInCountdownInterval && isFirstNotification
     }
     
+    private func _sortFutureSchoolClassesByDateAsDictionary(slugs: [String], cursor: Int, outcome: [NSDictionary], success: ([NSDictionary]?) -> Void, failure: (String) -> Void) {
+        if cursor == slugs.count {
+            success(outcome)
+        } else {
+            getSchoolClassTupleAsDictionary(
+                slugs[cursor],
+                success: { dict in
+                    var o = outcome
+                    
+                    o.append(dict!)
+                    self._sortFutureSchoolClassesByDateAsDictionary(slugs, cursor: cursor + 1, outcome: o, success: success, failure: failure)
+                },
+                failure: failure
+            )
+        }
+    }
+    
+    func getLessonURL(lesson: Lesson) -> String {
+        return "api_endpoint".localized + "/l/\(lesson.slug)"
+    }
+    
     func sortFutureSlugsByDate(success: ([String]?) -> Void, failure: (String) -> Void) {
         var callback = BLLCallback(base: self, success: { success($1) }, failure: failure)
         
@@ -43,6 +64,25 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
         } else {
             api.getFutureLessonSlugs(callback)
         }
+    }
+    
+    func sortFutureSchoolClassesByDateAsDictionary(success: ([NSDictionary]?) -> Void, failure: (String) -> Void) {
+        sortFutureSlugsByDate(
+            { slugs in
+                if slugs == nil {
+                    success(nil)
+                } else {
+                    self._sortFutureSchoolClassesByDateAsDictionary(
+                        slugs!,
+                        cursor: 0,
+                        outcome: [NSDictionary](),
+                        success: success,
+                        failure: failure
+                    )
+                }
+            },
+            failure: failure
+        )
     }
     
     func get(lessonSlug: String, success: (Lesson?) -> Void, failure: (String) -> Void) {
@@ -81,31 +121,84 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
         )
     }
     
-    func sortFutureTuplesByDate(success: ([NSDictionary]?) -> Void, failure: (String) -> Void) {
-        sortFutureSlugsByDate(
-            { slugs in
-                var tuples = [NSDictionary]()
+    func getSchoolClassTupleAsDictionary(lessonSlug: String, success: (NSDictionary?) -> Void, failure: (String) -> Void) {
+        getSchoolClassTuple(
+            lessonSlug,
+            success: { schoolClass, teacher, venue in
+                var startDate: NSDate = NSDate.fromString(schoolClass!.lesson!.startTime!)!
+                var endDate: NSDate = NSDate.fromString(schoolClass!.lesson!.endTime!)!
                 
-                if slugs == nil {
-                    success(nil)
-                    return
+                // Compute hour field
+                var hourField = ""
+                var startHour = startDate.hour()
+                var startMinute = startDate.minute()
+                var endHour = endDate.hour()
+                var endMinute = endDate.minute()
+                
+                if startHour > 12 {
+                    hourField += "\(startHour - 12)"
+                } else {
+                    hourField += "\(startHour)"
                 }
                 
-                for s in slugs! {
-                    self.getTuple(
-                        s,
-                        success: { (lesson, teacher, venue) in
-                            tuples.append([
-                                "lesson": lesson!.toDictionary(),
-                                "teacher": teacher!.toDictionary(),
-                                "venue": venue!.toDictionary()
-                            ])
-                        },
-                        failure: failure
-                    )
+                if startMinute > 0 {
+                    hourField += ":\(startMinute)"
                 }
                 
-                success(tuples)
+                hourField += " to "
+                
+                if endHour >= 12 {
+                    if endHour > 12 {
+                        hourField += "\(endHour - 12)"
+                    } else {
+                        hourField += "12"
+                    }
+                    
+                    if endMinute > 0 {
+                        hourField += ":\(endMinute)"
+                    }
+                    
+                    hourField += " PM"
+                } else {
+                    hourField += "\(endHour)"
+                    if endMinute > 0 {
+                        hourField += ":\(endMinute)"
+                    }
+                    hourField += " AM"
+                }
+                
+                hourField += " \(NSTimeZone.localTimeZone().abbreviation!)"
+                
+                var dict: NSMutableDictionary = [
+                    "lesson": [
+                        "slug": schoolClass!.lesson!.slug,
+                        "title": schoolClass!.lesson!.title!,
+                        "summary": schoolClass!.lesson!.summary!,
+                        "date": "\(startDate.shortMonth()) \(startDate.day())",
+                        "hour": "\(hourField)",
+                        "countdown": startDate.userFriendly()
+                    ],
+                    "teacher": [
+                        "name": teacher!.displayedName
+                    ],
+                    "venue": [
+                        "name": venue!.name!
+                    ],
+                    "attendees": "\(schoolClass!.students!.count)"
+                ]
+                
+                self._userBusiness.isCurrentUserAttendingTo(
+                    schoolClass!.lesson!.slug,
+                    isAttending: { isAttending in
+                        dict.setObject(isAttending, forKey: "isAttending")
+                        success(dict)
+                    },
+                    needToSignIn: {
+                        dict.setObject(false, forKey: "isAttending")
+                        success(dict)
+                    },
+                    failure: failure
+                )
             },
             failure: failure
         )

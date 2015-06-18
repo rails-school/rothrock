@@ -1,140 +1,241 @@
-.navbar-icon {
-  max-width: 80%;
-  max-height: 80%;
-  padding: 5px; }
+@font-face {
+  font-family: "Muli";
+  src: url("Muli-Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("Muli-Regular.eot?#iefix") format("embedded-opentype"), url("Muli-Regular.woff") format("woff"), url("Muli-Regular.ttf") format("truetype"), url("Muli-Regular.svg#c85b2458fecc0dfe933a4fc2cd098850") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400; }
+@font-face {
+  font-family: "Muli-Italic";
+  src: url("Muli-Italic.eot");
+  /* IE9 Compat Modes */
+  src: url("Muli-Italic.eot?#iefix") format("embedded-opentype"), url("Muli-Italic.woff") format("woff"), url("Muli-Italic.ttf") format("truetype"), url("Muli-Italic.svg#44cf9b31f9dde2efac9c52707f676b32") format("svg");
+  /* Legacy iOS */
+  font-style: italic;
+  font-weight: 400; }
+@font-face {
+  font-family: "Yanone Kaffeesatz";
+  src: url("YanoneKaffeesatz-Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("YanoneKaffeesatz-Regular.eot?#iefix") format("embedded-opentype"), url("YanoneKaffeesatz-Regular.woff") format("woff"), url("YanoneKaffeesatz-Regular.ttf") format("truetype"), url("YanoneKaffeesatz-Regular.svg#d05230b1b2f3ce3e90471620c9faac8c") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400; }
+.shown {
+  display: block; }
 
-.statusbar-overlay {
-  background-color: #A7000A; }
+.hidden {
+  display: none; }
 
-.navbar {
-  background-color: #A7000A; }
-  .navbar a.link {
-    color: #fff; }
+.visible {
+  visibility: visible; }
+
+.invisible {
+  visibility: hidden; }
 
 .class-list {
-  background-color: #1c1c1c; }
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 0 !important;
+  box-sizing: border-box;
+  background-color: #fff;
+  background-image: url("main-background-corner.png");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 30%; }
 
-.class-list-card {
-  margin: 15px; }
-  .class-list-card a {
-    padding: 10px; }
-  .class-list-card h1, .class-list-card h2 {
-    font-weight: normal; }
-  .class-list-card h1, .class-list-card h2, .class-list-card p {
-    margin: 5px; }
-  .class-list-card h1 {
-    font-size: 1.5em;
-    color: #1c1c1c; }
-  .class-list-card h2, .class-list-card p {
-    color: #7A7A7A; }
-  .class-list-card h2 {
-    font-size: 1em; }
-  .class-list-card p {
-    font-size: 0.8em; }
-  .class-list-card .class-list-card-footer {
-    background-color: #eee; }
-    .class-list-card .class-list-card-footer p {
-      display: inline-block;
-      width: 48%;
-      padding: 5px;
+.class-list header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  width: 100%;
+  padding: 20px 20px 15px 20px;
+  box-sizing: border-box; }
+  .class-list header .logo-wrapper {
+    max-width: 40%;
+    margin: 0 5px 5px 0; }
+    .class-list header .logo-wrapper .logo {
+      max-width: 100%;
+      margin: 0 0 5px 0; }
+    .class-list header .logo-wrapper .upcoming-classes {
       margin: 0;
-      box-sizing: border-box;
-      color: #7A7A7A; }
-      .class-list-card .class-list-card-footer p:last-child {
-        text-align: right; }
-
-.class-list hr {
-  margin: 20px;
-  border: 1px solid #7A7A7A;
-  display: none; }
-  .class-list hr.visible {
-    display: block; }
-
-.navbar-icon {
-  max-width: 80%;
-  max-height: 80%;
-  padding: 5px; }
-
-.statusbar-overlay {
-  background-color: #A7000A; }
-
-.navbar {
-  background-color: #A7000A; }
-  .navbar a.link {
-    color: #fff; }
-
-.page-content.class-details {
-  background-color: #1c1c1c; }
-  .page-content.class-details .content-block {
-    margin: 0;
-    padding: 0; }
-
-.page-content.class-details .class-details-header {
-  padding: 10px;
-  background-color: #1c1c1c; }
-  .page-content.class-details .class-details-header h1, .page-content.class-details .class-details-header p {
-    color: #fff; }
-  .page-content.class-details .class-details-header h1, .page-content.class-details .class-details-header h2 {
-    margin: 10px 5px;
-    font-weight: normal; }
-  .page-content.class-details .class-details-header h1 {
-    font-size: 2em;
+      font-family: "Muli";
+      font-size: 8px;
+      text-align: center;
+      color: #999; }
+  .class-list header .settings {
+    margin: 0 0 5px 5px;
     text-align: center; }
-  .page-content.class-details .class-details-header h2 {
-    font-size: 1em;
-    color: rgba(255, 255, 255, 0.5); }
-  .page-content.class-details .class-details-header p {
-    font-size: 0.8em;
-    margin: 5px; }
-  .page-content.class-details .class-details-header .row img {
-    width: 20px;
-    margin: 5px; }
-  .page-content.class-details .class-details-header .row img, .page-content.class-details .class-details-header .row p {
-    display: inline-block;
-    vertical-align: middle; }
-  .page-content.class-details .class-details-header .row > div:last-child {
-    text-align: right; }
+    .class-list header .settings p {
+      margin: 0;
+      font-family: "Muli";
+      font-size: 9px;
+      color: #999; }
+    .class-list header .settings .ic-settings {
+      margin: 0 0 5px 0; }
 
-.page-content.class-details .class-details-teacher-wrapper {
-  padding: 10px;
+.class-list section {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+  padding: 0 0 0 30px;
+  overflow: hidden; }
+  .class-list section .class-card-wrapper {
+    position: absolute;
+    width: 80%;
+    height: 100%; }
+    .class-list section .class-card-wrapper .class-attendees {
+      margin: 5px;
+      text-align: center;
+      font-family: "Muli";
+      font-size: 9px;
+      color: #ab1818; }
+    .class-list section .class-card-wrapper .class-share-wrapper {
+      margin: 0 5px 30px 5px; }
+      .class-list section .class-card-wrapper .class-share-wrapper > * {
+        display: inline-block; }
+      .class-list section .class-card-wrapper .class-share-wrapper p {
+        margin: 0;
+        font-size: 9px; }
+      .class-list section .class-card-wrapper .class-share-wrapper .ic-share {
+        padding: 0 5px 0 0;
+        color: #999; }
+      .class-list section .class-card-wrapper .class-share-wrapper p:last-child {
+        font-family: "Muli";
+        color: #333; }
+
+.class-list section .class-card-wrapper > * {
+  position: absolute; }
+.class-list section .class-card-wrapper .class-going-pin {
+  width: 50px;
+  height: 50px;
+  z-index: 3; }
+.class-list section .class-card-wrapper .class-countdown {
+  margin: 0;
+  padding: 0 30px 3px 0;
+  color: #333;
+  font-family: "Muli";
+  font-size: 9px;
+  border-bottom: 2px solid #ab1818;
+  z-index: 2; }
+  .class-list section .class-card-wrapper .class-countdown.going {
+    margin-left: 50px;
+    color: #5FB140;
+    border-color: #5FB140; }
+.class-list section .class-card-wrapper .class-card {
+  padding: 10px 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  overflow: auto;
+  z-index: 1; }
+.class-list section .class-card-wrapper .class-rsvp-button {
+  width: 100px;
+  height: 34.48276px;
+  padding: 2px 0;
+  font-family: "Yanone Kaffeesatz";
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 0 1px 1px #333;
   text-align: center;
-  background-color: #eee; }
-  .page-content.class-details .class-details-teacher-wrapper img, .page-content.class-details .class-details-teacher-wrapper p {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 5px; }
-  .page-content.class-details .class-details-teacher-wrapper img.gravatar {
-    width: 35px;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%; }
-  .page-content.class-details .class-details-teacher-wrapper p {
-    color: #1c1c1c;
-    font-size: 1.5em; }
+  background-color: #fff;
+  background-image: url("rsvp.png");
+  background-size: 100px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 2; }
+  .class-list section .class-card-wrapper .class-rsvp-button:active {
+    background-image: url("rsvp-active.png"); }
+  .class-list section .class-card-wrapper .class-rsvp-button.unrsvp {
+    background-image: url("unrsvp.png"); }
+    .class-list section .class-card-wrapper .class-rsvp-button.unrsvp:active {
+      background-image: url("unrsvp-active.png"); }
 
-.class-details .class-details-content {
-  padding: 10px;
-  background-color: white; }
-  .class-details .class-details-content p {
-    font-size: 0.8em; }
-  .class-details .class-details-content .attendees {
-    text-align: center;
-    color: #7A7A7A; }
-  .class-details .class-details-content .description {
-    text-align: justify;
-    color: #1c1c1c; }
-
-.toolbar.class-details {
-  background-color: #A7000A; }
-  .toolbar.class-details.unsigned {
-    background-color: #7A7A7A; }
-  .toolbar.class-details.attending {
-    background-color: #68B744; }
-  .toolbar.class-details a {
-    color: white;
-    font-size: 1.5em; }
+.class-list section .class-card-wrapper .class-card {
+  background-color: #fff; }
+  .class-list section .class-card-wrapper .class-card h1, .class-list section .class-card-wrapper .class-card h2 {
+    margin: 5px 0;
+    font-weight: normal; }
+  .class-list section .class-card-wrapper .class-card h1 {
+    color: #0f3344;
+    font-family: "Yanone Kaffeesatz";
+    font-size: 24px;
+    line-height: 1.2em; }
+  .class-list section .class-card-wrapper .class-card h2 {
+    color: #333;
+    font-family: "Muli";
+    font-size: 12px; }
+  .class-list section .class-card-wrapper .class-card ul {
+    margin: 15px 0;
+    padding: 0;
+    list-style-type: none; }
+    .class-list section .class-card-wrapper .class-card ul li {
+      margin: 5px 0;
+      padding: 0; }
+      .class-list section .class-card-wrapper .class-card ul li p {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        font-family: "Muli";
+        font-size: 10px; }
+      .class-list section .class-card-wrapper .class-card ul li p:first-child {
+        width: 25px;
+        padding: 0 5px 0 0;
+        text-align: center;
+        color: #999; }
+      .class-list section .class-card-wrapper .class-card ul li p:last-child {
+        color: #333; }

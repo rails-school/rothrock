@@ -13,7 +13,7 @@ public protocol IUserBusiness {
     
     func isCurrentUserAttendingTo(lessonSlug: String, isAttending: (Bool) -> Void, needToSignIn: () -> Void, failure: (String) -> Void)
     
-    func toggleAttendance(lessonId: Int, isAttending: Bool, success: () -> Void, failure: (String) -> Void)
+    func toggleAttendance(lessonId: Int, newValue: Bool, success: () -> Void, failure: (String) -> Void)
     
     func checkCredentials(email: String, password: String, success: () -> Void, failure: (String) -> Void)
     
@@ -22,4 +22,6 @@ public protocol IUserBusiness {
     func getCurrentUserEmail() -> String?
     
     func getCurrentUserSchoolId() -> Int?
+    
+    func getCurrentUserSchoolSlug() -> String
 }
