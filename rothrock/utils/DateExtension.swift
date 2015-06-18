@@ -30,7 +30,7 @@ extension NSDate {
     }
     
     public func userFriendly() -> String {
-        if self.isLaterThan(NSDate()) {
+        if self.isLaterThanOrEqualTo(NSDate()) {
             var outcome = "in "
             var pivot: Int = 0
             
@@ -56,7 +56,30 @@ extension NSDate {
             
             return outcome
         } else {
-            return self.timeAgoSinceNow()
+            var outcome = ""
+            var pivot: Int = 0
+            
+            if self.hoursAgo() >= 24 {
+                pivot = Int(self.daysAgo())
+                outcome += "\(pivot) day"
+            } else if self.minutesAgo() >= 60 {
+                pivot = Int(self.hoursAgo())
+                outcome += "\(pivot) hour"
+            } else if self.secondsAgo() >= 60 {
+                pivot = Int(self.minutesAgo())
+                outcome += "\(pivot) minute"
+            } else {
+                pivot = Int(self.secondsAgo())
+                outcome += "\(pivot) second"
+            }
+            
+            if pivot > 1 { // Plural form
+                outcome += "s"
+            }
+            
+            outcome += " ago"
+            
+            return outcome
         }
     }
 }
