@@ -1,4 +1,6 @@
 class Slider
+  this.ANIMATION_DURATION = 500
+
   constructor: (options) ->
     @slideWrapper = options.slideWrapper
     @cardWrapperClass = options.cardWrapperClass
@@ -17,11 +19,12 @@ class Slider
       if i == 0
         $(e).css
           left: 0
-          zIndex: 1
-      else
+      else if i == 1
         $(e).css
           left: $(e).width() + @gutter
-          zIndex: if (i == 1) then 2 else 1
+      else
+        $(e).css
+          left: ($(e).width() + @gutter) * 2
 
       @_setCardDesign($(e))
 
@@ -33,21 +36,21 @@ class Slider
         return if @isAnimating
 
         @isAnimating = true
-        @cards[i].animate { left: -@cards[i].width() - @gutter }, 500
-        @cards[i + 1].animate { left: 0 }, 500, null, (e) =>
-          $(e).css('z-index', 1)
-          @cards[i + 2].css('z-index', 2) if i < @cards.length - 2
+        @cards[i].animate { left: -@cards[i].width() - @gutter }, Slider.ANIMATION_DURATION
+        @cards[i + 1].animate { left: 0 }, Slider.ANIMATION_DURATION, null, (e) =>
           @isAnimating = false
+        if i < @cards.length - 2
+          @cards[i + 2].animate { left: $(e).width() + @gutter }, Slider.ANIMATION_DURATION
 
       hammertime.on 'customPanRight', (ev) =>
         return if i == 0
         return if @isAnimating
 
         @isAnimating = true
-        @cards[i].css('z-index', 2)
-        @cards[i + 1].css('z-index', 1) if i < @cards.length - 1
-        @cards[i].animate { left: @cards[i].width() + @gutter }, 500
-        @cards[i - 1].animate { left: 0 }, 500, null, () =>
+        if i < @cards.length - 1
+          @cards[i + 1].animate { left: (@cards[i].width() + @gutter) * 2 }, Slider.ANIMATION_DURATION
+        @cards[i].animate { left: @cards[i].width() + @gutter }, Slider.ANIMATION_DURATION
+        @cards[i - 1].animate { left: 0 }, Slider.ANIMATION_DURATION, null, () =>
           @isAnimating = false
 
   _setCardDesign: (wrapper) ->

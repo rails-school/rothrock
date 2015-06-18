@@ -3,6 +3,8 @@ var $$, BaseController, ClassListController, SingleClassController, Slider, clas
   hasProp = {}.hasOwnProperty;
 
 Slider = (function() {
+  Slider.ANIMATION_DURATION = 500;
+
   function Slider(options) {
     this.slideWrapper = options.slideWrapper;
     this.cardWrapperClass = options.cardWrapperClass;
@@ -20,13 +22,15 @@ Slider = (function() {
         _this.cards.push($(e));
         if (i === 0) {
           $(e).css({
-            left: 0,
-            zIndex: 1
+            left: 0
+          });
+        } else if (i === 1) {
+          $(e).css({
+            left: $(e).width() + _this.gutter
           });
         } else {
           $(e).css({
-            left: $(e).width() + _this.gutter,
-            zIndex: i === 1 ? 2 : 1
+            left: ($(e).width() + _this.gutter) * 2
           });
         }
         _this._setCardDesign($(e));
@@ -51,16 +55,17 @@ Slider = (function() {
           _this.isAnimating = true;
           _this.cards[i].animate({
             left: -_this.cards[i].width() - _this.gutter
-          }, 500);
-          return _this.cards[i + 1].animate({
+          }, Slider.ANIMATION_DURATION);
+          _this.cards[i + 1].animate({
             left: 0
-          }, 500, null, function(e) {
-            $(e).css('z-index', 1);
-            if (i < _this.cards.length - 2) {
-              _this.cards[i + 2].css('z-index', 2);
-            }
+          }, Slider.ANIMATION_DURATION, null, function(e) {
             return _this.isAnimating = false;
           });
+          if (i < _this.cards.length - 2) {
+            return _this.cards[i + 2].animate({
+              left: $(e).width() + _this.gutter
+            }, Slider.ANIMATION_DURATION);
+          }
         });
         return hammertime.on('customPanRight', function(ev) {
           if (i === 0) {
@@ -70,16 +75,17 @@ Slider = (function() {
             return;
           }
           _this.isAnimating = true;
-          _this.cards[i].css('z-index', 2);
           if (i < _this.cards.length - 1) {
-            _this.cards[i + 1].css('z-index', 1);
+            _this.cards[i + 1].animate({
+              left: (_this.cards[i].width() + _this.gutter) * 2
+            }, Slider.ANIMATION_DURATION);
           }
           _this.cards[i].animate({
             left: _this.cards[i].width() + _this.gutter
-          }, 500);
+          }, Slider.ANIMATION_DURATION);
           return _this.cards[i - 1].animate({
             left: 0
-          }, 500, null, function() {
+          }, Slider.ANIMATION_DURATION, null, function() {
             return _this.isAnimating = false;
           });
         });
