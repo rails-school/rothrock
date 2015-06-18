@@ -21,17 +21,42 @@ extension NSDate {
         return self.isLaterThanOrEqualTo(start) && self.isEarlierThanOrEqualTo(end)
     }
     
-    public func userFriendly() -> String {
-        var minutes = "\(self.minute())"
+    public func shortMonth()  -> String {
+        let months = [
+            "Jan", "Feb", "Mar", "Apr", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+        ]
         
-        if self.minute() < 10 {
-            minutes = "0" + minutes
-        }
-        
-        return "\(self.month())/\(self.day())/\(self.year()) - \(self.hour()):\(minutes)"
+        return months[self.month() - 1]
     }
     
-    public class func userFriendly(value: String) -> String {
-        return fromString(value)!.userFriendly()
+    public func userFriendly() -> String {
+        if self.isLaterThan(NSDate()) {
+            var outcome = "in "
+            var pivot: Int = 0
+            
+            if self.secondsUntil() <= 0 {
+                return "now"
+            } else if self.secondsUntil() < 60 {
+                pivot = Int(self.secondsUntil())
+                outcome += "\(pivot) second"
+            } else if self.minutesUntil() < 60 {
+                pivot = Int(self.minutesUntil())
+                outcome += "\(pivot) minute"
+            } else if self.hoursUntil() < 24 {
+                pivot = Int(self.hoursUntil())
+                outcome += "\(pivot) hour"
+            } else {
+                pivot = self.daysUntil()
+                outcome += "\(pivot) day"
+            }
+            
+            if pivot > 1 { // Plural form
+                outcome += "s"
+            }
+            
+            return outcome
+        } else {
+            return self.timeAgoSinceNow()
+        }
     }
 }

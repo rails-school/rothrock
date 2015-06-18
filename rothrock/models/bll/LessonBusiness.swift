@@ -121,14 +121,58 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
         getSchoolClassTuple(
             lessonSlug,
             success: { schoolClass, teacher, venue in
-                var dict = [
+                var startDate: NSDate = NSDate.fromString(schoolClass!.lesson!.startTime!)!
+                var endDate: NSDate = NSDate.fromString(schoolClass!.lesson!.endTime!)!
+                
+                // Compute hour field
+                var hourField = ""
+                var startHour = startDate.hour()
+                var startMinute = startDate.minute()
+                var endHour = endDate.hour()
+                var endMinute = endDate.minute()
+                
+                if startHour > 12 {
+                    hourField += "\(startHour - 12)"
+                } else {
+                    hourField += "\(startHour)"
+                }
+                
+                if startMinute > 0 {
+                    hourField += ":\(startMinute)"
+                }
+                
+                hourField += " to "
+                
+                if endHour >= 12 {
+                    if endHour > 12 {
+                        hourField += "\(endHour - 12)"
+                    } else {
+                        hourField += "12"
+                    }
+                    
+                    if endMinute > 0 {
+                        hourField += ":\(endMinute)"
+                    }
+                    
+                    hourField += " PM"
+                } else {
+                    hourField += "\(endHour)"
+                    if endMinute > 0 {
+                        hourField += ":\(endMinute)"
+                    }
+                    hourField += " AM"
+                }
+                
+                hourField += " \(NSTimeZone.localTimeZone().abbreviation!)"
+                
+                var dict: NSMutableDictionary = [
                     "lesson": [
                         "slug": schoolClass!.lesson!.slug,
                         "title": schoolClass!.lesson!.title!,
                         "summary": schoolClass!.lesson!.summary!,
-                        "date": "",
-                        "hour": "",
-                        "countdown": ""
+                        "date": "\(startDate.shortMonth()) \(startDate.day())",
+                        "hour": "\(hourField)",
+                        "countdown": startDate.userFriendly()
                     ],
                     "teacher": [
                         "name": teacher!.displayedName
@@ -139,7 +183,18 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
                     "attendees": "\(schoolClass!.students!.count)"
                 ]
                 
-                success(dict)
+                self._userBusiness.isCurrentUserAttendingTo(
+                    schoolClass!.lesson!.slug,
+                    isAttending: { isAttending in
+                        dict.setObject(isAttending, forKey: "isAttending")
+                        success(dict)
+                    },
+                    needToSignIn: {
+                        dict.setObject(false, forKey: "isAttending")
+                        success(dict)
+                    },
+                    failure: failure
+                )
             },
             failure: failure
         )

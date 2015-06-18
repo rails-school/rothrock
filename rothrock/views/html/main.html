@@ -28,7 +28,7 @@
               </header>
               <section class="js-class-list owl-carousel"></section>
               <script id="class-card-template" type="text/template7">{{#each classes}}
-                <div class="class-card-wrapper js-class-card-wrapper"><img src="going-pin.png" class="class-going-pin invisible js-class-going-pin">
+                <div class="class-card-wrapper js-class-card-wrapper">{{#js_compare "this.isAttending == 'true'"}}<img src="going-pin.png" class="class-going-pin js-class-going-pin">{{else}}<img src="going-pin.png" class="class-going-pin invisible js-class-going-pin">{{/js_compare}}
                   <p class="class-countdown js-class-countdown">{{lesson.countdown}}</p>
                   <div data-slug="{{lesson.slug}}" class="class-card js-class-card">
                     <h1>{{lesson.title}}</h1>
@@ -44,7 +44,7 @@
                       </li>
                       <li>
                         <p class="ic-calendar"><i class="fa fa-calendar-o"></i></p>
-                        <p>{{lesson.date}} {{lesson.countdown}}</p>
+                        <p>{{lesson.date}} ({{lesson.countdown}})</p>
                       </li>
                       <li>
                         <p class="ic-clock"><i class="fa fa-clock-o"></i></p>

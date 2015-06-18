@@ -60,17 +60,17 @@ class Slider
       top: 0
       left: 0
 
-    countdown.css
-      top: pin.outerHeight(true) / 2 - countdown.outerHeight(true)
-      left: pin.outerWidth(true) / 2
-
     cardTop = pin.outerHeight(true) / 2
-    cardHeight = wrapper.height() - attendees.outerHeight(true) - share.outerHeight(true)
+    cardHeight = wrapper.height() - attendees.outerHeight(true) - share.outerHeight(true) - cardTop
     card.css
       top: cardTop
       left: pin.outerWidth(true) / 2
       width: wrapper.outerWidth() - (pin.outerWidth(true) / 2)
       height: cardHeight
+
+    countdown.css
+      top: card.position().top - countdown.outerHeight(true) + parseInt(countdown.css('border-bottom-width'))
+      left: card.position().left
 
     rsvp.css
       top: cardTop + cardHeight - rsvp.outerHeight(true) / 2

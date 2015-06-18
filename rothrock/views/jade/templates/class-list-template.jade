@@ -1,7 +1,11 @@
 script#class-card-template(type='text/template7')
   | {{#each classes}}
   .class-card-wrapper.js-class-card-wrapper
+    | {{#js_compare "this.isAttending == 'true'"}}
+    img.class-going-pin.js-class-going-pin(src='going-pin.png')
+    | {{else}}
     img.class-going-pin.invisible.js-class-going-pin(src='going-pin.png')
+    | {{/js_compare}}
     p.class-countdown.js-class-countdown {{lesson.countdown}}
 
     //- Details wrapper
@@ -21,7 +25,7 @@ script#class-card-template(type='text/template7')
         li
           p.ic-calendar
             i.fa.fa-calendar-o
-          p {{lesson.date}} {{lesson.countdown}}
+          p {{lesson.date}} ({{lesson.countdown}})
         li
           p.ic-clock
             i.fa.fa-clock-o

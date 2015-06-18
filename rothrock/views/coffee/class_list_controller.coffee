@@ -19,7 +19,7 @@ class ClassListController extends BaseController
         slideWrapper: $(@listSelector)
         cardWrapperClass: 'js-class-card-wrapper'
         goingPinClass: 'js-class-going-pin'
-        countDownClass: 'js-class-countdown'
+        countdownClass: 'js-class-countdown'
         cardClass: 'js-class-card'
         rsvpClass: 'js-class-rsvp-button'
         attendeesClass: 'js-class-attendees'
