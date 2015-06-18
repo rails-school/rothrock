@@ -34,8 +34,8 @@ class Slider
         @cards[i].animate { left: -@cards[i].width() - @gutter }, 500
         @cards[i + 1].animate { left: 0 }, 500, null, (e) =>
           $(e).css('z-index', 1)
+          @cards[i + 2].css('z-index', 2) if i < @cards.length - 2
           @isAnimating = false
-        @cards[i + 2].css('z-index', 2) if i < @cards.length - 2
 
       hammertime.on 'panright', (ev) =>
         return if i == 0

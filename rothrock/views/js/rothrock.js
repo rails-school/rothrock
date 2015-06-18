@@ -44,15 +44,15 @@ Slider = (function() {
           _this.cards[i].animate({
             left: -_this.cards[i].width() - _this.gutter
           }, 500);
-          _this.cards[i + 1].animate({
+          return _this.cards[i + 1].animate({
             left: 0
           }, 500, null, function(e) {
             $(e).css('z-index', 1);
+            if (i < _this.cards.length - 2) {
+              _this.cards[i + 2].css('z-index', 2);
+            }
             return _this.isAnimating = false;
           });
-          if (i < _this.cards.length - 2) {
-            return _this.cards[i + 2].css('z-index', 2);
-          }
         });
         return hammertime.on('panright', function(ev) {
           if (i === 0) {
