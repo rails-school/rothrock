@@ -7,3 +7,55 @@
 .pages
   .page(data-page="settings")
     .page-content.settings
+      .form-wrapper
+        .content-block-title User information
+        .list-block
+          ul
+            li.item-content
+              .item-inner
+                .item-title Email
+                .item-after
+                  .item-input
+                    input.js-email-field(type="text", placeholder="Your email")
+            li.item-content
+              .item-inner
+                .item-title Password
+                .item-after
+                  .item-input
+                    input.js-password-field(type="password", placeholder="*********")
+
+        .content-block-title Notification of Upcoming Workshops
+        .list-block
+          ul
+            li.item-content
+              .item-inner
+                .item-title 2-Hour Reminder
+                .item-after
+                  .item-input
+                    select.js-2h-reminder
+                      option Never
+                      option Only if attending
+                      option Always
+            li.item-content
+              .item-inner
+                .item-title 24-Hour Reminder
+                .item-after
+                  .item-input
+                    select.js-24-reminder
+                      option Never
+                      option Only if attending
+                      option Always
+            li.item-content
+              .item-inner
+                .item-title New Workshop Alert
+                .item-after
+                  label.label-switch.js-new-workshop-alert
+                    input(type="checkbox")
+                    .checkbox
+
+      p.log-out
+        a.js-log-out(href="#") Log out of Rails School App
+
+      p.footer
+        | Tweet feedback to
+        a(href="https://twitter.com/RailsSchool") @railsschoolsf
