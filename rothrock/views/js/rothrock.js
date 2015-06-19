@@ -414,12 +414,93 @@ SettingsController = (function(superClass) {
 
   function SettingsController(app) {
     SettingsController.__super__.constructor.call(this, app);
+    this.settingsSelector = '.js-settings';
+    this.emailFieldSelector = '.js-email-field';
+    this.passwordFieldSelector = '.js-password-field';
+    this.twoHourDropdownSelector = '.js-2h-reminder';
+    this.dayDropdownSelector = '.js-24-reminder';
+    this.newWorkshopSelector = '.js-new-workshop-alert';
+    this.logOutSelector = '.js-log-out';
+    this.twitterSelector = '.js-twitter';
   }
 
-  SettingsController.prototype.onStart = function() {};
+  SettingsController.prototype._findEmailField = function() {
+    return $(this.settingsSelector).find(this.emailFieldSelector).first();
+  };
+
+  SettingsController.prototype._findPasswordField = function() {
+    return $(this.settingsSelector).find(this.passwordFieldSelector).first();
+  };
+
+  SettingsController.prototype.getBus = function() {
+    return Caravel.get('SettingsController');
+  };
+
+  SettingsController.prototype.onStart = function() {
+    return this.getBus().register('SetSettings', (function(_this) {
+      return function(name, data) {
+        _this._findEmailField().val(data.email);
+        $(_this.settingsSelector).find(_this.twoHourDropdownSelector).first().val(data.twoHourReminder);
+        $(_this.settingsSelector).find(_this.dayDropdownSelector).first().val(data.dayReminder);
+        return $(_this.settingsSelector).find(_this.newWorkshopSelector).first().prop('checked', data.newLessonAlert);
+      };
+    })(this));
+  };
 
   SettingsController.prototype.onResume = function() {
-    return $('.navbar').removeClass('hidden');
+    $('.navbar').removeClass('hidden');
+    $(this.settingsSelector).find(this.twoHourDropdownSelector).first().on('change', (function(_this) {
+      return function(e) {
+        return _this.getBus().post('TwoHourReminderNewValue', $(e).val());
+      };
+    })(this));
+    $(this.settingsSelector).find(this.dayDropdownSelector).first().on('change', (function(_this) {
+      return function(e) {
+        return _this.getBus().post('DayReminderNewValue', $(e).val());
+      };
+    })(this));
+    $(this.settingsSelector).find(this.newWorkshopSelector).first().on('change', (function(_this) {
+      return function(e) {
+        return _this.getBus().post('TwoHourReminderNewValue', $(e).prop('checked'));
+      };
+    })(this));
+    this.isEditingCredentials = false;
+    this._findEmailField().on('blur', (function(_this) {
+      return function(e) {
+        if (_this.isEditingCredentials) {
+          _this.isEditingCredentials = false;
+          return _this.getBus().post('SaveCredentials', {
+            email: $(e).val(),
+            password: _this._findPasswordField().val()
+          });
+        } else {
+          return _this.isEditingCredentials = true;
+        }
+      };
+    })(this));
+    this._findPasswordField().on('blur', (function(_this) {
+      return function(e) {
+        if (_this.isEditingCredentials) {
+          _this.isEditingCredentials = false;
+          return _this.getBus().post('SaveCredentials', {
+            email: _this._findEmailField().val(),
+            password: $(e).val()
+          });
+        } else {
+          return _this.isEditingCredentials = true;
+        }
+      };
+    })(this));
+    $(this.settingsSelector).find(this.logOutSelector).first().on('click', (function(_this) {
+      return function(e) {
+        return _this.getBus().post("LogOut");
+      };
+    })(this));
+    return $(this.settingsSelector).find(this.twitterSelector).first().on('click', (function(_this) {
+      return function(e) {
+        return _this.getBus().post("Twitter");
+      };
+    })(this));
   };
 
   return SettingsController;
@@ -436,11 +517,15 @@ mainView = myApp.addView('.view-main', {
 
 classListController = new ClassListController(myApp);
 
-settingsController = new SettingsController(myApp);
+settingsController = null;
 
 myApp.onPageBeforeInit('settings', (function(_this) {
   return function(page) {
     classListController.onPause();
+    if (settingsController == null) {
+      settingsController = new SettingsController(myApp);
+      settingsController.onStart();
+    }
     return settingsController.onResume();
   };
 })(this));
