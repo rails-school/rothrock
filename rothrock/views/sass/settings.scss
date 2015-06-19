@@ -12,6 +12,7 @@ $settings-selector: "settings";
     box-sizing: border-box;
 
     text-align: center;
+    font-size: 12px;
   }
 
   .footer {
@@ -22,11 +23,18 @@ $settings-selector: "settings";
     box-sizing: border-box;
 
     text-align: center;
+    font-size: 12px;
   }
 }
 
 .#{$settings-selector} .content-block-title {
-  word-wrap: break-word;
+  font-size: 12px;
+}
+
+.#{$settings-selector} .item-title,
+.#{$settings-selector} .item-input select,
+.#{$settings-selector} .item-input input {
+  font-size: 12px;
 }
 
 .#{$settings-selector} .item-input select {

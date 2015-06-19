@@ -300,7 +300,8 @@
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
-    text-align: center; }
+    text-align: center;
+    font-size: 12px; }
   .settings .footer {
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
@@ -312,10 +313,16 @@
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
-    text-align: center; }
+    text-align: center;
+    font-size: 12px; }
 
 .settings .content-block-title {
-  word-wrap: break-word; }
+  font-size: 12px; }
+
+.settings .item-title,
+.settings .item-input select,
+.settings .item-input input {
+  font-size: 12px; }
 
 .settings .item-input select {
   color: #aaa; }
