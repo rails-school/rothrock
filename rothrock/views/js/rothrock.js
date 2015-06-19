@@ -461,7 +461,7 @@ SettingsController = (function(superClass) {
     })(this));
     $(this.settingsSelector).find(this.newWorkshopSelector).first().on('change', (function(_this) {
       return function(e) {
-        return _this.getBus().post('TwoHourReminderNewValue', $(e).prop('checked'));
+        return _this.getBus().post('LessonAlertNewValue', $(e).prop('checked') ? 1 : 0);
       };
     })(this));
     this.isEditingCredentials = false;

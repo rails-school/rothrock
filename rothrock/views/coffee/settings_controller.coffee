@@ -37,7 +37,7 @@ class SettingsController extends BaseController
     $(@settingsSelector).find(@dayDropdownSelector).first().on 'change', (e) =>
       @getBus().post('DayReminderNewValue', $(e).val())
     $(@settingsSelector).find(@newWorkshopSelector).first().on 'change', (e) =>
-      @getBus().post('TwoHourReminderNewValue', $(e).prop('checked'))
+      @getBus().post('LessonAlertNewValue', if $(e).prop('checked') then 1 else 0)
 
     @isEditingCredentials = false
     @_findEmailField().on 'blur', (e) =>

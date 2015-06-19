@@ -162,10 +162,12 @@ internal class ClassListController: BaseController, MFMessageComposeViewControll
                     .get(
                         slug,
                         success: { lesson in
-                            let addressString = "https://twitter.com/intent/tweet?text=\(lesson!.title!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)%20\(BusinessFactory.provideLesson().getLessonURL(lesson!))"
+                            var message = lesson!.title!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+                            
+                            message += "%20\(BusinessFactory.provideLesson().getLessonURL(lesson!))"
                             
                             self.done()
-                            UIApplication.sharedApplication().openURL(NSURL(string: addressString)!)
+                            TwitterPlugin.tweet(message)
                         },
                         failure: { self.publishError($0) }
                 )

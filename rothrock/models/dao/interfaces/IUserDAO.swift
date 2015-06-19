@@ -28,4 +28,6 @@ public protocol IUserDAO {
     func setCurrentUserSchoolId(value: Int)
     
     func hasCurrentUser() -> Bool
+    
+    func logOut()
 }

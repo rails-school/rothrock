@@ -99,6 +99,10 @@ internal class UserBusiness: BaseBusiness, IUserBusiness {
         )
     }
     
+    func logOut() {
+        _userDAO.logOut()
+    }
+    
     func isSignedIn() -> Bool {
         return _userDAO.hasCurrentUser()
     }

@@ -87,4 +87,9 @@ internal class UserDAO: BaseDAO, IUserDAO {
     func hasCurrentUser() -> Bool {
         return getCurrentUserEmail() != nil && getCurrentUserToken() != nil
     }
+    
+    func logOut() {
+        _preferenceDAL.removeObjectForKey(UserDAO.EMAIL_KEY)
+        _preferenceDAL.removeObjectForKey(UserDAO.TOKEN_KEY)
+    }
 }

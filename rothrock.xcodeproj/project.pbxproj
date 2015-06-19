@@ -77,6 +77,8 @@
 		A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786222D1AEAA56E006B0F76 /* Lesson.swift */; };
 		A78CD2A21B14D5350086EFF8 /* class_details.html in Resources */ = {isa = PBXBuildFile; fileRef = A78CD2A11B14D5350086EFF8 /* class_details.html */; };
 		A78CD2A41B14DBA50086EFF8 /* jquery.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A78CD2A31B14DBA50086EFF8 /* jquery.min.js */; };
+		A79486BD1B34DA9E0010D419 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79486BC1B34DA9E0010D419 /* SettingsController.swift */; };
+		A79486C01B34E2AC0010D419 /* TwitterPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79486BF1B34E2AC0010D419 /* TwitterPlugin.swift */; };
 		A794DC1E1AF196BA00D8743F /* BoolSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */; };
 		A794DC211AF1A09800D8743F /* ILessonBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC201AF1A09800D8743F /* ILessonBusiness.swift */; };
 		A794DC231AF1A19600D8743F /* BaseBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC221AF1A19600D8743F /* BaseBusiness.swift */; };
@@ -203,6 +205,8 @@
 		A78CD2A11B14D5350086EFF8 /* class_details.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = class_details.html; path = views/html/class_details.html; sourceTree = "<group>"; };
 		A78CD2A31B14DBA50086EFF8 /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = jquery.min.js; path = views/bower_components/jquery/dist/jquery.min.js; sourceTree = "<group>"; };
 		A7916A891AEB6A5700E1CD4F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
+		A79486BC1B34DA9E0010D419 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = controllers/SettingsController.swift; sourceTree = "<group>"; };
+		A79486BF1B34E2AC0010D419 /* TwitterPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwitterPlugin.swift; path = controllers/utils/TwitterPlugin.swift; sourceTree = "<group>"; };
 		A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoolSerializer.swift; path = models/bll/serializers/BoolSerializer.swift; sourceTree = "<group>"; };
 		A794DC201AF1A09800D8743F /* ILessonBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ILessonBusiness.swift; path = models/bll/interfaces/ILessonBusiness.swift; sourceTree = "<group>"; };
 		A794DC221AF1A19600D8743F /* BaseBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseBusiness.swift; path = models/bll/BaseBusiness.swift; sourceTree = "<group>"; };
@@ -500,6 +504,14 @@
 			name = beans;
 			sourceTree = "<group>";
 		};
+		A79486BE1B34E28F0010D419 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				A79486BF1B34E2AC0010D419 /* TwitterPlugin.swift */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
 		A794DC1F1AF19FC300D8743F /* interfaces */ = {
 			isa = PBXGroup;
 			children = (
@@ -574,10 +586,12 @@
 		A7EC14BA1B080B5B001981EB /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A79486BE1B34E28F0010D419 /* utils */,
 				A7C72EDC1B0A59F1001BA13C /* events */,
 				A746A6A81AE9D6E800AF0FA5 /* MainController.swift */,
 				A77BCC581B2F5573006FCBFE /* ClassListController.swift */,
 				A77BCC5A1B2F55BB006FCBFE /* BaseController.swift */,
+				A79486BC1B34DA9E0010D419 /* SettingsController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -844,6 +858,8 @@
 				A772CBC01B066D390055AF4E /* PreferenceBusiness.swift in Sources */,
 				A794DC301AF1A77900D8743F /* IUserBusiness.swift in Sources */,
 				A78410661AEF1433006709ED /* CheckCredentialsRequestSerializer.swift in Sources */,
+				A79486C01B34E2AC0010D419 /* TwitterPlugin.swift in Sources */,
+				A79486BD1B34DA9E0010D419 /* SettingsController.swift in Sources */,
 				A740521C1AEFFC88003ABBE3 /* RemoteCallback.swift in Sources */,
 				A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */,
 				A7BD792E1B0556AB00303751 /* DAOFactory.swift in Sources */,
