@@ -16,6 +16,7 @@ public class MainController: UIViewController {
     @IBOutlet weak var _webView: UIWebView!
     
     private var _classListController: BaseController?
+    private var _settingsController: BaseController?
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +29,23 @@ public class MainController: UIViewController {
             bus.register(ProgressForkEvent.NAME) { name, data in
                 self.fork()
             }
+            
+            bus.register("StartingClassListController") { _, _ in
+                self._classListController = ClassListController(parentController: self, webView: self._webView)
+                self._classListController!.onStart()
+            }
+            bus.register("ResumingClassListController") { _, _ in self._classListController!.onResume() }
+            bus.register("PausingClassListController") { _, _ in self._classListController!.onPause() }
+            
+            bus.register("StartingSettingsController") { name, data in
+                self._settingsController = SettingsController(parentController: self, webView: self._webView)
+                self._settingsController!.onStart()
+            }
+            bus.register("ResumingSettingsController") { _, _ in self._settingsController!.onResume() }
+            bus.register("PausingSettingsController")  { _, _ in self._settingsController!.onPause() }
         }
         
-        _classListController = ClassListController(parentController: self, webView: _webView)
-        
         _webView.loadRequest(NSURLRequest(URL: NSBundle.mainBundle().URLForResource("main", withExtension: "html")!))
-        
-        _classListController!.onStart()
-        _classListController!.onResume()
     }
 
     public override func didReceiveMemoryWarning() {

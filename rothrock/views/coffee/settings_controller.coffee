@@ -33,24 +33,24 @@ class SettingsController extends BaseController
     $('.navbar').removeClass('hidden')
 
     $(@settingsSelector).find(@twoHourDropdownSelector).first().on 'change', (e) =>
-      @getBus().post('TwoHourReminderNewValue', $(e).val())
+      @getBus().post('TwoHourReminderNewValue', $(e.target).val())
     $(@settingsSelector).find(@dayDropdownSelector).first().on 'change', (e) =>
-      @getBus().post('DayReminderNewValue', $(e).val())
+      @getBus().post('DayReminderNewValue', $(e.target).val())
     $(@settingsSelector).find(@newWorkshopSelector).first().on 'change', (e) =>
-      @getBus().post('LessonAlertNewValue', if $(e).prop('checked') then 1 else 0)
+      @getBus().post('LessonAlertNewValue', if $(e.target).prop('checked') then 1 else 0)
 
     @isEditingCredentials = false
     @_findEmailField().on 'blur', (e) =>
       if @isEditingCredentials
         @isEditingCredentials = false
-        @getBus().post('SaveCredentials', { email: $(e).val(), password: @_findPasswordField().val() })
+        @getBus().post('SaveCredentials', { email: $(e.target).val(), password: @_findPasswordField().val() })
       else
         @isEditingCredentials = true
 
     @_findPasswordField().on 'blur', (e) =>
       if @isEditingCredentials
         @isEditingCredentials = false
-        @getBus().post('SaveCredentials', { email: @_findEmailField().val(), password: $(e).val() })
+        @getBus().post('SaveCredentials', { email: @_findEmailField().val(), password: $(e.target).val() })
       else
         @isEditingCredentials = true
 
