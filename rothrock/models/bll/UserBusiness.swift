@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Regex
 
 internal class UserBusiness: BaseBusiness, IUserBusiness {
     private static let COOLDOWN_SEC = 5 * 60
@@ -60,6 +61,7 @@ internal class UserBusiness: BaseBusiness, IUserBusiness {
     }
     
     func checkCredentials(email: String, password: String, success: () -> Void, failure: (String) -> Void) {
+        logOut() // Log out first, otherwise the token will not be present
         api.checkCredentials(
             CheckCredentialsRequest(email: email, password: password),
             callback: RemoteCallback<User>(
@@ -67,14 +69,15 @@ internal class UserBusiness: BaseBusiness, IUserBusiness {
                     var authenticationCookie: String?
                     
                     for (key, value) in response!.allHeaderFields {
-                        var headerName = "\(key)"
-                        var headerValue = "\(value)"
+                        var headerName = key as! String
+                        var headerValue = value as! String
                         
                         if headerName == "Set-Cookie" {
-                            var regex: NSRegularExpression = NSRegularExpression(pattern: "remember_user_token=(.+)", options: NSRegularExpressionOptions(), error: NSErrorPointer())!
+                            // Question mark is used as an ungreedy flag
+                            let match = headerValue.grep("remember_user_token=(.+?);")
                             
-                            if regex.numberOfMatchesInString(headerValue, options: NSMatchingOptions(), range: NSRangeFromString(headerValue)) > 0 {
-                                authenticationCookie = "\(regex.firstMatchInString(headerValue, options: NSMatchingOptions(), range: NSRangeFromString(headerValue)))"
+                            if match.captures.count > 0 {
+                                authenticationCookie = match.captures[0]
                             }
                         }
                     }
@@ -83,8 +86,9 @@ internal class UserBusiness: BaseBusiness, IUserBusiness {
                         self._userDAO.setCurrentUserEmail(email)
                         self._userDAO.setCurrentUserToken(c)
                         self._userDAO.setCurrentUserSchoolId(user!.schoolId)
+                        success()
                     } else {
-                        NSLog("%@: %@", NSStringFromClass(LessonBusiness.self), "Expected cookie was not found")
+                        NSLog("%@: %@", NSStringFromClass(UserBusiness.self), "Expected cookie was not found")
                         failure(self.getDefaultErrorMsg())
                     }
                 },

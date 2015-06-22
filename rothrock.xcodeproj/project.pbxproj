@@ -68,7 +68,6 @@
 		A77BCC6D1B2FB93A006FCBFE /* fontawesome-webfont.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC671B2FB93A006FCBFE /* fontawesome-webfont.woff2 */; };
 		A77BCC6E1B2FB93A006FCBFE /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC681B2FB93A006FCBFE /* FontAwesome.otf */; };
 		A78410641AEF131A006709ED /* CheckCredentialsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */; };
-		A78410661AEF1433006709ED /* CheckCredentialsRequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410651AEF1433006709ED /* CheckCredentialsRequestSerializer.swift */; };
 		A78410681AEF14E0006709ED /* IJSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410671AEF14E0006709ED /* IJSONSerializer.swift */; };
 		A784106A1AEF16FC006709ED /* SchoolClassSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410691AEF16FC006709ED /* SchoolClassSerializer.swift */; };
 		A784106C1AEF1F13006709ED /* UserSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784106B1AEF1F13006709ED /* UserSerializer.swift */; };
@@ -194,7 +193,6 @@
 		A77DB2D41AEB4F0500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A77DB2D61AEB4F2500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckCredentialsRequest.swift; path = models/bll/structs/CheckCredentialsRequest.swift; sourceTree = "<group>"; };
-		A78410651AEF1433006709ED /* CheckCredentialsRequestSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckCredentialsRequestSerializer.swift; path = models/bll/serializers/CheckCredentialsRequestSerializer.swift; sourceTree = "<group>"; };
 		A78410671AEF14E0006709ED /* IJSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IJSONSerializer.swift; path = models/bll/serializers/IJSONSerializer.swift; sourceTree = "<group>"; };
 		A78410691AEF16FC006709ED /* SchoolClassSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SchoolClassSerializer.swift; path = models/bll/serializers/SchoolClassSerializer.swift; sourceTree = "<group>"; };
 		A784106B1AEF1F13006709ED /* UserSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSerializer.swift; path = models/bll/serializers/UserSerializer.swift; sourceTree = "<group>"; };
@@ -446,7 +444,6 @@
 			children = (
 				A740521D1AF001AF003ABBE3 /* ArraySerializer.swift */,
 				A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */,
-				A78410651AEF1433006709ED /* CheckCredentialsRequestSerializer.swift */,
 				A74F045C1AEB274700EB8916 /* IJSONDeserializer.swift */,
 				A78410671AEF14E0006709ED /* IJSONSerializer.swift */,
 				A74F04591AEB271700EB8916 /* LessonSerializer.swift */,
@@ -857,7 +854,6 @@
 				A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */,
 				A772CBC01B066D390055AF4E /* PreferenceBusiness.swift in Sources */,
 				A794DC301AF1A77900D8743F /* IUserBusiness.swift in Sources */,
-				A78410661AEF1433006709ED /* CheckCredentialsRequestSerializer.swift in Sources */,
 				A79486C01B34E2AC0010D419 /* TwitterPlugin.swift in Sources */,
 				A79486BD1B34DA9E0010D419 /* SettingsController.swift in Sources */,
 				A740521C1AEFFC88003ABBE3 /* RemoteCallback.swift in Sources */,

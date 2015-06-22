@@ -99,10 +99,16 @@ internal class RailsSchoolAPI: IRailsSchoolAPI {
     }
     
     func checkCredentials(request: CheckCredentialsRequest, callback: RemoteCallback<User>) {
-        var o: AnyObject = SerializerFactory.provideCheckCredentialsRequest().serialize(request).dictionaryObject as! AnyObject
+        var data = [
+            "user": [
+                "email": request.email,
+                "password": request.password,
+                "remember_me": 1
+            ]
+        ]
         
         Alamofire
-            .request(.POST, _getUserRoute("/sign_in"), parameters: ["user": o], encoding: .JSON)
+            .request(.POST, _getUserRoute("/sign_in"), parameters: data, encoding: .JSON)
             .responseJSON(
                 options: NSJSONReadingOptions.AllowFragments,
                 completionHandler: callback.asHandler(SerializerFactory.provideUser())

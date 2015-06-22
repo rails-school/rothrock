@@ -12,6 +12,7 @@ target 'rothrock' do
   pod 'SCLAlertView', :git => 'https://github.com/vikmeup/SCLAlertView-Swift.git', :tag => '0.3.2'
   pod 'SwiftSpinner'
   pod 'Caravel'
+  pod 'Regex'
 end
 
 target 'rothrockTests', :exclusive => true do

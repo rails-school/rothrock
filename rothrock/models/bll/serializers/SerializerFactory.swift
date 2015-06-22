@@ -12,7 +12,6 @@ public class SerializerFactory {
     private static var _bool: IBoolDeserializer?
     private static var _string: IStringDeserializer?
     
-    private static var _checkCredentialsRequest: ICheckCredentialsRequestSerializer?
     private static var _lesson: ILessonDeserializer?
     private static var _user: IUserDeserializer?
     private static var _venue: IVenueDeserializer?
@@ -33,15 +32,6 @@ public class SerializerFactory {
         } else {
             _string = StringSerializer()
             return _string!
-        }
-    }
-    
-    public static func provideCheckCredentialsRequest() -> ICheckCredentialsRequestSerializer {
-        if let o = _checkCredentialsRequest {
-            return o
-        } else {
-            _checkCredentialsRequest = CheckCredentialsRequestSerializer()
-            return _checkCredentialsRequest!
         }
     }
     
