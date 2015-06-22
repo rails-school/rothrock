@@ -73,7 +73,7 @@ internal class UserDAO: BaseDAO, IUserDAO {
     }
     
     func setCurrentUserToken(value: String) {
-        _preferenceDAL.stringForKey(UserDAO.TOKEN_KEY)
+        _preferenceDAL.setObject(value, forKey: UserDAO.TOKEN_KEY)
     }
     
     func getCurrentUserSchoolId() -> Int? {
@@ -81,7 +81,7 @@ internal class UserDAO: BaseDAO, IUserDAO {
     }
     
     func setCurrentUserSchoolId(value: Int) {
-        _preferenceDAL.setInteger(value, forKey: UserDAO.SCHOOL_ID_KEY)
+        _preferenceDAL.setObject(value, forKey: UserDAO.SCHOOL_ID_KEY)
     }
     
     func hasCurrentUser() -> Bool {
