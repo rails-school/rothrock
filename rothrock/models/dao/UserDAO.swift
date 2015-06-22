@@ -85,6 +85,8 @@ internal class UserDAO: BaseDAO, IUserDAO {
     }
     
     func hasCurrentUser() -> Bool {
+        var e = getCurrentUserEmail()
+        var g = getCurrentUserToken()
         return getCurrentUserEmail() != nil && getCurrentUserToken() != nil
     }
     

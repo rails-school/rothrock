@@ -61,50 +61,64 @@ internal class UserBusiness: BaseBusiness, IUserBusiness {
     }
     
     func checkCredentials(email: String, password: String, success: () -> Void, failure: (String) -> Void) {
-        logOut() // Log out first, otherwise the token will not be present
-        api.checkCredentials(
-            CheckCredentialsRequest(email: email, password: password),
-            callback: RemoteCallback<User>(
-                success: { (response, user) in
-                    var authenticationCookie: String?
-                    
-                    for (key, value) in response!.allHeaderFields {
-                        var headerName = key as! String
-                        var headerValue = value as! String
-                        
-                        if headerName == "Set-Cookie" {
-                            // Question mark is used as an ungreedy flag
-                            let match = headerValue.grep("remember_user_token=(.+?);")
+        // Log out first, otherwise the token will not be present
+        logOut(
+            {
+                self.api.checkCredentials(
+                    CheckCredentialsRequest(email: email, password: password),
+                    callback: RemoteCallback<User>(
+                        success: { (response, user) in
+                            var authenticationCookie: String?
                             
-                            if match.captures.count > 0 {
-                                authenticationCookie = match.captures[0]
+                            for (key, value) in response!.allHeaderFields {
+                                var headerName = key as! String
+                                var headerValue = value as! String
+                                
+                                if headerName == "Set-Cookie" {
+                                    // Question mark is used as an ungreedy flag
+                                    let match = headerValue.grep("remember_user_token=(.+?);")
+                                    
+                                    if match.captures.count > 0 {
+                                        let capture = match.captures[0]
+                                        authenticationCookie = capture[count("remember_user_token=")..<(count(capture) - 1)]
+                                    }
+                                }
+                            }
+                            
+                            if let c = authenticationCookie {
+                                self._userDAO.setCurrentUserEmail(email)
+                                self._userDAO.setCurrentUserToken(c)
+                                self._userDAO.setCurrentUserSchoolId(user!.schoolId)
+                                success()
+                            } else {
+                                NSLog("%@: %@", NSStringFromClass(UserBusiness.self), "Expected cookie was not found")
+                                failure(self.getDefaultErrorMsg())
+                            }
+                        },
+                        failure: { (response, error) in
+                            if response!.statusCode == 401 && error != nil {
+                                failure("settings_invalid_credentials".localized)
+                            } else {
+                                self.processError(error, failure: failure)
                             }
                         }
-                    }
-                    
-                    if let c = authenticationCookie {
-                        self._userDAO.setCurrentUserEmail(email)
-                        self._userDAO.setCurrentUserToken(c)
-                        self._userDAO.setCurrentUserSchoolId(user!.schoolId)
-                        success()
-                    } else {
-                        NSLog("%@: %@", NSStringFromClass(UserBusiness.self), "Expected cookie was not found")
-                        failure(self.getDefaultErrorMsg())
-                    }
-                },
-                failure: { (response, error) in
-                    if response!.statusCode == 401 && error != nil {
-                        failure("settings_invalid_credentials".localized)
-                    } else {
-                        self.processError(error, failure: failure)
-                    }
-                }
-            )
+                    )
+                )
+            },
+            failure: failure
         )
     }
     
-    func logOut() {
-        _userDAO.logOut()
+    func logOut(success: () -> Void, failure: (String) -> Void) {
+        api.signOut(BLLCallback<Void>(
+            base: self,
+            success: { _, _ in
+                self._userDAO.logOut()
+                success()
+            },
+            failure: failure
+            )
+        )
     }
     
     func isSignedIn() -> Bool {

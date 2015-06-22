@@ -115,6 +115,15 @@ internal class RailsSchoolAPI: IRailsSchoolAPI {
             )
     }
     
+    func signOut(callback: RemoteCallback<Void>) {
+        Alamofire
+            .request(.DELETE, _getUserRoute("/sign_out"))
+            .responseJSON(
+                options: NSJSONReadingOptions.AllowFragments,
+                completionHandler: callback.asHandler()
+            )
+    }
+    
     func getVenue(id: Int, callback: RemoteCallback<Venue>) {
         Alamofire
             .request(.GET, _getRoute("/venues/\(id)"))

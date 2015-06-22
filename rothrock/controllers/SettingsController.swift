@@ -73,8 +73,15 @@ internal class SettingsController: BaseController {
             }
             
             bus.register("LogOut") { name, data in
-                BusinessFactory.provideUser().logOut()
-                self.confirm("settings_successful_log_out".localized)
+                BusinessFactory
+                    .provideUser()
+                    .logOut(
+                        {
+                            self.confirm("settings_successful_log_out".localized)
+                            self._onceBusReady()
+                        },
+                        failure: { self.publishError($0) }
+                    )
             }
             
             bus.register("Twitter") { name, data in

@@ -19,7 +19,7 @@ public protocol IUserBusiness {
     
     func isSignedIn() -> Bool
     
-    func logOut()
+    func logOut(success: () -> Void, failure: (String) -> Void)
     
     func getCurrentUserEmail() -> String?
     
