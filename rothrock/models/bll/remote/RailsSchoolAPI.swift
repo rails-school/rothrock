@@ -13,6 +13,10 @@ internal class RailsSchoolAPI: IRailsSchoolAPI {
     private static var ADDRESS = "api_endpoint".localized
     private static var FORMAT = ".json"
     
+    // Reference is needed, otherwise the manager is removed by the 
+    // garbage collector
+    private var _authenticatedManager: Alamofire.Manager?
+    
     private func _getRoute(path: String) -> String {
         return RailsSchoolAPI.ADDRESS + path + RailsSchoolAPI.FORMAT
     }
@@ -25,14 +29,23 @@ internal class RailsSchoolAPI: IRailsSchoolAPI {
         return _getRoute("/users" + path)
     }
     
-    private func _setAuthenticationCookie(cookie: String) -> Alamofire.Manager {
-        var defaultHeaders = Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders ?? [:]
-        var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        
-        defaultHeaders["Cookie"] = "remember_user_token"
-        configuration.HTTPAdditionalHeaders = defaultHeaders
-        
-        return Alamofire.Manager(configuration: configuration)
+    private func _setAuthenticationCookie(cookieValue: String) -> Alamofire.Manager {
+        if (_authenticatedManager != nil) {
+            return _authenticatedManager!
+        } else {
+            var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+            var cookie = NSHTTPCookie(properties: [
+                NSHTTPCookiePath: "/",
+                NSHTTPCookieName: "remember_user_token",
+                NSHTTPCookieValue: cookieValue,
+                NSHTTPCookieOriginURL: "api_endpoint".localized
+                ])!
+            
+            configuration.HTTPCookieStorage!.setCookie(cookie)
+            
+            _authenticatedManager = Alamofire.Manager(configuration: configuration)
+            return _authenticatedManager!
+        }
     }
     
     func getFutureLessonSlugs(callback: RemoteCallback<[String]>) {
@@ -144,7 +157,7 @@ internal class RailsSchoolAPI: IRailsSchoolAPI {
     
     func attend(lessonId: Int, authenticationCookie: String, callback: RemoteCallback<Void>) {
         _setAuthenticationCookie(authenticationCookie)
-            .request(.GET, _getRoute("/rsvp/\(lessonId)"))
+            .request(.POST, _getRoute("/rsvp/\(lessonId)"))
             .responseJSON(
                 options: NSJSONReadingOptions.AllowFragments,
                 completionHandler: callback.asHandler()
@@ -153,7 +166,7 @@ internal class RailsSchoolAPI: IRailsSchoolAPI {
     
     func removeAttendance(lessonId: Int, authenticationCookie: String, callback: RemoteCallback<Void>) {
         _setAuthenticationCookie(authenticationCookie)
-            .request(.GET, _getRoute("/rsvp/\(lessonId)/delete"))
+            .request(.POST, _getRoute("/rsvp/\(lessonId)/delete"))
             .responseJSON(
                 options: NSJSONReadingOptions.AllowFragments,
                 completionHandler: callback.asHandler()
