@@ -81,7 +81,10 @@ internal class ClassListController: BaseController, MFMessageComposeViewControll
                                     failure: { self.publishError($0) }
                                 )
                         },
-                        needToSignIn: { self.alert("error_not_signed_in".localized) },
+                        needToSignIn: {
+                            self.done()
+                            self.alert("error_not_signed_in".localized)
+                        },
                         failure: { self.publishError($0) }
                     )
             }
