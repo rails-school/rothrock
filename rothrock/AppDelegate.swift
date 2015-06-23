@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _alarmManager = AlarmManager(application: application)
         
         // Sets up push notifications
-        application.registerForRemoteNotificationTypes(.Badge | .Sound | .Alert)
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Badge | .Sound | .Alert, categories: nil))
         
         return true
     }
