@@ -10,7 +10,7 @@ target 'rothrock' do
   pod 'DateTools'
   pod 'SwiftEventBus', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
   pod 'SCLAlertView', :git => 'https://github.com/vikmeup/SCLAlertView-Swift.git', :tag => '0.3.2'
-  pod 'SwiftSpinner'
+  pod 'KVNProgress'
   pod 'Caravel'
   pod 'Regex'
 end
