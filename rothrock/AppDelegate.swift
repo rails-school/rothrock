@@ -19,6 +19,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var _backgroundThreads = 0
     private var _backgroundTimer: NSTimer?
     
+    private func _scheduleAlarm(application: UIApplication, lesson: Lesson?, hours: Int, title: String) {
+        var fireDate = NSDate.fromString(lesson!.startTime!)!.dateBySubtractingHours(hours)
+        var notification = UILocalNotification()
+        
+        for o in application.scheduledLocalNotifications {
+            var n = o as! UILocalNotification
+            if n.fireDate == fireDate { // Cancel existing similar alarm, then schedule it again
+                application.cancelLocalNotification(n)
+                break
+            }
+        }
+        
+        notification.fireDate = fireDate
+        notification.alertTitle = title
+        notification.alertBody = lesson!.title
+        notification.soundName = UILocalNotificationDefaultSoundName
+    }
+    
     func timerHandler() {
         _backgroundTimer = nil
         KVNProgress.show()
@@ -27,16 +45,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        // Set spinner configuration
         var config = KVNProgressConfiguration()
-        //config.circleStrokeForegroundColor = UIColor(red: 171.0, green: 24.0, blue: 24.0, alpha: 0.5)
         config.circleStrokeForegroundColor = UIColor(white: 0.8, alpha: 1)
         config.backgroundTintColor = UIColor(white: 1.0, alpha: 0.8)
         config.backgroundType = KVNProgressBackgroundType.Blurred
         config.circleSize = 100
         config.lineWidth = 3
         config.fullScreen = true
-        
         KVNProgress.setConfiguration(config)
+        
+        // Sets up alarms
+        BusinessFactory
+            .provideLesson()
+            .engineAlarms(
+                30 * 60 * 1000, // Every half hour
+                twoHourAlarm: { lesson in
+                    self._scheduleAlarm(application, lesson: lesson, hours: 2, title: "reminder_two_hours".localized)
+                },
+                dayAlarm: { lesson in
+                    self._scheduleAlarm(application, lesson: lesson, hours: 24, title: "reminder_next_day".localized)
+                }
+            )
         
         return true
     }
