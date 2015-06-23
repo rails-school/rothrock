@@ -102,7 +102,7 @@ internal class ClassListController: BaseController, MFMessageComposeViewControll
                                 var controller = MFMessageComposeViewController()
                                 var message = NSString(format: "class_share_text".localized, lesson!.title!)
                                 
-                                controller.body = message.substringToIndex(150) as String
+                                controller.body = message as String
                                 controller.recipients = []
                                 controller.messageComposeDelegate = self
                                 
