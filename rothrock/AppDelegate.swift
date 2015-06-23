@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var _backgroundThreads = 0
     private var _backgroundTimer: NSTimer?
     
+    private var _alarmManager: AlarmManager?
+    
     func timerHandler() {
         _backgroundTimer = nil
         KVNProgress.show()
@@ -27,16 +29,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        // Set spinner configuration
         var config = KVNProgressConfiguration()
-        //config.circleStrokeForegroundColor = UIColor(red: 171.0, green: 24.0, blue: 24.0, alpha: 0.5)
         config.circleStrokeForegroundColor = UIColor(white: 0.8, alpha: 1)
         config.backgroundTintColor = UIColor(white: 1.0, alpha: 0.8)
         config.backgroundType = KVNProgressBackgroundType.Blurred
         config.circleSize = 100
         config.lineWidth = 3
         config.fullScreen = true
-        
         KVNProgress.setConfiguration(config)
+        
+        // Sets up alarms
+        _alarmManager = AlarmManager(application: application)
+        
+        // Sets up push notifications
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Badge | .Sound | .Alert, categories: nil))
         
         return true
     }
@@ -103,6 +110,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        // Nothing to do
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        NSLog("%@", error)
     }
 }
 

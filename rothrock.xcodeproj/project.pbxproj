@@ -72,7 +72,6 @@
 		A784106A1AEF16FC006709ED /* SchoolClassSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410691AEF16FC006709ED /* SchoolClassSerializer.swift */; };
 		A784106C1AEF1F13006709ED /* UserSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784106B1AEF1F13006709ED /* UserSerializer.swift */; };
 		A784106E1AEF1F96006709ED /* VenueSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784106D1AEF1F96006709ED /* VenueSerializer.swift */; };
-		A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78622291AEAA10C006B0F76 /* RLMSupport.swift */; };
 		A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786222D1AEAA56E006B0F76 /* Lesson.swift */; };
 		A78CD2A21B14D5350086EFF8 /* class_details.html in Resources */ = {isa = PBXBuildFile; fileRef = A78CD2A11B14D5350086EFF8 /* class_details.html */; };
 		A78CD2A41B14DBA50086EFF8 /* jquery.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A78CD2A31B14DBA50086EFF8 /* jquery.min.js */; };
@@ -96,6 +95,7 @@
 		A7BD79331B0579E100303751 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD79321B0579E100303751 /* StringExtension.swift */; };
 		A7BD79351B0584BD00303751 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD79341B0584BD00303751 /* DateExtension.swift */; };
 		A7BD79371B058B2700303751 /* BLLCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD79361B058B2700303751 /* BLLCallback.swift */; };
+		A7C55DAB1B38F0E4005F4445 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C55DAA1B38F0E4005F4445 /* AlarmManager.swift */; };
 		A7C72EE01B0A5A8F001BA13C /* ProgressForkEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EDF1B0A5A8F001BA13C /* ProgressForkEvent.swift */; };
 		A7C72EE21B0A5B9B001BA13C /* ProgressDoneEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE11B0A5B9B001BA13C /* ProgressDoneEvent.swift */; };
 		A7C72EE41B0A5BB8001BA13C /* ErrorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE31B0A5BB8001BA13C /* ErrorEvent.swift */; };
@@ -107,7 +107,6 @@
 		A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */; };
 		A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */; };
 		A7F7A5781B1CC192009A3951 /* caravel.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A7F7A5771B1CC192009A3951 /* caravel.min.js */; };
-		E34592293B39382235FF4973 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEF411B36336395668B971F /* Pods.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		FE6FCA9EDDA79A7556DC9E70 /* Pods_rothrockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA57EFD32C75B4AEA027CF1 /* Pods_rothrockTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -198,7 +197,6 @@
 		A784106B1AEF1F13006709ED /* UserSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSerializer.swift; path = models/bll/serializers/UserSerializer.swift; sourceTree = "<group>"; };
 		A784106D1AEF1F96006709ED /* VenueSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenueSerializer.swift; path = models/bll/serializers/VenueSerializer.swift; sourceTree = "<group>"; };
 		A78622271AEA9F69006B0F76 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		A78622291AEAA10C006B0F76 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		A786222D1AEAA56E006B0F76 /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lesson.swift; path = models/beans/Lesson.swift; sourceTree = "<group>"; };
 		A78CD2A11B14D5350086EFF8 /* class_details.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = class_details.html; path = views/html/class_details.html; sourceTree = "<group>"; };
 		A78CD2A31B14DBA50086EFF8 /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = jquery.min.js; path = views/bower_components/jquery/dist/jquery.min.js; sourceTree = "<group>"; };
@@ -223,6 +221,7 @@
 		A7BD79321B0579E100303751 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = utils/StringExtension.swift; sourceTree = "<group>"; };
 		A7BD79341B0584BD00303751 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = utils/DateExtension.swift; sourceTree = "<group>"; };
 		A7BD79361B058B2700303751 /* BLLCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BLLCallback.swift; path = models/bll/BLLCallback.swift; sourceTree = "<group>"; };
+		A7C55DAA1B38F0E4005F4445 /* AlarmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmManager.swift; path = services/AlarmManager.swift; sourceTree = "<group>"; };
 		A7C72EDF1B0A5A8F001BA13C /* ProgressForkEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressForkEvent.swift; path = controllers/events/ProgressForkEvent.swift; sourceTree = "<group>"; };
 		A7C72EE11B0A5B9B001BA13C /* ProgressDoneEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressDoneEvent.swift; path = controllers/events/ProgressDoneEvent.swift; sourceTree = "<group>"; };
 		A7C72EE31B0A5BB8001BA13C /* ErrorEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorEvent.swift; path = controllers/events/ErrorEvent.swift; sourceTree = "<group>"; };
@@ -246,7 +245,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E34592293B39382235FF4973 /* Pods.framework in Frameworks */,
 				18A0992207485A232790F9D8 /* Pods_rothrock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,7 +341,6 @@
 				1E2E2C2F462101A5B78EBA36 /* Frameworks */,
 				9AAE8269A34CE9615D03FD9A /* Pods */,
 				A746A6A21AE9D6E800AF0FA5 /* Products */,
-				A78622291AEAA10C006B0F76 /* RLMSupport.swift */,
 				A746A6A31AE9D6E800AF0FA5 /* rothrock */,
 				A746A6B91AE9D6E800AF0FA5 /* rothrockTests */,
 			);
@@ -361,14 +358,15 @@
 		A746A6A31AE9D6E800AF0FA5 /* rothrock */ = {
 			isa = PBXGroup;
 			children = (
-				A7F571E81AEED9DD001084D3 /* Bridging-Header.h */,
-				A7BD792F1B05728F00303751 /* Localizable.strings */,
 				A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */,
-				A746A6AD1AE9D6E800AF0FA5 /* Images.xcassets */,
+				A7F571E81AEED9DD001084D3 /* Bridging-Header.h */,
 				A7EC14BA1B080B5B001981EB /* controllers */,
+				A746A6AD1AE9D6E800AF0FA5 /* Images.xcassets */,
 				A746A6AF1AE9D6E800AF0FA5 /* LaunchScreen.xib */,
+				A7BD792F1B05728F00303751 /* Localizable.strings */,
 				A746A6AA1AE9D6E800AF0FA5 /* Main.storyboard */,
 				A786222B1AEAA54B006B0F76 /* models */,
+				A7C55DA91B38F0C6005F4445 /* services */,
 				A746A6A41AE9D6E800AF0FA5 /* Supporting Files */,
 				A7BD79311B0579C700303751 /* utils */,
 				A7EC14B91B080B47001981EB /* views */,
@@ -529,6 +527,14 @@
 			name = utils;
 			sourceTree = "<group>";
 		};
+		A7C55DA91B38F0C6005F4445 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				A7C55DAA1B38F0E4005F4445 /* AlarmManager.swift */,
+			);
+			name = services;
+			sourceTree = "<group>";
+		};
 		A7C72EDC1B0A59F1001BA13C /* events */ = {
 			isa = PBXGroup;
 			children = (
@@ -648,6 +654,7 @@
 				TargetAttributes = {
 					A746A6A01AE9D6E800AF0FA5 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = YNH9MQQ87M;
 					};
 					A746A6B51AE9D6E800AF0FA5 = {
 						CreatedOnToolsVersion = 6.2;
@@ -851,7 +858,6 @@
 				A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */,
 				A794DC231AF1A19600D8743F /* BaseBusiness.swift in Sources */,
 				A74F04571AEB25AD00EB8916 /* SchoolClass.swift in Sources */,
-				A786222A1AEAA10C006B0F76 /* RLMSupport.swift in Sources */,
 				A772CBC01B066D390055AF4E /* PreferenceBusiness.swift in Sources */,
 				A794DC301AF1A77900D8743F /* IUserBusiness.swift in Sources */,
 				A79486C01B34E2AC0010D419 /* TwitterPlugin.swift in Sources */,
@@ -878,6 +884,7 @@
 				A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */,
 				A794DC211AF1A09800D8743F /* ILessonBusiness.swift in Sources */,
 				A784106A1AEF16FC006709ED /* SchoolClassSerializer.swift in Sources */,
+				A7C55DAB1B38F0E4005F4445 /* AlarmManager.swift in Sources */,
 				A74F044E1AEB06DE00EB8916 /* VenueDAO.swift in Sources */,
 				A740521E1AF001AF003ABBE3 /* ArraySerializer.swift in Sources */,
 				A7BD79351B0584BD00303751 /* DateExtension.swift in Sources */,
@@ -1017,6 +1024,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1026,6 +1035,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "rothrock/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1041,6 +1052,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1050,6 +1063,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "rothrock/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "Pods/**";

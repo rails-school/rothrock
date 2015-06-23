@@ -3,9 +3,9 @@ PODS:
   - Caravel (0.3.3)
   - DateTools (1.6.1)
   - KVNProgress (2.2.1)
-  - Realm (0.91.5):
-    - Realm/Headers (= 0.91.5)
-  - Realm/Headers (0.91.5)
+  - Realm (0.93.2):
+    - Realm/Headers (= 0.93.2)
+  - Realm/Headers (0.93.2)
   - Regex (0.2.1)
   - SCLAlertView (0.3)
   - SwiftEventBus (1.1.0)
@@ -16,7 +16,7 @@ DEPENDENCIES:
   - Caravel
   - DateTools
   - KVNProgress
-  - Realm (= 0.91.5)
+  - Realm
   - Realm/Headers
   - Regex
   - SCLAlertView (from `https://github.com/vikmeup/SCLAlertView-Swift.git`, tag `0.3.2`)
@@ -43,7 +43,7 @@ SPEC CHECKSUMS:
   Caravel: 045353f8b484746b0d019f27f504b085fa87e007
   DateTools: 9bcc89e4f2f9004d8a7a2bd1b49269cf78968e65
   KVNProgress: 7001d2d16a2755cee5599e8e485befe056f2197b
-  Realm: 670059efdb212ab939c1745a60aff27820c0a9c4
+  Realm: 2fdd0ae74f730e190384e0338d8a0d3654df8220
   Regex: 14d9745c19442ccdf920234e50d463ba659f58c4
   SCLAlertView: 7d1910ae5137626797d1a8e5ca9166964801881e
   SwiftEventBus: d334f7aecbddbd995c3de5c262cf35c72db550f3

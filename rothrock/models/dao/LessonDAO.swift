@@ -27,7 +27,7 @@ internal class LessonDAO: BaseDAO, ILessonDAO {
     func save(lesson: Lesson) {
         dal.beginWriteTransaction()
         lesson.updateDate = NSDate()
-        Lesson.createOrUpdateInRealm(dal, withObject: lesson)
+        Lesson.createOrUpdateInRealm(dal, withValue: lesson)
         dal.commitWriteTransaction()
     }
 }
