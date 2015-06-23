@@ -32,6 +32,7 @@
 "settings_password_placeholder" = "Password";
 "settings_submit_credentials" = "Remember me";
 "settings_invalid_credentials" = "Your username or password is invalid.";
+"settings_successful_log_out" = "Successfully logged out";
 
 "settings_reminder_label" = "Alert settings";
 "settings_reminder_day" = "24 hour reminder";

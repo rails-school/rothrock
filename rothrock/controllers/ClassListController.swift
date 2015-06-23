@@ -18,6 +18,23 @@ internal class ClassListController: BaseController, MFMessageComposeViewControll
         super.init(parentController: parentController, webView: webView)
     }
     
+    private func _onceBusReady() {
+        fork()
+        BusinessFactory
+            .provideLesson()
+            .sortFutureSchoolClassesByDateAsDictionary(
+                { (dictionaries) in
+                    self._bus!.post("ReceiveClasses", anArray: dictionaries!)
+                    self.done()
+                },
+                failure: { self.publishError($0) }
+        )
+        
+        if BusinessFactory.provideUser().isSignedIn() {
+            self._bus!.post("ReceiveSchool", aString: BusinessFactory.provideUser().getCurrentUserSchoolSlug())
+        }
+    }
+    
     override func onStart() {
         Caravel.get("ClassListController", webView: webView).whenReady() { bus in
             self._bus = bus
@@ -34,6 +51,7 @@ internal class ClassListController: BaseController, MFMessageComposeViewControll
             bus.register("ToggleAttendance") { name, data in
                 var slug = data as! String
                 
+                self.fork()
                 BusinessFactory
                     .provideUser()
                     .isCurrentUserAttendingTo(
@@ -50,6 +68,7 @@ internal class ClassListController: BaseController, MFMessageComposeViewControll
                                                 lesson!.id,
                                                 newValue: !isAttending,
                                                 success: {
+                                                    self.done()
                                                     bus.post(
                                                         "SetAttendance",
                                                         aDictionary: ["slug": slug, "isAttending": !isAttending]
@@ -62,7 +81,10 @@ internal class ClassListController: BaseController, MFMessageComposeViewControll
                                     failure: { self.publishError($0) }
                                 )
                         },
-                        needToSignIn: { self.alert("error_not_signed_in".localized) },
+                        needToSignIn: {
+                            self.done()
+                            self.alert("error_not_signed_in".localized)
+                        },
                         failure: { self.publishError($0) }
                     )
             }
@@ -71,6 +93,7 @@ internal class ClassListController: BaseController, MFMessageComposeViewControll
                 var slug = data as! String
                 
                 if MFMessageComposeViewController.canSendText() {
+                    self.fork()
                     BusinessFactory
                         .provideLesson()
                         .get(
@@ -83,6 +106,7 @@ internal class ClassListController: BaseController, MFMessageComposeViewControll
                                 controller.recipients = []
                                 controller.messageComposeDelegate = self
                                 
+                                self.done()
                                 self.parentController.presentViewController(controller, animated: true, completion: nil)
                             },
                             failure: { self.publishError($0) }
@@ -94,6 +118,7 @@ internal class ClassListController: BaseController, MFMessageComposeViewControll
                 var slug = data as! String
                 
                 if MFMailComposeViewController.canSendMail() {
+                    self.fork()
                     BusinessFactory
                         .provideLesson()
                         .get(
@@ -105,6 +130,7 @@ internal class ClassListController: BaseController, MFMessageComposeViewControll
                                 controller.setMessageBody(NSString(format: "class_share_text".localized + "\n\n %@", lesson!.title!,BusinessFactory.provideLesson().getLessonURL(lesson!)) as String, isHTML: false)
                                 controller.mailComposeDelegate = self
                                 
+                                self.done()
                                 self.parentController.presentViewController(controller, animated: true, completion: nil)
                             },
                             failure: { self.publishError($0) }
@@ -115,12 +141,15 @@ internal class ClassListController: BaseController, MFMessageComposeViewControll
             bus.register("TriggerShareFacebook") { name, data in
                 var slug = data as! String
                 
+                self.fork()
                 BusinessFactory
                     .provideLesson()
                     .get(
                         slug,
                         success: { lesson in
-                            let addressString = "https://www.facebook.com/sharer/sharer.php?u=\(BusinessFactory.provideLesson().getLessonURL(lesson!))";
+                            let addressString = "https://www.facebook.com/sharer/sharer.php?u=\(BusinessFactory.provideLesson().getLessonURL(lesson!))"
+                            
+                            self.done()
                             UIApplication.sharedApplication().openURL(NSURL(string: addressString)!)
                         },
                         failure: { self.publishError($0) }
@@ -130,19 +159,24 @@ internal class ClassListController: BaseController, MFMessageComposeViewControll
             bus.register("TriggerShareTwitter") { name, data in
                 var slug = data as! String
                 
+                self.fork()
                 BusinessFactory
                     .provideLesson()
                     .get(
                         slug,
                         success: { lesson in
-                            let addressString = "https://twitter.com/intent/tweet?text=\(lesson!.title!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)%20\(BusinessFactory.provideLesson().getLessonURL(lesson!))";
-                            UIApplication.sharedApplication().openURL(NSURL(string: addressString)!)
+                            var message = lesson!.title!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+                            
+                            message += "%20\(BusinessFactory.provideLesson().getLessonURL(lesson!))"
+                            
+                            self.done()
+                            TwitterPlugin.tweet(message)
                         },
                         failure: { self.publishError($0) }
                 )
             }
             
-            self.onResume()
+            self._onceBusReady()
         }
     }
     
@@ -151,20 +185,7 @@ internal class ClassListController: BaseController, MFMessageComposeViewControll
             return;
         }
         
-        fork()
-        BusinessFactory
-            .provideLesson()
-            .sortFutureSchoolClassesByDateAsDictionary(
-                { (dictionaries) in
-                    self._bus!.post("ReceiveClasses", anArray: dictionaries!)
-                    self.done()
-                },
-                failure: { self.publishError($0) }
-            )
-        
-        if BusinessFactory.provideUser().isSignedIn() {
-            self._bus!.post("ReceiveSchool", aString: BusinessFactory.provideUser().getCurrentUserSchoolSlug())            
-        }
+        _onceBusReady()
     }
     
     // MFMessageComposeViewControllerDelegate

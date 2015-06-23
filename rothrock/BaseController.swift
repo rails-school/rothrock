@@ -48,8 +48,8 @@ public class BaseController: NSObject {
     }
     
     public func publishError(message: String) {
-        SwiftEventBus.post(ErrorEvent.NAME, sender: ErrorEvent(message: message))
         done()
+        SwiftEventBus.post(ErrorEvent.NAME, sender: ErrorEvent(message: message))
     }
     
     public func onStart() {

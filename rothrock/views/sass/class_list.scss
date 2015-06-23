@@ -57,6 +57,10 @@ $going-pin-size: 50px;
 
     text-align: center;
 
+    a {
+      display: block;
+    }
+
     p {
       margin: 0;
 
@@ -153,7 +157,7 @@ $going-pin-size: 50px;
     z-index: 2;
 
     &.going {
-      margin-left: $going-pin-size;
+      padding-left: ($going-pin-size / 2 + 5px);
 
       color: $green;
 

@@ -25,6 +25,8 @@ public protocol IRailsSchoolAPI {
     
     func checkCredentials(request: CheckCredentialsRequest, callback: RemoteCallback<User>)
     
+    func signOut(callback: RemoteCallback<Void>)
+    
     func getVenue(id: Int, callback: RemoteCallback<Venue>)
     
     func isAttending(slug: String, authenticationCookie: String, callback: RemoteCallback<Bool>)

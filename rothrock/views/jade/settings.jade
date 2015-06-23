@@ -1,0 +1,61 @@
+.navbar
+  .navbar-inner
+    .left
+      a.back.link(href="#") Back
+    .center.sliding Settings
+
+.pages
+  .page(data-page="settings")
+    .page-content.settings.js-settings
+      .form-wrapper
+        .content-block-title User information
+        .list-block
+          ul
+            li.item-content
+              .item-inner
+                .item-title Email
+                .item-after
+                  .item-input
+                    input.js-email-field(type="email", placeholder="Your email")
+            li.item-content
+              .item-inner
+                .item-title Password
+                .item-after
+                  .item-input
+                    input.js-password-field(type="password", placeholder="*********")
+
+        .content-block-title Notification of Upcoming Workshops
+        .list-block
+          ul
+            li.item-content
+              .item-inner
+                .item-title 2-Hour Reminder
+                .item-after
+                  .item-input
+                    select.js-2h-reminder
+                      option(value="0") Never
+                      option(value="1") Only if attending
+                      option(value="2") Always
+            li.item-content
+              .item-inner
+                .item-title 24-Hour Reminder
+                .item-after
+                  .item-input
+                    select.js-24-reminder
+                      option(value="0") Never
+                      option(value="1") Only if attending
+                      option(value="2") Always
+            li.item-content
+              .item-inner
+                .item-title New Workshop Alert
+                .item-after
+                  label.label-switch
+                    input.js-new-workshop-alert(type="checkbox")
+                    .checkbox
+
+      p.log-out
+        a.js-log-out(href="#") Log out of Rails School App
+
+      p.footer
+        | Tweet feedback to&nbsp;
+        a.js-twitter @railsschoolsf

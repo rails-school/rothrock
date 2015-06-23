@@ -1,24 +1,26 @@
 PODS:
-  - Alamofire (1.2.2)
-  - Caravel (0.2.1)
-  - DateTools (1.5.0)
+  - Alamofire (1.2.3)
+  - Caravel (0.3.3)
+  - DateTools (1.6.1)
+  - KVNProgress (2.2.1)
   - Realm (0.91.5):
     - Realm/Headers (= 0.91.5)
   - Realm/Headers (0.91.5)
+  - Regex (0.2.1)
   - SCLAlertView (0.3)
   - SwiftEventBus (1.1.0)
-  - SwiftSpinner (0.6.7)
   - SwiftyJSON (2.2.0)
 
 DEPENDENCIES:
   - Alamofire
   - Caravel
   - DateTools
+  - KVNProgress
   - Realm (= 0.91.5)
   - Realm/Headers
+  - Regex
   - SCLAlertView (from `https://github.com/vikmeup/SCLAlertView-Swift.git`, tag `0.3.2`)
   - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`)
-  - SwiftSpinner
   - SwiftyJSON
 
 EXTERNAL SOURCES:
@@ -37,13 +39,14 @@ CHECKOUT OPTIONS:
     :git: https://github.com/cesarferreira/SwiftEventBus.git
 
 SPEC CHECKSUMS:
-  Alamofire: 11a6022f5089887d92ffb5a3014c97a0a915ab98
-  Caravel: 647d731718d0e20bcf075051b4e1d71e22ff8285
-  DateTools: b93a2c2017747329c6077c7d7e8a75106e23d0d7
+  Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
+  Caravel: 045353f8b484746b0d019f27f504b085fa87e007
+  DateTools: 9bcc89e4f2f9004d8a7a2bd1b49269cf78968e65
+  KVNProgress: 7001d2d16a2755cee5599e8e485befe056f2197b
   Realm: 670059efdb212ab939c1745a60aff27820c0a9c4
+  Regex: 14d9745c19442ccdf920234e50d463ba659f58c4
   SCLAlertView: 7d1910ae5137626797d1a8e5ca9166964801881e
   SwiftEventBus: d334f7aecbddbd995c3de5c262cf35c72db550f3
-  SwiftSpinner: 20abe2e2433b8815e1ef39c27630d0910c3c3f35
   SwiftyJSON: 0b3e6c07af17ff745e77e8e9984097b55c956e5c
 
-COCOAPODS: 0.37.1
+COCOAPODS: 0.37.2

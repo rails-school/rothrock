@@ -14,6 +14,7 @@
     <div class="statusbar-overlay"></div>
     <div class="views">
       <div class="view view-main">
+        <div class="navbar hidden"></div>
         <div class="pages navbar-through toolbar-hrought">
           <div data-page="class-list" class="page">
             <div class="page-content class-list">
@@ -21,14 +22,13 @@
                 <div class="logo-wrapper"><img src="logo-default.png" class="logo js-logo">
                   <p class="upcoming-classes js-upcoming-classes"></p>
                 </div>
-                <div class="settings js-settings">
-                  <p class="ic-settings"><i class="fa fa-2x fa-cog"></i></p>
-                  <p class="label">Settings</p>
-                </div>
+                <div class="settings js-settings"><a href="settings.html">
+                    <p class="ic-settings"><i class="fa fa-2x fa-cog"></i></p>
+                    <p class="label">Settings</p></a></div>
               </header>
               <section class="js-class-list owl-carousel"></section>
               <script id="class-card-template" type="text/template7">{{#each classes}}
-                <div data-slug="{{lesson.slug}}" class="class-card-wrapper js-class-card-wrapper">{{#js_compare "this.isAttending == 'true'"}}<img src="going-pin.png" class="class-going-pin js-class-going-pin">
+                <div data-slug="{{lesson.slug}}" class="class-card-wrapper js-class-card-wrapper">{{#js_compare "this.isAttending == true"}}<img src="going-pin.png" class="class-going-pin js-class-going-pin">
                   <p class="class-countdown going js-class-countdown">{{lesson.countdown}}</p>{{else}}<img src="going-pin.png" class="class-going-pin invisible js-class-going-pin">
                   <p class="class-countdown js-class-countdown">{{lesson.countdown}}</p>{{/js_compare}}
                   <div class="class-card js-class-card">
@@ -52,7 +52,7 @@
                         <p>{{lesson.hour}}</p>
                       </li>
                     </ul>
-                  </div>{{#js_compare "this.isAttending == 'true'"}}
+                  </div>{{#js_compare "this.isAttending == true"}}
                   <div class="class-rsvp-button unrsvp js-class-rsvp-button">unRSVP</div>{{else}}
                   <div class="class-rsvp-button js-class-rsvp-button">RSVP</div>{{/js_compare}}
                   <p class="class-attendees js-class-attendees">

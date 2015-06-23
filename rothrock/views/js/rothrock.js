@@ -1,4 +1,4 @@
-var $$, BaseController, ClassListController, SingleClassController, Slider, classListController, mainView, myApp,
+var $$, BaseController, ClassListController, SettingsController, SingleClassController, Slider, classListController, mainView, myApp, settingsController,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
 
@@ -285,11 +285,15 @@ ClassListController = (function(superClass) {
           goingPin.removeClass('invisible');
           return countdown.addClass('going');
         } else {
-          goingPin.addClass('visible');
+          goingPin.addClass('invisible');
           return countdown.removeClass('going');
         }
       };
     })(this));
+  };
+
+  ClassListController.prototype.onResume = function() {
+    return $('.navbar').addClass('hidden');
   };
 
   return ClassListController;
@@ -405,6 +409,104 @@ SingleClassController = (function(superClass) {
 
 })(BaseController);
 
+SettingsController = (function(superClass) {
+  extend(SettingsController, superClass);
+
+  function SettingsController(app) {
+    SettingsController.__super__.constructor.call(this, app);
+    this.settingsSelector = '.js-settings';
+    this.emailFieldSelector = '.js-email-field';
+    this.passwordFieldSelector = '.js-password-field';
+    this.twoHourDropdownSelector = '.js-2h-reminder';
+    this.dayDropdownSelector = '.js-24-reminder';
+    this.newWorkshopSelector = '.js-new-workshop-alert';
+    this.logOutSelector = '.js-log-out';
+    this.twitterSelector = '.js-twitter';
+  }
+
+  SettingsController.prototype._findEmailField = function() {
+    return $(this.settingsSelector).find(this.emailFieldSelector).first();
+  };
+
+  SettingsController.prototype._findPasswordField = function() {
+    return $(this.settingsSelector).find(this.passwordFieldSelector).first();
+  };
+
+  SettingsController.prototype.getBus = function() {
+    return Caravel.get('SettingsController');
+  };
+
+  SettingsController.prototype.onStart = function() {
+    return this.getBus().register('SetSettings', (function(_this) {
+      return function(name, data) {
+        _this._findEmailField().val(data.email);
+        $(_this.settingsSelector).find(_this.twoHourDropdownSelector).first().val(data.twoHourReminder);
+        $(_this.settingsSelector).find(_this.dayDropdownSelector).first().val(data.dayReminder);
+        return $(_this.settingsSelector).find(_this.newWorkshopSelector).first().prop('checked', data.newLessonAlert);
+      };
+    })(this));
+  };
+
+  SettingsController.prototype.onResume = function() {
+    $('.navbar').removeClass('hidden');
+    $(this.settingsSelector).find(this.twoHourDropdownSelector).first().on('change', (function(_this) {
+      return function(e) {
+        return _this.getBus().post('TwoHourReminderNewValue', $(e.target).val());
+      };
+    })(this));
+    $(this.settingsSelector).find(this.dayDropdownSelector).first().on('change', (function(_this) {
+      return function(e) {
+        return _this.getBus().post('DayReminderNewValue', $(e.target).val());
+      };
+    })(this));
+    $(this.settingsSelector).find(this.newWorkshopSelector).first().on('change', (function(_this) {
+      return function(e) {
+        return _this.getBus().post('LessonAlertNewValue', $(e.target).prop('checked') ? 1 : 0);
+      };
+    })(this));
+    this.isEditingCredentials = false;
+    this._findEmailField().on('blur', (function(_this) {
+      return function(e) {
+        if (_this.isEditingCredentials) {
+          _this.isEditingCredentials = false;
+          return _this.getBus().post('SaveCredentials', {
+            email: $(e.target).val(),
+            password: _this._findPasswordField().val()
+          });
+        } else {
+          return _this.isEditingCredentials = true;
+        }
+      };
+    })(this));
+    this._findPasswordField().on('blur', (function(_this) {
+      return function(e) {
+        if (_this.isEditingCredentials) {
+          _this.isEditingCredentials = false;
+          return _this.getBus().post('SaveCredentials', {
+            email: _this._findEmailField().val(),
+            password: $(e.target).val()
+          });
+        } else {
+          return _this.isEditingCredentials = true;
+        }
+      };
+    })(this));
+    $(this.settingsSelector).find(this.logOutSelector).first().on('click', (function(_this) {
+      return function(e) {
+        return _this.getBus().post("LogOut");
+      };
+    })(this));
+    return $(this.settingsSelector).find(this.twitterSelector).first().on('click', (function(_this) {
+      return function(e) {
+        return _this.getBus().post("Twitter");
+      };
+    })(this));
+  };
+
+  return SettingsController;
+
+})(BaseController);
+
 myApp = new Framework7();
 
 $$ = Dom7;
@@ -415,6 +517,21 @@ mainView = myApp.addView('.view-main', {
 
 classListController = new ClassListController(myApp);
 
+settingsController = null;
+
+myApp.onPageBeforeInit('settings', (function(_this) {
+  return function(page) {
+    classListController.onPause();
+    if (settingsController == null) {
+      settingsController = new SettingsController(myApp);
+      Caravel.getDefault().post("StartingSettingsController");
+      settingsController.onStart();
+    }
+    Caravel.getDefault().post("ResumingSettingsController");
+    return settingsController.onResume();
+  };
+})(this));
+
 myApp.onPageBack('single-class', (function(_this) {
   return function(page) {
     singleClassController.onPause();
@@ -424,11 +541,17 @@ myApp.onPageBack('single-class', (function(_this) {
 
 myApp.onPageBack('settings', (function(_this) {
   return function(page) {
+    Caravel.getDefault().post("PausingSettingsController");
     settingsController.onPause();
+    Caravel.getDefault().post("ResumingClassListController");
     return classListController.onResume();
   };
 })(this));
 
+Caravel.getDefault().post("StartingClassListController");
+
 classListController.onStart();
+
+Caravel.getDefault().post("ResumingClassListController");
 
 classListController.onResume();

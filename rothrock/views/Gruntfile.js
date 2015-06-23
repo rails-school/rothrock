@@ -22,6 +22,7 @@ module.exports = function (grunt) {
                         'coffee/base_controller.coffee',
                         'coffee/class_list_controller.coffee',
                         'coffee/single_class_controller.coffee',
+                        'coffee/settings_controller.coffee',
                         'coffee/main.coffee'
                     ]
                 }
@@ -43,7 +44,8 @@ module.exports = function (grunt) {
                     pretty: true
                 },
                 files: {
-                    "html/main.html": ['jade/main.jade']
+                    "html/main.html": ['jade/main.jade'],
+                    "html/settings.html": ['jade/settings.jade']
                 }
             }
         },

@@ -106,5 +106,8 @@ class ClassListController extends BaseController
         goingPin.removeClass('invisible')
         countdown.addClass('going')
       else
-        goingPin.addClass('visible')
+        goingPin.addClass('invisible')
         countdown.removeClass('going')
+
+  onResume: () ->
+    $('.navbar').addClass('hidden')
