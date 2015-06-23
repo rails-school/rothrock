@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var _backgroundThreads = 0
     private var _backgroundTimer: NSTimer?
     
-    private var _alarmManager: AlarmManager
+    private var _alarmManager: AlarmManager?
     
     func timerHandler() {
         _backgroundTimer = nil
@@ -42,7 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Sets up alarms
         _alarmManager = AlarmManager(application: application)
         
-        // Watch push notifications
+        // Sets up push notifications
+        application.registerForRemoteNotificationTypes(.Badge | .Sound | .Alert)
         
         return true
     }
@@ -109,6 +110,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        // Nothing to do
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        NSLog("%@", error)
     }
 }
 
