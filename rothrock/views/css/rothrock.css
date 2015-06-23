@@ -176,7 +176,7 @@
   border-bottom: 2px solid #ab1818;
   z-index: 2; }
   .class-list section .class-card-wrapper .class-countdown.going {
-    margin-left: 50px;
+    padding-left: 30px;
     color: #5FB140;
     border-color: #5FB140; }
 .class-list section .class-card-wrapper .class-card {

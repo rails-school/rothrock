@@ -285,7 +285,7 @@ ClassListController = (function(superClass) {
           goingPin.removeClass('invisible');
           return countdown.addClass('going');
         } else {
-          goingPin.addClass('visible');
+          goingPin.addClass('invisible');
           return countdown.removeClass('going');
         }
       };

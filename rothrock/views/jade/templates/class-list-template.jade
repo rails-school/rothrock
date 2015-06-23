@@ -1,7 +1,7 @@
 script#class-card-template(type='text/template7')
   | {{#each classes}}
   .class-card-wrapper.js-class-card-wrapper(data-slug="{{lesson.slug}}")
-    | {{#js_compare "this.isAttending == 'true'"}}
+    | {{#js_compare "this.isAttending == true"}}
     img.class-going-pin.js-class-going-pin(src='going-pin.png')
     p.class-countdown.going.js-class-countdown {{lesson.countdown}}
     | {{else}}
@@ -33,7 +33,7 @@ script#class-card-template(type='text/template7')
           p {{lesson.hour}}
 
     //- RSVP button
-    | {{#js_compare "this.isAttending == 'true'"}}
+    | {{#js_compare "this.isAttending == true"}}
     .class-rsvp-button.unrsvp.js-class-rsvp-button unRSVP
     | {{else}}
     .class-rsvp-button.js-class-rsvp-button RSVP

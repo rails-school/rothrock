@@ -157,7 +157,7 @@ $going-pin-size: 50px;
     z-index: 2;
 
     &.going {
-      margin-left: $going-pin-size;
+      padding-left: ($going-pin-size / 2 + 5px);
 
       color: $green;
 
