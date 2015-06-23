@@ -51,10 +51,10 @@ internal class UserDAO: BaseDAO, IUserDAO {
             e.hideLastName = user.hideLastName
             e.updateDate = NSDate()
             
-            User.createOrUpdateInRealm(dal, withObject: e)
+            User.createOrUpdateInRealm(dal, withValue: e)
         } else {
             user.updateDate = NSDate()
-            User.createInRealm(dal, withObject: user)
+            User.createInRealm(dal, withValue: user)
         }
         
         dal.commitWriteTransaction()
