@@ -96,6 +96,7 @@
 		A7BD79331B0579E100303751 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD79321B0579E100303751 /* StringExtension.swift */; };
 		A7BD79351B0584BD00303751 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD79341B0584BD00303751 /* DateExtension.swift */; };
 		A7BD79371B058B2700303751 /* BLLCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD79361B058B2700303751 /* BLLCallback.swift */; };
+		A7C55DAB1B38F0E4005F4445 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C55DAA1B38F0E4005F4445 /* AlarmManager.swift */; };
 		A7C72EE01B0A5A8F001BA13C /* ProgressForkEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EDF1B0A5A8F001BA13C /* ProgressForkEvent.swift */; };
 		A7C72EE21B0A5B9B001BA13C /* ProgressDoneEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE11B0A5B9B001BA13C /* ProgressDoneEvent.swift */; };
 		A7C72EE41B0A5BB8001BA13C /* ErrorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE31B0A5BB8001BA13C /* ErrorEvent.swift */; };
@@ -223,6 +224,7 @@
 		A7BD79321B0579E100303751 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = utils/StringExtension.swift; sourceTree = "<group>"; };
 		A7BD79341B0584BD00303751 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = utils/DateExtension.swift; sourceTree = "<group>"; };
 		A7BD79361B058B2700303751 /* BLLCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BLLCallback.swift; path = models/bll/BLLCallback.swift; sourceTree = "<group>"; };
+		A7C55DAA1B38F0E4005F4445 /* AlarmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmManager.swift; path = services/AlarmManager.swift; sourceTree = "<group>"; };
 		A7C72EDF1B0A5A8F001BA13C /* ProgressForkEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressForkEvent.swift; path = controllers/events/ProgressForkEvent.swift; sourceTree = "<group>"; };
 		A7C72EE11B0A5B9B001BA13C /* ProgressDoneEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressDoneEvent.swift; path = controllers/events/ProgressDoneEvent.swift; sourceTree = "<group>"; };
 		A7C72EE31B0A5BB8001BA13C /* ErrorEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorEvent.swift; path = controllers/events/ErrorEvent.swift; sourceTree = "<group>"; };
@@ -361,14 +363,15 @@
 		A746A6A31AE9D6E800AF0FA5 /* rothrock */ = {
 			isa = PBXGroup;
 			children = (
-				A7F571E81AEED9DD001084D3 /* Bridging-Header.h */,
-				A7BD792F1B05728F00303751 /* Localizable.strings */,
 				A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */,
-				A746A6AD1AE9D6E800AF0FA5 /* Images.xcassets */,
+				A7F571E81AEED9DD001084D3 /* Bridging-Header.h */,
 				A7EC14BA1B080B5B001981EB /* controllers */,
+				A746A6AD1AE9D6E800AF0FA5 /* Images.xcassets */,
 				A746A6AF1AE9D6E800AF0FA5 /* LaunchScreen.xib */,
+				A7BD792F1B05728F00303751 /* Localizable.strings */,
 				A746A6AA1AE9D6E800AF0FA5 /* Main.storyboard */,
 				A786222B1AEAA54B006B0F76 /* models */,
+				A7C55DA91B38F0C6005F4445 /* services */,
 				A746A6A41AE9D6E800AF0FA5 /* Supporting Files */,
 				A7BD79311B0579C700303751 /* utils */,
 				A7EC14B91B080B47001981EB /* views */,
@@ -527,6 +530,14 @@
 				A7BD79341B0584BD00303751 /* DateExtension.swift */,
 			);
 			name = utils;
+			sourceTree = "<group>";
+		};
+		A7C55DA91B38F0C6005F4445 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				A7C55DAA1B38F0E4005F4445 /* AlarmManager.swift */,
+			);
+			name = services;
 			sourceTree = "<group>";
 		};
 		A7C72EDC1B0A59F1001BA13C /* events */ = {
@@ -878,6 +889,7 @@
 				A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */,
 				A794DC211AF1A09800D8743F /* ILessonBusiness.swift in Sources */,
 				A784106A1AEF16FC006709ED /* SchoolClassSerializer.swift in Sources */,
+				A7C55DAB1B38F0E4005F4445 /* AlarmManager.swift in Sources */,
 				A74F044E1AEB06DE00EB8916 /* VenueDAO.swift in Sources */,
 				A740521E1AF001AF003ABBE3 /* ArraySerializer.swift in Sources */,
 				A7BD79351B0584BD00303751 /* DateExtension.swift in Sources */,

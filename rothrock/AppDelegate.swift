@@ -19,23 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var _backgroundThreads = 0
     private var _backgroundTimer: NSTimer?
     
-    private func _scheduleAlarm(application: UIApplication, lesson: Lesson?, hours: Int, title: String) {
-        var fireDate = NSDate.fromString(lesson!.startTime!)!.dateBySubtractingHours(hours)
-        var notification = UILocalNotification()
-        
-        for o in application.scheduledLocalNotifications {
-            var n = o as! UILocalNotification
-            if n.fireDate == fireDate { // Cancel existing similar alarm, then schedule it again
-                application.cancelLocalNotification(n)
-                break
-            }
-        }
-        
-        notification.fireDate = fireDate
-        notification.alertTitle = title
-        notification.alertBody = lesson!.title
-        notification.soundName = UILocalNotificationDefaultSoundName
-    }
+    private var _alarmManager: AlarmManager
     
     func timerHandler() {
         _backgroundTimer = nil
@@ -56,17 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         KVNProgress.setConfiguration(config)
         
         // Sets up alarms
-        BusinessFactory
-            .provideLesson()
-            .engineAlarms(
-                30 * 60 * 1000, // Every half hour
-                twoHourAlarm: { lesson in
-                    self._scheduleAlarm(application, lesson: lesson, hours: 2, title: "reminder_two_hours".localized)
-                },
-                dayAlarm: { lesson in
-                    self._scheduleAlarm(application, lesson: lesson, hours: 24, title: "reminder_next_day".localized)
-                }
-            )
+        _alarmManager = AlarmManager(application: application)
+        
+        // Watch push notifications
         
         return true
     }
