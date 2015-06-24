@@ -38,6 +38,15 @@ $single-class-selector: ".single-class";
   overflow: auto;
   z-index: 1;
 
+  .logo {
+    max-width: 100px;
+    margin: 0 5px 5px 0;
+  }
+
+  .attendees {
+    @extend %attendees;
+  }
+
   h2 {
     color: $gray;
   }

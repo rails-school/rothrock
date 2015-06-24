@@ -123,6 +123,17 @@ $sublabel: 11px;
   }
 }
 
+%attendees {
+  margin: 5px;
+
+  text-align: center;
+  font: {
+    family: $body-font;
+    size: $label;
+  }
+  color: $red;
+}
+
 %share-wrapper {
   > * {
     display: inline-block;
