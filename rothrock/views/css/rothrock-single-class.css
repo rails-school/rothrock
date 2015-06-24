@@ -37,15 +37,16 @@
 .single-class .rsvp-button {
   width: 150px;
   height: 51.72414px;
-  padding: 2px 0;
+  padding: 4.5px 0;
   font-family: "Yanone Kaffeesatz";
   font-size: 32px;
   color: #fff;
   text-shadow: 0 1px 1px #333;
   text-align: center;
   background-color: #fff;
+  background-position: 5px 5px;
   background-image: url("rsvp.png");
-  background-size: 150px;
+  background-size: 140px;
   background-repeat: no-repeat;
   cursor: pointer; }
   .single-class .rsvp-button:active {
@@ -54,6 +55,44 @@
     background-image: url("unrsvp.png"); }
     .single-class .unrsvp.rsvp-button:active {
       background-image: url("unrsvp-active.png"); }
+
+.single-class section h1 {
+  color: #0f3344;
+  font-family: "Yanone Kaffeesatz";
+  font-size: 32px;
+  text-align: left;
+  line-height: 1.4em; }
+
+.single-class section h2 {
+  font-family: "Muli";
+  font-size: 18px;
+  text-align: justify; }
+
+.single-class section h1, .single-class section h2 {
+  margin: 10px 0;
+  font-weight: normal; }
+
+.single-class section ul {
+  margin: 15px 0;
+  padding: 0;
+  text-align: left;
+  list-style-type: none; }
+  .single-class section ul li {
+    margin: 10px 0;
+    padding: 0; }
+    .single-class section ul li p {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0;
+      font-family: "Muli";
+      font-size: 15px; }
+    .single-class section ul li p:first-child {
+      width: 25px;
+      padding: 0 15px 0 0;
+      text-align: center;
+      color: #999; }
+    .single-class section ul li p:last-child {
+      color: #333; }
 
 .single-class section .attendees {
   margin: 5px;
@@ -75,11 +114,13 @@
   font-family: "Muli";
   color: #333; }
 
-.single-class header,
-.single-class section,
-.single-class .rsvp-button
-.single-class footer {
-  position: absolute; }
+.single-class {
+  widht: 100%;
+  height: 100%;
+  padding: 0 !important;
+  background: white; }
+  .single-class header, .single-class section, .single-class .rsvp-button, .single-class footer {
+    position: absolute; }
 
 .single-class header {
   top: -12.5px;
@@ -97,12 +138,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 10px 20px;
+  padding: 30px 50px 50px 50px;
   box-sizing: border-box;
+  text-align: center;
   overflow: auto;
   z-index: 1; }
   .single-class section .logo {
-    max-width: 100px;
+    max-width: 50px;
     margin: 0 5px 5px 0; }
   .single-class section h2 {
     color: #999; }
@@ -110,6 +152,7 @@
     margin: 5px 0;
     font-size: 18px;
     font-family: "Muli";
+    text-align: justify;
     color: #333; }
 
 .single-class .rsvp-button {
@@ -135,6 +178,10 @@
   justify-content: space-between;
   -ms-flex-pack: justify;
   width: 100%;
-  padding: 5px 10px;
+  padding: 10px 20px;
   box-sizing: border-box;
+  background-color: white;
+  border-top: 1px solid #ccc;
   z-index: 2; }
+  .single-class footer p.ic-close {
+    margin: 0; }

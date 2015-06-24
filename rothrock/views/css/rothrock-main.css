@@ -37,15 +37,16 @@
 .class-list section .class-card-wrapper .class-rsvp-button {
   width: 150px;
   height: 51.72414px;
-  padding: 2px 0;
+  padding: 4.5px 0;
   font-family: "Yanone Kaffeesatz";
   font-size: 32px;
   color: #fff;
   text-shadow: 0 1px 1px #333;
   text-align: center;
   background-color: #fff;
+  background-position: 5px 5px;
   background-image: url("rsvp.png");
-  background-size: 150px;
+  background-size: 140px;
   background-repeat: no-repeat;
   cursor: pointer; }
   .class-list section .class-card-wrapper .class-rsvp-button:active {
@@ -59,11 +60,13 @@
   color: #0f3344;
   font-family: "Yanone Kaffeesatz";
   font-size: 32px;
-  line-height: 1.2em; }
+  text-align: left;
+  line-height: 1.4em; }
 
 .class-list section .class-card-wrapper .class-card h2 {
   font-family: "Muli";
-  font-size: 18px; }
+  font-size: 18px;
+  text-align: justify; }
 
 .class-list section .class-card-wrapper .class-card h1, .class-list section .class-card-wrapper .class-card h2 {
   margin: 10px 0;
@@ -72,9 +75,10 @@
 .class-list section .class-card-wrapper .class-card ul {
   margin: 15px 0;
   padding: 0;
+  text-align: left;
   list-style-type: none; }
   .class-list section .class-card-wrapper .class-card ul li {
-    margin: 5px 0;
+    margin: 10px 0;
     padding: 0; }
     .class-list section .class-card-wrapper .class-card ul li p {
       display: inline-block;
@@ -84,7 +88,7 @@
       font-size: 15px; }
     .class-list section .class-card-wrapper .class-card ul li p:first-child {
       width: 25px;
-      padding: 0 5px 0 0;
+      padding: 0 15px 0 0;
       text-align: center;
       color: #999; }
     .class-list section .class-card-wrapper .class-card ul li p:last-child {
@@ -218,7 +222,7 @@
     width: 80%;
     height: 100%; }
     .class-list section .class-card-wrapper .class-share-wrapper {
-      margin: 0 5px 30px 5px; }
+      margin: 0 5px 15px 5px; }
 
 .class-list section .class-card-wrapper > * {
   position: absolute; }
@@ -239,7 +243,7 @@
     color: #5FB140;
     border-color: #5FB140; }
 .class-list section .class-card-wrapper .class-card {
-  padding: 10px 15px;
+  padding: 10px 15px 30px 15px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   overflow: auto;
@@ -291,15 +295,16 @@
 .class-list section .class-card-wrapper .class-rsvp-button {
   width: 150px;
   height: 51.72414px;
-  padding: 2px 0;
+  padding: 4.5px 0;
   font-family: "Yanone Kaffeesatz";
   font-size: 32px;
   color: #fff;
   text-shadow: 0 1px 1px #333;
   text-align: center;
   background-color: #fff;
+  background-position: 5px 5px;
   background-image: url("rsvp.png");
-  background-size: 150px;
+  background-size: 140px;
   background-repeat: no-repeat;
   cursor: pointer; }
   .class-list section .class-card-wrapper .class-rsvp-button:active {
@@ -313,11 +318,13 @@
   color: #0f3344;
   font-family: "Yanone Kaffeesatz";
   font-size: 32px;
-  line-height: 1.2em; }
+  text-align: left;
+  line-height: 1.4em; }
 
 .class-list section .class-card-wrapper .class-card h2 {
   font-family: "Muli";
-  font-size: 18px; }
+  font-size: 18px;
+  text-align: justify; }
 
 .class-list section .class-card-wrapper .class-card h1, .class-list section .class-card-wrapper .class-card h2 {
   margin: 10px 0;
@@ -326,9 +333,10 @@
 .class-list section .class-card-wrapper .class-card ul {
   margin: 15px 0;
   padding: 0;
+  text-align: left;
   list-style-type: none; }
   .class-list section .class-card-wrapper .class-card ul li {
-    margin: 5px 0;
+    margin: 10px 0;
     padding: 0; }
     .class-list section .class-card-wrapper .class-card ul li p {
       display: inline-block;
@@ -338,7 +346,7 @@
       font-size: 15px; }
     .class-list section .class-card-wrapper .class-card ul li p:first-child {
       width: 25px;
-      padding: 0 5px 0 0;
+      padding: 0 15px 0 0;
       text-align: center;
       color: #999; }
     .class-list section .class-card-wrapper .class-card ul li p:last-child {

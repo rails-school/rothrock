@@ -1,5 +1,5 @@
 script#single-class-template(type='text/template7')
-  | {{#js_compare "this.isAttending = true"}}
+  | {{#js_compare "this.isAttending == true"}}
   header
     img.class-going-pin(src='going-pin.png')
     p.countdown.js-header-countdown {{lesson.countdown}}
@@ -47,7 +47,7 @@ script#single-class-template(type='text/template7')
   | {{/js_compare}}
 
   footer
-    p.back.ic-close.js-close-trigger
+    p.ic-close.js-close-trigger
       i.fa.fa-2x.fa-close
 
     .share-wrapper.js-share

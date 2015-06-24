@@ -14,15 +14,11 @@ html
     //- Status bar overlay for full screen mode (PhoneGap)
     .statusbar-overlay
     .views
-      //- Your main view, should have "view-main" class
       .view.view-main
-        .navbar.hidden
-        //- No navbar by default
-        .pages.navbar-through.toolbar-hrought
-          //- Page, "data-page" contains page name
-          .page(data-page='single-class')
-            .page-content.class-list
-              include single_class
+        .pages.navbar-through.toolbar-through
+          .page(data-page="single-class")
+            .page-content.single-class.js-single-class
+              include templates/single_class_template
 
     //- JS dependencies
     script(type='text/javascript', src='framework7.min.js')

@@ -2,11 +2,16 @@
 
 $single-class-selector: ".single-class";
 
-#{$single-class-selector} header,
-#{$single-class-selector} section,
-#{$single-class-selector} .rsvp-button
-#{$single-class-selector} footer {
-  position: absolute;
+#{$single-class-selector} {
+  widht: 100%;
+  height: 100%;
+  padding: 0 !important;
+
+  background: white;
+
+  header, section, .rsvp-button, footer {
+    position: absolute;
+  }
 }
 
 #{$single-class-selector} header {
@@ -32,14 +37,16 @@ $single-class-selector: ".single-class";
 
   width: 100%;
   height: 100%;
-  padding: 10px 20px;
+  padding: 30px 50px 50px 50px;
   box-sizing: border-box;
+
+  text-align: center;
 
   overflow: auto;
   z-index: 1;
 
   .logo {
-    max-width: 100px;
+    max-width: 50px;
     margin: 0 5px 5px 0;
   }
 
@@ -47,8 +54,17 @@ $single-class-selector: ".single-class";
     @extend %attendees;
   }
 
+  h1 {
+    @extend %headline;
+  }
+
   h2 {
+    @extend %subheadline;
     color: $gray;
+  }
+
+  ul {
+    @extend %icon-list;
   }
 
   .description {
@@ -58,6 +74,7 @@ $single-class-selector: ".single-class";
       size: $subtitle;
       family: $body-font;
     }
+    text-align: justify;
     color: $black;
   }
 }
@@ -75,10 +92,16 @@ $single-class-selector: ".single-class";
   @include justify-content(space-between);
 
   width: 100%;
-  padding: 5px 10px;
+  padding: 10px 20px;
   box-sizing: border-box;
 
+  background-color: white;
+  border-top: 1px solid $soft-gray;
   z-index: 2;
+
+  p.ic-close {
+    margin: 0;
+  }
 
   .share-wrapper {
     @extend %share-wrapper;

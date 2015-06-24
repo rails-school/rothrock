@@ -109,6 +109,7 @@ Slider = (function() {
     cardLeft = pin.outerWidth(true) / 2;
     cardHeight = wrapper.height() - attendees.outerHeight(true) - share.outerHeight(true);
     cardHeight = cardHeight - cardTop - rsvp.outerHeight(true) / 2;
+    cardHeight = cardHeight - parseInt(card.css('padding-top')) - parseInt(card.css('padding-bottom'));
     card.css({
       top: cardTop,
       left: cardLeft,

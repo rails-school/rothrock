@@ -88,7 +88,7 @@ SingleClassController = (function(superClass) {
     this.rsvpButtonSelector = '.js-rsvp-button';
     this.shareSelector = '.js-share';
     this.closeTriggerSelector = '.js-close-trigger';
-    this.footerSelector = 'footer';
+    this.footerSelector = this.singleClassSelector + " footer";
   }
 
   SingleClassController.prototype.getBus = function() {
@@ -101,19 +101,16 @@ SingleClassController = (function(superClass) {
       return function(name, data) {
         _this.fork();
         $(_this.singleClassSelector).html(_this.template(data));
+        $(_this.rsvpButtonSelector).css({
+          bottom: $(_this.footerSelector).outerHeight() - $(_this.rsvpButtonSelector).outerHeight() / 2,
+          left: ($(_this.footerSelector).outerWidth() - $(_this.rsvpButtonSelector).outerWidth()) / 2
+        });
         $(_this.shareSelector).on('click', function() {
           return new ShareMenu().show(_this.getApp(), _this.getBus(), $(_this.sectionSelector).data('slug'));
         });
         return _this.done();
       };
     })(this));
-  };
-
-  SingleClassController.prototype.onResume = function() {
-    return $(this.rsvpButtonSelector).css({
-      bottom: $(this.footerSelector).outerHeight() + $(this.rsvpButtonSelector).outerHeight() / 2,
-      left: ($(this.footerSelector).outerWidth() - $(this.rsvpButtonSelector)) / 2
-    });
   };
 
   return SingleClassController;

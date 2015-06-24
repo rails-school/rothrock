@@ -174,6 +174,7 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
                         "slug": schoolClass!.lesson!.slug,
                         "title": schoolClass!.lesson!.title!,
                         "summary": schoolClass!.lesson!.summary!,
+                        "description": schoolClass!.lesson!.lessonDescription!,
                         "date": "\(startDate.shortMonth()) \(startDate.day())",
                         "hour": "\(hourField)",
                         "countdown": startDate.userFriendly()

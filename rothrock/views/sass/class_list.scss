@@ -97,7 +97,7 @@ $class-list-selector: ".class-list";
     .class-share-wrapper {
       @extend %share-wrapper;
 
-      margin: 0 5px 30px 5px;
+      margin: 0 5px 15px 5px;
     }
   }
 }
@@ -139,7 +139,7 @@ $class-list-selector: ".class-list";
   }
 
   .class-card {
-    padding: 10px 15px;
+    padding: 10px 15px 30px 15px;
     box-sizing: border-box;
 
     border: 1px solid $soft-gray;
