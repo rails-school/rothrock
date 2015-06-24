@@ -136,14 +136,14 @@
 		A740521B1AEFFC88003ABBE3 /* RemoteCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteCallback.swift; path = models/bll/remote/RemoteCallback.swift; sourceTree = "<group>"; };
 		A740521D1AF001AF003ABBE3 /* ArraySerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArraySerializer.swift; path = models/bll/serializers/ArraySerializer.swift; sourceTree = "<group>"; };
 		A741CFFA1B166895001C9272 /* settings.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = settings.html; path = views/html/settings.html; sourceTree = "<group>"; };
-		A746A6A11AE9D6E800AF0FA5 /* rothrock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rothrock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A746A6A11AE9D6E800AF0FA5 /* Rails School.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rails School.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A746A6A51AE9D6E800AF0FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A746A6A81AE9D6E800AF0FA5 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainController.swift; path = controllers/MainController.swift; sourceTree = "<group>"; };
 		A746A6AB1AE9D6E800AF0FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A746A6AD1AE9D6E800AF0FA5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A746A6B01AE9D6E800AF0FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		A746A6B61AE9D6E800AF0FA5 /* rothrockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rothrockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A746A6B61AE9D6E800AF0FA5 /* Rails SchoolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rails SchoolTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A746A6BB1AE9D6E800AF0FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A746A6BC1AE9D6E800AF0FA5 /* rothrockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rothrockTests.swift; sourceTree = "<group>"; };
 		A74F04491AEB02B700EB8916 /* PreferenceDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferenceDAO.swift; path = models/dao/PreferenceDAO.swift; sourceTree = "<group>"; };
@@ -349,8 +349,8 @@
 		A746A6A21AE9D6E800AF0FA5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A746A6A11AE9D6E800AF0FA5 /* rothrock.app */,
-				A746A6B61AE9D6E800AF0FA5 /* rothrockTests.xctest */,
+				A746A6A11AE9D6E800AF0FA5 /* Rails School.app */,
+				A746A6B61AE9D6E800AF0FA5 /* Rails SchoolTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -602,9 +602,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A746A6A01AE9D6E800AF0FA5 /* rothrock */ = {
+		A746A6A01AE9D6E800AF0FA5 /* Rails School */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A746A6C01AE9D6E800AF0FA5 /* Build configuration list for PBXNativeTarget "rothrock" */;
+			buildConfigurationList = A746A6C01AE9D6E800AF0FA5 /* Build configuration list for PBXNativeTarget "Rails School" */;
 			buildPhases = (
 				69A6B10183254A78767F4207 /* Check Pods Manifest.lock */,
 				A746A69D1AE9D6E800AF0FA5 /* Sources */,
@@ -617,14 +617,14 @@
 			);
 			dependencies = (
 			);
-			name = rothrock;
+			name = "Rails School";
 			productName = rothrock;
-			productReference = A746A6A11AE9D6E800AF0FA5 /* rothrock.app */;
+			productReference = A746A6A11AE9D6E800AF0FA5 /* Rails School.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A746A6B51AE9D6E800AF0FA5 /* rothrockTests */ = {
+		A746A6B51AE9D6E800AF0FA5 /* Rails SchoolTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A746A6C31AE9D6E800AF0FA5 /* Build configuration list for PBXNativeTarget "rothrockTests" */;
+			buildConfigurationList = A746A6C31AE9D6E800AF0FA5 /* Build configuration list for PBXNativeTarget "Rails SchoolTests" */;
 			buildPhases = (
 				26688C0FF4F5649854054B95 /* Check Pods Manifest.lock */,
 				A746A6B21AE9D6E800AF0FA5 /* Sources */,
@@ -638,9 +638,9 @@
 			dependencies = (
 				A746A6B81AE9D6E800AF0FA5 /* PBXTargetDependency */,
 			);
-			name = rothrockTests;
+			name = "Rails SchoolTests";
 			productName = rothrockTests;
-			productReference = A746A6B61AE9D6E800AF0FA5 /* rothrockTests.xctest */;
+			productReference = A746A6B61AE9D6E800AF0FA5 /* Rails SchoolTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -662,7 +662,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A746A69C1AE9D6E800AF0FA5 /* Build configuration list for PBXProject "rothrock" */;
+			buildConfigurationList = A746A69C1AE9D6E800AF0FA5 /* Build configuration list for PBXProject "Rails School" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -675,8 +675,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A746A6A01AE9D6E800AF0FA5 /* rothrock */,
-				A746A6B51AE9D6E800AF0FA5 /* rothrockTests */,
+				A746A6A01AE9D6E800AF0FA5 /* Rails School */,
+				A746A6B51AE9D6E800AF0FA5 /* Rails SchoolTests */,
 			);
 		};
 /* End PBXProject section */
@@ -910,7 +910,7 @@
 /* Begin PBXTargetDependency section */
 		A746A6B81AE9D6E800AF0FA5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A746A6A01AE9D6E800AF0FA5 /* rothrock */;
+			target = A746A6A01AE9D6E800AF0FA5 /* Rails School */;
 			targetProxy = A746A6B71AE9D6E800AF0FA5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1034,7 +1034,7 @@
 				INFOPLIST_FILE = rothrock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Rails School";
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "rothrock/Bridging-Header.h";
@@ -1062,7 +1062,7 @@
 				INFOPLIST_FILE = rothrock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Rails School";
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "rothrock/Bridging-Header.h";
@@ -1086,7 +1086,7 @@
 				);
 				INFOPLIST_FILE = rothrockTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Rails SchoolTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rothrock.app/rothrock";
 			};
 			name = Debug;
@@ -1102,7 +1102,7 @@
 				);
 				INFOPLIST_FILE = rothrockTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Rails SchoolTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rothrock.app/rothrock";
 			};
 			name = Release;
@@ -1110,7 +1110,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A746A69C1AE9D6E800AF0FA5 /* Build configuration list for PBXProject "rothrock" */ = {
+		A746A69C1AE9D6E800AF0FA5 /* Build configuration list for PBXProject "Rails School" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A746A6BE1AE9D6E800AF0FA5 /* Debug */,
@@ -1119,7 +1119,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A746A6C01AE9D6E800AF0FA5 /* Build configuration list for PBXNativeTarget "rothrock" */ = {
+		A746A6C01AE9D6E800AF0FA5 /* Build configuration list for PBXNativeTarget "Rails School" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A746A6C11AE9D6E800AF0FA5 /* Debug */,
@@ -1128,7 +1128,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A746A6C31AE9D6E800AF0FA5 /* Build configuration list for PBXNativeTarget "rothrockTests" */ = {
+		A746A6C31AE9D6E800AF0FA5 /* Build configuration list for PBXNativeTarget "Rails SchoolTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A746A6C41AE9D6E800AF0FA5 /* Debug */,
