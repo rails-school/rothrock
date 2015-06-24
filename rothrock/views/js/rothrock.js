@@ -1,4 +1,4 @@
-var $$, BaseController, ClassListController, SettingsController, SingleClassController, Slider, classListController, mainView, myApp, settingsController, singleClassController,
+var $$, BaseController, ClassListController, SettingsController, ShareMenu, SingleClassController, Slider, classListController, mainView, myApp, settingsController, singleClassController,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
 
@@ -137,6 +137,50 @@ Slider = (function() {
 
 })();
 
+ShareMenu = (function() {
+  function ShareMenu() {}
+
+  ShareMenu.prototype.show = function(app, bus, slug) {
+    return app.actions([
+      {
+        text: 'Text',
+        onClick: (function(_this) {
+          return function() {
+            return bus.post('TriggerShareText', slug);
+          };
+        })(this)
+      }, {
+        text: 'Email',
+        onClick: (function(_this) {
+          return function() {
+            return bus.post('TriggerShareEmail', slug);
+          };
+        })(this)
+      }, {
+        text: 'Facebook',
+        onClick: (function(_this) {
+          return function() {
+            return bus.post('TriggerShareFacebook', slug);
+          };
+        })(this)
+      }, {
+        text: 'Twitter',
+        onClick: (function(_this) {
+          return function() {
+            return bus.post('TriggerShareTwitter', slug);
+          };
+        })(this)
+      }, {
+        text: 'Cancel',
+        color: 'red'
+      }
+    ]);
+  };
+
+  return ShareMenu;
+
+})();
+
 BaseController = (function() {
   function BaseController(app) {
     this.app = app;
@@ -217,32 +261,7 @@ ClassListController = (function(superClass) {
             return _this.getBus().post('TriggerInsight', slug);
           });
           $(e).find(_this.shareSelector).first().on('click', function() {
-            return _this.getApp().actions([
-              {
-                text: 'Text',
-                onClick: function() {
-                  return _this.getBus().post('TriggerShareText', slug);
-                }
-              }, {
-                text: 'Email',
-                onClick: function() {
-                  return _this.getBus().post('TriggerShareEmail', slug);
-                }
-              }, {
-                text: 'Facebook',
-                onClick: function() {
-                  return _this.getBus().post('TriggerShareFacebook', slug);
-                }
-              }, {
-                text: 'Twitter',
-                onClick: function() {
-                  return _this.getBus().post('TriggerShareTwitter', slug);
-                }
-              }, {
-                text: 'Cancel',
-                color: 'red'
-              }
-            ]);
+            return new ShareMenu().show(_this.getApp(), _this.getBus(), slug);
           });
           return $(e).find(_this.rsvpSelector).first().on('click', function() {
             slug = $(e).data('slug');
@@ -305,11 +324,32 @@ SingleClassController = (function(superClass) {
 
   function SingleClassController(app) {
     SingleClassController.__super__.constructor.call(this, app);
+    this.singleClassSelector = '.js-single-class';
+    this.sectionSelector = 'section';
     this.rsvpButtonSelector = '.js-rsvp-button';
+    this.shareSelector = '.js-share';
+    this.closeTriggerSelector = '.js-close-trigger';
     this.footerSelector = 'footer';
   }
 
-  SingleClassController.prototype.onStart = function() {};
+  SingleClassController.prototype.getBus = function() {
+    return Caravel.get('SingleClassController');
+  };
+
+  SingleClassController.prototype.onStart = function() {
+    this.template = Template7.compile($("#single-class-template").html());
+    return this.getBus().register("ReceiveClass", (function(_this) {
+      return function(name, data) {
+        _this.fork();
+        $(_this.singleClassSelector).html(_this.template(data));
+        $(_this.shareSelector).on('click', function() {
+          return new ShareMenu().show(_this.getApp(), _this.getBus(), $(_this.sectionSelector).data('slug'));
+        });
+        $(_this.closeTriggerSelector).on('click', function() {});
+        return _this.done();
+      };
+    })(this));
+  };
 
   SingleClassController.prototype.onResume = function() {
     return $(this.rsvpButtonSelector).css({

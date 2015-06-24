@@ -9,7 +9,7 @@
         <header class="hidden"><img src="going-pin.png" class="class-going-pin"/>
           <p class="countdown js-header-countdown">{{lesson.countdown}}</p>
         </header>{{/js_compare}}
-        <section><img src="logo-diamond.png" class="logo"/>
+        <section data-slug="{{lesson.slug}}"><img src="logo-diamond.png" class="logo"/>
           <p class="attendees">
             {{#js_compare "this.attendees == 0"}} Be the first join to join this class! {{/js_compare}}
             {{#js_compare "this.attendees == 1"}} 1 student is going {{/js_compare}}
@@ -40,7 +40,7 @@
         <div class="rsvp-button unrsvp js-rsvp-button">unRSVP</div>{{else}}
         <div class="rsvp-button js-rsvp-button">RSVP</div>{{/js_compare}}
         <footer>
-          <p class="ic-close"><i class="fa fa-2x fa-close"></i></p>
+          <p class="ic-close js-close-trigger"><i class="fa fa-2x fa-close"></i></p>
           <div class="share-wrapper js-share">
             <p class="ic-share"><i class="fa fa-share-alt"></i></p>
             <p>Share</p>

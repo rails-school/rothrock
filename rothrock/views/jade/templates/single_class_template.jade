@@ -9,7 +9,7 @@ script#single-class-template(type='text/template7')
     p.countdown.js-header-countdown {{lesson.countdown}}
   | {{/js_compare}}
 
-  section
+  section(data-slug="{{lesson.slug}}")
     img.logo(src="logo-diamond.png")
     p.attendees
       | {{#js_compare "this.attendees == 0"}} Be the first join to join this class! {{/js_compare}}
@@ -47,7 +47,7 @@ script#single-class-template(type='text/template7')
   | {{/js_compare}}
 
   footer
-    p.ic-close
+    p.back.ic-close.js-close-trigger
       i.fa.fa-2x.fa-close
 
     .share-wrapper.js-share

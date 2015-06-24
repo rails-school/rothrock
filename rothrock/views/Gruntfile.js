@@ -18,11 +18,12 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'js/rothrock.js': [
-                        'coffee/slider.coffee',
-                        'coffee/base_controller.coffee',
-                        'coffee/class_list_controller.coffee',
-                        'coffee/single_class_controller.coffee',
-                        'coffee/settings_controller.coffee',
+                        'coffee/components/slider.coffee',
+                        'coffee/components/share_menu.coffee',
+                        'coffee/controllers/base_controller.coffee',
+                        'coffee/controllers/class_list_controller.coffee',
+                        'coffee/controllers/single_class_controller.coffee',
+                        'coffee/controllers/settings_controller.coffee',
                         'coffee/main.coffee'
                     ]
                 }
