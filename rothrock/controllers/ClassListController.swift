@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Caravel
 import MessageUI
+import SwiftEventBus
 
 internal class ClassListController: BaseController, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
     private var _bus: Caravel?
@@ -39,13 +40,9 @@ internal class ClassListController: BaseController, MFMessageComposeViewControll
         Caravel.get("ClassListController", webView: webView).whenReady() { bus in
             self._bus = bus
             
-            bus.register("TriggerSettings") { name, data in
-                // TODO
-            }
-            
             bus.register("TriggerInsight") { name, data in
                 var slug = data as! String
-                //TODO
+                SwiftEventBus.post(PresentSingleClassControllerEvent.NAME, sender: PresentSingleClassControllerEvent(slug: slug))
             }
             
             bus.register("ToggleAttendance") { name, data in

@@ -17,7 +17,7 @@ public class MainController: UIViewController {
     
     private var _classListController: BaseController?
     private var _settingsController: BaseController?
-    private var _singleClassController: BaseController?
+    private var _singleClassController: UIViewController?
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +45,24 @@ public class MainController: UIViewController {
             bus.register("ResumingSettingsController") { _, _ in self._settingsController!.onResume() }
             bus.register("PausingSettingsController")  { _, _ in self._settingsController!.onPause() }
             
-            bus.register("StartingSingleClassController") { name, data in
-                self._singleClassController = SingleClassController(parentController: self, webView: self._webView)
-                self._singleClassController!.onStart()
+//            bus.register("StartingSingleClassController") { name, data in
+//                self._singleClassController = SingleClassController(parentController: self, webView: self._webView)
+//                self._singleClassController!.onStart()
+//            }
+//            bus.register("ResumingSingleClassController") { _, _ in self._singleClassController!.onResume() }
+//            bus.register("PausingSingleClassController")  { _, _ in self._singleClassController!.onPause() }
+        }
+        
+        SwiftEventBus.onMainThread(self, name: PresentSingleClassControllerEvent.NAME) { notif in
+            var e = notif.object as! PresentSingleClassControllerEvent
+            
+            if self._singleClassController == nil {
+                self._singleClassController = self.storyboard!.instantiateViewControllerWithIdentifier("SingleClassController") as! UIViewController
             }
-            bus.register("ResumingSingleClassController") { _, _ in self._singleClassController!.onResume() }
-            bus.register("PausingSingleClassController")  { _, _ in self._singleClassController!.onPause() }
+            
+            self.presentViewController(self._singleClassController!, animated: true) {
+                SwiftEventBus.post(SingleClassInitEvent.NAME, sender: SingleClassInitEvent(slug: e.slug))
+            }
         }
         
         _webView.loadRequest(NSURLRequest(URL: NSBundle.mainBundle().URLForResource("main", withExtension: "html")!))

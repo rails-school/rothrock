@@ -1,4 +1,4 @@
-var $$, BaseController, ClassListController, SettingsController, ShareMenu, SingleClassController, Slider, classListController, mainView, myApp, settingsController, singleClassController,
+var $$, BaseController, ClassListController, SettingsController, Slider, classListController, mainView, myApp, settingsController,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
 
@@ -134,50 +134,6 @@ Slider = (function() {
   };
 
   return Slider;
-
-})();
-
-ShareMenu = (function() {
-  function ShareMenu() {}
-
-  ShareMenu.prototype.show = function(app, bus, slug) {
-    return app.actions([
-      {
-        text: 'Text',
-        onClick: (function(_this) {
-          return function() {
-            return bus.post('TriggerShareText', slug);
-          };
-        })(this)
-      }, {
-        text: 'Email',
-        onClick: (function(_this) {
-          return function() {
-            return bus.post('TriggerShareEmail', slug);
-          };
-        })(this)
-      }, {
-        text: 'Facebook',
-        onClick: (function(_this) {
-          return function() {
-            return bus.post('TriggerShareFacebook', slug);
-          };
-        })(this)
-      }, {
-        text: 'Twitter',
-        onClick: (function(_this) {
-          return function() {
-            return bus.post('TriggerShareTwitter', slug);
-          };
-        })(this)
-      }, {
-        text: 'Cancel',
-        color: 'red'
-      }
-    ]);
-  };
-
-  return ShareMenu;
 
 })();
 
@@ -319,49 +275,6 @@ ClassListController = (function(superClass) {
 
 })(BaseController);
 
-SingleClassController = (function(superClass) {
-  extend(SingleClassController, superClass);
-
-  function SingleClassController(app) {
-    SingleClassController.__super__.constructor.call(this, app);
-    this.singleClassSelector = '.js-single-class';
-    this.sectionSelector = 'section';
-    this.rsvpButtonSelector = '.js-rsvp-button';
-    this.shareSelector = '.js-share';
-    this.closeTriggerSelector = '.js-close-trigger';
-    this.footerSelector = 'footer';
-  }
-
-  SingleClassController.prototype.getBus = function() {
-    return Caravel.get('SingleClassController');
-  };
-
-  SingleClassController.prototype.onStart = function() {
-    this.template = Template7.compile($("#single-class-template").html());
-    return this.getBus().register("ReceiveClass", (function(_this) {
-      return function(name, data) {
-        _this.fork();
-        $(_this.singleClassSelector).html(_this.template(data));
-        $(_this.shareSelector).on('click', function() {
-          return new ShareMenu().show(_this.getApp(), _this.getBus(), $(_this.sectionSelector).data('slug'));
-        });
-        $(_this.closeTriggerSelector).on('click', function() {});
-        return _this.done();
-      };
-    })(this));
-  };
-
-  SingleClassController.prototype.onResume = function() {
-    return $(this.rsvpButtonSelector).css({
-      bottom: $(this.footerSelector).outerHeight() + $(this.rsvpButtonSelector).outerHeight() / 2,
-      left: ($(this.footerSelector).outerWidth() - $(this.rsvpButtonSelector)) / 2
-    });
-  };
-
-  return SingleClassController;
-
-})(BaseController);
-
 SettingsController = (function(superClass) {
   extend(SettingsController, superClass);
 
@@ -470,8 +383,6 @@ mainView = myApp.addView('.view-main', {
 
 classListController = new ClassListController(myApp);
 
-singleClassController = null;
-
 settingsController = null;
 
 myApp.onPageBeforeInit('settings', (function(_this) {
@@ -484,28 +395,6 @@ myApp.onPageBeforeInit('settings', (function(_this) {
     }
     Caravel.getDefault().post("ResumingSettingsController");
     return settingsController.onResume();
-  };
-})(this));
-
-myApp.onPageBeforeInit('single-class', (function(_this) {
-  return function(page) {
-    classListController.onPause();
-    if (singleClassController == null) {
-      singleClassController = new SingleClassController(myApp);
-      Caravel.getDefault().post("StartingSingleClassController");
-      singleClassController.onStart();
-    }
-    Caravel.getDefault().post("ResumingSingleClassController");
-    return singleClassController.onResume();
-  };
-})(this));
-
-myApp.onPageBack('single-class', (function(_this) {
-  return function(page) {
-    Caravel.getDefault().post("PausingSingleClassController");
-    singleClassController.onPause();
-    Caravel.getDefault().post("ResumingClassListController");
-    return classListController.onResume();
   };
 })(this));
 

@@ -5,19 +5,14 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui')
     meta(name='apple-mobile-web-app-capable', content='yes')
     meta(name='apple-mobile-web-app-status-bar-style', content='black')
-
     title Rails School
-
     //- CSS dependencies
     link(rel='stylesheet', href='framework7.min.css')
     link(rel='stylesheet', href='font-awesome.min.css')
-
-    link(rel='stylesheet', href='rothrock-main.css')
-
+    link(rel='stylesheet', href='rothrock-single-class.css')
   body
     //- Status bar overlay for full screen mode (PhoneGap)
     .statusbar-overlay
-
     .views
       //- Your main view, should have "view-main" class
       .view.view-main
@@ -25,15 +20,14 @@ html
         //- No navbar by default
         .pages.navbar-through.toolbar-hrought
           //- Page, "data-page" contains page name
-          .page(data-page='class-list')
+          .page(data-page='single-class')
             .page-content.class-list
-              include class_list
+              include single_class
 
     //- JS dependencies
     script(type='text/javascript', src='framework7.min.js')
     script(type='text/javascript', src='jquery.min.js')
     script(type='text/javascript', src='hammer.min.js')
     script(type='text/javascript', src='caravel.min.js')
-
     //- Main script
-    script(type='text/javascript', src='rothrock-main.js')
+    script(type='text/javascript', src='rothrock-single-class.js')

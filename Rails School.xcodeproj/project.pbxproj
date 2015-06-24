@@ -11,9 +11,7 @@
 		A716CE491B3340A100420F67 /* main-background-corner.png in Resources */ = {isa = PBXBuildFile; fileRef = A716CE481B3340A100420F67 /* main-background-corner.png */; };
 		A71A7CC51AF00E760094019E /* StringSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A7CC41AF00E760094019E /* StringSerializer.swift */; };
 		A71A7CC71AF00F440094019E /* SerializerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A7CC61AF00F440094019E /* SerializerFactory.swift */; };
-		A73E628F1B13C8C400CAAA8F /* rothrock.css in Resources */ = {isa = PBXBuildFile; fileRef = A73E628E1B13C8C400CAAA8F /* rothrock.css */; };
 		A73E62911B13C8D100CAAA8F /* framework7.min.css in Resources */ = {isa = PBXBuildFile; fileRef = A73E62901B13C8D100CAAA8F /* framework7.min.css */; };
-		A73E62931B13C8DC00CAAA8F /* rothrock.js in Resources */ = {isa = PBXBuildFile; fileRef = A73E62921B13C8DC00CAAA8F /* rothrock.js */; };
 		A73E62951B13C8E500CAAA8F /* framework7.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A73E62941B13C8E500CAAA8F /* framework7.min.js */; };
 		A740521C1AEFFC88003ABBE3 /* RemoteCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A740521B1AEFFC88003ABBE3 /* RemoteCallback.swift */; };
 		A740521E1AF001AF003ABBE3 /* ArraySerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A740521D1AF001AF003ABBE3 /* ArraySerializer.swift */; };
@@ -49,6 +47,13 @@
 		A77395601B30A78A00004169 /* YanoneKaffeesatz-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A77395541B30A78A00004169 /* YanoneKaffeesatz-Regular.ttf */; };
 		A77395611B30A78A00004169 /* YanoneKaffeesatz-Regular.woff in Resources */ = {isa = PBXBuildFile; fileRef = A77395551B30A78A00004169 /* YanoneKaffeesatz-Regular.woff */; };
 		A77395671B30E4DE00004169 /* hammer.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A77395661B30E4DE00004169 /* hammer.min.js */; };
+		A7782D7D1B3B5F640001B9BA /* PresentSingleClassControllerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D7C1B3B5F640001B9BA /* PresentSingleClassControllerEvent.swift */; };
+		A7782D7F1B3B653C0001B9BA /* SingleClassInitEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D7E1B3B653C0001B9BA /* SingleClassInitEvent.swift */; };
+		A7782D821B3B68500001B9BA /* rothrock-main.css in Resources */ = {isa = PBXBuildFile; fileRef = A7782D801B3B68500001B9BA /* rothrock-main.css */; };
+		A7782D831B3B68500001B9BA /* rothrock-single-class.css in Resources */ = {isa = PBXBuildFile; fileRef = A7782D811B3B68500001B9BA /* rothrock-single-class.css */; };
+		A7782D861B3B685A0001B9BA /* rothrock-main.js in Resources */ = {isa = PBXBuildFile; fileRef = A7782D841B3B685A0001B9BA /* rothrock-main.js */; };
+		A7782D871B3B685A0001B9BA /* rothrock-single-class.js in Resources */ = {isa = PBXBuildFile; fileRef = A7782D851B3B685A0001B9BA /* rothrock-single-class.js */; };
+		A7782D891B3B68940001B9BA /* main_single_class.html in Resources */ = {isa = PBXBuildFile; fileRef = A7782D881B3B68940001B9BA /* main_single_class.html */; };
 		A77BCC511B2F54E7006FCBFE /* going-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4A1B2F54E7006FCBFE /* going-pin.png */; };
 		A77BCC521B2F54E7006FCBFE /* logo-charlottesville.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */; };
 		A77BCC531B2F54E7006FCBFE /* logo-sf.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4C1B2F54E7006FCBFE /* logo-sf.png */; };
@@ -73,7 +78,6 @@
 		A784106C1AEF1F13006709ED /* UserSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784106B1AEF1F13006709ED /* UserSerializer.swift */; };
 		A784106E1AEF1F96006709ED /* VenueSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784106D1AEF1F96006709ED /* VenueSerializer.swift */; };
 		A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786222D1AEAA56E006B0F76 /* Lesson.swift */; };
-		A78CD2A21B14D5350086EFF8 /* class_details.html in Resources */ = {isa = PBXBuildFile; fileRef = A78CD2A11B14D5350086EFF8 /* class_details.html */; };
 		A78CD2A41B14DBA50086EFF8 /* jquery.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A78CD2A31B14DBA50086EFF8 /* jquery.min.js */; };
 		A79486BD1B34DA9E0010D419 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79486BC1B34DA9E0010D419 /* SettingsController.swift */; };
 		A79486C01B34E2AC0010D419 /* TwitterPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79486BF1B34E2AC0010D419 /* TwitterPlugin.swift */; };
@@ -131,9 +135,7 @@
 		A716CE481B3340A100420F67 /* main-background-corner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main-background-corner.png"; path = "views/imgs/main-background-corner.png"; sourceTree = "<group>"; };
 		A71A7CC41AF00E760094019E /* StringSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringSerializer.swift; path = models/bll/serializers/StringSerializer.swift; sourceTree = "<group>"; };
 		A71A7CC61AF00F440094019E /* SerializerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SerializerFactory.swift; path = models/bll/serializers/SerializerFactory.swift; sourceTree = "<group>"; };
-		A73E628E1B13C8C400CAAA8F /* rothrock.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = rothrock.css; path = views/css/rothrock.css; sourceTree = "<group>"; };
 		A73E62901B13C8D100CAAA8F /* framework7.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = framework7.min.css; path = views/bower_components/framework7/dist/css/framework7.min.css; sourceTree = "<group>"; };
-		A73E62921B13C8DC00CAAA8F /* rothrock.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = rothrock.js; path = views/js/rothrock.js; sourceTree = "<group>"; };
 		A73E62941B13C8E500CAAA8F /* framework7.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = framework7.min.js; path = views/bower_components/framework7/dist/js/framework7.min.js; sourceTree = "<group>"; };
 		A740521B1AEFFC88003ABBE3 /* RemoteCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteCallback.swift; path = models/bll/remote/RemoteCallback.swift; sourceTree = "<group>"; };
 		A740521D1AF001AF003ABBE3 /* ArraySerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArraySerializer.swift; path = models/bll/serializers/ArraySerializer.swift; sourceTree = "<group>"; };
@@ -173,6 +175,13 @@
 		A77395541B30A78A00004169 /* YanoneKaffeesatz-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "YanoneKaffeesatz-Regular.ttf"; path = "views/fonts/YanoneKaffeesatz-Regular.ttf"; sourceTree = "<group>"; };
 		A77395551B30A78A00004169 /* YanoneKaffeesatz-Regular.woff */ = {isa = PBXFileReference; lastKnownFileType = file; name = "YanoneKaffeesatz-Regular.woff"; path = "views/fonts/YanoneKaffeesatz-Regular.woff"; sourceTree = "<group>"; };
 		A77395661B30E4DE00004169 /* hammer.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = hammer.min.js; path = views/bower_components/hammer.js/hammer.min.js; sourceTree = "<group>"; };
+		A7782D7C1B3B5F640001B9BA /* PresentSingleClassControllerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentSingleClassControllerEvent.swift; path = controllers/events/PresentSingleClassControllerEvent.swift; sourceTree = "<group>"; };
+		A7782D7E1B3B653C0001B9BA /* SingleClassInitEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleClassInitEvent.swift; path = controllers/events/SingleClassInitEvent.swift; sourceTree = "<group>"; };
+		A7782D801B3B68500001B9BA /* rothrock-main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = "rothrock-main.css"; path = "views/css/rothrock-main.css"; sourceTree = "<group>"; };
+		A7782D811B3B68500001B9BA /* rothrock-single-class.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = "rothrock-single-class.css"; path = "views/css/rothrock-single-class.css"; sourceTree = "<group>"; };
+		A7782D841B3B685A0001B9BA /* rothrock-main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "rothrock-main.js"; path = "views/js/rothrock-main.js"; sourceTree = "<group>"; };
+		A7782D851B3B685A0001B9BA /* rothrock-single-class.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "rothrock-single-class.js"; path = "views/js/rothrock-single-class.js"; sourceTree = "<group>"; };
+		A7782D881B3B68940001B9BA /* main_single_class.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = main_single_class.html; path = views/html/main_single_class.html; sourceTree = "<group>"; };
 		A77BCC4A1B2F54E7006FCBFE /* going-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "going-pin.png"; path = "views/imgs/going-pin.png"; sourceTree = "<group>"; };
 		A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-charlottesville.png"; path = "views/imgs/logo-charlottesville.png"; sourceTree = "<group>"; };
 		A77BCC4C1B2F54E7006FCBFE /* logo-sf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-sf.png"; path = "views/imgs/logo-sf.png"; sourceTree = "<group>"; };
@@ -200,7 +209,6 @@
 		A784106D1AEF1F96006709ED /* VenueSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenueSerializer.swift; path = models/bll/serializers/VenueSerializer.swift; sourceTree = "<group>"; };
 		A78622271AEA9F69006B0F76 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		A786222D1AEAA56E006B0F76 /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lesson.swift; path = models/beans/Lesson.swift; sourceTree = "<group>"; };
-		A78CD2A11B14D5350086EFF8 /* class_details.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = class_details.html; path = views/html/class_details.html; sourceTree = "<group>"; };
 		A78CD2A31B14DBA50086EFF8 /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = jquery.min.js; path = views/bower_components/jquery/dist/jquery.min.js; sourceTree = "<group>"; };
 		A7916A891AEB6A5700E1CD4F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A79486BC1B34DA9E0010D419 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = controllers/SettingsController.swift; sourceTree = "<group>"; };
@@ -295,8 +303,8 @@
 			isa = PBXGroup;
 			children = (
 				A77BCC5C1B2F5A6E006FCBFE /* main.html */,
+				A7782D881B3B68940001B9BA /* main_single_class.html */,
 				A741CFFA1B166895001C9272 /* settings.html */,
-				A78CD2A11B14D5350086EFF8 /* class_details.html */,
 			);
 			name = html;
 			sourceTree = "<group>";
@@ -325,7 +333,8 @@
 				A7F7A5771B1CC192009A3951 /* caravel.min.js */,
 				A78CD2A31B14DBA50086EFF8 /* jquery.min.js */,
 				A73E62941B13C8E500CAAA8F /* framework7.min.js */,
-				A73E62921B13C8DC00CAAA8F /* rothrock.js */,
+				A7782D841B3B685A0001B9BA /* rothrock-main.js */,
+				A7782D851B3B685A0001B9BA /* rothrock-single-class.js */,
 			);
 			name = js;
 			sourceTree = "<group>";
@@ -335,7 +344,8 @@
 			children = (
 				A77BCC601B2FB7C8006FCBFE /* font-awesome.min.css */,
 				A73E62901B13C8D100CAAA8F /* framework7.min.css */,
-				A73E628E1B13C8C400CAAA8F /* rothrock.css */,
+				A7782D801B3B68500001B9BA /* rothrock-main.css */,
+				A7782D811B3B68500001B9BA /* rothrock-single-class.css */,
 			);
 			name = css;
 			sourceTree = "<group>";
@@ -548,6 +558,8 @@
 				A7C72EE31B0A5BB8001BA13C /* ErrorEvent.swift */,
 				A7C72EE51B0A5CFB001BA13C /* ConfirmationEvent.swift */,
 				A7C72EE71B0A5D4B001BA13C /* InformationEvent.swift */,
+				A7782D7C1B3B5F640001B9BA /* PresentSingleClassControllerEvent.swift */,
+				A7782D7E1B3B653C0001B9BA /* SingleClassInitEvent.swift */,
 			);
 			name = events;
 			sourceTree = "<group>";
@@ -696,7 +708,6 @@
 				A746A6AC1AE9D6E800AF0FA5 /* Main.storyboard in Resources */,
 				A77BCC521B2F54E7006FCBFE /* logo-charlottesville.png in Resources */,
 				A7BD79301B05728F00303751 /* Localizable.strings in Resources */,
-				A73E62931B13C8DC00CAAA8F /* rothrock.js in Resources */,
 				A773955C1B30A78A00004169 /* Muli-Regular.ttf in Resources */,
 				A773955A1B30A78A00004169 /* Muli-Regular.eot in Resources */,
 				A716CE491B3340A100420F67 /* main-background-corner.png in Resources */,
@@ -704,6 +715,7 @@
 				A773955B1B30A78A00004169 /* Muli-Regular.svg in Resources */,
 				A77395611B30A78A00004169 /* YanoneKaffeesatz-Regular.woff in Resources */,
 				A77395571B30A78A00004169 /* Muli-Italic.svg in Resources */,
+				A7782D871B3B685A0001B9BA /* rothrock-single-class.js in Resources */,
 				A77BCC6C1B2FB93A006FCBFE /* fontawesome-webfont.woff in Resources */,
 				A77BCC551B2F54E7006FCBFE /* rsvp.png in Resources */,
 				A773955D1B30A78A00004169 /* Muli-Regular.woff in Resources */,
@@ -712,6 +724,7 @@
 				A77395601B30A78A00004169 /* YanoneKaffeesatz-Regular.ttf in Resources */,
 				A746A6B11AE9D6E800AF0FA5 /* LaunchScreen.xib in Resources */,
 				A746A6AE1AE9D6E800AF0FA5 /* Images.xcassets in Resources */,
+				A7782D821B3B68500001B9BA /* rothrock-main.css in Resources */,
 				A73E62911B13C8D100CAAA8F /* framework7.min.css in Resources */,
 				A77BCC571B2F54E7006FCBFE /* unrsvp.png in Resources */,
 				A77BCC691B2FB93A006FCBFE /* fontawesome-webfont.eot in Resources */,
@@ -719,10 +732,9 @@
 				A773955F1B30A78A00004169 /* YanoneKaffeesatz-Regular.svg in Resources */,
 				A7F7A5781B1CC192009A3951 /* caravel.min.js in Resources */,
 				A77395591B30A78A00004169 /* Muli-Italic.woff in Resources */,
-				A78CD2A21B14D5350086EFF8 /* class_details.html in Resources */,
 				A77BCC541B2F54E7006FCBFE /* rsvp-active.png in Resources */,
+				A7782D891B3B68940001B9BA /* main_single_class.html in Resources */,
 				A77395581B30A78A00004169 /* Muli-Italic.ttf in Resources */,
-				A73E628F1B13C8C400CAAA8F /* rothrock.css in Resources */,
 				A77BCC6D1B2FB93A006FCBFE /* fontawesome-webfont.woff2 in Resources */,
 				A77395671B30E4DE00004169 /* hammer.min.js in Resources */,
 				A77BCC611B2FB7C8006FCBFE /* font-awesome.min.css in Resources */,
@@ -730,6 +742,8 @@
 				A77BCC6B1B2FB93A006FCBFE /* fontawesome-webfont.ttf in Resources */,
 				A78CD2A41B14DBA50086EFF8 /* jquery.min.js in Resources */,
 				A741CFFB1B166895001C9272 /* settings.html in Resources */,
+				A7782D861B3B685A0001B9BA /* rothrock-main.js in Resources */,
+				A7782D831B3B68500001B9BA /* rothrock-single-class.css in Resources */,
 				A77BCC6E1B2FB93A006FCBFE /* FontAwesome.otf in Resources */,
 				A77BCC561B2F54E7006FCBFE /* unrsvp-active.png in Resources */,
 				A73E62951B13C8E500CAAA8F /* framework7.min.js in Resources */,
@@ -858,6 +872,7 @@
 				A7BA44F21AEAED41008514F5 /* BaseDAO.swift in Sources */,
 				A7BD79331B0579E100303751 /* StringExtension.swift in Sources */,
 				A784106E1AEF1F96006709ED /* VenueSerializer.swift in Sources */,
+				A7782D7F1B3B653C0001B9BA /* SingleClassInitEvent.swift in Sources */,
 				A7BA44F41AEAEE02008514F5 /* LessonDAO.swift in Sources */,
 				A794DC1E1AF196BA00D8743F /* BoolSerializer.swift in Sources */,
 				A772CBC21B066EE40055AF4E /* UserBusiness.swift in Sources */,
@@ -877,6 +892,7 @@
 				A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */,
 				A794DC321AF1A88E00D8743F /* IVenueBusiness.swift in Sources */,
 				A7C72EE41B0A5BB8001BA13C /* ErrorEvent.swift in Sources */,
+				A7782D7D1B3B5F640001B9BA /* PresentSingleClassControllerEvent.swift in Sources */,
 				A7BA44EE1AEAEC25008514F5 /* IUserDAO.swift in Sources */,
 				A74F045D1AEB274700EB8916 /* IJSONDeserializer.swift in Sources */,
 				A77BCC591B2F5573006FCBFE /* ClassListController.swift in Sources */,
