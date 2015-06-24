@@ -1,0 +1,56 @@
+script#single-class-template(type='text/template7')
+  | {{#js_compare "this.isAttending = true"}}
+  header
+    img.class-going-pin(src='going-pin.png')
+    p.countdown.js-header-countdown {{lesson.countdown}}
+  | {{else}}
+  header.hidden
+    img.class-going-pin(src='going-pin.png')
+    p.countdown.js-header-countdown {{lesson.countdown}}
+  | {{/js_compare}}
+
+  section
+    img(src="logo-diamond.png")
+    p.attendees
+      | {{#js_compare "this.attendees == 0"}} Be the first join to join this class! {{/js_compare}}
+      | {{#js_compare "this.attendees == 1"}} 1 student is going {{/js_compare}}
+      | {{#js_compare "this.attendees > 1"}}{{attendees}} students are going {{/js_compare}}
+
+    h1 {{lesson.title}}
+    h2 {{lesson.summary}}
+
+    ul
+      li
+        p.ic-ruby
+          i.fa.fa-diamond
+        p {{teacher.name}}
+      li
+        p.ic-venue
+          i.fa.fa-map-marker
+        p {{venue.name}}
+      li
+        p.ic-calendar
+          i.fa.fa-calendar-o
+        p {{lesson.date}} ({{lesson.countdown}})
+      li
+        p.ic-clock
+          i.fa.fa-clock-o
+        p {{lesson.hour}}
+
+    p.description {{lesson.description}}
+
+  //- RSVP button
+  | {{#js_compare "this.isAttending == true"}}
+  .class-rsvp-button.unrsvp.js-class-rsvp-button unRSVP
+  | {{else}}
+  .class-rsvp-button.js-class-rsvp-button RSVP
+  | {{/js_compare}}
+
+  footer
+    p.ic-close
+      i.fa.fa-2x.fa-close
+
+    .share-wrapper.js-share
+      p.ic-share
+        i.fa.fa-share-alt
+      p Share
