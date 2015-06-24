@@ -34,6 +34,75 @@
 .invisible {
   visibility: hidden; }
 
+.class-list section .class-card-wrapper .class-rsvp-button, .single-class .rsvp-button {
+  width: 150px;
+  height: 51.72414px;
+  padding: 2px 0;
+  font-family: "Yanone Kaffeesatz";
+  font-size: 32px;
+  color: #fff;
+  text-shadow: 0 1px 1px #333;
+  text-align: center;
+  background-color: #fff;
+  background-image: url("rsvp.png");
+  background-size: 150px;
+  background-repeat: no-repeat;
+  cursor: pointer; }
+  .class-list section .class-card-wrapper .class-rsvp-button:active, .single-class .rsvp-button:active {
+    background-image: url("rsvp-active.png"); }
+  .class-list section .class-card-wrapper .unrsvp.class-rsvp-button, .single-class .unrsvp.rsvp-button {
+    background-image: url("unrsvp.png"); }
+    .class-list section .class-card-wrapper .unrsvp.class-rsvp-button:active, .single-class .unrsvp.rsvp-button:active {
+      background-image: url("unrsvp-active.png"); }
+
+.class-list section .class-card-wrapper .class-card h1 {
+  color: #0f3344;
+  font-family: "Yanone Kaffeesatz";
+  font-size: 32px;
+  line-height: 1.2em; }
+
+.class-list section .class-card-wrapper .class-card h2 {
+  font-family: "Muli";
+  font-size: 18px; }
+
+.class-list section .class-card-wrapper .class-card h1, .class-list section .class-card-wrapper .class-card h2 {
+  margin: 10px 0;
+  font-weight: normal; }
+
+.class-list section .class-card-wrapper .class-card ul {
+  margin: 15px 0;
+  padding: 0;
+  list-style-type: none; }
+  .class-list section .class-card-wrapper .class-card ul li {
+    margin: 5px 0;
+    padding: 0; }
+    .class-list section .class-card-wrapper .class-card ul li p {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0;
+      font-family: "Muli";
+      font-size: 15px; }
+    .class-list section .class-card-wrapper .class-card ul li p:first-child {
+      width: 25px;
+      padding: 0 5px 0 0;
+      text-align: center;
+      color: #999; }
+    .class-list section .class-card-wrapper .class-card ul li p:last-child {
+      color: #333; }
+
+.class-list section .class-card-wrapper .class-share-wrapper > *, .single-class footer .share-wrapper > * {
+  display: inline-block;
+  vertical-align: middle; }
+.class-list section .class-card-wrapper .class-share-wrapper p, .single-class footer .share-wrapper p {
+  margin: 0;
+  font-size: 13px; }
+.class-list section .class-card-wrapper .class-share-wrapper .ic-share, .single-class footer .share-wrapper .ic-share {
+  padding: 0 5px 0 0;
+  color: #999; }
+.class-list section .class-card-wrapper .class-share-wrapper p:last-child, .single-class footer .share-wrapper p:last-child {
+  font-family: "Muli";
+  color: #333; }
+
 .class-list {
   display: -webkit-box;
   display: -moz-box;
@@ -149,17 +218,6 @@
       color: #ab1818; }
     .class-list section .class-card-wrapper .class-share-wrapper {
       margin: 0 5px 30px 5px; }
-      .class-list section .class-card-wrapper .class-share-wrapper > * {
-        display: inline-block; }
-      .class-list section .class-card-wrapper .class-share-wrapper p {
-        margin: 0;
-        font-size: 13px; }
-      .class-list section .class-card-wrapper .class-share-wrapper .ic-share {
-        padding: 0 5px 0 0;
-        color: #999; }
-      .class-list section .class-card-wrapper .class-share-wrapper p:last-child {
-        font-family: "Muli";
-        color: #333; }
 
 .class-list section .class-card-wrapper > * {
   position: absolute; }
@@ -186,61 +244,12 @@
   overflow: auto;
   z-index: 1; }
 .class-list section .class-card-wrapper .class-rsvp-button {
-  width: 150px;
-  height: 51.72414px;
-  padding: 2px 0;
-  font-family: "Yanone Kaffeesatz";
-  font-size: 32px;
-  color: #fff;
-  text-shadow: 0 1px 1px #333;
-  text-align: center;
-  background-color: #fff;
-  background-image: url("rsvp.png");
-  background-size: 150px;
-  background-repeat: no-repeat;
-  cursor: pointer;
   z-index: 2; }
-  .class-list section .class-card-wrapper .class-rsvp-button:active {
-    background-image: url("rsvp-active.png"); }
-  .class-list section .class-card-wrapper .class-rsvp-button.unrsvp {
-    background-image: url("unrsvp.png"); }
-    .class-list section .class-card-wrapper .class-rsvp-button.unrsvp:active {
-      background-image: url("unrsvp-active.png"); }
 
 .class-list section .class-card-wrapper .class-card {
   background-color: #fff; }
-  .class-list section .class-card-wrapper .class-card h1, .class-list section .class-card-wrapper .class-card h2 {
-    margin: 10px 0;
-    font-weight: normal; }
-  .class-list section .class-card-wrapper .class-card h1 {
-    color: #0f3344;
-    font-family: "Yanone Kaffeesatz";
-    font-size: 32px;
-    line-height: 1.2em; }
   .class-list section .class-card-wrapper .class-card h2 {
-    color: #333;
-    font-family: "Muli";
-    font-size: 18px; }
-  .class-list section .class-card-wrapper .class-card ul {
-    margin: 15px 0;
-    padding: 0;
-    list-style-type: none; }
-    .class-list section .class-card-wrapper .class-card ul li {
-      margin: 5px 0;
-      padding: 0; }
-      .class-list section .class-card-wrapper .class-card ul li p {
-        display: inline-block;
-        vertical-align: middle;
-        margin: 0;
-        font-family: "Muli";
-        font-size: 15px; }
-      .class-list section .class-card-wrapper .class-card ul li p:first-child {
-        width: 25px;
-        padding: 0 5px 0 0;
-        text-align: center;
-        color: #999; }
-      .class-list section .class-card-wrapper .class-card ul li p:last-child {
-        color: #333; }
+    color: #333; }
 
 @font-face {
   font-family: "Muli";
@@ -277,6 +286,75 @@
 
 .invisible {
   visibility: hidden; }
+
+.class-list section .class-card-wrapper .class-rsvp-button, .single-class .rsvp-button {
+  width: 150px;
+  height: 51.72414px;
+  padding: 2px 0;
+  font-family: "Yanone Kaffeesatz";
+  font-size: 32px;
+  color: #fff;
+  text-shadow: 0 1px 1px #333;
+  text-align: center;
+  background-color: #fff;
+  background-image: url("rsvp.png");
+  background-size: 150px;
+  background-repeat: no-repeat;
+  cursor: pointer; }
+  .class-list section .class-card-wrapper .class-rsvp-button:active, .single-class .rsvp-button:active {
+    background-image: url("rsvp-active.png"); }
+  .class-list section .class-card-wrapper .unrsvp.class-rsvp-button, .single-class .unrsvp.rsvp-button {
+    background-image: url("unrsvp.png"); }
+    .class-list section .class-card-wrapper .unrsvp.class-rsvp-button:active, .single-class .unrsvp.rsvp-button:active {
+      background-image: url("unrsvp-active.png"); }
+
+.class-list section .class-card-wrapper .class-card h1 {
+  color: #0f3344;
+  font-family: "Yanone Kaffeesatz";
+  font-size: 32px;
+  line-height: 1.2em; }
+
+.class-list section .class-card-wrapper .class-card h2 {
+  font-family: "Muli";
+  font-size: 18px; }
+
+.class-list section .class-card-wrapper .class-card h1, .class-list section .class-card-wrapper .class-card h2 {
+  margin: 10px 0;
+  font-weight: normal; }
+
+.class-list section .class-card-wrapper .class-card ul {
+  margin: 15px 0;
+  padding: 0;
+  list-style-type: none; }
+  .class-list section .class-card-wrapper .class-card ul li {
+    margin: 5px 0;
+    padding: 0; }
+    .class-list section .class-card-wrapper .class-card ul li p {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0;
+      font-family: "Muli";
+      font-size: 15px; }
+    .class-list section .class-card-wrapper .class-card ul li p:first-child {
+      width: 25px;
+      padding: 0 5px 0 0;
+      text-align: center;
+      color: #999; }
+    .class-list section .class-card-wrapper .class-card ul li p:last-child {
+      color: #333; }
+
+.class-list section .class-card-wrapper .class-share-wrapper > *, .single-class footer .share-wrapper > * {
+  display: inline-block;
+  vertical-align: middle; }
+.class-list section .class-card-wrapper .class-share-wrapper p, .single-class footer .share-wrapper p {
+  margin: 0;
+  font-size: 13px; }
+.class-list section .class-card-wrapper .class-share-wrapper .ic-share, .single-class footer .share-wrapper .ic-share {
+  padding: 0 5px 0 0;
+  color: #999; }
+.class-list section .class-card-wrapper .class-share-wrapper p:last-child, .single-class footer .share-wrapper p:last-child {
+  font-family: "Muli";
+  color: #333; }
 
 .settings {
   display: -webkit-box;
@@ -355,3 +433,131 @@
 
 .invisible {
   visibility: hidden; }
+
+.class-list section .class-card-wrapper .class-rsvp-button, .single-class .rsvp-button {
+  width: 150px;
+  height: 51.72414px;
+  padding: 2px 0;
+  font-family: "Yanone Kaffeesatz";
+  font-size: 32px;
+  color: #fff;
+  text-shadow: 0 1px 1px #333;
+  text-align: center;
+  background-color: #fff;
+  background-image: url("rsvp.png");
+  background-size: 150px;
+  background-repeat: no-repeat;
+  cursor: pointer; }
+  .class-list section .class-card-wrapper .class-rsvp-button:active, .single-class .rsvp-button:active {
+    background-image: url("rsvp-active.png"); }
+  .class-list section .class-card-wrapper .unrsvp.class-rsvp-button, .single-class .unrsvp.rsvp-button {
+    background-image: url("unrsvp.png"); }
+    .class-list section .class-card-wrapper .unrsvp.class-rsvp-button:active, .single-class .unrsvp.rsvp-button:active {
+      background-image: url("unrsvp-active.png"); }
+
+.class-list section .class-card-wrapper .class-card h1 {
+  color: #0f3344;
+  font-family: "Yanone Kaffeesatz";
+  font-size: 32px;
+  line-height: 1.2em; }
+
+.class-list section .class-card-wrapper .class-card h2 {
+  font-family: "Muli";
+  font-size: 18px; }
+
+.class-list section .class-card-wrapper .class-card h1, .class-list section .class-card-wrapper .class-card h2 {
+  margin: 10px 0;
+  font-weight: normal; }
+
+.class-list section .class-card-wrapper .class-card ul {
+  margin: 15px 0;
+  padding: 0;
+  list-style-type: none; }
+  .class-list section .class-card-wrapper .class-card ul li {
+    margin: 5px 0;
+    padding: 0; }
+    .class-list section .class-card-wrapper .class-card ul li p {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0;
+      font-family: "Muli";
+      font-size: 15px; }
+    .class-list section .class-card-wrapper .class-card ul li p:first-child {
+      width: 25px;
+      padding: 0 5px 0 0;
+      text-align: center;
+      color: #999; }
+    .class-list section .class-card-wrapper .class-card ul li p:last-child {
+      color: #333; }
+
+.class-list section .class-card-wrapper .class-share-wrapper > *, .single-class footer .share-wrapper > * {
+  display: inline-block;
+  vertical-align: middle; }
+.class-list section .class-card-wrapper .class-share-wrapper p, .single-class footer .share-wrapper p {
+  margin: 0;
+  font-size: 13px; }
+.class-list section .class-card-wrapper .class-share-wrapper .ic-share, .single-class footer .share-wrapper .ic-share {
+  padding: 0 5px 0 0;
+  color: #999; }
+.class-list section .class-card-wrapper .class-share-wrapper p:last-child, .single-class footer .share-wrapper p:last-child {
+  font-family: "Muli";
+  color: #333; }
+
+.single-class header,
+.single-class section,
+.single-class .rsvp-button
+.single-class footer {
+  position: absolute; }
+
+.single-class header {
+  top: -12.5px;
+  left: -12.5px;
+  z-index: 2; }
+  .single-class header > * {
+    display: inline-block;
+    vertical-align: middle; }
+  .single-class header .class-going-pin {
+    width: 50px;
+    height: 50px; }
+
+.single-class section {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  overflow: auto;
+  z-index: 1; }
+  .single-class section h2 {
+    color: #999; }
+  .single-class section .description {
+    margin: 5px 0;
+    font-size: 18px;
+    font-family: "Muli";
+    color: #333; }
+
+.single-class .rsvp-button {
+  z-index: 3; }
+
+.single-class footer {
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+  width: 100%;
+  z-index: 2; }

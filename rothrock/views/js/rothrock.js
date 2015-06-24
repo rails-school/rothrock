@@ -305,11 +305,18 @@ SingleClassController = (function(superClass) {
 
   function SingleClassController(app) {
     SingleClassController.__super__.constructor.call(this, app);
+    this.rsvpButtonSelector = '.js-rsvp-button';
+    this.footerSelector = 'footer';
   }
 
   SingleClassController.prototype.onStart = function() {};
 
-  SingleClassController.prototype.onResume = function() {};
+  SingleClassController.prototype.onResume = function() {
+    return $(this.rsvpButtonSelector).css({
+      bottom: $(this.footerSelector).outerHeight() + $(this.rsvpButtonSelector).outerHeight() / 2,
+      left: ($(this.footerSelector).outerWidth() - $(this.rsvpButtonSelector)) / 2
+    });
+  };
 
   return SingleClassController;
 

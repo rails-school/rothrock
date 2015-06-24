@@ -1,3 +1,75 @@
 @import "base";
 
-$single-class-selector: "single-class";
+$single-class-selector: ".single-class";
+
+#{$single-class-selector} header,
+#{$single-class-selector} section,
+#{$single-class-selector} .rsvp-button
+#{$single-class-selector} footer {
+  position: absolute;
+}
+
+#{$single-class-selector} header {
+  top: (-$going-pin-size * 0.25);
+  left: (-$going-pin-size * 0.25);
+
+  z-index: 2;
+
+  > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .class-going-pin {
+    width: $going-pin-size;
+    height: $going-pin-size;
+  }
+}
+
+#{$single-class-selector} section {
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+
+  overflow: auto;
+  z-index: 1;
+
+  h2 {
+    color: $gray;
+  }
+
+  .description {
+    margin: 5px 0;
+
+    font: {
+      size: $subtitle;
+      family: $body-font;
+    }
+    color: $black;
+  }
+}
+
+#{$single-class-selector} .rsvp-button {
+  @extend %rsvp-button;
+
+  z-index: 3;
+}
+
+#{$single-class-selector} footer {
+  bottom: 0;
+  left: 0;
+  @include display(flex);
+  @include justify-content(space-between);
+
+  width: 100%;
+
+  z-index: 2;
+
+  .share-wrapper {
+    @extend %share-wrapper;
+  }
+}

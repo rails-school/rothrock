@@ -17,6 +17,7 @@ public class MainController: UIViewController {
     
     private var _classListController: BaseController?
     private var _settingsController: BaseController?
+    private var _singleClassController: BaseController?
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,14 +44,16 @@ public class MainController: UIViewController {
             }
             bus.register("ResumingSettingsController") { _, _ in self._settingsController!.onResume() }
             bus.register("PausingSettingsController")  { _, _ in self._settingsController!.onPause() }
+            
+            bus.register("StartingSingleClassController") { name, data in
+                self._singleClassController = SingleClassController(parentController: self, webView: self._webView)
+                self._singleClassController!.onStart()
+            }
+            bus.register("ResumingSingleClassController") { _, _ in self._singleClassController!.onResume() }
+            bus.register("PausingSingleClassController")  { _, _ in self._singleClassController!.onPause() }
         }
         
         _webView.loadRequest(NSURLRequest(URL: NSBundle.mainBundle().URLForResource("main", withExtension: "html")!))
-    }
-
-    public override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     public func fork() {
