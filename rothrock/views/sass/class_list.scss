@@ -3,6 +3,12 @@
 $class-list-selector: "class-list";
 $going-pin-size: 50px;
 
+$title: 32px;
+$subtitle: 18px;
+$body: 15px;
+$label: 13px;
+$sublabel: 11px;
+
 .#{$class-list-selector} {
   @include display(flex);
   @include flex-direction(column);
@@ -45,7 +51,7 @@ $going-pin-size: 50px;
 
       font: {
         family: $body-font;
-        size: 8px;
+        size: $sublabel;
       }
       text-align: center;
       color: $gray;
@@ -66,7 +72,7 @@ $going-pin-size: 50px;
 
       font: {
         family: $body-font;
-        size: 9px;
+        size: $label;
       }
       color: $gray;
     }
@@ -97,7 +103,7 @@ $going-pin-size: 50px;
       text-align: center;
       font: {
         family: $body-font;
-        size: 9px;
+        size: $label;
       }
       color: $red;
     }
@@ -112,7 +118,7 @@ $going-pin-size: 50px;
       p {
         margin: 0;
 
-        font-size: 9px;
+        font-size: $label;
       }
 
       .ic-share {
@@ -150,7 +156,7 @@ $going-pin-size: 50px;
     color: $black;
     font: {
       family: $body-font;
-      size: 9px;
+      size: $label;
     }
 
     border-bottom: 2px solid $red;
@@ -177,7 +183,7 @@ $going-pin-size: 50px;
 
   .class-rsvp-button {
     $rsvp-original-ratio: 290 / 100;
-    $rsvp-width: 100px;
+    $rsvp-width: 150px;
 
     width: $rsvp-width;
     height: ($rsvp-width / $rsvp-original-ratio);
@@ -185,7 +191,7 @@ $going-pin-size: 50px;
 
     font: {
       family: $headline-font;
-      size: 20px;
+      size: $title;
     }
     color: $white;
     text-shadow: 0 1px 1px $black;
@@ -220,7 +226,7 @@ $going-pin-size: 50px;
   background-color: $white;
 
   h1, h2 {
-    margin: 5px 0;
+    margin: 10px 0;
 
     font-weight: normal;
   }
@@ -229,7 +235,7 @@ $going-pin-size: 50px;
     color: $blue;
     font: {
       family: $headline-font;
-      size: 24px;
+      size: $title;
     }
     line-height: 1.2em;
   }
@@ -238,7 +244,7 @@ $going-pin-size: 50px;
     color: $black;
     font: {
       family: $body-font;
-      size: 12px;
+      size: $subtitle;
     }
   }
 
@@ -260,7 +266,7 @@ $going-pin-size: 50px;
 
         font: {
           family: $body-font;
-          size: 10px;
+          size: $body;
         }
       }
 
