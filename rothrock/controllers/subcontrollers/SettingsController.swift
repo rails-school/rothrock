@@ -56,21 +56,18 @@ internal class SettingsController: SubController {
                 var value = data as! Int
                 
                 BusinessFactory.providePreference().updateTwoHourReminderPreference(TwoHourNotificationPreference(rawValue: value)!)
-                self._confirmSaving()
             }
             
             bus.register("DayReminderNewValue") { name, data in
                 var value = data as! Int
                 
                 BusinessFactory.providePreference().updateDayReminderPreference(DayNotificationPreference(rawValue: value)!)
-                self._confirmSaving()
             }
             
             bus.register("LessonAlertNewValue") { name, data in
                 var value = data as! Int
                 
                 BusinessFactory.providePreference().updateLessonAlertPreference(value == 1)
-                self._confirmSaving()
             }
             
             bus.register("LogOut") { name, data in
