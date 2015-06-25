@@ -103,12 +103,12 @@ Slider = (function() {
         hammertime = new Hammer.Manager(e);
         hammertime.add(new Hammer.Pan({
           event: 'customPanLeft',
-          threshold: 30,
+          threshold: 20,
           direction: Hammer.DIRECTION_LEFT
         }));
         hammertime.add(new Hammer.Pan({
           event: 'customPanRight',
-          threshold: 30,
+          threshold: 20,
           direction: Hammer.DIRECTION_RIGHT
         }));
         hammertime.on('customPanLeft', function(ev) {
