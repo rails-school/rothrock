@@ -178,10 +178,15 @@
   justify-content: space-between;
   -ms-flex-pack: justify;
   width: 100%;
-  padding: 10px 20px;
-  box-sizing: border-box;
   background-color: white;
   border-top: 1px solid #ccc;
   z-index: 2; }
+  .single-class footer > * {
+    padding-top: 10px;
+    padding-bottom: 10px; }
   .single-class footer p.ic-close {
-    margin: 0; }
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px; }
+  .single-class footer .share-wrapper {
+    padding-right: 20px; }
