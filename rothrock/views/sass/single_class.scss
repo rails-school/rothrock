@@ -90,6 +90,7 @@ $single-class-selector: ".single-class";
   left: 0;
   @include display(flex);
   @include justify-content(space-between);
+  @include align-items(center);
 
   width: 100%;
 

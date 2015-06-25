@@ -177,6 +177,15 @@
   -o-justify-content: space-between;
   justify-content: space-between;
   -ms-flex-pack: justify;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
   width: 100%;
   background-color: white;
   border-top: 1px solid #ccc;
