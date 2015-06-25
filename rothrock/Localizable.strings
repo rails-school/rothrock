@@ -26,6 +26,7 @@
 "reminder_next_day" = "Tomorrow";
 
 "class_share_text" = "Hey, I am going to that class: %@. Join me!";
+"class_add_to_calendar_confirmation" = "Do you want to add this event to your calendar?";
 
 "settings_account_label" = "Account";
 "settings_email_placeholder" = "Email";

@@ -34,7 +34,7 @@ public class SharePlugin {
                             controller.messageComposeDelegate = self._owner
                             
                             self._owner.done()
-                            self._owner.controller.presentViewController(controller, animated: true, completion: nil)
+                            self._owner.presentViewController(controller, animated: true, completion: nil)
                         },
                         failure: { self._owner.publishError($0) }
                 )
@@ -58,7 +58,7 @@ public class SharePlugin {
                             controller.mailComposeDelegate = self._owner
                             
                             self._owner.done()
-                            self._owner.controller.presentViewController(controller, animated: true, completion: nil)
+                            self._owner.presentViewController(controller, animated: true, completion: nil)
                         },
                         failure: { self._owner.publishError($0) }
                 )
