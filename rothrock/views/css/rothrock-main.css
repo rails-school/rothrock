@@ -411,5 +411,9 @@
     box-sizing: border-box;
     text-align: center; }
 
+.settings .item-input input {
+  text-align: right; }
+
 .settings .item-input select {
-  color: #aaa; }
+  color: #aaa;
+  direction: rtl; }
