@@ -7,7 +7,6 @@ mainView = myApp.addView '.view-main', {
 }
 
 classListController = new ClassListController myApp
-#singleClassController = new SingleClassController myApp
 settingsController = null
 
 myApp.onPageBeforeInit 'settings', (page) =>
@@ -20,10 +19,6 @@ myApp.onPageBeforeInit 'settings', (page) =>
   Caravel.getDefault().post("ResumingSettingsController")
   settingsController.onResume()
 
-myApp.onPageBack 'single-class', (page) =>
-  singleClassController.onPause()
-  classListController.onResume()
-
 myApp.onPageBack 'settings', (page) =>
   Caravel.getDefault().post("PausingSettingsController")
   settingsController.onPause()
@@ -34,3 +29,8 @@ Caravel.getDefault().post("StartingClassListController")
 classListController.onStart()
 Caravel.getDefault().post("ResumingClassListController")
 classListController.onResume()
+
+Caravel.getDefault().register "ManualResumingClassListController", () =>
+  classListController.onResume()
+Caravel.getDefault().register "ManualPausingClassListController", () =>
+  classListController.onPause()

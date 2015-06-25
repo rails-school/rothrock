@@ -1,6 +1,72 @@
-var $$, BaseController, ClassListController, SettingsController, SingleClassController, Slider, classListController, mainView, myApp, settingsController,
+var $$, BaseController, ClassListController, DeviceInterface, SettingsController, ShareMenu, Slider, classListController, mainView, myApp, settingsController,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
+
+DeviceInterface = (function() {
+  function DeviceInterface(bus, slug) {
+    this.bus = bus;
+    this.slug = slug;
+  }
+
+  DeviceInterface.prototype.addToCalendar = function() {
+    return this.bus.post("AddToCalendar", this.slug);
+  };
+
+  DeviceInterface.prototype.addToMap = function() {
+    return this.bus.post("AddToMap", this.slug);
+  };
+
+  return DeviceInterface;
+
+})();
+
+ShareMenu = (function() {
+  function ShareMenu(app, bus, slug) {
+    this.app = app;
+    this.bus = bus;
+    this.slug = slug;
+  }
+
+  ShareMenu.prototype.show = function() {
+    return this.app.actions([
+      {
+        text: 'Text',
+        onClick: (function(_this) {
+          return function() {
+            return _this.bus.post('TriggerShareText', _this.slug);
+          };
+        })(this)
+      }, {
+        text: 'Email',
+        onClick: (function(_this) {
+          return function() {
+            return _this.bus.post('TriggerShareEmail', _this.slug);
+          };
+        })(this)
+      }, {
+        text: 'Facebook',
+        onClick: (function(_this) {
+          return function() {
+            return _this.bus.post('TriggerShareFacebook', _this.slug);
+          };
+        })(this)
+      }, {
+        text: 'Twitter',
+        onClick: (function(_this) {
+          return function() {
+            return _this.bus.post('TriggerShareTwitter', _this.slug);
+          };
+        })(this)
+      }, {
+        text: 'Cancel',
+        color: 'red'
+      }
+    ]);
+  };
+
+  return ShareMenu;
+
+})();
 
 Slider = (function() {
   Slider.ANIMATION_DURATION = 500;
@@ -109,6 +175,7 @@ Slider = (function() {
     cardLeft = pin.outerWidth(true) / 2;
     cardHeight = wrapper.height() - attendees.outerHeight(true) - share.outerHeight(true);
     cardHeight = cardHeight - cardTop - rsvp.outerHeight(true) / 2;
+    cardHeight = cardHeight - parseInt(card.css('padding-top')) - parseInt(card.css('padding-bottom'));
     card.css({
       top: cardTop,
       left: cardLeft,
@@ -180,6 +247,8 @@ ClassListController = (function(superClass) {
     this.settingsSelector = '.js-settings';
     this.cardWrapperSelector = '.js-class-card-wrapper';
     this.cardSelector = '.js-class-card';
+    this.mapSelector = '.js-map';
+    this.calendarSelector = '.js-calendar';
     this.goingPinSelector = '.js-class-going-pin';
     this.countdownSelector = '.js-class-countdown';
     this.rsvpSelector = '.js-class-rsvp-button';
@@ -216,33 +285,16 @@ ClassListController = (function(superClass) {
           $(e).find(_this.cardSelector).first().on('click', function() {
             return _this.getBus().post('TriggerInsight', slug);
           });
+          $(e).find(_this.mapSelector).first().on('click', function(e) {
+            e.stopPropagation();
+            return new DeviceInterface(_this.getBus(), slug).addToMap();
+          });
+          $(e).find(_this.calendarSelector).first().on('click', function(e) {
+            e.stopPropagation();
+            return new DeviceInterface(_this.getBus(), slug).addToCalendar();
+          });
           $(e).find(_this.shareSelector).first().on('click', function() {
-            return _this.getApp().actions([
-              {
-                text: 'Text',
-                onClick: function() {
-                  return _this.getBus().post('TriggerShareText', slug);
-                }
-              }, {
-                text: 'Email',
-                onClick: function() {
-                  return _this.getBus().post('TriggerShareEmail', slug);
-                }
-              }, {
-                text: 'Facebook',
-                onClick: function() {
-                  return _this.getBus().post('TriggerShareFacebook', slug);
-                }
-              }, {
-                text: 'Twitter',
-                onClick: function() {
-                  return _this.getBus().post('TriggerShareTwitter', slug);
-                }
-              }, {
-                text: 'Cancel',
-                color: 'red'
-              }
-            ]);
+            return new ShareMenu(_this.getApp(), _this.getBus(), slug).show();
           });
           return $(e).find(_this.rsvpSelector).first().on('click', function() {
             slug = $(e).data('slug');
@@ -257,36 +309,12 @@ ClassListController = (function(superClass) {
         return _this.getBus().post("TriggerSettings");
       };
     })(this));
-    this.getBus().register('ReceiveSchool', (function(_this) {
+    return this.getBus().register('ReceiveSchool', (function(_this) {
       return function(name, data) {
         if (data === "cville") {
           return $(_this.logoSelector).attr('src', 'logo-charlottesville.png');
         } else {
           return $(_this.logoSelector).attr('src', 'logo-sf.png');
-        }
-      };
-    })(this));
-    return this.getBus().register("SetAttendance", (function(_this) {
-      return function(name, data) {
-        var cardWrapper, countdown, goingPin, isAttending, rsvpButton;
-        isAttending = data.isAttending;
-        cardWrapper = $(_this.listSelector).find(_this.cardWrapperSelector + "[data-slug='" + data.slug + "']").first();
-        rsvpButton = cardWrapper.find(_this.rsvpSelector).first();
-        if (isAttending) {
-          rsvpButton.addClass('unrsvp');
-          rsvpButton.text('unRSVP');
-        } else {
-          rsvpButton.removeClass('unrsvp');
-          rsvpButton.text('RSVP');
-        }
-        goingPin = cardWrapper.find(_this.goingPinSelector).first();
-        countdown = cardWrapper.find(_this.countdownSelector).first();
-        if (isAttending) {
-          goingPin.removeClass('invisible');
-          return countdown.addClass('going');
-        } else {
-          goingPin.addClass('invisible');
-          return countdown.removeClass('going');
         }
       };
     })(this));
@@ -297,115 +325,6 @@ ClassListController = (function(superClass) {
   };
 
   return ClassListController;
-
-})(BaseController);
-
-SingleClassController = (function(superClass) {
-  extend(SingleClassController, superClass);
-
-  function SingleClassController(app) {
-    SingleClassController.__super__.constructor.call(this, app);
-    this.blockSelector = '.js-class-details';
-    this.attendanceToggle = $('.js-toggle-attendance');
-    this.toolbar = $('.toolbar');
-    this.attendanceToggle.on('click', (function(_this) {
-      return function() {
-        if (_this.canIToggleAttendance) {
-          return _this.getBus().post('UpdateAttendance', _this.isAttending);
-        } else {
-          return _this.getBus().post('UnableToToggleAttendance');
-        }
-      };
-    })(this));
-    this.getBus().register("DisplayClassDetails", (function(_this) {
-      return function(name, data) {
-        _this._setContent(data);
-        return $('.js-class-details-share').on('click', function() {
-          return _this.getApp().actions([
-            {
-              text: 'Text a friend',
-              onClick: function() {
-                return _this.getBus().post("ClassDetailsText");
-              }
-            }, {
-              text: 'Email a friend',
-              onClick: function() {
-                return _this.getBus().post("ClassDetailsEmail");
-              }
-            }, {
-              text: 'Share on Facebook',
-              onClick: function() {
-                return _this.getBus().post("ClassDetailsFacebook");
-              }
-            }, {
-              text: 'Share on Twitter',
-              onClick: function() {
-                return _this.getBus().post("ClassDetailsTwitter");
-              }
-            }, {
-              text: 'Cancel',
-              color: 'red'
-            }
-          ]);
-        });
-      };
-    })(this));
-    this.getBus().register("CanIToggleAttendance", (function(_this) {
-      return function(name, data) {
-        _this.canIToggleAttendance = data;
-        _this.attendanceToggle.text('RSVP!');
-        return _this.toolbar.addClass('unsigned');
-      };
-    })(this));
-    this.getBus().register("SetAttendance", (function(_this) {
-      return function(name, data) {
-        _this.isAttending = data;
-        _this.toolbar.removeClass('unsigned');
-        if (_this.isAttending) {
-          _this.attendanceToggle.text('unRSVP');
-          return _this.toolbar.addClass('attending');
-        } else {
-          _this.attendanceToggle.text('RSVP!');
-          return _this.toolbar.removeClass('attending');
-        }
-      };
-    })(this));
-  }
-
-  SingleClassController.prototype._setContent = function(data) {
-    var attendees;
-    this.fork();
-    this.toolbar.show();
-    if (this.template == null) {
-      this.template = Template7.compile($('#class-details-template').html());
-    }
-    data.teacher.gravatar = "http://www.gravatar.com/avatar/" + (md5(data.teacher.email));
-    attendees = data.schoolClass.students;
-    if (attendees > 1) {
-      attendees = attendees + " students will attend this class";
-    } else if (attendees === 1) {
-      attendees = "1 student will attend this class";
-    } else {
-      attendees = "Be the first to join this class!";
-    }
-    data.schoolClass.attendees = attendees;
-    $(this.blockSelector).html(this.template({
-      data: data
-    }));
-    $(this.blockSelector).find('.js-class-details-map').on('click', (function(_this) {
-      return function() {
-        return _this.getBus().post("RequestClassDetailsMap");
-      };
-    })(this));
-    $(this.blockSelector).find('.js-class-details-calendar').on('click', (function(_this) {
-      return function() {
-        return _this.getBus().post("RequestClassDetailsCalendar");
-      };
-    })(this));
-    return this.done();
-  };
-
-  return SingleClassController;
 
 })(BaseController);
 
@@ -532,13 +451,6 @@ myApp.onPageBeforeInit('settings', (function(_this) {
   };
 })(this));
 
-myApp.onPageBack('single-class', (function(_this) {
-  return function(page) {
-    singleClassController.onPause();
-    return classListController.onResume();
-  };
-})(this));
-
 myApp.onPageBack('settings', (function(_this) {
   return function(page) {
     Caravel.getDefault().post("PausingSettingsController");
@@ -555,3 +467,15 @@ classListController.onStart();
 Caravel.getDefault().post("ResumingClassListController");
 
 classListController.onResume();
+
+Caravel.getDefault().register("ManualResumingClassListController", (function(_this) {
+  return function() {
+    return classListController.onResume();
+  };
+})(this));
+
+Caravel.getDefault().register("ManualPausingClassListController", (function(_this) {
+  return function() {
+    return classListController.onPause();
+  };
+})(this));

@@ -12,11 +12,12 @@ import EventKit
 import MessageUI
 import Caravel
 
-public class MainController: UIViewController {
+public class MainController: BaseController {
     @IBOutlet weak var _webView: UIWebView!
     
-    private var _classListController: BaseController?
-    private var _settingsController: BaseController?
+    private var _classListController: SubController?
+    private var _settingsController: SubController?
+    private var _singleClassController: UIViewController?
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,27 +44,30 @@ public class MainController: UIViewController {
             }
             bus.register("ResumingSettingsController") { _, _ in self._settingsController!.onResume() }
             bus.register("PausingSettingsController")  { _, _ in self._settingsController!.onPause() }
+            
+            
+            
+            SwiftEventBus.onMainThread(self, name: PresentSingleClassControllerEvent.NAME) { notif in
+                var e = notif.object as! PresentSingleClassControllerEvent
+                
+                if self._singleClassController == nil {
+                    self._singleClassController = self.storyboard!.instantiateViewControllerWithIdentifier("SingleClassController") as! UIViewController
+                }
+                
+                bus.post("ManualPausingClassListController")
+                self._classListController!.onPause()
+                self.presentViewController(self._singleClassController!, animated: true) {
+                    SwiftEventBus.post(SingleClassInitEvent.NAME, sender: SingleClassInitEvent(slug: e.slug))
+                }
+            }
+            
+            SwiftEventBus.onMainThread(self, name: ClosedSingleClassControllerEvent.NAME) { _ in
+                bus.post("ManualResumingClassListController")
+                self._classListController!.onResume()
+            }
         }
         
         _webView.loadRequest(NSURLRequest(URL: NSBundle.mainBundle().URLForResource("main", withExtension: "html")!))
-    }
-
-    public override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    public func fork() {
-        SwiftEventBus.post(ProgressForkEvent.NAME)
-    }
-    
-    public func done() {
-        SwiftEventBus.post(ProgressDoneEvent.NAME)
-    }
-    
-    public func publishError(message: String) {
-        SwiftEventBus.post(ErrorEvent.NAME, sender: ErrorEvent(message: message))
-        done()
     }
 }
 

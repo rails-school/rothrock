@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Caravel
 
-internal class SettingsController: BaseController {
+internal class SettingsController: SubController {
     private var _bus: Caravel?
     
     override init(parentController: UIViewController, webView: UIWebView) {

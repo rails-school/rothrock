@@ -1,9 +1,8 @@
 @import "base";
 
-$class-list-selector: "class-list";
-$going-pin-size: 50px;
+$class-list-selector: ".class-list";
 
-.#{$class-list-selector} {
+#{$class-list-selector} {
   @include display(flex);
   @include flex-direction(column);
 
@@ -21,7 +20,7 @@ $going-pin-size: 50px;
   }
 }
 
-.#{$class-list-selector} header {
+#{$class-list-selector} header {
   @include display(flex);
   @include flex-direction(row);
   @include justify-content(space-between);
@@ -45,7 +44,7 @@ $going-pin-size: 50px;
 
       font: {
         family: $body-font;
-        size: 8px;
+        size: $sublabel;
       }
       text-align: center;
       color: $gray;
@@ -66,7 +65,7 @@ $going-pin-size: 50px;
 
       font: {
         family: $body-font;
-        size: 9px;
+        size: $label;
       }
       color: $gray;
     }
@@ -77,7 +76,7 @@ $going-pin-size: 50px;
   }
 }
 
-.#{$class-list-selector} section {
+#{$class-list-selector} section {
   @include flex(1);
   position: relative; // Change card-wrapper referential to section
 
@@ -92,45 +91,19 @@ $going-pin-size: 50px;
     height: 100%;
 
     .class-attendees {
-      margin: 5px;
-
-      text-align: center;
-      font: {
-        family: $body-font;
-        size: 9px;
-      }
-      color: $red;
+      @extend %attendees;
     }
 
     .class-share-wrapper {
-      margin: 0 5px 30px 5px;
+      @extend %share-wrapper;
 
-      > * {
-        display: inline-block;
-      }
-
-      p {
-        margin: 0;
-
-        font-size: 9px;
-      }
-
-      .ic-share {
-        padding: 0 5px 0 0;
-
-        color: $gray;
-      }
-
-      p:last-child {
-        font-family: $body-font;
-        color: $black;
-      }
+      margin: 0 5px 15px 5px;
     }
   }
 }
 
 // Class card + floating elements
-.#{$class-list-selector} section .class-card-wrapper {
+#{$class-list-selector} section .class-card-wrapper {
 
   > * {
     position: absolute;
@@ -150,7 +123,7 @@ $going-pin-size: 50px;
     color: $black;
     font: {
       family: $body-font;
-      size: 9px;
+      size: $label;
     }
 
     border-bottom: 2px solid $red;
@@ -166,7 +139,7 @@ $going-pin-size: 50px;
   }
 
   .class-card {
-    padding: 10px 15px;
+    padding: 10px 15px 30px 15px;
     box-sizing: border-box;
 
     border: 1px solid $soft-gray;
@@ -176,105 +149,27 @@ $going-pin-size: 50px;
   }
 
   .class-rsvp-button {
-    $rsvp-original-ratio: 290 / 100;
-    $rsvp-width: 100px;
-
-    width: $rsvp-width;
-    height: ($rsvp-width / $rsvp-original-ratio);
-    padding: 2px 0;
-
-    font: {
-      family: $headline-font;
-      size: 20px;
-    }
-    color: $white;
-    text-shadow: 0 1px 1px $black;
-    text-align: center;
-
-    background: {
-      color: $white;
-      image: url('rsvp.png');
-      size: $rsvp-width;
-      repeat: no-repeat;
-    }
-    cursor: pointer;
-
-    &:active {
-      background-image: url('rsvp-active.png');
-    }
-
-    &.unrsvp {
-      background-image: url('unrsvp.png');
-
-      &:active {
-        background-image: url('unrsvp-active.png');
-      }
-    }
+    @extend %rsvp-button;
 
     z-index: 2;
   }
 }
 
 // Class card inner content
-.#{$class-list-selector} section .class-card-wrapper .class-card {
+#{$class-list-selector} section .class-card-wrapper .class-card {
   background-color: $white;
 
-  h1, h2 {
-    margin: 5px 0;
-
-    font-weight: normal;
-  }
-
   h1 {
-    color: $blue;
-    font: {
-      family: $headline-font;
-      size: 24px;
-    }
-    line-height: 1.2em;
+    @extend %headline;
   }
 
   h2 {
+    @extend %subheadline;
+
     color: $black;
-    font: {
-      family: $body-font;
-      size: 12px;
-    }
   }
 
   ul {
-    margin: 15px 0;
-    padding: 0;
-
-    list-style-type: none;
-
-    li {
-      margin: 5px 0;
-      padding: 0;
-
-      p {
-        display: inline-block;
-        vertical-align: middle;
-
-        margin: 0;
-
-        font: {
-          family: $body-font;
-          size: 10px;
-        }
-      }
-
-      p:first-child {
-        width: 25px;
-        padding: 0 5px 0 0;
-
-        text-align: center;
-        color: $gray;
-      }
-
-      p:last-child {
-        color: $black;
-      }
-    }
+    @extend %icon-list;
   }
 }

@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:rothrock.xcodeproj">
+      location = "group:/Users/acadet/Documents/workspace/swift/rothrock/Rails School.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

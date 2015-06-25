@@ -2,6 +2,14 @@
 @import "colors";
 @import "fonts";
 
+$going-pin-size: 50px;
+
+$title: 32px;
+$subtitle: 18px;
+$body: 15px;
+$label: 13px;
+$sublabel: 11px;
+
 .shown {
   display: block;
 }
@@ -16,4 +24,141 @@
 
 .invisible {
   visibility: hidden;
+}
+
+// RSVP button
+%rsvp-button {
+  $rsvp-original-ratio: 290 / 100;
+  $rsvp-width: 150px;
+
+  width: $rsvp-width;
+  height: ($rsvp-width / $rsvp-original-ratio);
+  padding: (2px + 5px / 2) 0;
+
+  font: {
+    family: $headline-font;
+    size: $title;
+  }
+  color: $white;
+  text-shadow: 0 1px 1px $black;
+  text-align: center;
+
+  background: {
+    color: $white;
+    position: 5px 5px;
+    image: url('rsvp.png');
+    size: ($rsvp-width - 10px);
+    repeat: no-repeat;
+  }
+  cursor: pointer;
+
+  &:active {
+    background-image: url('rsvp-active.png');
+  }
+
+  &.unrsvp {
+    background-image: url('unrsvp.png');
+
+    &:active {
+      background-image: url('unrsvp-active.png');
+    }
+  }
+}
+
+// Headline
+%headline {
+  color: $blue;
+  font: {
+    family: $headline-font;
+    size: $title;
+  }
+  text-align: left;
+  line-height: 1.4em;
+}
+
+%subheadline {
+  font: {
+    family: $body-font;
+    size: $subtitle;
+  }
+  text-align: justify;
+}
+
+%headline, %subheadline {
+  margin: 10px 0;
+
+  font-weight: normal;
+}
+
+%icon-list {
+  margin: 15px 0;
+  padding: 0;
+
+  text-align: left;
+
+  list-style-type: none;
+
+  li {
+    margin: 10px 0;
+    padding: 0;
+
+    p {
+      display: inline-block;
+      vertical-align: middle;
+
+      margin: 0;
+
+      font: {
+        family: $body-font;
+        size: $body;
+      }
+    }
+
+    p:first-child {
+      width: 25px;
+      padding: 0 15px 0 0;
+
+      text-align: center;
+      color: $gray;
+    }
+
+    p:last-child {
+      color: $black;
+    }
+  }
+}
+
+%attendees {
+  margin: 5px;
+
+  text-align: center;
+  font: {
+    family: $body-font;
+    size: $label;
+  }
+  color: $red;
+}
+
+%share-wrapper {
+  > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  p {
+    margin: 0;
+
+    font-size: $label;
+  }
+
+  .ic-share {
+    padding: 0 5px 0 0;
+
+    color: $gray;
+  }
+
+  p:last-child {
+    font-family: $body-font;
+    color: $black;
+  }
 }

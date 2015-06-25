@@ -17,13 +17,21 @@ module.exports = function (grunt) {
                     join: true
                 },
                 files: {
-                    'js/rothrock.js': [
-                        'coffee/slider.coffee',
-                        'coffee/base_controller.coffee',
-                        'coffee/class_list_controller.coffee',
-                        'coffee/single_class_controller.coffee',
-                        'coffee/settings_controller.coffee',
+                    'js/rothrock-main.js': [
+                        'coffee/components/device_interface.coffee',
+                        'coffee/components/share_menu.coffee',
+                        'coffee/components/slider.coffee',
+                        'coffee/controllers/base_controller.coffee',
+                        'coffee/controllers/class_list_controller.coffee',
+                        'coffee/controllers/settings_controller.coffee',
                         'coffee/main.coffee'
+                    ],
+                    'js/rothrock-single-class.js': [
+                        'coffee/components/device_interface.coffee',
+                        'coffee/components/share_menu.coffee',
+                        'coffee/controllers/base_controller.coffee',
+                        'coffee/controllers/single_class_controller.coffee',
+                        'coffee/main_single_class.coffee'
                     ]
                 }
             }
@@ -45,7 +53,8 @@ module.exports = function (grunt) {
                 },
                 files: {
                     "html/main.html": ['jade/main.jade'],
-                    "html/settings.html": ['jade/settings.jade']
+                    "html/settings.html": ['jade/settings.jade'],
+                    "html/main_single_class.html": ['jade/main_single_class.jade']
                 }
             }
         },
@@ -55,7 +64,8 @@ module.exports = function (grunt) {
                     sourcemap: 'none'
                 },
                 files: {
-                    'css/rothrock.css': 'sass/rothrock.scss'
+                    'css/rothrock-main.css': 'sass/rothrock_main.scss',
+                    'css/rothrock-single-class.css': 'sass/single_class.scss'
                 }
             }
         },

@@ -10,6 +10,9 @@ class ClassListController extends BaseController
 
     @cardWrapperSelector = '.js-class-card-wrapper'
     @cardSelector = '.js-class-card'
+    @mapSelector = '.js-map'
+    @calendarSelector = '.js-calendar'
+
     @goingPinSelector = '.js-class-going-pin'
     @countdownSelector = '.js-class-countdown'
     @rsvpSelector = '.js-class-rsvp-button'
@@ -43,34 +46,17 @@ class ClassListController extends BaseController
         $(e).find(@cardSelector).first().on 'click', () =>
           @getBus().post('TriggerInsight', slug)
 
+        $(e).find(@mapSelector).first().on 'click', (e) =>
+          e.stopPropagation()
+          new DeviceInterface(@getBus(), slug).addToMap()
+
+        $(e).find(@calendarSelector).first().on 'click', (e) =>
+          e.stopPropagation()
+          new DeviceInterface(@getBus(), slug).addToCalendar()
+
         # Trigger share menu
         $(e).find(@shareSelector).first().on 'click', () =>
-          @getApp().actions [
-                              {
-                                text: 'Text'
-                                onClick: () =>
-                                  @getBus().post('TriggerShareText', slug)
-                              },
-                              {
-                                text: 'Email'
-                                onClick: () =>
-                                  @getBus().post('TriggerShareEmail', slug)
-                              },
-                              {
-                                text: 'Facebook'
-                                onClick: () =>
-                                  @getBus().post('TriggerShareFacebook', slug)
-                              },
-                              {
-                                text: 'Twitter',
-                                onClick: () =>
-                                  @getBus().post('TriggerShareTwitter', slug)
-                              },
-                              {
-                                text: 'Cancel',
-                                color: 'red'
-                              }
-                            ]
+          new ShareMenu(@getApp(), @getBus(), slug).show()
 
         # Toggle rsvp
         $(e).find(@rsvpSelector).first().on 'click', () =>
@@ -87,27 +73,6 @@ class ClassListController extends BaseController
         $(@logoSelector).attr('src', 'logo-charlottesville.png')
       else
         $(@logoSelector).attr('src', 'logo-sf.png')
-
-    @getBus().register "SetAttendance", (name, data) =>
-      isAttending = data.isAttending
-      cardWrapper = $(@listSelector).find("#{@cardWrapperSelector}[data-slug='#{data.slug}']").first()
-
-      rsvpButton = cardWrapper.find(@rsvpSelector).first()
-      if isAttending
-        rsvpButton.addClass('unrsvp')
-        rsvpButton.text('unRSVP')
-      else
-        rsvpButton.removeClass('unrsvp')
-        rsvpButton.text('RSVP')
-
-      goingPin = cardWrapper.find(@goingPinSelector).first()
-      countdown = cardWrapper.find(@countdownSelector).first()
-      if isAttending
-        goingPin.removeClass('invisible')
-        countdown.addClass('going')
-      else
-        goingPin.addClass('invisible')
-        countdown.removeClass('going')
 
   onResume: () ->
     $('.navbar').addClass('hidden')

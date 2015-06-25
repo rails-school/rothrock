@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwiftEventBus
 
-public class BaseController: NSObject {
+public class SubController: NSObject {
     private var _webView: UIWebView
     private var _parentController: UIViewController
     

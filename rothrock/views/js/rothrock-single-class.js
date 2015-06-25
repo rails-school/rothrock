@@ -1,0 +1,170 @@
+var $$, BaseController, DeviceInterface, ShareMenu, SingleClassController, mainView, myApp, singleClassController,
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
+
+DeviceInterface = (function() {
+  function DeviceInterface(bus, slug) {
+    this.bus = bus;
+    this.slug = slug;
+  }
+
+  DeviceInterface.prototype.addToCalendar = function() {
+    return this.bus.post("AddToCalendar", this.slug);
+  };
+
+  DeviceInterface.prototype.addToMap = function() {
+    return this.bus.post("AddToMap", this.slug);
+  };
+
+  return DeviceInterface;
+
+})();
+
+ShareMenu = (function() {
+  function ShareMenu(app, bus, slug) {
+    this.app = app;
+    this.bus = bus;
+    this.slug = slug;
+  }
+
+  ShareMenu.prototype.show = function() {
+    return this.app.actions([
+      {
+        text: 'Text',
+        onClick: (function(_this) {
+          return function() {
+            return _this.bus.post('TriggerShareText', _this.slug);
+          };
+        })(this)
+      }, {
+        text: 'Email',
+        onClick: (function(_this) {
+          return function() {
+            return _this.bus.post('TriggerShareEmail', _this.slug);
+          };
+        })(this)
+      }, {
+        text: 'Facebook',
+        onClick: (function(_this) {
+          return function() {
+            return _this.bus.post('TriggerShareFacebook', _this.slug);
+          };
+        })(this)
+      }, {
+        text: 'Twitter',
+        onClick: (function(_this) {
+          return function() {
+            return _this.bus.post('TriggerShareTwitter', _this.slug);
+          };
+        })(this)
+      }, {
+        text: 'Cancel',
+        color: 'red'
+      }
+    ]);
+  };
+
+  return ShareMenu;
+
+})();
+
+BaseController = (function() {
+  function BaseController(app) {
+    this.app = app;
+    this.bus = Caravel.getDefault();
+  }
+
+  BaseController.prototype.getDefaultBus = function() {
+    return this.bus;
+  };
+
+  BaseController.prototype.getApp = function() {
+    return this.app;
+  };
+
+  BaseController.prototype.onStart = function() {};
+
+  BaseController.prototype.onResume = function() {};
+
+  BaseController.prototype.onPause = function() {};
+
+  BaseController.prototype.fork = function() {
+    return this.bus.post("ProgressForkEvent");
+  };
+
+  BaseController.prototype.done = function() {
+    return this.bus.post("ProgressDoneEvent");
+  };
+
+  return BaseController;
+
+})();
+
+SingleClassController = (function(superClass) {
+  extend(SingleClassController, superClass);
+
+  function SingleClassController(app) {
+    SingleClassController.__super__.constructor.call(this, app);
+    this.singleClassSelector = '.js-single-class';
+    this.sectionSelector = 'section';
+    this.mapSelector = '.js-map';
+    this.calendarSelector = '.js-calendar';
+    this.rsvpButtonSelector = '.js-rsvp-button';
+    this.shareSelector = '.js-share';
+    this.closeTriggerSelector = '.js-close-trigger';
+    this.footerSelector = this.singleClassSelector + " footer";
+  }
+
+  SingleClassController.prototype.getBus = function() {
+    return Caravel.get('SingleClassController');
+  };
+
+  SingleClassController.prototype.onStart = function() {
+    this.template = Template7.compile($("#single-class-template").html());
+    return this.getBus().register("ReceiveClass", (function(_this) {
+      return function(name, data) {
+        var slug;
+        _this.fork();
+        $(_this.singleClassSelector).html(_this.template(data));
+        slug = $(_this.sectionSelector).data('slug');
+        $(_this.rsvpButtonSelector).css({
+          bottom: $(_this.footerSelector).outerHeight() - $(_this.rsvpButtonSelector).outerHeight() / 2,
+          left: ($(_this.footerSelector).outerWidth() - $(_this.rsvpButtonSelector).outerWidth()) / 2
+        });
+        $(_this.mapSelector).on('click', function() {
+          return new DeviceInterface(_this.getBus(), slug).addToMap();
+        });
+        $(_this.calendarSelector).on('click', function() {
+          return new DeviceInterface(_this.getBus(), slug).addToCalendar();
+        });
+        $(_this.rsvpButtonSelector).on('click', function() {
+          return _this.getBus().post("ToggleAttendance");
+        });
+        $(_this.shareSelector).on('click', function() {
+          return new ShareMenu(_this.getApp(), _this.getBus(), slug).show();
+        });
+        $(_this.closeTriggerSelector).on('click', function() {
+          return _this.getBus().post('CloseInsight');
+        });
+        return _this.done();
+      };
+    })(this));
+  };
+
+  return SingleClassController;
+
+})(BaseController);
+
+myApp = new Framework7();
+
+$$ = Dom7;
+
+mainView = myApp.addView('.view-main', {
+  dynamicNavbar: true
+});
+
+singleClassController = new SingleClassController(myApp);
+
+singleClassController.onStart();
+
+singleClassController.onResume();

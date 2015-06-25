@@ -3,7 +3,7 @@ script#class-card-template(type='text/template7')
   .class-card-wrapper.js-class-card-wrapper(data-slug="{{lesson.slug}}")
     | {{#js_compare "this.isAttending == true"}}
     img.class-going-pin.js-class-going-pin(src='going-pin.png')
-    p.class-countdown.going.js-class-countdown {{lesson.countdown}}
+    p.class-countdown.js-class-countdown {{lesson.countdown}}
     | {{else}}
     img.class-going-pin.invisible.js-class-going-pin(src='going-pin.png')
     p.class-countdown.js-class-countdown {{lesson.countdown}}
@@ -19,15 +19,15 @@ script#class-card-template(type='text/template7')
           p.ic-ruby
             i.fa.fa-diamond
           p {{teacher.name}}
-        li
+        li.js-map
           p.ic-venue
             i.fa.fa-map-marker
           p {{venue.name}}
-        li
+        li.js-calendar
           p.ic-calendar
             i.fa.fa-calendar-o
           p {{lesson.date}} ({{lesson.countdown}})
-        li
+        li.js-calendar
           p.ic-clock
             i.fa.fa-clock-o
           p {{lesson.hour}}

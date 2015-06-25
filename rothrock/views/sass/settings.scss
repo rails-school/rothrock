@@ -5,6 +5,7 @@ $settings-selector: "settings";
 .#{$settings-selector} {
   @include display(flex);
   @include flex-direction(column);
+  @include justify-content(space-between);
 
   .log-out {
     width: 100%;
@@ -12,29 +13,16 @@ $settings-selector: "settings";
     box-sizing: border-box;
 
     text-align: center;
-    font-size: 12px;
+    font-weight: bold;
   }
 
   .footer {
-    @include flex(1);
-
     width: 100%;
-    padding: 10px;
+    padding: 10px 10px 20px 10px;
     box-sizing: border-box;
 
     text-align: center;
-    font-size: 12px;
   }
-}
-
-.#{$settings-selector} .content-block-title {
-  font-size: 12px;
-}
-
-.#{$settings-selector} .item-title,
-.#{$settings-selector} .item-input select,
-.#{$settings-selector} .item-input input {
-  font-size: 12px;
 }
 
 .#{$settings-selector} .item-input select {

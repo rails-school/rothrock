@@ -79,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self._backgroundThreads++
             
             if self._backgroundThreads == 1 {
-                self._backgroundTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("timerHandler"), userInfo: nil, repeats: false)
+                self._backgroundTimer = NSTimer.scheduledTimerWithTimeInterval(0.25, target: self, selector: Selector("timerHandler"), userInfo: nil, repeats: false)
             }
         }
         

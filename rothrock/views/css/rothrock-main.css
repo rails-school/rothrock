@@ -34,6 +34,86 @@
 .invisible {
   visibility: hidden; }
 
+.class-list section .class-card-wrapper .class-rsvp-button {
+  width: 150px;
+  height: 51.72414px;
+  padding: 4.5px 0;
+  font-family: "Yanone Kaffeesatz";
+  font-size: 32px;
+  color: #fff;
+  text-shadow: 0 1px 1px #333;
+  text-align: center;
+  background-color: #fff;
+  background-position: 5px 5px;
+  background-image: url("rsvp.png");
+  background-size: 140px;
+  background-repeat: no-repeat;
+  cursor: pointer; }
+  .class-list section .class-card-wrapper .class-rsvp-button:active {
+    background-image: url("rsvp-active.png"); }
+  .class-list section .class-card-wrapper .unrsvp.class-rsvp-button {
+    background-image: url("unrsvp.png"); }
+    .class-list section .class-card-wrapper .unrsvp.class-rsvp-button:active {
+      background-image: url("unrsvp-active.png"); }
+
+.class-list section .class-card-wrapper .class-card h1 {
+  color: #0f3344;
+  font-family: "Yanone Kaffeesatz";
+  font-size: 32px;
+  text-align: left;
+  line-height: 1.4em; }
+
+.class-list section .class-card-wrapper .class-card h2 {
+  font-family: "Muli";
+  font-size: 18px;
+  text-align: justify; }
+
+.class-list section .class-card-wrapper .class-card h1, .class-list section .class-card-wrapper .class-card h2 {
+  margin: 10px 0;
+  font-weight: normal; }
+
+.class-list section .class-card-wrapper .class-card ul {
+  margin: 15px 0;
+  padding: 0;
+  text-align: left;
+  list-style-type: none; }
+  .class-list section .class-card-wrapper .class-card ul li {
+    margin: 10px 0;
+    padding: 0; }
+    .class-list section .class-card-wrapper .class-card ul li p {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0;
+      font-family: "Muli";
+      font-size: 15px; }
+    .class-list section .class-card-wrapper .class-card ul li p:first-child {
+      width: 25px;
+      padding: 0 15px 0 0;
+      text-align: center;
+      color: #999; }
+    .class-list section .class-card-wrapper .class-card ul li p:last-child {
+      color: #333; }
+
+.class-list section .class-card-wrapper .class-attendees {
+  margin: 5px;
+  text-align: center;
+  font-family: "Muli";
+  font-size: 13px;
+  color: #ab1818; }
+
+.class-list section .class-card-wrapper .class-share-wrapper > * {
+  display: inline-block;
+  vertical-align: middle; }
+.class-list section .class-card-wrapper .class-share-wrapper p {
+  margin: 0;
+  font-size: 13px; }
+.class-list section .class-card-wrapper .class-share-wrapper .ic-share {
+  padding: 0 5px 0 0;
+  color: #999; }
+.class-list section .class-card-wrapper .class-share-wrapper p:last-child {
+  font-family: "Muli";
+  color: #333; }
+
 .class-list {
   display: -webkit-box;
   display: -moz-box;
@@ -110,7 +190,7 @@
     .class-list header .logo-wrapper .upcoming-classes {
       margin: 0;
       font-family: "Muli";
-      font-size: 8px;
+      font-size: 11px;
       text-align: center;
       color: #999; }
   .class-list header .settings {
@@ -121,7 +201,7 @@
     .class-list header .settings p {
       margin: 0;
       font-family: "Muli";
-      font-size: 9px;
+      font-size: 13px;
       color: #999; }
     .class-list header .settings .ic-settings {
       margin: 0 0 5px 0; }
@@ -141,25 +221,8 @@
     position: absolute;
     width: 80%;
     height: 100%; }
-    .class-list section .class-card-wrapper .class-attendees {
-      margin: 5px;
-      text-align: center;
-      font-family: "Muli";
-      font-size: 9px;
-      color: #ab1818; }
     .class-list section .class-card-wrapper .class-share-wrapper {
-      margin: 0 5px 30px 5px; }
-      .class-list section .class-card-wrapper .class-share-wrapper > * {
-        display: inline-block; }
-      .class-list section .class-card-wrapper .class-share-wrapper p {
-        margin: 0;
-        font-size: 9px; }
-      .class-list section .class-card-wrapper .class-share-wrapper .ic-share {
-        padding: 0 5px 0 0;
-        color: #999; }
-      .class-list section .class-card-wrapper .class-share-wrapper p:last-child {
-        font-family: "Muli";
-        color: #333; }
+      margin: 0 5px 15px 5px; }
 
 .class-list section .class-card-wrapper > * {
   position: absolute; }
@@ -172,7 +235,7 @@
   padding: 0 30px 3px 0;
   color: #333;
   font-family: "Muli";
-  font-size: 9px;
+  font-size: 13px;
   border-bottom: 2px solid #ab1818;
   z-index: 2; }
   .class-list section .class-card-wrapper .class-countdown.going {
@@ -180,67 +243,18 @@
     color: #5FB140;
     border-color: #5FB140; }
 .class-list section .class-card-wrapper .class-card {
-  padding: 10px 15px;
+  padding: 10px 15px 30px 15px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   overflow: auto;
   z-index: 1; }
 .class-list section .class-card-wrapper .class-rsvp-button {
-  width: 100px;
-  height: 34.48276px;
-  padding: 2px 0;
-  font-family: "Yanone Kaffeesatz";
-  font-size: 20px;
-  color: #fff;
-  text-shadow: 0 1px 1px #333;
-  text-align: center;
-  background-color: #fff;
-  background-image: url("rsvp.png");
-  background-size: 100px;
-  background-repeat: no-repeat;
-  cursor: pointer;
   z-index: 2; }
-  .class-list section .class-card-wrapper .class-rsvp-button:active {
-    background-image: url("rsvp-active.png"); }
-  .class-list section .class-card-wrapper .class-rsvp-button.unrsvp {
-    background-image: url("unrsvp.png"); }
-    .class-list section .class-card-wrapper .class-rsvp-button.unrsvp:active {
-      background-image: url("unrsvp-active.png"); }
 
 .class-list section .class-card-wrapper .class-card {
   background-color: #fff; }
-  .class-list section .class-card-wrapper .class-card h1, .class-list section .class-card-wrapper .class-card h2 {
-    margin: 5px 0;
-    font-weight: normal; }
-  .class-list section .class-card-wrapper .class-card h1 {
-    color: #0f3344;
-    font-family: "Yanone Kaffeesatz";
-    font-size: 24px;
-    line-height: 1.2em; }
   .class-list section .class-card-wrapper .class-card h2 {
-    color: #333;
-    font-family: "Muli";
-    font-size: 12px; }
-  .class-list section .class-card-wrapper .class-card ul {
-    margin: 15px 0;
-    padding: 0;
-    list-style-type: none; }
-    .class-list section .class-card-wrapper .class-card ul li {
-      margin: 5px 0;
-      padding: 0; }
-      .class-list section .class-card-wrapper .class-card ul li p {
-        display: inline-block;
-        vertical-align: middle;
-        margin: 0;
-        font-family: "Muli";
-        font-size: 10px; }
-      .class-list section .class-card-wrapper .class-card ul li p:first-child {
-        width: 25px;
-        padding: 0 5px 0 0;
-        text-align: center;
-        color: #999; }
-      .class-list section .class-card-wrapper .class-card ul li p:last-child {
-        color: #333; }
+    color: #333; }
 
 @font-face {
   font-family: "Muli";
@@ -278,6 +292,86 @@
 .invisible {
   visibility: hidden; }
 
+.class-list section .class-card-wrapper .class-rsvp-button {
+  width: 150px;
+  height: 51.72414px;
+  padding: 4.5px 0;
+  font-family: "Yanone Kaffeesatz";
+  font-size: 32px;
+  color: #fff;
+  text-shadow: 0 1px 1px #333;
+  text-align: center;
+  background-color: #fff;
+  background-position: 5px 5px;
+  background-image: url("rsvp.png");
+  background-size: 140px;
+  background-repeat: no-repeat;
+  cursor: pointer; }
+  .class-list section .class-card-wrapper .class-rsvp-button:active {
+    background-image: url("rsvp-active.png"); }
+  .class-list section .class-card-wrapper .unrsvp.class-rsvp-button {
+    background-image: url("unrsvp.png"); }
+    .class-list section .class-card-wrapper .unrsvp.class-rsvp-button:active {
+      background-image: url("unrsvp-active.png"); }
+
+.class-list section .class-card-wrapper .class-card h1 {
+  color: #0f3344;
+  font-family: "Yanone Kaffeesatz";
+  font-size: 32px;
+  text-align: left;
+  line-height: 1.4em; }
+
+.class-list section .class-card-wrapper .class-card h2 {
+  font-family: "Muli";
+  font-size: 18px;
+  text-align: justify; }
+
+.class-list section .class-card-wrapper .class-card h1, .class-list section .class-card-wrapper .class-card h2 {
+  margin: 10px 0;
+  font-weight: normal; }
+
+.class-list section .class-card-wrapper .class-card ul {
+  margin: 15px 0;
+  padding: 0;
+  text-align: left;
+  list-style-type: none; }
+  .class-list section .class-card-wrapper .class-card ul li {
+    margin: 10px 0;
+    padding: 0; }
+    .class-list section .class-card-wrapper .class-card ul li p {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0;
+      font-family: "Muli";
+      font-size: 15px; }
+    .class-list section .class-card-wrapper .class-card ul li p:first-child {
+      width: 25px;
+      padding: 0 15px 0 0;
+      text-align: center;
+      color: #999; }
+    .class-list section .class-card-wrapper .class-card ul li p:last-child {
+      color: #333; }
+
+.class-list section .class-card-wrapper .class-attendees {
+  margin: 5px;
+  text-align: center;
+  font-family: "Muli";
+  font-size: 13px;
+  color: #ab1818; }
+
+.class-list section .class-card-wrapper .class-share-wrapper > * {
+  display: inline-block;
+  vertical-align: middle; }
+.class-list section .class-card-wrapper .class-share-wrapper p {
+  margin: 0;
+  font-size: 13px; }
+.class-list section .class-card-wrapper .class-share-wrapper .ic-share {
+  padding: 0 5px 0 0;
+  color: #999; }
+.class-list section .class-card-wrapper .class-share-wrapper p:last-child {
+  font-family: "Muli";
+  color: #333; }
+
 .settings {
   display: -webkit-box;
   display: -moz-box;
@@ -295,34 +389,27 @@
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   flex-direction: column;
-  -ms-flex-direction: column; }
+  -ms-flex-direction: column;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify; }
   .settings .log-out {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
     text-align: center;
-    font-size: 12px; }
+    font-weight: bold; }
   .settings .footer {
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    box-flex: 1;
-    -webkit-flex: 1;
-    -moz-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
     width: 100%;
-    padding: 10px;
+    padding: 10px 10px 20px 10px;
     box-sizing: border-box;
-    text-align: center;
-    font-size: 12px; }
-
-.settings .content-block-title {
-  font-size: 12px; }
-
-.settings .item-title,
-.settings .item-input select,
-.settings .item-input input {
-  font-size: 12px; }
+    text-align: center; }
 
 .settings .item-input select {
   color: #aaa; }
