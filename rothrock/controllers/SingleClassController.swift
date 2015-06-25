@@ -10,13 +10,20 @@ import Foundation
 import UIKit
 import Caravel
 import SwiftEventBus
+import MessageUI
 
-internal class SingleClassController: BaseController {
+public class SingleClassController: BaseController, ISharePluginOwner {
     
     @IBOutlet weak var _webView: UIWebView!
     
     private var _slug: String?
     private var _bus: Caravel?
+    
+    private var _sharePlugin: SharePlugin?
+    
+    public var controller: UIViewController {
+        return self
+    }
     
     private func _sendClass() {
         BusinessFactory
@@ -31,7 +38,7 @@ internal class SingleClassController: BaseController {
         )
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         fork()
@@ -55,8 +62,20 @@ internal class SingleClassController: BaseController {
                     SwiftEventBus.post(ClosedSingleClassControllerEvent.NAME)
                 }
             }
+            
+            self._sharePlugin = SharePlugin(owner: self, bus: bus)
         }
         
         _webView.loadRequest(NSURLRequest(URL: NSBundle.mainBundle().URLForResource("main_single_class", withExtension: "html")!))
+    }
+    
+    // MFMessageComposeViewControllerDelegate
+    public func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MFMailComposeViewControllerDelegate
+    public func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
 }

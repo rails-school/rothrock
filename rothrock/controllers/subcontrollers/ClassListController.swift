@@ -12,8 +12,13 @@ import Caravel
 import MessageUI
 import SwiftEventBus
 
-internal class ClassListController: SubController, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
+internal class ClassListController: SubController, ISharePluginOwner {
     private var _bus: Caravel?
+    private var _sharePlugin: SharePlugin?
+    
+    var controller: UIViewController {
+        return parentController
+    }
     
     internal override init(parentController: UIViewController, webView: UIWebView) {
         super.init(parentController: parentController, webView: webView)
@@ -86,92 +91,7 @@ internal class ClassListController: SubController, MFMessageComposeViewControlle
                     )
             }
             
-            bus.register("TriggerShareText") { name, data in
-                var slug = data as! String
-                
-                if MFMessageComposeViewController.canSendText() {
-                    self.fork()
-                    BusinessFactory
-                        .provideLesson()
-                        .get(
-                            slug,
-                            success: { lesson in
-                                var controller = MFMessageComposeViewController()
-                                var message = NSString(format: "class_share_text".localized, lesson!.title!)
-                                
-                                controller.body = message as String
-                                controller.recipients = []
-                                controller.messageComposeDelegate = self
-                                
-                                self.done()
-                                self.parentController.presentViewController(controller, animated: true, completion: nil)
-                            },
-                            failure: { self.publishError($0) }
-                        )
-                }
-            }
-            
-            bus.register("TriggerShareEmail") { name, data in
-                var slug = data as! String
-                
-                if MFMailComposeViewController.canSendMail() {
-                    self.fork()
-                    BusinessFactory
-                        .provideLesson()
-                        .get(
-                            slug,
-                            success: { lesson in
-                                var controller = MFMailComposeViewController()
-                                
-                                controller.setSubject("app_name".localized)
-                                controller.setMessageBody(NSString(format: "class_share_text".localized + "\n\n %@", lesson!.title!,BusinessFactory.provideLesson().getLessonURL(lesson!)) as String, isHTML: false)
-                                controller.mailComposeDelegate = self
-                                
-                                self.done()
-                                self.parentController.presentViewController(controller, animated: true, completion: nil)
-                            },
-                            failure: { self.publishError($0) }
-                        )
-                }
-            }
-            
-            bus.register("TriggerShareFacebook") { name, data in
-                var slug = data as! String
-                
-                self.fork()
-                BusinessFactory
-                    .provideLesson()
-                    .get(
-                        slug,
-                        success: { lesson in
-                            let addressString = "https://www.facebook.com/sharer/sharer.php?u=\(BusinessFactory.provideLesson().getLessonURL(lesson!))"
-                            
-                            self.done()
-                            UIApplication.sharedApplication().openURL(NSURL(string: addressString)!)
-                        },
-                        failure: { self.publishError($0) }
-                    )
-            }
-            
-            bus.register("TriggerShareTwitter") { name, data in
-                var slug = data as! String
-                
-                self.fork()
-                BusinessFactory
-                    .provideLesson()
-                    .get(
-                        slug,
-                        success: { lesson in
-                            var message = lesson!.title!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
-                            
-                            message += "%20\(BusinessFactory.provideLesson().getLessonURL(lesson!))"
-                            
-                            self.done()
-                            TwitterPlugin.tweet(message)
-                        },
-                        failure: { self.publishError($0) }
-                )
-            }
+            self._sharePlugin = SharePlugin(owner: self, bus: bus)
             
             self._onceBusReady()
         }

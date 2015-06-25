@@ -56,6 +56,9 @@
 		A7782D891B3B68940001B9BA /* main_single_class.html in Resources */ = {isa = PBXBuildFile; fileRef = A7782D881B3B68940001B9BA /* main_single_class.html */; };
 		A7782D8D1B3B7CA40001B9BA /* ClosedSingleClassControllerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D8C1B3B7CA40001B9BA /* ClosedSingleClassControllerEvent.swift */; };
 		A7782D901B3B7DE80001B9BA /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D8F1B3B7DE80001B9BA /* BaseController.swift */; };
+		A7782D921B3B84490001B9BA /* SharePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D911B3B84490001B9BA /* SharePlugin.swift */; };
+		A7782D941B3B84DF0001B9BA /* ISharePluginOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D931B3B84DF0001B9BA /* ISharePluginOwner.swift */; };
+		A7782D961B3B87D40001B9BA /* TwitterPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D951B3B87D40001B9BA /* TwitterPlugin.swift */; };
 		A77BCC511B2F54E7006FCBFE /* going-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4A1B2F54E7006FCBFE /* going-pin.png */; };
 		A77BCC521B2F54E7006FCBFE /* logo-charlottesville.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */; };
 		A77BCC531B2F54E7006FCBFE /* logo-sf.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4C1B2F54E7006FCBFE /* logo-sf.png */; };
@@ -82,7 +85,6 @@
 		A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786222D1AEAA56E006B0F76 /* Lesson.swift */; };
 		A78CD2A41B14DBA50086EFF8 /* jquery.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A78CD2A31B14DBA50086EFF8 /* jquery.min.js */; };
 		A79486BD1B34DA9E0010D419 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79486BC1B34DA9E0010D419 /* SettingsController.swift */; };
-		A79486C01B34E2AC0010D419 /* TwitterPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79486BF1B34E2AC0010D419 /* TwitterPlugin.swift */; };
 		A794DC1E1AF196BA00D8743F /* BoolSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */; };
 		A794DC211AF1A09800D8743F /* ILessonBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC201AF1A09800D8743F /* ILessonBusiness.swift */; };
 		A794DC231AF1A19600D8743F /* BaseBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC221AF1A19600D8743F /* BaseBusiness.swift */; };
@@ -186,6 +188,9 @@
 		A7782D881B3B68940001B9BA /* main_single_class.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = main_single_class.html; path = views/html/main_single_class.html; sourceTree = "<group>"; };
 		A7782D8C1B3B7CA40001B9BA /* ClosedSingleClassControllerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClosedSingleClassControllerEvent.swift; path = controllers/events/ClosedSingleClassControllerEvent.swift; sourceTree = "<group>"; };
 		A7782D8F1B3B7DE80001B9BA /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseController.swift; path = controllers/BaseController.swift; sourceTree = "<group>"; };
+		A7782D911B3B84490001B9BA /* SharePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharePlugin.swift; path = controllers/utils/SharePlugin.swift; sourceTree = "<group>"; };
+		A7782D931B3B84DF0001B9BA /* ISharePluginOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ISharePluginOwner.swift; path = controllers/utils/ISharePluginOwner.swift; sourceTree = "<group>"; };
+		A7782D951B3B87D40001B9BA /* TwitterPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwitterPlugin.swift; path = controllers/utils/TwitterPlugin.swift; sourceTree = "<group>"; };
 		A77BCC4A1B2F54E7006FCBFE /* going-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "going-pin.png"; path = "views/imgs/going-pin.png"; sourceTree = "<group>"; };
 		A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-charlottesville.png"; path = "views/imgs/logo-charlottesville.png"; sourceTree = "<group>"; };
 		A77BCC4C1B2F54E7006FCBFE /* logo-sf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-sf.png"; path = "views/imgs/logo-sf.png"; sourceTree = "<group>"; };
@@ -216,7 +221,6 @@
 		A78CD2A31B14DBA50086EFF8 /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = jquery.min.js; path = views/bower_components/jquery/dist/jquery.min.js; sourceTree = "<group>"; };
 		A7916A891AEB6A5700E1CD4F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
 		A79486BC1B34DA9E0010D419 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = controllers/subcontrollers/SettingsController.swift; sourceTree = "<group>"; };
-		A79486BF1B34E2AC0010D419 /* TwitterPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwitterPlugin.swift; path = controllers/utils/TwitterPlugin.swift; sourceTree = "<group>"; };
 		A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoolSerializer.swift; path = models/bll/serializers/BoolSerializer.swift; sourceTree = "<group>"; };
 		A794DC201AF1A09800D8743F /* ILessonBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ILessonBusiness.swift; path = models/bll/interfaces/ILessonBusiness.swift; sourceTree = "<group>"; };
 		A794DC221AF1A19600D8743F /* BaseBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseBusiness.swift; path = models/bll/BaseBusiness.swift; sourceTree = "<group>"; };
@@ -531,7 +535,9 @@
 		A79486BE1B34E28F0010D419 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				A79486BF1B34E2AC0010D419 /* TwitterPlugin.swift */,
+				A7782D911B3B84490001B9BA /* SharePlugin.swift */,
+				A7782D931B3B84DF0001B9BA /* ISharePluginOwner.swift */,
+				A7782D951B3B87D40001B9BA /* TwitterPlugin.swift */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -891,13 +897,13 @@
 				A7BA44F41AEAEE02008514F5 /* LessonDAO.swift in Sources */,
 				A794DC1E1AF196BA00D8743F /* BoolSerializer.swift in Sources */,
 				A772CBC21B066EE40055AF4E /* UserBusiness.swift in Sources */,
+				A7782D961B3B87D40001B9BA /* TwitterPlugin.swift in Sources */,
 				A74F045A1AEB271700EB8916 /* LessonSerializer.swift in Sources */,
 				A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */,
 				A794DC231AF1A19600D8743F /* BaseBusiness.swift in Sources */,
 				A74F04571AEB25AD00EB8916 /* SchoolClass.swift in Sources */,
 				A772CBC01B066D390055AF4E /* PreferenceBusiness.swift in Sources */,
 				A794DC301AF1A77900D8743F /* IUserBusiness.swift in Sources */,
-				A79486C01B34E2AC0010D419 /* TwitterPlugin.swift in Sources */,
 				A79486BD1B34DA9E0010D419 /* SettingsController.swift in Sources */,
 				A740521C1AEFFC88003ABBE3 /* RemoteCallback.swift in Sources */,
 				A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */,
@@ -919,9 +925,11 @@
 				A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */,
 				A74F044C1AEB04FE00EB8916 /* UserDAO.swift in Sources */,
 				A74F044A1AEB02B700EB8916 /* PreferenceDAO.swift in Sources */,
+				A7782D921B3B84490001B9BA /* SharePlugin.swift in Sources */,
 				A77BCC5B1B2F55BB006FCBFE /* SubController.swift in Sources */,
 				A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */,
 				A794DC211AF1A09800D8743F /* ILessonBusiness.swift in Sources */,
+				A7782D941B3B84DF0001B9BA /* ISharePluginOwner.swift in Sources */,
 				A784106A1AEF16FC006709ED /* SchoolClassSerializer.swift in Sources */,
 				A7C55DAB1B38F0E4005F4445 /* AlarmManager.swift in Sources */,
 				A74F044E1AEB06DE00EB8916 /* VenueDAO.swift in Sources */,
