@@ -66,7 +66,7 @@
 .single-class section h2 {
   font-family: "Muli";
   font-size: 18px;
-  text-align: justify; }
+  text-align: left; }
 
 .single-class section h1, .single-class section h2 {
   margin: 10px 0;
@@ -152,7 +152,7 @@
     margin: 5px 0;
     font-size: 18px;
     font-family: "Muli";
-    text-align: justify;
+    text-align: left;
     color: #333; }
 
 .single-class .rsvp-button {
