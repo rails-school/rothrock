@@ -12,7 +12,7 @@ import Caravel
 import MessageUI
 import SwiftEventBus
 
-internal class ClassListController: BaseController, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
+internal class ClassListController: SubController, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
     private var _bus: Caravel?
     
     internal override init(parentController: UIViewController, webView: UIWebView) {

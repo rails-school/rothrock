@@ -415,3 +415,15 @@ classListController.onStart();
 Caravel.getDefault().post("ResumingClassListController");
 
 classListController.onResume();
+
+Caravel.getDefault().register("ManualResumingClassListController", (function(_this) {
+  return function() {
+    return classListController.onResume();
+  };
+})(this));
+
+Caravel.getDefault().register("ManualPausingClassListController", (function(_this) {
+  return function() {
+    return classListController.onPause();
+  };
+})(this));

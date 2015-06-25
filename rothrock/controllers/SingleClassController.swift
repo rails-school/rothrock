@@ -11,25 +11,12 @@ import UIKit
 import Caravel
 import SwiftEventBus
 
-internal class SingleClassController: UIViewController {
+internal class SingleClassController: BaseController {
     
     @IBOutlet weak var _webView: UIWebView!
     
     private var _slug: String?
     private var _bus: Caravel?
-    
-    private func _fork() {
-        SwiftEventBus.post(ProgressForkEvent.NAME)
-    }
-    
-    private func _done() {
-        SwiftEventBus.post(ProgressDoneEvent.NAME)
-    }
-    
-    private func _publishError(message: String) {
-        _done()
-        SwiftEventBus.post(ErrorEvent.NAME, sender: ErrorEvent(message: message))
-    }
     
     private func _sendClass() {
         BusinessFactory
@@ -38,14 +25,16 @@ internal class SingleClassController: UIViewController {
                 _slug!,
                 success: { dict in
                     self._bus!.post("ReceiveClass", aDictionary: dict!)
+                    self.done()
                 },
-                failure: { self._publishError($0) }
+                failure: { self.publishError($0) }
         )
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fork()
         SwiftEventBus.onMainThread(self, name: SingleClassInitEvent.NAME) { notif in
             var e = notif.object as! SingleClassInitEvent
             
@@ -59,6 +48,12 @@ internal class SingleClassController: UIViewController {
             self._bus = bus
             if self._slug != nil { // Slug has been received, notify JS then
                 self._sendClass()
+            }
+            
+            bus.register("CloseInsight") { _, _ in
+                self.dismissViewControllerAnimated(true) {
+                    SwiftEventBus.post(ClosedSingleClassControllerEvent.NAME)
+                }
             }
         }
         

@@ -18,6 +18,7 @@ class SingleClassController extends BaseController
     @template = Template7.compile($("#single-class-template").html())
     @getBus().register "ReceiveClass", (name, data) =>
       @fork()
+
       $(@singleClassSelector).html(@template(data))
 
       # Set layout
@@ -27,5 +28,8 @@ class SingleClassController extends BaseController
 
       $(@shareSelector).on 'click', () =>
         new ShareMenu().show(@getApp(), @getBus(), $(@sectionSelector).data('slug'))
+
+      $(@closeTriggerSelector).on 'click', () =>
+        @getBus().post('CloseInsight')
 
       @done()

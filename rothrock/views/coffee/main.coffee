@@ -29,3 +29,8 @@ Caravel.getDefault().post("StartingClassListController")
 classListController.onStart()
 Caravel.getDefault().post("ResumingClassListController")
 classListController.onResume()
+
+Caravel.getDefault().register "ManualResumingClassListController", () =>
+  classListController.onResume()
+Caravel.getDefault().register "ManualPausingClassListController", () =>
+  classListController.onPause()

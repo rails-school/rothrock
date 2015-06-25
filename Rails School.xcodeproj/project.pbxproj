@@ -54,6 +54,8 @@
 		A7782D861B3B685A0001B9BA /* rothrock-main.js in Resources */ = {isa = PBXBuildFile; fileRef = A7782D841B3B685A0001B9BA /* rothrock-main.js */; };
 		A7782D871B3B685A0001B9BA /* rothrock-single-class.js in Resources */ = {isa = PBXBuildFile; fileRef = A7782D851B3B685A0001B9BA /* rothrock-single-class.js */; };
 		A7782D891B3B68940001B9BA /* main_single_class.html in Resources */ = {isa = PBXBuildFile; fileRef = A7782D881B3B68940001B9BA /* main_single_class.html */; };
+		A7782D8D1B3B7CA40001B9BA /* ClosedSingleClassControllerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D8C1B3B7CA40001B9BA /* ClosedSingleClassControllerEvent.swift */; };
+		A7782D901B3B7DE80001B9BA /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D8F1B3B7DE80001B9BA /* BaseController.swift */; };
 		A77BCC511B2F54E7006FCBFE /* going-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4A1B2F54E7006FCBFE /* going-pin.png */; };
 		A77BCC521B2F54E7006FCBFE /* logo-charlottesville.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */; };
 		A77BCC531B2F54E7006FCBFE /* logo-sf.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4C1B2F54E7006FCBFE /* logo-sf.png */; };
@@ -62,7 +64,7 @@
 		A77BCC561B2F54E7006FCBFE /* unrsvp-active.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4F1B2F54E7006FCBFE /* unrsvp-active.png */; };
 		A77BCC571B2F54E7006FCBFE /* unrsvp.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC501B2F54E7006FCBFE /* unrsvp.png */; };
 		A77BCC591B2F5573006FCBFE /* ClassListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77BCC581B2F5573006FCBFE /* ClassListController.swift */; };
-		A77BCC5B1B2F55BB006FCBFE /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77BCC5A1B2F55BB006FCBFE /* BaseController.swift */; };
+		A77BCC5B1B2F55BB006FCBFE /* SubController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77BCC5A1B2F55BB006FCBFE /* SubController.swift */; };
 		A77BCC5D1B2F5A6E006FCBFE /* main.html in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC5C1B2F5A6E006FCBFE /* main.html */; };
 		A77BCC5F1B2F81E8006FCBFE /* logo-default.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC5E1B2F81E8006FCBFE /* logo-default.png */; };
 		A77BCC611B2FB7C8006FCBFE /* font-awesome.min.css in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC601B2FB7C8006FCBFE /* font-awesome.min.css */; };
@@ -182,6 +184,8 @@
 		A7782D841B3B685A0001B9BA /* rothrock-main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "rothrock-main.js"; path = "views/js/rothrock-main.js"; sourceTree = "<group>"; };
 		A7782D851B3B685A0001B9BA /* rothrock-single-class.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "rothrock-single-class.js"; path = "views/js/rothrock-single-class.js"; sourceTree = "<group>"; };
 		A7782D881B3B68940001B9BA /* main_single_class.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = main_single_class.html; path = views/html/main_single_class.html; sourceTree = "<group>"; };
+		A7782D8C1B3B7CA40001B9BA /* ClosedSingleClassControllerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClosedSingleClassControllerEvent.swift; path = controllers/events/ClosedSingleClassControllerEvent.swift; sourceTree = "<group>"; };
+		A7782D8F1B3B7DE80001B9BA /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseController.swift; path = controllers/BaseController.swift; sourceTree = "<group>"; };
 		A77BCC4A1B2F54E7006FCBFE /* going-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "going-pin.png"; path = "views/imgs/going-pin.png"; sourceTree = "<group>"; };
 		A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-charlottesville.png"; path = "views/imgs/logo-charlottesville.png"; sourceTree = "<group>"; };
 		A77BCC4C1B2F54E7006FCBFE /* logo-sf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-sf.png"; path = "views/imgs/logo-sf.png"; sourceTree = "<group>"; };
@@ -189,8 +193,8 @@
 		A77BCC4E1B2F54E7006FCBFE /* rsvp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rsvp.png; path = views/imgs/rsvp.png; sourceTree = "<group>"; };
 		A77BCC4F1B2F54E7006FCBFE /* unrsvp-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "unrsvp-active.png"; path = "views/imgs/unrsvp-active.png"; sourceTree = "<group>"; };
 		A77BCC501B2F54E7006FCBFE /* unrsvp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unrsvp.png; path = views/imgs/unrsvp.png; sourceTree = "<group>"; };
-		A77BCC581B2F5573006FCBFE /* ClassListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassListController.swift; path = controllers/ClassListController.swift; sourceTree = "<group>"; };
-		A77BCC5A1B2F55BB006FCBFE /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		A77BCC581B2F5573006FCBFE /* ClassListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassListController.swift; path = controllers/subcontrollers/ClassListController.swift; sourceTree = "<group>"; };
+		A77BCC5A1B2F55BB006FCBFE /* SubController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubController.swift; path = controllers/subcontrollers/SubController.swift; sourceTree = "<group>"; };
 		A77BCC5C1B2F5A6E006FCBFE /* main.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = main.html; path = views/html/main.html; sourceTree = "<group>"; };
 		A77BCC5E1B2F81E8006FCBFE /* logo-default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-default.png"; path = "views/imgs/logo-default.png"; sourceTree = "<group>"; };
 		A77BCC601B2FB7C8006FCBFE /* font-awesome.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = "font-awesome.min.css"; path = "views/bower_components/fontawesome/css/font-awesome.min.css"; sourceTree = "<group>"; };
@@ -211,7 +215,7 @@
 		A786222D1AEAA56E006B0F76 /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lesson.swift; path = models/beans/Lesson.swift; sourceTree = "<group>"; };
 		A78CD2A31B14DBA50086EFF8 /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = jquery.min.js; path = views/bower_components/jquery/dist/jquery.min.js; sourceTree = "<group>"; };
 		A7916A891AEB6A5700E1CD4F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
-		A79486BC1B34DA9E0010D419 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = controllers/SettingsController.swift; sourceTree = "<group>"; };
+		A79486BC1B34DA9E0010D419 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = controllers/subcontrollers/SettingsController.swift; sourceTree = "<group>"; };
 		A79486BF1B34E2AC0010D419 /* TwitterPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwitterPlugin.swift; path = controllers/utils/TwitterPlugin.swift; sourceTree = "<group>"; };
 		A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoolSerializer.swift; path = models/bll/serializers/BoolSerializer.swift; sourceTree = "<group>"; };
 		A794DC201AF1A09800D8743F /* ILessonBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ILessonBusiness.swift; path = models/bll/interfaces/ILessonBusiness.swift; sourceTree = "<group>"; };
@@ -469,6 +473,16 @@
 			name = serializers;
 			sourceTree = "<group>";
 		};
+		A7782D8E1B3B7D840001B9BA /* subcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				A77BCC5A1B2F55BB006FCBFE /* SubController.swift */,
+				A77BCC581B2F5573006FCBFE /* ClassListController.swift */,
+				A79486BC1B34DA9E0010D419 /* SettingsController.swift */,
+			);
+			name = subcontrollers;
+			sourceTree = "<group>";
+		};
 		A77BCC621B2FB92E006FCBFE /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -560,6 +574,7 @@
 				A7C72EE71B0A5D4B001BA13C /* InformationEvent.swift */,
 				A7782D7C1B3B5F640001B9BA /* PresentSingleClassControllerEvent.swift */,
 				A7782D7E1B3B653C0001B9BA /* SingleClassInitEvent.swift */,
+				A7782D8C1B3B7CA40001B9BA /* ClosedSingleClassControllerEvent.swift */,
 			);
 			name = events;
 			sourceTree = "<group>";
@@ -606,13 +621,12 @@
 		A7EC14BA1B080B5B001981EB /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A7782D8E1B3B7D840001B9BA /* subcontrollers */,
 				A79486BE1B34E28F0010D419 /* utils */,
 				A7C72EDC1B0A59F1001BA13C /* events */,
 				A746A6A81AE9D6E800AF0FA5 /* MainController.swift */,
-				A77BCC581B2F5573006FCBFE /* ClassListController.swift */,
-				A77BCC5A1B2F55BB006FCBFE /* BaseController.swift */,
-				A79486BC1B34DA9E0010D419 /* SettingsController.swift */,
 				A7FA76471B3A3B6900F4BAA2 /* SingleClassController.swift */,
+				A7782D8F1B3B7DE80001B9BA /* BaseController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -860,6 +874,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A74F04521AEB208400EB8916 /* IRailsSchoolAPI.swift in Sources */,
+				A7782D8D1B3B7CA40001B9BA /* ClosedSingleClassControllerEvent.swift in Sources */,
 				A746A6A91AE9D6E800AF0FA5 /* MainController.swift in Sources */,
 				A74F04541AEB20BD00EB8916 /* RailsSchoolAPI.swift in Sources */,
 				A772CBC41B0691960055AF4E /* VenueBusiness.swift in Sources */,
@@ -889,6 +904,7 @@
 				A7BD792E1B0556AB00303751 /* DAOFactory.swift in Sources */,
 				A78410641AEF131A006709ED /* CheckCredentialsRequest.swift in Sources */,
 				A7C72EE01B0A5A8F001BA13C /* ProgressForkEvent.swift in Sources */,
+				A7782D901B3B7DE80001B9BA /* BaseController.swift in Sources */,
 				A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */,
 				A794DC321AF1A88E00D8743F /* IVenueBusiness.swift in Sources */,
 				A7C72EE41B0A5BB8001BA13C /* ErrorEvent.swift in Sources */,
@@ -903,7 +919,7 @@
 				A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */,
 				A74F044C1AEB04FE00EB8916 /* UserDAO.swift in Sources */,
 				A74F044A1AEB02B700EB8916 /* PreferenceDAO.swift in Sources */,
-				A77BCC5B1B2F55BB006FCBFE /* BaseController.swift in Sources */,
+				A77BCC5B1B2F55BB006FCBFE /* SubController.swift in Sources */,
 				A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */,
 				A794DC211AF1A09800D8743F /* ILessonBusiness.swift in Sources */,
 				A784106A1AEF16FC006709ED /* SchoolClassSerializer.swift in Sources */,

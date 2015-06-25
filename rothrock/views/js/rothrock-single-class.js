@@ -108,6 +108,9 @@ SingleClassController = (function(superClass) {
         $(_this.shareSelector).on('click', function() {
           return new ShareMenu().show(_this.getApp(), _this.getBus(), $(_this.sectionSelector).data('slug'));
         });
+        $(_this.closeTriggerSelector).on('click', function() {
+          return _this.getBus().post('CloseInsight');
+        });
         return _this.done();
       };
     })(this));
