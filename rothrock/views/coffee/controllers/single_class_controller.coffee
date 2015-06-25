@@ -26,6 +26,10 @@ class SingleClassController extends BaseController
         bottom: $(@footerSelector).outerHeight() - $(@rsvpButtonSelector).outerHeight() / 2
         left: ($(@footerSelector).outerWidth() - $(@rsvpButtonSelector).outerWidth()) / 2
 
+      # Set listeners
+      $(@rsvpButtonSelector).on 'click', () =>
+        @getBus().post("ToggleAttendance")
+
       $(@shareSelector).on 'click', () =>
         new ShareMenu().show(@getApp(), @getBus(), $(@sectionSelector).data('slug'))
 

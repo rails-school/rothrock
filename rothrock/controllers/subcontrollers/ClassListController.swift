@@ -71,11 +71,8 @@ internal class ClassListController: SubController, ISharePluginOwner {
                                                 newValue: !isAttending,
                                                 success: {
                                                     self.done()
-                                                    bus.post(
-                                                        "SetAttendance",
-                                                        aDictionary: ["slug": slug, "isAttending": !isAttending]
-                                                    )
                                                     self.confirm("saved_confirmation".localized)
+                                                    self._onceBusReady()
                                                 },
                                                 failure: { self.publishError($0) }
                                             )

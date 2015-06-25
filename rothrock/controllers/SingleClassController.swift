@@ -63,6 +63,42 @@ public class SingleClassController: BaseController, ISharePluginOwner {
                 }
             }
             
+            bus.register("ToggleAttendance") { name, data in
+                self.fork()
+                BusinessFactory
+                    .provideUser()
+                    .isCurrentUserAttendingTo(
+                        self._slug!,
+                        isAttending: { isAttending in
+                            BusinessFactory
+                                .provideLesson()
+                                .get(
+                                    self._slug!,
+                                    success: { lesson in
+                                        BusinessFactory
+                                            .provideUser()
+                                            .toggleAttendance(
+                                                lesson!.id,
+                                                newValue: !isAttending,
+                                                success: {
+                                                    self.done()
+                                                    self.confirm("saved_confirmation".localized)
+                                                    self._sendClass()
+                                                },
+                                                failure: { self.publishError($0) }
+                                        )
+                                    },
+                                    failure: { self.publishError($0) }
+                                )
+                        },
+                        needToSignIn: {
+                            self.done()
+                            self.alert("error_not_signed_in".localized)
+                        },
+                        failure: { self.publishError($0) }
+                )
+            }
+            
             self._sharePlugin = SharePlugin(owner: self, bus: bus)
         }
         

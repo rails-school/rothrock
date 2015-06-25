@@ -105,6 +105,9 @@ SingleClassController = (function(superClass) {
           bottom: $(_this.footerSelector).outerHeight() - $(_this.rsvpButtonSelector).outerHeight() / 2,
           left: ($(_this.footerSelector).outerWidth() - $(_this.rsvpButtonSelector).outerWidth()) / 2
         });
+        $(_this.rsvpButtonSelector).on('click', function() {
+          return _this.getBus().post("ToggleAttendance");
+        });
         $(_this.shareSelector).on('click', function() {
           return new ShareMenu().show(_this.getApp(), _this.getBus(), $(_this.sectionSelector).data('slug'));
         });

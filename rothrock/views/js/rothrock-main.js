@@ -233,36 +233,12 @@ ClassListController = (function(superClass) {
         return _this.getBus().post("TriggerSettings");
       };
     })(this));
-    this.getBus().register('ReceiveSchool', (function(_this) {
+    return this.getBus().register('ReceiveSchool', (function(_this) {
       return function(name, data) {
         if (data === "cville") {
           return $(_this.logoSelector).attr('src', 'logo-charlottesville.png');
         } else {
           return $(_this.logoSelector).attr('src', 'logo-sf.png');
-        }
-      };
-    })(this));
-    return this.getBus().register("SetAttendance", (function(_this) {
-      return function(name, data) {
-        var cardWrapper, countdown, goingPin, isAttending, rsvpButton;
-        isAttending = data.isAttending;
-        cardWrapper = $(_this.listSelector).find(_this.cardWrapperSelector + "[data-slug='" + data.slug + "']").first();
-        rsvpButton = cardWrapper.find(_this.rsvpSelector).first();
-        if (isAttending) {
-          rsvpButton.addClass('unrsvp');
-          rsvpButton.text('unRSVP');
-        } else {
-          rsvpButton.removeClass('unrsvp');
-          rsvpButton.text('RSVP');
-        }
-        goingPin = cardWrapper.find(_this.goingPinSelector).first();
-        countdown = cardWrapper.find(_this.countdownSelector).first();
-        if (isAttending) {
-          goingPin.removeClass('invisible');
-          return countdown.addClass('going');
-        } else {
-          goingPin.addClass('invisible');
-          return countdown.removeClass('going');
         }
       };
     })(this));

@@ -63,26 +63,5 @@ class ClassListController extends BaseController
       else
         $(@logoSelector).attr('src', 'logo-sf.png')
 
-    @getBus().register "SetAttendance", (name, data) =>
-      isAttending = data.isAttending
-      cardWrapper = $(@listSelector).find("#{@cardWrapperSelector}[data-slug='#{data.slug}']").first()
-
-      rsvpButton = cardWrapper.find(@rsvpSelector).first()
-      if isAttending
-        rsvpButton.addClass('unrsvp')
-        rsvpButton.text('unRSVP')
-      else
-        rsvpButton.removeClass('unrsvp')
-        rsvpButton.text('RSVP')
-
-      goingPin = cardWrapper.find(@goingPinSelector).first()
-      countdown = cardWrapper.find(@countdownSelector).first()
-      if isAttending
-        goingPin.removeClass('invisible')
-        countdown.addClass('going')
-      else
-        goingPin.addClass('invisible')
-        countdown.removeClass('going')
-
   onResume: () ->
     $('.navbar').addClass('hidden')
