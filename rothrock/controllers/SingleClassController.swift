@@ -12,7 +12,7 @@ import Caravel
 import SwiftEventBus
 import MessageUI
 
-public class SingleClassController: BaseController, ISharePluginOwner {
+public class SingleClassController: BaseController, ISharePluginOwner, IDeviceInterfaceOwner {
     
     @IBOutlet weak var _webView: UIWebView!
     
@@ -20,6 +20,7 @@ public class SingleClassController: BaseController, ISharePluginOwner {
     private var _bus: Caravel?
     
     private var _sharePlugin: SharePlugin?
+    private var _deviceInterface: DeviceInterface?
     
     public var controller: UIViewController {
         return self
@@ -100,6 +101,7 @@ public class SingleClassController: BaseController, ISharePluginOwner {
             }
             
             self._sharePlugin = SharePlugin(owner: self, bus: bus)
+            self._deviceInterface = DeviceInterface(owner: self, bus: bus)
         }
         
         _webView.loadRequest(NSURLRequest(URL: NSBundle.mainBundle().URLForResource("main_single_class", withExtension: "html")!))

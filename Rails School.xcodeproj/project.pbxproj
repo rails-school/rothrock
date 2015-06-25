@@ -59,6 +59,8 @@
 		A7782D921B3B84490001B9BA /* SharePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D911B3B84490001B9BA /* SharePlugin.swift */; };
 		A7782D941B3B84DF0001B9BA /* ISharePluginOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D931B3B84DF0001B9BA /* ISharePluginOwner.swift */; };
 		A7782D961B3B87D40001B9BA /* TwitterPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D951B3B87D40001B9BA /* TwitterPlugin.swift */; };
+		A7782D981B3B8D830001B9BA /* DeviceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D971B3B8D830001B9BA /* DeviceInterface.swift */; };
+		A7782D9A1B3B8F3E0001B9BA /* IDeviceInterfaceOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D991B3B8F3E0001B9BA /* IDeviceInterfaceOwner.swift */; };
 		A77BCC511B2F54E7006FCBFE /* going-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4A1B2F54E7006FCBFE /* going-pin.png */; };
 		A77BCC521B2F54E7006FCBFE /* logo-charlottesville.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */; };
 		A77BCC531B2F54E7006FCBFE /* logo-sf.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4C1B2F54E7006FCBFE /* logo-sf.png */; };
@@ -191,6 +193,8 @@
 		A7782D911B3B84490001B9BA /* SharePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharePlugin.swift; path = controllers/utils/SharePlugin.swift; sourceTree = "<group>"; };
 		A7782D931B3B84DF0001B9BA /* ISharePluginOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ISharePluginOwner.swift; path = controllers/utils/ISharePluginOwner.swift; sourceTree = "<group>"; };
 		A7782D951B3B87D40001B9BA /* TwitterPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwitterPlugin.swift; path = controllers/utils/TwitterPlugin.swift; sourceTree = "<group>"; };
+		A7782D971B3B8D830001B9BA /* DeviceInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceInterface.swift; path = controllers/utils/DeviceInterface.swift; sourceTree = "<group>"; };
+		A7782D991B3B8F3E0001B9BA /* IDeviceInterfaceOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IDeviceInterfaceOwner.swift; path = controllers/utils/IDeviceInterfaceOwner.swift; sourceTree = "<group>"; };
 		A77BCC4A1B2F54E7006FCBFE /* going-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "going-pin.png"; path = "views/imgs/going-pin.png"; sourceTree = "<group>"; };
 		A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-charlottesville.png"; path = "views/imgs/logo-charlottesville.png"; sourceTree = "<group>"; };
 		A77BCC4C1B2F54E7006FCBFE /* logo-sf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-sf.png"; path = "views/imgs/logo-sf.png"; sourceTree = "<group>"; };
@@ -538,6 +542,8 @@
 				A7782D911B3B84490001B9BA /* SharePlugin.swift */,
 				A7782D931B3B84DF0001B9BA /* ISharePluginOwner.swift */,
 				A7782D951B3B87D40001B9BA /* TwitterPlugin.swift */,
+				A7782D971B3B8D830001B9BA /* DeviceInterface.swift */,
+				A7782D991B3B8F3E0001B9BA /* IDeviceInterfaceOwner.swift */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -890,12 +896,14 @@
 				A7C72EE61B0A5CFB001BA13C /* ConfirmationEvent.swift in Sources */,
 				A71A7CC71AF00F440094019E /* SerializerFactory.swift in Sources */,
 				A794DC2E1AF1A6CE00D8743F /* IPreferenceBusiness.swift in Sources */,
+				A7782D9A1B3B8F3E0001B9BA /* IDeviceInterfaceOwner.swift in Sources */,
 				A7BA44F21AEAED41008514F5 /* BaseDAO.swift in Sources */,
 				A7BD79331B0579E100303751 /* StringExtension.swift in Sources */,
 				A784106E1AEF1F96006709ED /* VenueSerializer.swift in Sources */,
 				A7782D7F1B3B653C0001B9BA /* SingleClassInitEvent.swift in Sources */,
 				A7BA44F41AEAEE02008514F5 /* LessonDAO.swift in Sources */,
 				A794DC1E1AF196BA00D8743F /* BoolSerializer.swift in Sources */,
+				A7782D981B3B8D830001B9BA /* DeviceInterface.swift in Sources */,
 				A772CBC21B066EE40055AF4E /* UserBusiness.swift in Sources */,
 				A7782D961B3B87D40001B9BA /* TwitterPlugin.swift in Sources */,
 				A74F045A1AEB271700EB8916 /* LessonSerializer.swift in Sources */,

@@ -1,6 +1,24 @@
-var $$, BaseController, ClassListController, SettingsController, ShareMenu, Slider, classListController, mainView, myApp, settingsController,
+var $$, BaseController, ClassListController, DeviceInterface, SettingsController, ShareMenu, Slider, classListController, mainView, myApp, settingsController,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
+
+DeviceInterface = (function() {
+  function DeviceInterface(bus, slug) {
+    this.bus = bus;
+    this.slug = slug;
+  }
+
+  DeviceInterface.prototype.addToCalendar = function() {
+    return this.bus.post("AddToCalendar", this.slug);
+  };
+
+  DeviceInterface.prototype.addToMap = function() {
+    return this.bus.post("AddToMap", this.slug);
+  };
+
+  return DeviceInterface;
+
+})();
 
 ShareMenu = (function() {
   function ShareMenu(app, bus, slug) {
@@ -229,6 +247,8 @@ ClassListController = (function(superClass) {
     this.settingsSelector = '.js-settings';
     this.cardWrapperSelector = '.js-class-card-wrapper';
     this.cardSelector = '.js-class-card';
+    this.mapSelector = '.js-map';
+    this.calendarSelector = '.js-calendar';
     this.goingPinSelector = '.js-class-going-pin';
     this.countdownSelector = '.js-class-countdown';
     this.rsvpSelector = '.js-class-rsvp-button';
@@ -264,6 +284,14 @@ ClassListController = (function(superClass) {
           slug = $(e).data('slug');
           $(e).find(_this.cardSelector).first().on('click', function() {
             return _this.getBus().post('TriggerInsight', slug);
+          });
+          $(e).find(_this.mapSelector).first().on('click', function(e) {
+            e.stopPropagation();
+            return new DeviceInterface(_this.getBus(), slug).addToMap();
+          });
+          $(e).find(_this.calendarSelector).first().on('click', function(e) {
+            e.stopPropagation();
+            return new DeviceInterface(_this.getBus(), slug).addToCalendar();
           });
           $(e).find(_this.shareSelector).first().on('click', function() {
             return new ShareMenu(_this.getApp(), _this.getBus(), slug).show();

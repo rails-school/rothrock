@@ -12,9 +12,10 @@ import Caravel
 import MessageUI
 import SwiftEventBus
 
-internal class ClassListController: SubController, ISharePluginOwner {
+internal class ClassListController: SubController, ISharePluginOwner, IDeviceInterfaceOwner {
     private var _bus: Caravel?
     private var _sharePlugin: SharePlugin?
+    private var _deviceInterface: DeviceInterface?
     
     var controller: UIViewController {
         return parentController
@@ -89,6 +90,7 @@ internal class ClassListController: SubController, ISharePluginOwner {
             }
             
             self._sharePlugin = SharePlugin(owner: self, bus: bus)
+            self._deviceInterface = DeviceInterface(owner: self, bus: bus)
             
             self._onceBusReady()
         }

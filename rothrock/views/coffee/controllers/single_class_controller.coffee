@@ -6,6 +6,9 @@ class SingleClassController extends BaseController
 
     @sectionSelector = 'section'
 
+    @mapSelector = '.js-map'
+    @calendarSelector = '.js-calendar'
+
     @rsvpButtonSelector = '.js-rsvp-button'
     @shareSelector = '.js-share'
     @closeTriggerSelector = '.js-close-trigger'
@@ -20,6 +23,7 @@ class SingleClassController extends BaseController
       @fork()
 
       $(@singleClassSelector).html(@template(data))
+      slug = $(@sectionSelector).data('slug')
 
       # Set layout
       $(@rsvpButtonSelector).css
@@ -27,11 +31,17 @@ class SingleClassController extends BaseController
         left: ($(@footerSelector).outerWidth() - $(@rsvpButtonSelector).outerWidth()) / 2
 
       # Set listeners
+      $(@mapSelector).on 'click', () =>
+        new DeviceInterface(@getBus(), slug).addToMap()
+
+      $(@calendarSelector).on 'click', () =>
+        new DeviceInterface(@getBus(), slug).addToCalendar()
+
       $(@rsvpButtonSelector).on 'click', () =>
         @getBus().post("ToggleAttendance")
 
       $(@shareSelector).on 'click', () =>
-        new ShareMenu(@getApp(), @getBus(), $(@sectionSelector).data('slug')).show()
+        new ShareMenu(@getApp(), @getBus(), slug).show()
 
       $(@closeTriggerSelector).on 'click', () =>
         @getBus().post('CloseInsight')

@@ -18,6 +18,7 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'js/rothrock-main.js': [
+                        'coffee/components/device_interface.coffee',
                         'coffee/components/share_menu.coffee',
                         'coffee/components/slider.coffee',
                         'coffee/controllers/base_controller.coffee',
@@ -26,6 +27,7 @@ module.exports = function (grunt) {
                         'coffee/main.coffee'
                     ],
                     'js/rothrock-single-class.js': [
+                        'coffee/components/device_interface.coffee',
                         'coffee/components/share_menu.coffee',
                         'coffee/controllers/base_controller.coffee',
                         'coffee/controllers/single_class_controller.coffee',

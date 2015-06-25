@@ -10,6 +10,9 @@ class ClassListController extends BaseController
 
     @cardWrapperSelector = '.js-class-card-wrapper'
     @cardSelector = '.js-class-card'
+    @mapSelector = '.js-map'
+    @calendarSelector = '.js-calendar'
+
     @goingPinSelector = '.js-class-going-pin'
     @countdownSelector = '.js-class-countdown'
     @rsvpSelector = '.js-class-rsvp-button'
@@ -42,6 +45,14 @@ class ClassListController extends BaseController
         # Trigger insight
         $(e).find(@cardSelector).first().on 'click', () =>
           @getBus().post('TriggerInsight', slug)
+
+        $(e).find(@mapSelector).first().on 'click', (e) =>
+          e.stopPropagation()
+          new DeviceInterface(@getBus(), slug).addToMap()
+
+        $(e).find(@calendarSelector).first().on 'click', (e) =>
+          e.stopPropagation()
+          new DeviceInterface(@getBus(), slug).addToCalendar()
 
         # Trigger share menu
         $(e).find(@shareSelector).first().on 'click', () =>
