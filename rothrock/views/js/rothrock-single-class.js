@@ -3,36 +3,40 @@ var $$, BaseController, ShareMenu, SingleClassController, mainView, myApp, singl
   hasProp = {}.hasOwnProperty;
 
 ShareMenu = (function() {
-  function ShareMenu() {}
+  function ShareMenu(app, bus, slug) {
+    this.app = app;
+    this.bus = bus;
+    this.slug = slug;
+  }
 
-  ShareMenu.prototype.show = function(app, bus, slug) {
-    return app.actions([
+  ShareMenu.prototype.show = function() {
+    return this.app.actions([
       {
         text: 'Text',
         onClick: (function(_this) {
           return function() {
-            return bus.post('TriggerShareText', slug);
+            return _this.bus.post('TriggerShareText', _this.slug);
           };
         })(this)
       }, {
         text: 'Email',
         onClick: (function(_this) {
           return function() {
-            return bus.post('TriggerShareEmail', slug);
+            return _this.bus.post('TriggerShareEmail', _this.slug);
           };
         })(this)
       }, {
         text: 'Facebook',
         onClick: (function(_this) {
           return function() {
-            return bus.post('TriggerShareFacebook', slug);
+            return _this.bus.post('TriggerShareFacebook', _this.slug);
           };
         })(this)
       }, {
         text: 'Twitter',
         onClick: (function(_this) {
           return function() {
-            return bus.post('TriggerShareTwitter', slug);
+            return _this.bus.post('TriggerShareTwitter', _this.slug);
           };
         })(this)
       }, {
@@ -109,7 +113,7 @@ SingleClassController = (function(superClass) {
           return _this.getBus().post("ToggleAttendance");
         });
         $(_this.shareSelector).on('click', function() {
-          return new ShareMenu().show(_this.getApp(), _this.getBus(), $(_this.sectionSelector).data('slug'));
+          return new ShareMenu(_this.getApp(), _this.getBus(), $(_this.sectionSelector).data('slug')).show();
         });
         $(_this.closeTriggerSelector).on('click', function() {
           return _this.getBus().post('CloseInsight');

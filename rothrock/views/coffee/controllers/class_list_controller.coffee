@@ -45,7 +45,7 @@ class ClassListController extends BaseController
 
         # Trigger share menu
         $(e).find(@shareSelector).first().on 'click', () =>
-          new ShareMenu().show(@getApp(), @getBus(), slug)
+          new ShareMenu(@getApp(), @getBus(), slug).show()
 
         # Toggle rsvp
         $(e).find(@rsvpSelector).first().on 'click', () =>

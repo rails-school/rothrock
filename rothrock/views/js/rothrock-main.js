@@ -1,6 +1,54 @@
-var $$, BaseController, ClassListController, SettingsController, Slider, classListController, mainView, myApp, settingsController,
+var $$, BaseController, ClassListController, SettingsController, ShareMenu, Slider, classListController, mainView, myApp, settingsController,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
+
+ShareMenu = (function() {
+  function ShareMenu(app, bus, slug) {
+    this.app = app;
+    this.bus = bus;
+    this.slug = slug;
+  }
+
+  ShareMenu.prototype.show = function() {
+    return this.app.actions([
+      {
+        text: 'Text',
+        onClick: (function(_this) {
+          return function() {
+            return _this.bus.post('TriggerShareText', _this.slug);
+          };
+        })(this)
+      }, {
+        text: 'Email',
+        onClick: (function(_this) {
+          return function() {
+            return _this.bus.post('TriggerShareEmail', _this.slug);
+          };
+        })(this)
+      }, {
+        text: 'Facebook',
+        onClick: (function(_this) {
+          return function() {
+            return _this.bus.post('TriggerShareFacebook', _this.slug);
+          };
+        })(this)
+      }, {
+        text: 'Twitter',
+        onClick: (function(_this) {
+          return function() {
+            return _this.bus.post('TriggerShareTwitter', _this.slug);
+          };
+        })(this)
+      }, {
+        text: 'Cancel',
+        color: 'red'
+      }
+    ]);
+  };
+
+  return ShareMenu;
+
+})();
 
 Slider = (function() {
   Slider.ANIMATION_DURATION = 500;
@@ -218,7 +266,7 @@ ClassListController = (function(superClass) {
             return _this.getBus().post('TriggerInsight', slug);
           });
           $(e).find(_this.shareSelector).first().on('click', function() {
-            return new ShareMenu().show(_this.getApp(), _this.getBus(), slug);
+            return new ShareMenu(_this.getApp(), _this.getBus(), slug).show();
           });
           return $(e).find(_this.rsvpSelector).first().on('click', function() {
             slug = $(e).data('slug');

@@ -31,7 +31,7 @@ class SingleClassController extends BaseController
         @getBus().post("ToggleAttendance")
 
       $(@shareSelector).on 'click', () =>
-        new ShareMenu().show(@getApp(), @getBus(), $(@sectionSelector).data('slug'))
+        new ShareMenu(@getApp(), @getBus(), $(@sectionSelector).data('slug')).show()
 
       $(@closeTriggerSelector).on 'click', () =>
         @getBus().post('CloseInsight')
