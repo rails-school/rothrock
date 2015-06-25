@@ -358,6 +358,13 @@ SettingsController = (function(superClass) {
   SettingsController.prototype.onStart = function() {
     return this.getBus().register('SetSettings', (function(_this) {
       return function(name, data) {
+        var logOut;
+        logOut = $(_this.settingsSelector).find(_this.logOutSelector);
+        if (data.isSignedIn) {
+          logOut.removeClass('hidden');
+        } else {
+          logOut.addClass('hidden');
+        }
         _this._findEmailField().val(data.email);
         $(_this.settingsSelector).find(_this.twoHourDropdownSelector).first().val(data.twoHourReminder);
         $(_this.settingsSelector).find(_this.dayDropdownSelector).first().val(data.dayReminder);

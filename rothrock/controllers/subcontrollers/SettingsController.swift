@@ -23,6 +23,7 @@ internal class SettingsController: SubController {
     
     private func _onceBusReady() {
         _bus!.post("SetSettings", aDictionary: [
+            "isSignedIn": BusinessFactory.provideUser().isSignedIn(),
             "email": BusinessFactory.provideUser().getCurrentUserEmail() ?? "",
             "twoHourReminder": BusinessFactory.providePreference().getTwoHourReminderPreference()!.rawValue,
             "dayReminder": BusinessFactory.providePreference().getDayReminderPreference()!.rawValue,
