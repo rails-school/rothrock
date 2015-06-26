@@ -7,7 +7,7 @@ PODS:
     - Realm/Headers (= 0.93.2)
   - Realm/Headers (0.93.2)
   - Regex (0.2.1)
-  - SCLAlertView (0.3)
+  - SCLAlertView (0.4)
   - SwiftEventBus (1.1.0)
   - SwiftyJSON (2.2.0)
 
@@ -19,21 +19,20 @@ DEPENDENCIES:
   - Realm
   - Realm/Headers
   - Regex
-  - SCLAlertView (from `https://github.com/vikmeup/SCLAlertView-Swift.git`, tag `0.3.2`)
+  - SCLAlertView (from `https://github.com/vikmeup/SCLAlertView-Swift.git`)
   - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`)
   - SwiftyJSON
 
 EXTERNAL SOURCES:
   SCLAlertView:
     :git: https://github.com/vikmeup/SCLAlertView-Swift.git
-    :tag: 0.3.2
   SwiftEventBus:
     :git: https://github.com/cesarferreira/SwiftEventBus.git
 
 CHECKOUT OPTIONS:
   SCLAlertView:
+    :commit: 2a22bac5cb8530b4f98f89a5aac3ce7bba0d1758
     :git: https://github.com/vikmeup/SCLAlertView-Swift.git
-    :tag: 0.3.2
   SwiftEventBus:
     :commit: 7df7098b5aa837f1815fba4a6fd344fa6d6ae0a8
     :git: https://github.com/cesarferreira/SwiftEventBus.git
@@ -45,7 +44,7 @@ SPEC CHECKSUMS:
   KVNProgress: 7001d2d16a2755cee5599e8e485befe056f2197b
   Realm: 2fdd0ae74f730e190384e0338d8a0d3654df8220
   Regex: 14d9745c19442ccdf920234e50d463ba659f58c4
-  SCLAlertView: 7d1910ae5137626797d1a8e5ca9166964801881e
+  SCLAlertView: 830bdcb850f15fed8ca25bfbf3d6db5f9d890fd4
   SwiftEventBus: d334f7aecbddbd995c3de5c262cf35c72db550f3
   SwiftyJSON: 0b3e6c07af17ff745e77e8e9984097b55c956e5c
 

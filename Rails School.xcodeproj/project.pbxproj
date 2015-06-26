@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18A0992207485A232790F9D8 /* Pods_rothrock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5575745422AE9B1FB00FA044 /* Pods_rothrock.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7D414FDFD9B552D56EC801F5 /* Pods_Rails_School.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE3CF1C86955B730D21346D /* Pods_Rails_School.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A716CE491B3340A100420F67 /* main-background-corner.png in Resources */ = {isa = PBXBuildFile; fileRef = A716CE481B3340A100420F67 /* main-background-corner.png */; };
 		A71A7CC51AF00E760094019E /* StringSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A7CC41AF00E760094019E /* StringSerializer.swift */; };
 		A71A7CC71AF00F440094019E /* SerializerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A7CC61AF00F440094019E /* SerializerFactory.swift */; };
@@ -119,6 +120,7 @@
 		A7F7A5781B1CC192009A3951 /* caravel.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A7F7A5771B1CC192009A3951 /* caravel.min.js */; };
 		A7FA76461B3A390B00F4BAA2 /* logo-diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = A7FA76451B3A390B00F4BAA2 /* logo-diamond.png */; };
 		A7FA76481B3A3B6900F4BAA2 /* SingleClassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FA76471B3A3B6900F4BAA2 /* SingleClassController.swift */; };
+		B83F401BBF6B733618B1A21C /* Pods_Rails_SchoolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA2A95A21881DDF7AF72F76 /* Pods_Rails_SchoolTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FE6FCA9EDDA79A7556DC9E70 /* Pods_rothrockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA57EFD32C75B4AEA027CF1 /* Pods_rothrockTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -136,6 +138,7 @@
 		3533233ADE0D8A7AE76B5D94 /* Pods-rothrockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrockTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rothrockTests/Pods-rothrockTests.release.xcconfig"; sourceTree = "<group>"; };
 		3BEF411B36336395668B971F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5575745422AE9B1FB00FA044 /* Pods_rothrock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rothrock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DE3CF1C86955B730D21346D /* Pods_Rails_School.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rails_School.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC00F4D646796D935E91B68 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9C8967141C7046423621E252 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A716CE481B3340A100420F67 /* main-background-corner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main-background-corner.png"; path = "views/imgs/main-background-corner.png"; sourceTree = "<group>"; };
@@ -261,7 +264,12 @@
 		AB487B39E1ADD18545092D96 /* Pods-rothrock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.release.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.release.xcconfig"; sourceTree = "<group>"; };
 		AEA57EFD32C75B4AEA027CF1 /* Pods_rothrockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rothrockTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF5C00745E3C29669D778DF /* Pods-rothrockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrockTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rothrockTests/Pods-rothrockTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AFA2A95A21881DDF7AF72F76 /* Pods_Rails_SchoolTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rails_SchoolTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E5E00603A9C8156E79A2F1 /* Pods-rothrock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.debug.xcconfig"; sourceTree = "<group>"; };
+		B7971C6D6EFEC1DE94196EF9 /* Pods-Rails SchoolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rails SchoolTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rails SchoolTests/Pods-Rails SchoolTests.release.xcconfig"; sourceTree = "<group>"; };
+		E240BDE185A9DEBAA07DC913 /* Pods-Rails School.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rails School.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rails School/Pods-Rails School.release.xcconfig"; sourceTree = "<group>"; };
+		F949D156619DE87823FF4EF3 /* Pods-Rails SchoolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rails SchoolTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rails SchoolTests/Pods-Rails SchoolTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FEC426D7888C49E4BB33AC99 /* Pods-Rails School.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rails School.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rails School/Pods-Rails School.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A0992207485A232790F9D8 /* Pods_rothrock.framework in Frameworks */,
+				7D414FDFD9B552D56EC801F5 /* Pods_Rails_School.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE6FCA9EDDA79A7556DC9E70 /* Pods_rothrockTests.framework in Frameworks */,
+				B83F401BBF6B733618B1A21C /* Pods_Rails_SchoolTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +304,8 @@
 				3BEF411B36336395668B971F /* Pods.framework */,
 				5575745422AE9B1FB00FA044 /* Pods_rothrock.framework */,
 				AEA57EFD32C75B4AEA027CF1 /* Pods_rothrockTests.framework */,
+				7DE3CF1C86955B730D21346D /* Pods_Rails_School.framework */,
+				AFA2A95A21881DDF7AF72F76 /* Pods_Rails_SchoolTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -307,6 +319,10 @@
 				AB487B39E1ADD18545092D96 /* Pods-rothrock.release.xcconfig */,
 				AEF5C00745E3C29669D778DF /* Pods-rothrockTests.debug.xcconfig */,
 				3533233ADE0D8A7AE76B5D94 /* Pods-rothrockTests.release.xcconfig */,
+				FEC426D7888C49E4BB33AC99 /* Pods-Rails School.debug.xcconfig */,
+				E240BDE185A9DEBAA07DC913 /* Pods-Rails School.release.xcconfig */,
+				F949D156619DE87823FF4EF3 /* Pods-Rails SchoolTests.debug.xcconfig */,
+				B7971C6D6EFEC1DE94196EF9 /* Pods-Rails SchoolTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -815,7 +831,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rothrock/Pods-rothrock-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rails School/Pods-Rails School-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4FEA318EBA4D747AE354EC41 /* Embed Pods Frameworks */ = {
@@ -830,7 +846,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rothrock/Pods-rothrock-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rails School/Pods-Rails School-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		69A6B10183254A78767F4207 /* Check Pods Manifest.lock */ = {
@@ -860,7 +876,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rothrockTests/Pods-rothrockTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rails SchoolTests/Pods-Rails SchoolTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FF1F4BE02E876A4F74BFAE12 /* Copy Pods Resources */ = {
@@ -875,7 +891,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rothrockTests/Pods-rothrockTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rails SchoolTests/Pods-Rails SchoolTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1074,7 +1090,7 @@
 		};
 		A746A6C11AE9D6E800AF0FA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3E5E00603A9C8156E79A2F1 /* Pods-rothrock.debug.xcconfig */;
+			baseConfigurationReference = FEC426D7888C49E4BB33AC99 /* Pods-Rails School.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1102,7 +1118,7 @@
 		};
 		A746A6C21AE9D6E800AF0FA5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB487B39E1ADD18545092D96 /* Pods-rothrock.release.xcconfig */;
+			baseConfigurationReference = E240BDE185A9DEBAA07DC913 /* Pods-Rails School.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1129,7 +1145,7 @@
 		};
 		A746A6C41AE9D6E800AF0FA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AEF5C00745E3C29669D778DF /* Pods-rothrockTests.debug.xcconfig */;
+			baseConfigurationReference = F949D156619DE87823FF4EF3 /* Pods-Rails SchoolTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1149,7 +1165,7 @@
 		};
 		A746A6C51AE9D6E800AF0FA5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3533233ADE0D8A7AE76B5D94 /* Pods-rothrockTests.release.xcconfig */;
+			baseConfigurationReference = B7971C6D6EFEC1DE94196EF9 /* Pods-Rails SchoolTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
