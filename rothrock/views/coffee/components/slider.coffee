@@ -13,6 +13,7 @@ class Slider
     @gutter = options.gutter
 
     @cards = []
+    @currentCardIndex = 0
     @slideWrapper.find(".#{@cardWrapperClass}").each (i, e) =>
       @cards.push($(e))
 
@@ -28,30 +29,32 @@ class Slider
 
       @_setCardDesign($(e))
 
-      hammertime = new Hammer.Manager(e)
-      hammertime.add(new Hammer.Pan({ event: 'customPanLeft', threshold: 20, direction: Hammer.DIRECTION_LEFT }))
-      hammertime.add(new Hammer.Pan({ event: 'customPanRight', threshold: 20, direction: Hammer.DIRECTION_RIGHT }))
-      hammertime.on 'customPanLeft', (ev) =>
-        return if i == @cards.length - 1
-        return if @isAnimating
+    hammertime = new Hammer.Manager(@slideWrapper.get(0))
+    hammertime.add(new Hammer.Pan({ event: 'customPanLeft', threshold: 20, direction: Hammer.DIRECTION_LEFT }))
+    hammertime.add(new Hammer.Pan({ event: 'customPanRight', threshold: 20, direction: Hammer.DIRECTION_RIGHT }))
+    hammertime.on 'customPanLeft', (ev) =>
+      return if @currentCardIndex == @cards.length - 1
+      return if @isAnimating
 
-        @isAnimating = true
-        @cards[i].animate { left: -@cards[i].width() - @gutter }, Slider.ANIMATION_DURATION
-        @cards[i + 1].animate { left: 0 }, Slider.ANIMATION_DURATION, null, (e) =>
-          @isAnimating = false
-        if i < @cards.length - 2
-          @cards[i + 2].animate { left: $(e).width() + @gutter }, Slider.ANIMATION_DURATION
+      @isAnimating = true
+      @cards[@currentCardIndex].animate { left: -@cards[@currentCardIndex].width() - @gutter }, Slider.ANIMATION_DURATION
+      @cards[@currentCardIndex + 1].animate { left: 0 }, Slider.ANIMATION_DURATION, null, (e) =>
+        @isAnimating = false
+      if @currentCardIndex < @cards.length - 2
+        @cards[@currentCardIndex + 2].animate { left: $(@cards[@currentCardIndex]).width() + @gutter }, Slider.ANIMATION_DURATION
+      @currentCardIndex++
 
-      hammertime.on 'customPanRight', (ev) =>
-        return if i == 0
-        return if @isAnimating
+    hammertime.on 'customPanRight', (ev) =>
+      return if @currentCardIndex == 0
+      return if @isAnimating
 
-        @isAnimating = true
-        if i < @cards.length - 1
-          @cards[i + 1].animate { left: (@cards[i].width() + @gutter) * 2 }, Slider.ANIMATION_DURATION
-        @cards[i].animate { left: @cards[i].width() + @gutter }, Slider.ANIMATION_DURATION
-        @cards[i - 1].animate { left: 0 }, Slider.ANIMATION_DURATION, null, () =>
-          @isAnimating = false
+      @isAnimating = true
+      if @currentCardIndex < @cards.length - 1
+        @cards[@currentCardIndex + 1].animate { left: (@cards[@currentCardIndex].width() + @gutter) * 2 }, Slider.ANIMATION_DURATION
+      @cards[@currentCardIndex].animate { left: @cards[@currentCardIndex].width() + @gutter }, Slider.ANIMATION_DURATION
+      @cards[@currentCardIndex - 1].animate { left: 0 }, Slider.ANIMATION_DURATION, null, () =>
+        @isAnimating = false
+      @currentCardIndex--
 
   _setCardDesign: (wrapper) ->
     pin = wrapper.find(".#{@goingPinClass}").first()
