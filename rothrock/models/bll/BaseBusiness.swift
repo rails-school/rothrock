@@ -12,8 +12,7 @@ internal class BaseBusiness {
     private var _api: IRailsSchoolAPI
     
     internal init(api: IRailsSchoolAPI) {
-        self._api = api
-        
+        self._api = api        
     }
     
     internal var api: IRailsSchoolAPI {

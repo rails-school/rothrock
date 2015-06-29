@@ -136,4 +136,15 @@ internal class UserBusiness: BaseBusiness, IUserBusiness {
     func getCurrentUserSchoolSlug() -> String {
         return (getCurrentUserSchoolId() == 1) ? "sf" : "cville"
     }
+    
+    func saveDeviceToken(token: NSData) {
+        api.saveDeviceToken(
+            "\(token)",
+            callback: BLLCallback<Void>(
+                base: self,
+                success: { _, _ in NSLog("%@: Device token successfully saved", NSStringFromClass(UserBusiness.self)) },
+                failure: { NSLog("%@ - Error when saving device token: %@", NSStringFromClass(UserBusiness.self), $0) }
+            )
+        )
+    }
 }

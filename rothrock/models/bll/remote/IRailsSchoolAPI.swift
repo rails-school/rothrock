@@ -27,6 +27,8 @@ public protocol IRailsSchoolAPI {
     
     func signOut(callback: RemoteCallback<Void>)
     
+    func saveDeviceToken(token: String, callback: RemoteCallback<Void>)
+    
     func getVenue(id: Int, callback: RemoteCallback<Venue>)
     
     func isAttending(slug: String, authenticationCookie: String, callback: RemoteCallback<Bool>)
