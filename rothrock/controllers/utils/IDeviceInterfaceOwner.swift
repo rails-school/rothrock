@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 public protocol IDeviceInterfaceOwner {
+    func presentViewController(controller: UIViewController, animated: Bool, completion: (() -> Void)?)
+    
     func fork()
     
     func done()

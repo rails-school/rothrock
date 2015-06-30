@@ -66,7 +66,7 @@
 .single-class section h2 {
   font-family: "Muli";
   font-size: 18px;
-  text-align: justify; }
+  text-align: left; }
 
 .single-class section h1, .single-class section h2 {
   margin: 10px 0;
@@ -152,7 +152,7 @@
     margin: 5px 0;
     font-size: 18px;
     font-family: "Muli";
-    text-align: justify;
+    text-align: left;
     color: #333; }
 
 .single-class .rsvp-button {
@@ -177,11 +177,25 @@
   -o-justify-content: space-between;
   justify-content: space-between;
   -ms-flex-pack: justify;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
   width: 100%;
-  padding: 10px 20px;
-  box-sizing: border-box;
   background-color: white;
   border-top: 1px solid #ccc;
   z-index: 2; }
+  .single-class footer > * {
+    padding-top: 10px;
+    padding-bottom: 10px; }
   .single-class footer p.ic-close {
-    margin: 0; }
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px; }
+  .single-class footer .share-wrapper {
+    padding-right: 20px; }

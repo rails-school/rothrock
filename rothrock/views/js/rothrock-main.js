@@ -72,6 +72,7 @@ Slider = (function() {
   Slider.ANIMATION_DURATION = 500;
 
   function Slider(options) {
+    var hammertime;
     this.slideWrapper = options.slideWrapper;
     this.cardWrapperClass = options.cardWrapperClass;
     this.goingPinClass = options.goingPinClass;
@@ -82,9 +83,9 @@ Slider = (function() {
     this.shareClass = options.shareClass;
     this.gutter = options.gutter;
     this.cards = [];
+    this.currentCardIndex = 0;
     this.slideWrapper.find("." + this.cardWrapperClass).each((function(_this) {
       return function(i, e) {
-        var hammertime;
         _this.cards.push($(e));
         if (i === 0) {
           $(e).css({
@@ -99,62 +100,68 @@ Slider = (function() {
             left: ($(e).width() + _this.gutter) * 2
           });
         }
-        _this._setCardDesign($(e));
-        hammertime = new Hammer.Manager(e);
-        hammertime.add(new Hammer.Pan({
-          event: 'customPanLeft',
-          threshold: 30,
-          direction: Hammer.DIRECTION_LEFT
-        }));
-        hammertime.add(new Hammer.Pan({
-          event: 'customPanRight',
-          threshold: 30,
-          direction: Hammer.DIRECTION_RIGHT
-        }));
-        hammertime.on('customPanLeft', function(ev) {
-          if (i === _this.cards.length - 1) {
-            return;
-          }
-          if (_this.isAnimating) {
-            return;
-          }
-          _this.isAnimating = true;
-          _this.cards[i].animate({
-            left: -_this.cards[i].width() - _this.gutter
-          }, Slider.ANIMATION_DURATION);
-          _this.cards[i + 1].animate({
-            left: 0
-          }, Slider.ANIMATION_DURATION, null, function(e) {
-            return _this.isAnimating = false;
-          });
-          if (i < _this.cards.length - 2) {
-            return _this.cards[i + 2].animate({
-              left: $(e).width() + _this.gutter
-            }, Slider.ANIMATION_DURATION);
-          }
+        return _this._setCardDesign($(e));
+      };
+    })(this));
+    hammertime = new Hammer.Manager(this.slideWrapper.get(0));
+    hammertime.add(new Hammer.Pan({
+      event: 'customPanLeft',
+      threshold: 20,
+      direction: Hammer.DIRECTION_LEFT
+    }));
+    hammertime.add(new Hammer.Pan({
+      event: 'customPanRight',
+      threshold: 20,
+      direction: Hammer.DIRECTION_RIGHT
+    }));
+    hammertime.on('customPanLeft', (function(_this) {
+      return function(ev) {
+        if (_this.currentCardIndex === _this.cards.length - 1) {
+          return;
+        }
+        if (_this.isAnimating) {
+          return;
+        }
+        _this.isAnimating = true;
+        _this.cards[_this.currentCardIndex].animate({
+          left: -_this.cards[_this.currentCardIndex].width() - _this.gutter
+        }, Slider.ANIMATION_DURATION);
+        _this.cards[_this.currentCardIndex + 1].animate({
+          left: 0
+        }, Slider.ANIMATION_DURATION, null, function(e) {
+          return _this.isAnimating = false;
         });
-        return hammertime.on('customPanRight', function(ev) {
-          if (i === 0) {
-            return;
-          }
-          if (_this.isAnimating) {
-            return;
-          }
-          _this.isAnimating = true;
-          if (i < _this.cards.length - 1) {
-            _this.cards[i + 1].animate({
-              left: (_this.cards[i].width() + _this.gutter) * 2
-            }, Slider.ANIMATION_DURATION);
-          }
-          _this.cards[i].animate({
-            left: _this.cards[i].width() + _this.gutter
+        if (_this.currentCardIndex < _this.cards.length - 2) {
+          _this.cards[_this.currentCardIndex + 2].animate({
+            left: $(_this.cards[_this.currentCardIndex]).width() + _this.gutter
           }, Slider.ANIMATION_DURATION);
-          return _this.cards[i - 1].animate({
-            left: 0
-          }, Slider.ANIMATION_DURATION, null, function() {
-            return _this.isAnimating = false;
-          });
+        }
+        return _this.currentCardIndex++;
+      };
+    })(this));
+    hammertime.on('customPanRight', (function(_this) {
+      return function(ev) {
+        if (_this.currentCardIndex === 0) {
+          return;
+        }
+        if (_this.isAnimating) {
+          return;
+        }
+        _this.isAnimating = true;
+        if (_this.currentCardIndex < _this.cards.length - 1) {
+          _this.cards[_this.currentCardIndex + 1].animate({
+            left: (_this.cards[_this.currentCardIndex].width() + _this.gutter) * 2
+          }, Slider.ANIMATION_DURATION);
+        }
+        _this.cards[_this.currentCardIndex].animate({
+          left: _this.cards[_this.currentCardIndex].width() + _this.gutter
+        }, Slider.ANIMATION_DURATION);
+        _this.cards[_this.currentCardIndex - 1].animate({
+          left: 0
+        }, Slider.ANIMATION_DURATION, null, function() {
+          return _this.isAnimating = false;
         });
+        return _this.currentCardIndex--;
       };
     })(this));
   }
@@ -358,6 +365,13 @@ SettingsController = (function(superClass) {
   SettingsController.prototype.onStart = function() {
     return this.getBus().register('SetSettings', (function(_this) {
       return function(name, data) {
+        var logOut;
+        logOut = $(_this.settingsSelector).find(_this.logOutSelector);
+        if (data.isSignedIn) {
+          logOut.removeClass('hidden');
+        } else {
+          logOut.addClass('hidden');
+        }
         _this._findEmailField().val(data.email);
         $(_this.settingsSelector).find(_this.twoHourDropdownSelector).first().val(data.twoHourReminder);
         $(_this.settingsSelector).find(_this.dayDropdownSelector).first().val(data.dayReminder);

@@ -17,10 +17,6 @@ internal class ClassListController: SubController, ISharePluginOwner, IDeviceInt
     private var _sharePlugin: SharePlugin?
     private var _deviceInterface: DeviceInterface?
     
-    var controller: UIViewController {
-        return parentController
-    }
-    
     internal override init(parentController: UIViewController, webView: UIWebView) {
         super.init(parentController: parentController, webView: webView)
     }
@@ -102,6 +98,10 @@ internal class ClassListController: SubController, ISharePluginOwner, IDeviceInt
         }
         
         _onceBusReady()
+    }
+    
+    func presentViewController(controller: UIViewController, animated: Bool, completion: (() -> Void)?) {
+        parentController.presentViewController(controller, animated: animated, completion: completion)
     }
     
     // MFMessageComposeViewControllerDelegate

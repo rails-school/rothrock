@@ -24,6 +24,8 @@ class SettingsController extends BaseController
 
   onStart: () ->
     @getBus().register 'SetSettings', (name, data) =>
+      logOut = $(@settingsSelector).find(@logOutSelector)
+      if data.isSignedIn then logOut.removeClass('hidden') else logOut.addClass('hidden')
       @_findEmailField().val(data.email)
       $(@settingsSelector).find(@twoHourDropdownSelector).first().val(data.twoHourReminder)
       $(@settingsSelector).find(@dayDropdownSelector).first().val(data.dayReminder)

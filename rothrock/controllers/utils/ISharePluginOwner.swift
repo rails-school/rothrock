@@ -11,7 +11,7 @@ import UIKit
 import MessageUI
 
 public protocol ISharePluginOwner: MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
-    var controller: UIViewController { get }
+    func presentViewController(controller: UIViewController, animated: Bool, completion: (() -> Void)?)
     
     func fork()
     

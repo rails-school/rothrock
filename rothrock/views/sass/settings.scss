@@ -25,6 +25,12 @@ $settings-selector: "settings";
   }
 }
 
+.#{$settings-selector} .item-input input {
+  text-align: right;
+}
+
 .#{$settings-selector} .item-input select {
   color: $placeholder-color;
+
+  direction: rtl;
 }

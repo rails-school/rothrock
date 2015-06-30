@@ -66,7 +66,7 @@
 .class-list section .class-card-wrapper .class-card h2 {
   font-family: "Muli";
   font-size: 18px;
-  text-align: justify; }
+  text-align: left; }
 
 .class-list section .class-card-wrapper .class-card h1, .class-list section .class-card-wrapper .class-card h2 {
   margin: 10px 0;
@@ -324,7 +324,7 @@
 .class-list section .class-card-wrapper .class-card h2 {
   font-family: "Muli";
   font-size: 18px;
-  text-align: justify; }
+  text-align: left; }
 
 .class-list section .class-card-wrapper .class-card h1, .class-list section .class-card-wrapper .class-card h2 {
   margin: 10px 0;
@@ -411,5 +411,9 @@
     box-sizing: border-box;
     text-align: center; }
 
+.settings .item-input input {
+  text-align: right; }
+
 .settings .item-input select {
-  color: #aaa; }
+  color: #aaa;
+  direction: rtl; }

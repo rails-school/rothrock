@@ -10,10 +10,6 @@
 
 "api_endpoint" = "https://www.railsschool.org";
 
-"no_attendee" = "Be the first to join this class!";
-"one_attendee" = "1 student will attend this class";
-"multi_attendees" = "%@ students will attend this class";
-
 "processing" = "Processing...";
 "updated_preference" = "Updated!";
 "saved_confirmation" = "Saved!";
@@ -26,6 +22,7 @@
 "reminder_next_day" = "Tomorrow";
 
 "class_share_text" = "Hey, I am going to that class: %@. Join me!";
+"class_add_to_calendar_confirmation" = "Do you want to add this event to your calendar?";
 
 "settings_account_label" = "Account";
 "settings_email_placeholder" = "Email";
