@@ -137,6 +137,19 @@ internal class RailsSchoolAPI: IRailsSchoolAPI {
             )
     }
     
+    func saveDeviceToken(token: String, callback: RemoteCallback<Void>) {
+        var data = [
+            "token": token
+        ]
+        
+        Alamofire
+            .request(.PUT, _getUserRoute("/device-token"), parameters: data, encoding: .JSON)
+            .responseJSON(
+                options: NSJSONReadingOptions.AllowFragments,
+                completionHandler: callback.asHandler()
+            )
+    }
+    
     func getVenue(id: Int, callback: RemoteCallback<Venue>) {
         Alamofire
             .request(.GET, _getRoute("/venues/\(id)"))

@@ -9,6 +9,7 @@
 "app_name" = "Rails School";
 
 "api_endpoint" = "https://www.railsschool.org";
+//"api_endpoint" = "http://192.168.50.180:3000";
 
 "processing" = "Processing...";
 "updated_preference" = "Updated!";

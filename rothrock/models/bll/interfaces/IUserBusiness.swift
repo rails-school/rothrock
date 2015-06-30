@@ -26,4 +26,6 @@ public protocol IUserBusiness {
     func getCurrentUserSchoolId() -> Int?
     
     func getCurrentUserSchoolSlug() -> String
+    
+    func saveDeviceToken(token: NSData)
 }

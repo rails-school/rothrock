@@ -12,8 +12,7 @@ internal class BaseBusiness {
     private var _api: IRailsSchoolAPI
     
     internal init(api: IRailsSchoolAPI) {
-        self._api = api
-        
+        self._api = api        
     }
     
     internal var api: IRailsSchoolAPI {
@@ -24,8 +23,8 @@ internal class BaseBusiness {
         return "error_default".localized
     }
     
-    internal func processError(error: NSError?, failure: (String) -> Void) {
-        NSLog("%@: %@", NSStringFromClass(BaseBusiness.self), error!.description)
+    internal func processError(error: NSError, failure: (String) -> Void) {
+        NSLog("%@: %@", NSStringFromClass(BaseBusiness.self), error.description)
         failure(getDefaultErrorMsg())
     }
 }
