@@ -10,10 +10,6 @@
 
 "api_endpoint" = "https://www.railsschool.org";
 
-"no_attendee" = "Be the first to join this class!";
-"one_attendee" = "1 student will attend this class";
-"multi_attendees" = "%@ students will attend this class";
-
 "processing" = "Processing...";
 "updated_preference" = "Updated!";
 "saved_confirmation" = "Saved!";
