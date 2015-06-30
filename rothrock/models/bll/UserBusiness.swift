@@ -96,7 +96,7 @@ internal class UserBusiness: BaseBusiness, IUserBusiness {
                             }
                         },
                         failure: { (response, error) in
-                            if response!.statusCode == 401 && error != nil {
+                            if response!.statusCode == 401 {
                                 failure("settings_invalid_credentials".localized)
                             } else {
                                 self.processError(error, failure: failure)

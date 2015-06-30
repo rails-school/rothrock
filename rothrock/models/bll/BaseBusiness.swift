@@ -23,8 +23,8 @@ internal class BaseBusiness {
         return "error_default".localized
     }
     
-    internal func processError(error: NSError?, failure: (String) -> Void) {
-        NSLog("%@: %@", NSStringFromClass(BaseBusiness.self), error!.description)
+    internal func processError(error: NSError, failure: (String) -> Void) {
+        NSLog("%@: %@", NSStringFromClass(BaseBusiness.self), error.description)
         failure(getDefaultErrorMsg())
     }
 }
