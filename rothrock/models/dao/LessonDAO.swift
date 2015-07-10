@@ -40,8 +40,8 @@ internal class LessonDAO: BaseDAO, ILessonDAO {
     func truncateTable() {
         var lessons = Lesson.allObjects()
         
-        for l in lessons {
-            delete(l)
+        for i in 0..<lessons.count {
+            delete(lessons.objectAtIndex(i) as! Lesson)
         }
     }
 }

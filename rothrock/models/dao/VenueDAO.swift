@@ -38,8 +38,8 @@ internal class VenueDAO: BaseDAO, IVenueDAO {
     func truncateTable() {
         var venues = Venue.allObjects()
         
-        for v in venues {
-            delete(v)
+        for i in 0..<venues.count {
+            delete(venues.objectAtIndex(i) as! Venue)
         }
     }
 }

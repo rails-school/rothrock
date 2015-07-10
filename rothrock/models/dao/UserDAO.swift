@@ -13,10 +13,10 @@ internal class UserDAO: BaseDAO, IUserDAO {
         SCHOOL_ID_KEY = "current_user_school_id",
         TOKEN_KEY = "current_user_token"
     
-    private var _preferenceDAL: NSUserDefaults
+    private var _keyValueDAL: NSUserDefaults
     
     init(dal: RLMRealm, preferenceStorage: NSUserDefaults) {
-        self._preferenceDAL = preferenceStorage
+        self._keyValueDAL = preferenceStorage
         
         super.init(dal: dal)
     }
@@ -67,27 +67,27 @@ internal class UserDAO: BaseDAO, IUserDAO {
     }
     
     func getCurrentUserEmail() -> String? {
-        return _preferenceDAL.stringForKey(UserDAO.EMAIL_KEY)
+        return _keyValueDAL.stringForKey(UserDAO.EMAIL_KEY)
     }
     
     func setCurrentUserEmail(value: String) {
-        _preferenceDAL.setObject(value, forKey: UserDAO.EMAIL_KEY)
+        _keyValueDAL.setObject(value, forKey: UserDAO.EMAIL_KEY)
     }
     
     func getCurrentUserToken() -> String? {
-        return _preferenceDAL.stringForKey(UserDAO.TOKEN_KEY)
+        return _keyValueDAL.stringForKey(UserDAO.TOKEN_KEY)
     }
     
     func setCurrentUserToken(value: String) {
-        _preferenceDAL.setObject(value, forKey: UserDAO.TOKEN_KEY)
+        _keyValueDAL.setObject(value, forKey: UserDAO.TOKEN_KEY)
     }
     
     func getCurrentUserSchoolId() -> Int? {
-        return _preferenceDAL.objectForKey(UserDAO.SCHOOL_ID_KEY) as? Int
+        return _keyValueDAL.objectForKey(UserDAO.SCHOOL_ID_KEY) as? Int
     }
     
     func setCurrentUserSchoolId(value: Int) {
-        _preferenceDAL.setObject(value, forKey: UserDAO.SCHOOL_ID_KEY)
+        _keyValueDAL.setObject(value, forKey: UserDAO.SCHOOL_ID_KEY)
     }
     
     func hasCurrentUser() -> Bool {
@@ -97,15 +97,15 @@ internal class UserDAO: BaseDAO, IUserDAO {
     }
     
     func logOut() {
-        _preferenceDAL.removeObjectForKey(UserDAO.EMAIL_KEY)
-        _preferenceDAL.removeObjectForKey(UserDAO.TOKEN_KEY)
+        _keyValueDAL.removeObjectForKey(UserDAO.EMAIL_KEY)
+        _keyValueDAL.removeObjectForKey(UserDAO.TOKEN_KEY)
     }
     
     func truncateTable() {
         var users = User.allObjects()
         
-        for u in users {
-            delete(u)
+        for i in 0..<users.count {
+            delete(users.objectAtIndex(i) as! User)
         }
     }
 }
