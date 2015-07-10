@@ -28,4 +28,18 @@ internal class VenueDAO: BaseDAO, IVenueDAO {
         Venue.createOrUpdateInRealm(dal, withValue: venue)
         dal.commitWriteTransaction()
     }
+    
+    internal func delete(venue: Venue) {
+        dal.beginWriteTransaction()
+        dal.deleteObject(venue)
+        dal.commitWriteTransaction()
+    }
+    
+    func truncateTable() {
+        var venues = Venue.allObjects()
+        
+        for v in venues {
+            delete(v)
+        }
+    }
 }

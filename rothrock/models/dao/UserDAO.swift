@@ -60,6 +60,12 @@ internal class UserDAO: BaseDAO, IUserDAO {
         dal.commitWriteTransaction()
     }
     
+    internal func delete(user: User) {
+        dal.beginWriteTransaction()
+        dal.deleteObject(user)
+        dal.commitWriteTransaction()
+    }
+    
     func getCurrentUserEmail() -> String? {
         return _preferenceDAL.stringForKey(UserDAO.EMAIL_KEY)
     }
@@ -93,5 +99,13 @@ internal class UserDAO: BaseDAO, IUserDAO {
     func logOut() {
         _preferenceDAL.removeObjectForKey(UserDAO.EMAIL_KEY)
         _preferenceDAL.removeObjectForKey(UserDAO.TOKEN_KEY)
+    }
+    
+    func truncateTable() {
+        var users = User.allObjects()
+        
+        for u in users {
+            delete(u)
+        }
     }
 }

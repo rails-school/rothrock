@@ -14,4 +14,6 @@ public protocol IVenueDAO {
     func find(id: Int) -> Venue?
     
     func save(venue: Venue)
+    
+    func truncateTable()
 }

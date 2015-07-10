@@ -30,4 +30,18 @@ internal class LessonDAO: BaseDAO, ILessonDAO {
         Lesson.createOrUpdateInRealm(dal, withValue: lesson)
         dal.commitWriteTransaction()
     }
+    
+    internal func delete(lesson: Lesson) {
+        dal.beginWriteTransaction()
+        dal.deleteObject(lesson)
+        dal.commitWriteTransaction()
+    }
+    
+    func truncateTable() {
+        var lessons = Lesson.allObjects()
+        
+        for l in lessons {
+            delete(l)
+        }
+    }
 }
