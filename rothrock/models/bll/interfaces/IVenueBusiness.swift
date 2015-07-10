@@ -10,4 +10,6 @@ import Foundation
 
 public protocol IVenueBusiness {
     func get(id: Int, success: (Venue?) -> Void, failure: (String) -> Void)
+    
+    func cleanDatabase()
 }

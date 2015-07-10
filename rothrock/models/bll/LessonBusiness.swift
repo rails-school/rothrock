@@ -298,4 +298,8 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
             }
         })
     }
+    
+    func cleanDatabase() {
+        _lessonDAO.truncateTable()
+    }
 }

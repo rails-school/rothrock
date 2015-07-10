@@ -32,4 +32,8 @@ internal class VenueBusiness: BaseBusiness, IVenueBusiness {
             api.getVenue(id, callback: BLLCallback(base: self, success: { success($1); self._venueDAO.save($1!) }, failure: failure))
         }
     }
+    
+    func cleanDatabase() {
+        _venueDAO.truncateTable()
+    }
 }

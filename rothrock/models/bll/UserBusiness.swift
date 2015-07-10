@@ -147,4 +147,8 @@ internal class UserBusiness: BaseBusiness, IUserBusiness {
             )
         )
     }
+    
+    func cleanDatabase() {
+        _userDAO.truncateTable()
+    }
 }
