@@ -11,12 +11,13 @@ import Foundation
 internal class UserDAO: BaseDAO, IUserDAO {
     private static let EMAIL_KEY = "current_user_email",
         SCHOOL_ID_KEY = "current_user_school_id",
-        TOKEN_KEY = "current_user_token"
+        TOKEN_KEY = "current_user_token",
+        LATEST_CLEAN_KEY = "latest_clean"
     
     private var _keyValueDAL: NSUserDefaults
     
-    init(dal: RLMRealm, preferenceStorage: NSUserDefaults) {
-        self._keyValueDAL = preferenceStorage
+    init(dal: RLMRealm, keyValueStorage: NSUserDefaults) {
+        self._keyValueDAL = keyValueStorage
         
         super.init(dal: dal)
     }
@@ -101,11 +102,23 @@ internal class UserDAO: BaseDAO, IUserDAO {
         _keyValueDAL.removeObjectForKey(UserDAO.TOKEN_KEY)
     }
     
+    func getLatestClean() -> NSDate? {
+        var date = _keyValueDAL.objectForKey(UserDAO.LATEST_CLEAN_KEY) as? String
+        
+        if let d = date {
+            return NSDate.fromString(d)
+        } else {
+            return nil
+        }
+    }
+    
     func truncateTable() {
         var users = User.allObjects()
         
         for i in 0..<users.count {
             delete(users.objectAtIndex(i) as! User)
         }
+        
+        _keyValueDAL.setObject(NSDate().toString(), forKey: UserDAO.LATEST_CLEAN_KEY)
     }
 }

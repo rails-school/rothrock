@@ -9,6 +9,15 @@
 import Foundation
 
 internal class LessonDAO: BaseDAO, ILessonDAO {
+    private static let LATEST_CLEAN_KEY = "latest_clean"
+    
+    private var _keyValueDAL: NSUserDefaults
+    
+    init(dal: RLMRealm, keyValueStorage: NSUserDefaults) {
+        self._keyValueDAL = keyValueStorage
+        
+        super.init(dal: dal)
+    }
     
     func exists(slug: String) -> Bool {
         if let l = find(slug) {
@@ -37,11 +46,23 @@ internal class LessonDAO: BaseDAO, ILessonDAO {
         dal.commitWriteTransaction()
     }
     
+    func getLatestClean() -> NSDate? {
+        var date = _keyValueDAL.objectForKey(LessonDAO.LATEST_CLEAN_KEY) as? String
+        
+        if let d = date {
+            return NSDate.fromString(d)
+        } else {
+            return nil
+        }
+    }
+    
     func truncateTable() {
         var lessons = Lesson.allObjects()
         
         for i in 0..<lessons.count {
             delete(lessons.objectAtIndex(i) as! Lesson)
         }
+        
+        _keyValueDAL.setObject(NSDate().toString(), forKey: LessonDAO.LATEST_CLEAN_KEY)
     }
 }

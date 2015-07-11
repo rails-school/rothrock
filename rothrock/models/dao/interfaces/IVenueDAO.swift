@@ -15,5 +15,7 @@ public protocol IVenueDAO {
     
     func save(venue: Venue)
     
+    func getLatestClean() -> NSDate?
+    
     func truncateTable()
 }
