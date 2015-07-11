@@ -116,6 +116,6 @@ $single-class-selector: ".single-class";
   .share-wrapper {
     @extend %share-wrapper;
 
-    padding-right: 20px;
+    padding: 5px 20px;
   }
 }

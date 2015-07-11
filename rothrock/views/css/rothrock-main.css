@@ -224,7 +224,7 @@
     width: 80%;
     height: 100%; }
     .class-list section .class-card-wrapper .class-share-wrapper {
-      margin: 0 5px 15px 5px; }
+      padding: 5px 40px 15px 40px; }
 
 .class-list section .class-card-wrapper > * {
   position: absolute; }
