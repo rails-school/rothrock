@@ -34,6 +34,12 @@ internal class VenueBusiness: BaseBusiness, IVenueBusiness {
     }
     
     func cleanDatabase() {
-        _venueDAO.truncateTable()
+        if let latestClean = _venueDAO.getLatestClean() {
+            if latestClean.daysAgo() >= 7 {
+                _venueDAO.truncateTable()
+            }
+        } else {
+            _venueDAO.truncateTable()
+        }
     }
 }

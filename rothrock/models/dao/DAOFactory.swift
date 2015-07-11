@@ -18,7 +18,7 @@ public class DAOFactory {
         if let o = _user {
             return o
         } else {
-            _user = UserDAO(dal: RLMRealm.defaultRealm(), preferenceStorage: NSUserDefaults.standardUserDefaults())
+            _user = UserDAO(dal: RLMRealm.defaultRealm(), keyValueStorage: NSUserDefaults.standardUserDefaults())
             return _user!
         }
     }
@@ -27,7 +27,7 @@ public class DAOFactory {
         if let o = _lesson {
             return o
         } else {
-            _lesson = LessonDAO(dal: RLMRealm.defaultRealm())
+            _lesson = LessonDAO(dal: RLMRealm.defaultRealm(), keyValueStorage: NSUserDefaults.standardUserDefaults())
             return _lesson!
         }
     }
@@ -36,7 +36,7 @@ public class DAOFactory {
         if let o = _venue {
             return o
         } else {
-            _venue = VenueDAO(dal: RLMRealm.defaultRealm())
+            _venue = VenueDAO(dal: RLMRealm.defaultRealm(), keyValueStorage: NSUserDefaults.standardUserDefaults())
             return _venue!
         }
     }

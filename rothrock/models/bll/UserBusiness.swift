@@ -149,6 +149,12 @@ internal class UserBusiness: BaseBusiness, IUserBusiness {
     }
     
     func cleanDatabase() {
-        _userDAO.truncateTable()
+        if let latestClean = _userDAO.getLatestClean() {
+            if latestClean.daysAgo() >= 7 {
+                _userDAO.truncateTable()
+            }
+        } else {
+            _userDAO.truncateTable()
+        }
     }
 }

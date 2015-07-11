@@ -41,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Sets up alarms
         _alarmManager = AlarmManager(application: application)
+        application.setMinimumBackgroundFetchInterval(Double(AlarmManager.PERIOD_MILLI / 1000))
         
         // Sets up push notifications
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Badge | .Sound | .Alert, categories: nil))
@@ -115,11 +116,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        // Push notifications have been allowed, save device token
         BusinessFactory.provideUser().saveDeviceToken(deviceToken)
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         NSLog("%@", error)
+    }
+    
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        if let a = _alarmManager {
+            a.trigger() {
+                completionHandler(UIBackgroundFetchResult.NewData)
+            }
+        }
     }
 }
 
