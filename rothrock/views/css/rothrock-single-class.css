@@ -34,6 +34,13 @@
 .invisible {
   visibility: hidden; }
 
+.single-class {
+  background-color: #fff;
+  background-image: url("main-background-corner.png");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 30%; }
+
 .single-class .rsvp-button {
   width: 150px;
   height: 51.72414px;
@@ -117,8 +124,7 @@
 .single-class {
   width: 100%;
   height: 100%;
-  padding: 0 !important;
-  background: white; }
+  padding: 0 !important; }
   .single-class header, .single-class section, .single-class .rsvp-button, .single-class footer {
     position: absolute; }
 
