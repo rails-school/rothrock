@@ -4,12 +4,8 @@
 
 $going-pin-size: 50px;
 
-.shown {
-  display: block;
-}
-
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .visible {

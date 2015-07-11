@@ -22,11 +22,8 @@
   /* Legacy iOS */
   font-style: normal;
   font-weight: 400; }
-.shown {
-  display: block; }
-
 .hidden {
-  display: none; }
+  display: none !important; }
 
 .visible {
   visibility: visible; }
