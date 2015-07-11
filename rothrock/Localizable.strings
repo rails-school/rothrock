@@ -1,0 +1,46 @@
+/* 
+  Localizable.strings
+  rothrock
+
+  Created by Adrien on 14/05/15.
+  Copyright (c) 2015 RailsSchool. All rights reserved.
+*/
+
+"app_name" = "Rails School";
+
+"api_endpoint" = "https://www.railsschool.org";
+//"api_endpoint" = "http://192.168.50.180:3000";
+
+"processing" = "Processing...";
+"updated_preference" = "Updated!";
+"saved_confirmation" = "Saved!";
+"added_to_calendar" = "Added to calendar!";
+
+"attend_class" = "RSVP!";
+"remove_attendance" = "unRSVP";
+
+"reminder_two_hours" = "In two hours";
+"reminder_next_day" = "Tomorrow";
+
+"class_share_text" = "Hey, I am going to that class: %@. Join me!";
+"class_add_to_calendar_confirmation" = "Do you want to add this event to your calendar?";
+
+"settings_account_label" = "Account";
+"settings_email_placeholder" = "Email";
+"settings_password_placeholder" = "Password";
+"settings_submit_credentials" = "Remember me";
+"settings_invalid_credentials" = "Your username or password is invalid.";
+"settings_successful_log_out" = "Successfully logged out";
+
+"settings_reminder_label" = "Alert settings";
+"settings_reminder_day" = "24 hour reminder";
+"settings_reminder_two_hour" = "2 hour reminder";
+"settings_lesson_alert" = "New lesson alert";
+
+"settings_reminder_frequence_always" = "Always";
+"settings_reminder_frequence_attending" = "Only if attending";
+"settings_reminder_frequence_never" = "Never";
+
+"error_default" = "Whoops! Something wrong happened. Please try again.";
+"error_no_connection" = "You seem to have no Internet connection. Please try again.";
+"error_not_signed_in" = "You need to sign in before attending to any lesson.";

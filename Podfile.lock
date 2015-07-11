@@ -1,19 +1,51 @@
 PODS:
-  - Cent (3.0.0):
-    - Dollar (~> 3.0.0)
-  - Dollar (3.0.0)
-  - Realm (0.91.3):
-    - Realm/Headers (= 0.91.3)
-  - Realm/Headers (0.91.3)
+  - Alamofire (1.2.3)
+  - Caravel (0.3.3)
+  - DateTools (1.6.1)
+  - KVNProgress (2.2.1)
+  - Realm (0.93.2):
+    - Realm/Headers (= 0.93.2)
+  - Realm/Headers (0.93.2)
+  - Regex (0.2.1)
+  - SCLAlertView (0.4)
+  - SwiftEventBus (1.1.0)
+  - SwiftyJSON (2.2.0)
 
 DEPENDENCIES:
-  - Cent (~> 3.0.0)
-  - Dollar (~> 3.0.0)
-  - Realm (~> 0.91.3)
+  - Alamofire
+  - Caravel
+  - DateTools
+  - KVNProgress
+  - Realm
+  - Realm/Headers
+  - Regex
+  - SCLAlertView (from `https://github.com/vikmeup/SCLAlertView-Swift.git`)
+  - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`)
+  - SwiftyJSON
+
+EXTERNAL SOURCES:
+  SCLAlertView:
+    :git: https://github.com/vikmeup/SCLAlertView-Swift.git
+  SwiftEventBus:
+    :git: https://github.com/cesarferreira/SwiftEventBus.git
+
+CHECKOUT OPTIONS:
+  SCLAlertView:
+    :commit: 2a22bac5cb8530b4f98f89a5aac3ce7bba0d1758
+    :git: https://github.com/vikmeup/SCLAlertView-Swift.git
+  SwiftEventBus:
+    :commit: 7df7098b5aa837f1815fba4a6fd344fa6d6ae0a8
+    :git: https://github.com/cesarferreira/SwiftEventBus.git
 
 SPEC CHECKSUMS:
-  Cent: 305179e6575e71b14a3dfe0f73a1096e3349fb60
-  Dollar: 4df780ce1baa410d71e423fee07646abb1106909
-  Realm: 4bfdac6f0f3170a3947c7196e2e9a2e49c943719
+  Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
+  Caravel: 045353f8b484746b0d019f27f504b085fa87e007
+  DateTools: 9bcc89e4f2f9004d8a7a2bd1b49269cf78968e65
+  KVNProgress: 7001d2d16a2755cee5599e8e485befe056f2197b
+  Realm: 2fdd0ae74f730e190384e0338d8a0d3654df8220
+  Regex: 14d9745c19442ccdf920234e50d463ba659f58c4
+  SCLAlertView: 830bdcb850f15fed8ca25bfbf3d6db5f9d890fd4
+  SwiftEventBus: d334f7aecbddbd995c3de5c262cf35c72db550f3
+  SwiftyJSON: 0b3e6c07af17ff745e77e8e9984097b55c956e5c
 
-COCOAPODS: 0.37.0.beta.1
+COCOAPODS: 0.37.2

@@ -2,12 +2,19 @@
 platform :ios, '8.0'
 use_frameworks!
 
-target 'rothrock' do
-  pod 'Dollar', '~> 3.0.0'
-  pod 'Cent', '~> 3.0.0'
-  pod 'Realm', '~> 0.91.3'
+target 'Rails School' do
+  pod 'Realm' # Using Realm instead of RealmSwift as there are some Obj-C deps
+  pod 'SwiftyJSON'
+  pod 'Alamofire'
+  pod 'DateTools'
+  pod 'SwiftEventBus', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
+  pod 'SCLAlertView', :git => 'https://github.com/vikmeup/SCLAlertView-Swift.git'
+  pod 'KVNProgress'
+  pod 'Caravel'
+  pod 'Regex'
 end
 
-target 'rothrockTests' do
-
+target 'Rails SchoolTests', :exclusive => true do
+    pod 'Realm/Headers'
 end
+

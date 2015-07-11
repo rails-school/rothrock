@@ -1,0 +1,1220 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18A0992207485A232790F9D8 /* Pods_rothrock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5575745422AE9B1FB00FA044 /* Pods_rothrock.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7D414FDFD9B552D56EC801F5 /* Pods_Rails_School.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE3CF1C86955B730D21346D /* Pods_Rails_School.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A716CE491B3340A100420F67 /* main-background-corner.png in Resources */ = {isa = PBXBuildFile; fileRef = A716CE481B3340A100420F67 /* main-background-corner.png */; };
+		A71A7CC51AF00E760094019E /* StringSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A7CC41AF00E760094019E /* StringSerializer.swift */; };
+		A71A7CC71AF00F440094019E /* SerializerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A7CC61AF00F440094019E /* SerializerFactory.swift */; };
+		A73E62911B13C8D100CAAA8F /* framework7.min.css in Resources */ = {isa = PBXBuildFile; fileRef = A73E62901B13C8D100CAAA8F /* framework7.min.css */; };
+		A73E62951B13C8E500CAAA8F /* framework7.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A73E62941B13C8E500CAAA8F /* framework7.min.js */; };
+		A740521C1AEFFC88003ABBE3 /* RemoteCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A740521B1AEFFC88003ABBE3 /* RemoteCallback.swift */; };
+		A740521E1AF001AF003ABBE3 /* ArraySerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A740521D1AF001AF003ABBE3 /* ArraySerializer.swift */; };
+		A741CFFB1B166895001C9272 /* settings.html in Resources */ = {isa = PBXBuildFile; fileRef = A741CFFA1B166895001C9272 /* settings.html */; };
+		A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */; };
+		A746A6A91AE9D6E800AF0FA5 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A6A81AE9D6E800AF0FA5 /* MainController.swift */; };
+		A746A6AC1AE9D6E800AF0FA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A746A6AA1AE9D6E800AF0FA5 /* Main.storyboard */; };
+		A746A6AE1AE9D6E800AF0FA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A746A6AD1AE9D6E800AF0FA5 /* Images.xcassets */; };
+		A746A6B11AE9D6E800AF0FA5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A746A6AF1AE9D6E800AF0FA5 /* LaunchScreen.xib */; };
+		A746A6BD1AE9D6E800AF0FA5 /* rothrockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A6BC1AE9D6E800AF0FA5 /* rothrockTests.swift */; };
+		A74F044A1AEB02B700EB8916 /* PreferenceDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F04491AEB02B700EB8916 /* PreferenceDAO.swift */; };
+		A74F044C1AEB04FE00EB8916 /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F044B1AEB04FE00EB8916 /* UserDAO.swift */; };
+		A74F044E1AEB06DE00EB8916 /* VenueDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F044D1AEB06DE00EB8916 /* VenueDAO.swift */; };
+		A74F04521AEB208400EB8916 /* IRailsSchoolAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F04511AEB208400EB8916 /* IRailsSchoolAPI.swift */; };
+		A74F04541AEB20BD00EB8916 /* RailsSchoolAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F04531AEB20BD00EB8916 /* RailsSchoolAPI.swift */; };
+		A74F04571AEB25AD00EB8916 /* SchoolClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F04561AEB25AD00EB8916 /* SchoolClass.swift */; };
+		A74F045A1AEB271700EB8916 /* LessonSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F04591AEB271700EB8916 /* LessonSerializer.swift */; };
+		A74F045D1AEB274700EB8916 /* IJSONDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F045C1AEB274700EB8916 /* IJSONDeserializer.swift */; };
+		A772CBC01B066D390055AF4E /* PreferenceBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CBBF1B066D390055AF4E /* PreferenceBusiness.swift */; };
+		A772CBC21B066EE40055AF4E /* UserBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CBC11B066EE40055AF4E /* UserBusiness.swift */; };
+		A772CBC41B0691960055AF4E /* VenueBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CBC31B0691960055AF4E /* VenueBusiness.swift */; };
+		A772CBC61B0692E90055AF4E /* BusinessFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CBC51B0692E90055AF4E /* BusinessFactory.swift */; };
+		A77395561B30A78A00004169 /* Muli-Italic.eot in Resources */ = {isa = PBXBuildFile; fileRef = A773954A1B30A78A00004169 /* Muli-Italic.eot */; };
+		A77395571B30A78A00004169 /* Muli-Italic.svg in Resources */ = {isa = PBXBuildFile; fileRef = A773954B1B30A78A00004169 /* Muli-Italic.svg */; };
+		A77395581B30A78A00004169 /* Muli-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A773954C1B30A78A00004169 /* Muli-Italic.ttf */; };
+		A77395591B30A78A00004169 /* Muli-Italic.woff in Resources */ = {isa = PBXBuildFile; fileRef = A773954D1B30A78A00004169 /* Muli-Italic.woff */; };
+		A773955A1B30A78A00004169 /* Muli-Regular.eot in Resources */ = {isa = PBXBuildFile; fileRef = A773954E1B30A78A00004169 /* Muli-Regular.eot */; };
+		A773955B1B30A78A00004169 /* Muli-Regular.svg in Resources */ = {isa = PBXBuildFile; fileRef = A773954F1B30A78A00004169 /* Muli-Regular.svg */; };
+		A773955C1B30A78A00004169 /* Muli-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A77395501B30A78A00004169 /* Muli-Regular.ttf */; };
+		A773955D1B30A78A00004169 /* Muli-Regular.woff in Resources */ = {isa = PBXBuildFile; fileRef = A77395511B30A78A00004169 /* Muli-Regular.woff */; };
+		A773955E1B30A78A00004169 /* YanoneKaffeesatz-Regular.eot in Resources */ = {isa = PBXBuildFile; fileRef = A77395521B30A78A00004169 /* YanoneKaffeesatz-Regular.eot */; };
+		A773955F1B30A78A00004169 /* YanoneKaffeesatz-Regular.svg in Resources */ = {isa = PBXBuildFile; fileRef = A77395531B30A78A00004169 /* YanoneKaffeesatz-Regular.svg */; };
+		A77395601B30A78A00004169 /* YanoneKaffeesatz-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A77395541B30A78A00004169 /* YanoneKaffeesatz-Regular.ttf */; };
+		A77395611B30A78A00004169 /* YanoneKaffeesatz-Regular.woff in Resources */ = {isa = PBXBuildFile; fileRef = A77395551B30A78A00004169 /* YanoneKaffeesatz-Regular.woff */; };
+		A77395671B30E4DE00004169 /* hammer.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A77395661B30E4DE00004169 /* hammer.min.js */; };
+		A7782D7D1B3B5F640001B9BA /* PresentSingleClassControllerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D7C1B3B5F640001B9BA /* PresentSingleClassControllerEvent.swift */; };
+		A7782D7F1B3B653C0001B9BA /* SingleClassInitEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D7E1B3B653C0001B9BA /* SingleClassInitEvent.swift */; };
+		A7782D821B3B68500001B9BA /* rothrock-main.css in Resources */ = {isa = PBXBuildFile; fileRef = A7782D801B3B68500001B9BA /* rothrock-main.css */; };
+		A7782D831B3B68500001B9BA /* rothrock-single-class.css in Resources */ = {isa = PBXBuildFile; fileRef = A7782D811B3B68500001B9BA /* rothrock-single-class.css */; };
+		A7782D861B3B685A0001B9BA /* rothrock-main.js in Resources */ = {isa = PBXBuildFile; fileRef = A7782D841B3B685A0001B9BA /* rothrock-main.js */; };
+		A7782D871B3B685A0001B9BA /* rothrock-single-class.js in Resources */ = {isa = PBXBuildFile; fileRef = A7782D851B3B685A0001B9BA /* rothrock-single-class.js */; };
+		A7782D891B3B68940001B9BA /* main_single_class.html in Resources */ = {isa = PBXBuildFile; fileRef = A7782D881B3B68940001B9BA /* main_single_class.html */; };
+		A7782D8D1B3B7CA40001B9BA /* ClosedSingleClassControllerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D8C1B3B7CA40001B9BA /* ClosedSingleClassControllerEvent.swift */; };
+		A7782D901B3B7DE80001B9BA /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D8F1B3B7DE80001B9BA /* BaseController.swift */; };
+		A7782D921B3B84490001B9BA /* SharePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D911B3B84490001B9BA /* SharePlugin.swift */; };
+		A7782D941B3B84DF0001B9BA /* ISharePluginOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D931B3B84DF0001B9BA /* ISharePluginOwner.swift */; };
+		A7782D961B3B87D40001B9BA /* TwitterPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D951B3B87D40001B9BA /* TwitterPlugin.swift */; };
+		A7782D981B3B8D830001B9BA /* DeviceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D971B3B8D830001B9BA /* DeviceInterface.swift */; };
+		A7782D9A1B3B8F3E0001B9BA /* IDeviceInterfaceOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7782D991B3B8F3E0001B9BA /* IDeviceInterfaceOwner.swift */; };
+		A77BCC511B2F54E7006FCBFE /* going-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4A1B2F54E7006FCBFE /* going-pin.png */; };
+		A77BCC521B2F54E7006FCBFE /* logo-charlottesville.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */; };
+		A77BCC531B2F54E7006FCBFE /* logo-sf.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4C1B2F54E7006FCBFE /* logo-sf.png */; };
+		A77BCC541B2F54E7006FCBFE /* rsvp-active.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4D1B2F54E7006FCBFE /* rsvp-active.png */; };
+		A77BCC551B2F54E7006FCBFE /* rsvp.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4E1B2F54E7006FCBFE /* rsvp.png */; };
+		A77BCC561B2F54E7006FCBFE /* unrsvp-active.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC4F1B2F54E7006FCBFE /* unrsvp-active.png */; };
+		A77BCC571B2F54E7006FCBFE /* unrsvp.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC501B2F54E7006FCBFE /* unrsvp.png */; };
+		A77BCC591B2F5573006FCBFE /* ClassListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77BCC581B2F5573006FCBFE /* ClassListController.swift */; };
+		A77BCC5B1B2F55BB006FCBFE /* SubController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77BCC5A1B2F55BB006FCBFE /* SubController.swift */; };
+		A77BCC5D1B2F5A6E006FCBFE /* main.html in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC5C1B2F5A6E006FCBFE /* main.html */; };
+		A77BCC5F1B2F81E8006FCBFE /* logo-default.png in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC5E1B2F81E8006FCBFE /* logo-default.png */; };
+		A77BCC611B2FB7C8006FCBFE /* font-awesome.min.css in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC601B2FB7C8006FCBFE /* font-awesome.min.css */; };
+		A77BCC691B2FB93A006FCBFE /* fontawesome-webfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC631B2FB93A006FCBFE /* fontawesome-webfont.eot */; };
+		A77BCC6A1B2FB93A006FCBFE /* fontawesome-webfont.svg in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC641B2FB93A006FCBFE /* fontawesome-webfont.svg */; };
+		A77BCC6B1B2FB93A006FCBFE /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC651B2FB93A006FCBFE /* fontawesome-webfont.ttf */; };
+		A77BCC6C1B2FB93A006FCBFE /* fontawesome-webfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC661B2FB93A006FCBFE /* fontawesome-webfont.woff */; };
+		A77BCC6D1B2FB93A006FCBFE /* fontawesome-webfont.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC671B2FB93A006FCBFE /* fontawesome-webfont.woff2 */; };
+		A77BCC6E1B2FB93A006FCBFE /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = A77BCC681B2FB93A006FCBFE /* FontAwesome.otf */; };
+		A78410641AEF131A006709ED /* CheckCredentialsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */; };
+		A78410681AEF14E0006709ED /* IJSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410671AEF14E0006709ED /* IJSONSerializer.swift */; };
+		A784106A1AEF16FC006709ED /* SchoolClassSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78410691AEF16FC006709ED /* SchoolClassSerializer.swift */; };
+		A784106C1AEF1F13006709ED /* UserSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784106B1AEF1F13006709ED /* UserSerializer.swift */; };
+		A784106E1AEF1F96006709ED /* VenueSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784106D1AEF1F96006709ED /* VenueSerializer.swift */; };
+		A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786222D1AEAA56E006B0F76 /* Lesson.swift */; };
+		A78CD2A41B14DBA50086EFF8 /* jquery.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A78CD2A31B14DBA50086EFF8 /* jquery.min.js */; };
+		A79486BD1B34DA9E0010D419 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79486BC1B34DA9E0010D419 /* SettingsController.swift */; };
+		A794DC1E1AF196BA00D8743F /* BoolSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */; };
+		A794DC211AF1A09800D8743F /* ILessonBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC201AF1A09800D8743F /* ILessonBusiness.swift */; };
+		A794DC231AF1A19600D8743F /* BaseBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC221AF1A19600D8743F /* BaseBusiness.swift */; };
+		A794DC251AF1A24100D8743F /* RailsSchoolAPIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC241AF1A24100D8743F /* RailsSchoolAPIFactory.swift */; };
+		A794DC2E1AF1A6CE00D8743F /* IPreferenceBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC2D1AF1A6CE00D8743F /* IPreferenceBusiness.swift */; };
+		A794DC301AF1A77900D8743F /* IUserBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC2F1AF1A77900D8743F /* IUserBusiness.swift */; };
+		A794DC321AF1A88E00D8743F /* IVenueBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC311AF1A88E00D8743F /* IVenueBusiness.swift */; };
+		A794DC341AF1A8F700D8743F /* LessonBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794DC331AF1A8F700D8743F /* LessonBusiness.swift */; };
+		A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */; };
+		A7BA44EE1AEAEC25008514F5 /* IUserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44ED1AEAEC25008514F5 /* IUserDAO.swift */; };
+		A7BA44F01AEAECDB008514F5 /* IVenueDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */; };
+		A7BA44F21AEAED41008514F5 /* BaseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44F11AEAED41008514F5 /* BaseDAO.swift */; };
+		A7BA44F41AEAEE02008514F5 /* LessonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA44F31AEAEE02008514F5 /* LessonDAO.swift */; };
+		A7BD792E1B0556AB00303751 /* DAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD792D1B0556AB00303751 /* DAOFactory.swift */; };
+		A7BD79301B05728F00303751 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7BD792F1B05728F00303751 /* Localizable.strings */; };
+		A7BD79331B0579E100303751 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD79321B0579E100303751 /* StringExtension.swift */; };
+		A7BD79351B0584BD00303751 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD79341B0584BD00303751 /* DateExtension.swift */; };
+		A7BD79371B058B2700303751 /* BLLCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD79361B058B2700303751 /* BLLCallback.swift */; };
+		A7C55DAB1B38F0E4005F4445 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C55DAA1B38F0E4005F4445 /* AlarmManager.swift */; };
+		A7C72EE01B0A5A8F001BA13C /* ProgressForkEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EDF1B0A5A8F001BA13C /* ProgressForkEvent.swift */; };
+		A7C72EE21B0A5B9B001BA13C /* ProgressDoneEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE11B0A5B9B001BA13C /* ProgressDoneEvent.swift */; };
+		A7C72EE41B0A5BB8001BA13C /* ErrorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE31B0A5BB8001BA13C /* ErrorEvent.swift */; };
+		A7C72EE61B0A5CFB001BA13C /* ConfirmationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE51B0A5CFB001BA13C /* ConfirmationEvent.swift */; };
+		A7C72EE81B0A5D4B001BA13C /* InformationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C72EE71B0A5D4B001BA13C /* InformationEvent.swift */; };
+		A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFE91AEACBEC00370F4A /* User.swift */; };
+		A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEB1AEAD1C100370F4A /* Venue.swift */; };
+		A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */; };
+		A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */; };
+		A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */; };
+		A7F7A5781B1CC192009A3951 /* caravel.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A7F7A5771B1CC192009A3951 /* caravel.min.js */; };
+		A7FA76461B3A390B00F4BAA2 /* logo-diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = A7FA76451B3A390B00F4BAA2 /* logo-diamond.png */; };
+		A7FA76481B3A3B6900F4BAA2 /* SingleClassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FA76471B3A3B6900F4BAA2 /* SingleClassController.swift */; };
+		B83F401BBF6B733618B1A21C /* Pods_Rails_SchoolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA2A95A21881DDF7AF72F76 /* Pods_Rails_SchoolTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FE6FCA9EDDA79A7556DC9E70 /* Pods_rothrockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA57EFD32C75B4AEA027CF1 /* Pods_rothrockTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A746A6B71AE9D6E800AF0FA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A746A6991AE9D6E800AF0FA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A746A6A01AE9D6E800AF0FA5;
+			remoteInfo = rothrock;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3533233ADE0D8A7AE76B5D94 /* Pods-rothrockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrockTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rothrockTests/Pods-rothrockTests.release.xcconfig"; sourceTree = "<group>"; };
+		3BEF411B36336395668B971F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5575745422AE9B1FB00FA044 /* Pods_rothrock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rothrock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DE3CF1C86955B730D21346D /* Pods_Rails_School.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rails_School.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DC00F4D646796D935E91B68 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9C8967141C7046423621E252 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A716CE481B3340A100420F67 /* main-background-corner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main-background-corner.png"; path = "views/imgs/main-background-corner.png"; sourceTree = "<group>"; };
+		A71A7CC41AF00E760094019E /* StringSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringSerializer.swift; path = models/bll/serializers/StringSerializer.swift; sourceTree = "<group>"; };
+		A71A7CC61AF00F440094019E /* SerializerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SerializerFactory.swift; path = models/bll/serializers/SerializerFactory.swift; sourceTree = "<group>"; };
+		A73E62901B13C8D100CAAA8F /* framework7.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = framework7.min.css; path = views/bower_components/framework7/dist/css/framework7.min.css; sourceTree = "<group>"; };
+		A73E62941B13C8E500CAAA8F /* framework7.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = framework7.min.js; path = views/bower_components/framework7/dist/js/framework7.min.js; sourceTree = "<group>"; };
+		A740521B1AEFFC88003ABBE3 /* RemoteCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteCallback.swift; path = models/bll/remote/RemoteCallback.swift; sourceTree = "<group>"; };
+		A740521D1AF001AF003ABBE3 /* ArraySerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArraySerializer.swift; path = models/bll/serializers/ArraySerializer.swift; sourceTree = "<group>"; };
+		A741CFFA1B166895001C9272 /* settings.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = settings.html; path = views/html/settings.html; sourceTree = "<group>"; };
+		A746A6A11AE9D6E800AF0FA5 /* Rails School.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rails School.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A746A6A51AE9D6E800AF0FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A746A6A81AE9D6E800AF0FA5 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainController.swift; path = controllers/MainController.swift; sourceTree = "<group>"; };
+		A746A6AB1AE9D6E800AF0FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A746A6AD1AE9D6E800AF0FA5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A746A6B01AE9D6E800AF0FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A746A6B61AE9D6E800AF0FA5 /* Rails SchoolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rails SchoolTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A746A6BB1AE9D6E800AF0FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A746A6BC1AE9D6E800AF0FA5 /* rothrockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rothrockTests.swift; sourceTree = "<group>"; };
+		A74F04491AEB02B700EB8916 /* PreferenceDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferenceDAO.swift; path = models/dao/PreferenceDAO.swift; sourceTree = "<group>"; };
+		A74F044B1AEB04FE00EB8916 /* UserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDAO.swift; path = models/dao/UserDAO.swift; sourceTree = "<group>"; };
+		A74F044D1AEB06DE00EB8916 /* VenueDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenueDAO.swift; path = models/dao/VenueDAO.swift; sourceTree = "<group>"; };
+		A74F04511AEB208400EB8916 /* IRailsSchoolAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRailsSchoolAPI.swift; path = models/bll/remote/IRailsSchoolAPI.swift; sourceTree = "<group>"; };
+		A74F04531AEB20BD00EB8916 /* RailsSchoolAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RailsSchoolAPI.swift; path = models/bll/remote/RailsSchoolAPI.swift; sourceTree = "<group>"; };
+		A74F04561AEB25AD00EB8916 /* SchoolClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SchoolClass.swift; path = models/bll/structs/SchoolClass.swift; sourceTree = "<group>"; };
+		A74F04591AEB271700EB8916 /* LessonSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LessonSerializer.swift; path = models/bll/serializers/LessonSerializer.swift; sourceTree = "<group>"; };
+		A74F045C1AEB274700EB8916 /* IJSONDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IJSONDeserializer.swift; path = models/bll/serializers/IJSONDeserializer.swift; sourceTree = "<group>"; };
+		A772CBBF1B066D390055AF4E /* PreferenceBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferenceBusiness.swift; path = models/bll/PreferenceBusiness.swift; sourceTree = "<group>"; };
+		A772CBC11B066EE40055AF4E /* UserBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserBusiness.swift; path = models/bll/UserBusiness.swift; sourceTree = "<group>"; };
+		A772CBC31B0691960055AF4E /* VenueBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenueBusiness.swift; path = models/bll/VenueBusiness.swift; sourceTree = "<group>"; };
+		A772CBC51B0692E90055AF4E /* BusinessFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusinessFactory.swift; path = models/bll/BusinessFactory.swift; sourceTree = "<group>"; };
+		A773954A1B30A78A00004169 /* Muli-Italic.eot */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Italic.eot"; path = "views/fonts/Muli-Italic.eot"; sourceTree = "<group>"; };
+		A773954B1B30A78A00004169 /* Muli-Italic.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Muli-Italic.svg"; path = "views/fonts/Muli-Italic.svg"; sourceTree = "<group>"; };
+		A773954C1B30A78A00004169 /* Muli-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Italic.ttf"; path = "views/fonts/Muli-Italic.ttf"; sourceTree = "<group>"; };
+		A773954D1B30A78A00004169 /* Muli-Italic.woff */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Italic.woff"; path = "views/fonts/Muli-Italic.woff"; sourceTree = "<group>"; };
+		A773954E1B30A78A00004169 /* Muli-Regular.eot */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Regular.eot"; path = "views/fonts/Muli-Regular.eot"; sourceTree = "<group>"; };
+		A773954F1B30A78A00004169 /* Muli-Regular.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Muli-Regular.svg"; path = "views/fonts/Muli-Regular.svg"; sourceTree = "<group>"; };
+		A77395501B30A78A00004169 /* Muli-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Regular.ttf"; path = "views/fonts/Muli-Regular.ttf"; sourceTree = "<group>"; };
+		A77395511B30A78A00004169 /* Muli-Regular.woff */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Regular.woff"; path = "views/fonts/Muli-Regular.woff"; sourceTree = "<group>"; };
+		A77395521B30A78A00004169 /* YanoneKaffeesatz-Regular.eot */ = {isa = PBXFileReference; lastKnownFileType = file; name = "YanoneKaffeesatz-Regular.eot"; path = "views/fonts/YanoneKaffeesatz-Regular.eot"; sourceTree = "<group>"; };
+		A77395531B30A78A00004169 /* YanoneKaffeesatz-Regular.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "YanoneKaffeesatz-Regular.svg"; path = "views/fonts/YanoneKaffeesatz-Regular.svg"; sourceTree = "<group>"; };
+		A77395541B30A78A00004169 /* YanoneKaffeesatz-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "YanoneKaffeesatz-Regular.ttf"; path = "views/fonts/YanoneKaffeesatz-Regular.ttf"; sourceTree = "<group>"; };
+		A77395551B30A78A00004169 /* YanoneKaffeesatz-Regular.woff */ = {isa = PBXFileReference; lastKnownFileType = file; name = "YanoneKaffeesatz-Regular.woff"; path = "views/fonts/YanoneKaffeesatz-Regular.woff"; sourceTree = "<group>"; };
+		A77395661B30E4DE00004169 /* hammer.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = hammer.min.js; path = views/bower_components/hammer.js/hammer.min.js; sourceTree = "<group>"; };
+		A7782D7C1B3B5F640001B9BA /* PresentSingleClassControllerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentSingleClassControllerEvent.swift; path = controllers/events/PresentSingleClassControllerEvent.swift; sourceTree = "<group>"; };
+		A7782D7E1B3B653C0001B9BA /* SingleClassInitEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleClassInitEvent.swift; path = controllers/events/SingleClassInitEvent.swift; sourceTree = "<group>"; };
+		A7782D801B3B68500001B9BA /* rothrock-main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = "rothrock-main.css"; path = "views/css/rothrock-main.css"; sourceTree = "<group>"; };
+		A7782D811B3B68500001B9BA /* rothrock-single-class.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = "rothrock-single-class.css"; path = "views/css/rothrock-single-class.css"; sourceTree = "<group>"; };
+		A7782D841B3B685A0001B9BA /* rothrock-main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "rothrock-main.js"; path = "views/js/rothrock-main.js"; sourceTree = "<group>"; };
+		A7782D851B3B685A0001B9BA /* rothrock-single-class.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "rothrock-single-class.js"; path = "views/js/rothrock-single-class.js"; sourceTree = "<group>"; };
+		A7782D881B3B68940001B9BA /* main_single_class.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = main_single_class.html; path = views/html/main_single_class.html; sourceTree = "<group>"; };
+		A7782D8C1B3B7CA40001B9BA /* ClosedSingleClassControllerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClosedSingleClassControllerEvent.swift; path = controllers/events/ClosedSingleClassControllerEvent.swift; sourceTree = "<group>"; };
+		A7782D8F1B3B7DE80001B9BA /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseController.swift; path = controllers/BaseController.swift; sourceTree = "<group>"; };
+		A7782D911B3B84490001B9BA /* SharePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharePlugin.swift; path = controllers/utils/SharePlugin.swift; sourceTree = "<group>"; };
+		A7782D931B3B84DF0001B9BA /* ISharePluginOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ISharePluginOwner.swift; path = controllers/utils/ISharePluginOwner.swift; sourceTree = "<group>"; };
+		A7782D951B3B87D40001B9BA /* TwitterPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwitterPlugin.swift; path = controllers/utils/TwitterPlugin.swift; sourceTree = "<group>"; };
+		A7782D971B3B8D830001B9BA /* DeviceInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceInterface.swift; path = controllers/utils/DeviceInterface.swift; sourceTree = "<group>"; };
+		A7782D991B3B8F3E0001B9BA /* IDeviceInterfaceOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IDeviceInterfaceOwner.swift; path = controllers/utils/IDeviceInterfaceOwner.swift; sourceTree = "<group>"; };
+		A77BCC4A1B2F54E7006FCBFE /* going-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "going-pin.png"; path = "views/imgs/going-pin.png"; sourceTree = "<group>"; };
+		A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-charlottesville.png"; path = "views/imgs/logo-charlottesville.png"; sourceTree = "<group>"; };
+		A77BCC4C1B2F54E7006FCBFE /* logo-sf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-sf.png"; path = "views/imgs/logo-sf.png"; sourceTree = "<group>"; };
+		A77BCC4D1B2F54E7006FCBFE /* rsvp-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rsvp-active.png"; path = "views/imgs/rsvp-active.png"; sourceTree = "<group>"; };
+		A77BCC4E1B2F54E7006FCBFE /* rsvp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rsvp.png; path = views/imgs/rsvp.png; sourceTree = "<group>"; };
+		A77BCC4F1B2F54E7006FCBFE /* unrsvp-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "unrsvp-active.png"; path = "views/imgs/unrsvp-active.png"; sourceTree = "<group>"; };
+		A77BCC501B2F54E7006FCBFE /* unrsvp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unrsvp.png; path = views/imgs/unrsvp.png; sourceTree = "<group>"; };
+		A77BCC581B2F5573006FCBFE /* ClassListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassListController.swift; path = controllers/subcontrollers/ClassListController.swift; sourceTree = "<group>"; };
+		A77BCC5A1B2F55BB006FCBFE /* SubController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubController.swift; path = controllers/subcontrollers/SubController.swift; sourceTree = "<group>"; };
+		A77BCC5C1B2F5A6E006FCBFE /* main.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = main.html; path = views/html/main.html; sourceTree = "<group>"; };
+		A77BCC5E1B2F81E8006FCBFE /* logo-default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-default.png"; path = "views/imgs/logo-default.png"; sourceTree = "<group>"; };
+		A77BCC601B2FB7C8006FCBFE /* font-awesome.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = "font-awesome.min.css"; path = "views/bower_components/fontawesome/css/font-awesome.min.css"; sourceTree = "<group>"; };
+		A77BCC631B2FB93A006FCBFE /* fontawesome-webfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fontawesome-webfont.eot"; path = "views/bower_components/fontawesome/fonts/fontawesome-webfont.eot"; sourceTree = "<group>"; };
+		A77BCC641B2FB93A006FCBFE /* fontawesome-webfont.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "fontawesome-webfont.svg"; path = "views/bower_components/fontawesome/fonts/fontawesome-webfont.svg"; sourceTree = "<group>"; };
+		A77BCC651B2FB93A006FCBFE /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fontawesome-webfont.ttf"; path = "views/bower_components/fontawesome/fonts/fontawesome-webfont.ttf"; sourceTree = "<group>"; };
+		A77BCC661B2FB93A006FCBFE /* fontawesome-webfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fontawesome-webfont.woff"; path = "views/bower_components/fontawesome/fonts/fontawesome-webfont.woff"; sourceTree = "<group>"; };
+		A77BCC671B2FB93A006FCBFE /* fontawesome-webfont.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fontawesome-webfont.woff2"; path = "views/bower_components/fontawesome/fonts/fontawesome-webfont.woff2"; sourceTree = "<group>"; };
+		A77BCC681B2FB93A006FCBFE /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.otf; path = views/bower_components/fontawesome/fonts/FontAwesome.otf; sourceTree = "<group>"; };
+		A77DB2D41AEB4F0500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
+		A77DB2D61AEB4F2500471F68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
+		A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckCredentialsRequest.swift; path = models/bll/structs/CheckCredentialsRequest.swift; sourceTree = "<group>"; };
+		A78410671AEF14E0006709ED /* IJSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IJSONSerializer.swift; path = models/bll/serializers/IJSONSerializer.swift; sourceTree = "<group>"; };
+		A78410691AEF16FC006709ED /* SchoolClassSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SchoolClassSerializer.swift; path = models/bll/serializers/SchoolClassSerializer.swift; sourceTree = "<group>"; };
+		A784106B1AEF1F13006709ED /* UserSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSerializer.swift; path = models/bll/serializers/UserSerializer.swift; sourceTree = "<group>"; };
+		A784106D1AEF1F96006709ED /* VenueSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VenueSerializer.swift; path = models/bll/serializers/VenueSerializer.swift; sourceTree = "<group>"; };
+		A78622271AEA9F69006B0F76 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		A786222D1AEAA56E006B0F76 /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lesson.swift; path = models/beans/Lesson.swift; sourceTree = "<group>"; };
+		A78CD2A31B14DBA50086EFF8 /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = jquery.min.js; path = views/bower_components/jquery/dist/jquery.min.js; sourceTree = "<group>"; };
+		A7916A891AEB6A5700E1CD4F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Pods-rothrock/Realm.framework"; sourceTree = "<group>"; };
+		A79486BC1B34DA9E0010D419 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = controllers/subcontrollers/SettingsController.swift; sourceTree = "<group>"; };
+		A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoolSerializer.swift; path = models/bll/serializers/BoolSerializer.swift; sourceTree = "<group>"; };
+		A794DC201AF1A09800D8743F /* ILessonBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ILessonBusiness.swift; path = models/bll/interfaces/ILessonBusiness.swift; sourceTree = "<group>"; };
+		A794DC221AF1A19600D8743F /* BaseBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseBusiness.swift; path = models/bll/BaseBusiness.swift; sourceTree = "<group>"; };
+		A794DC241AF1A24100D8743F /* RailsSchoolAPIFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RailsSchoolAPIFactory.swift; path = models/bll/remote/RailsSchoolAPIFactory.swift; sourceTree = "<group>"; };
+		A794DC2D1AF1A6CE00D8743F /* IPreferenceBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPreferenceBusiness.swift; path = models/bll/interfaces/IPreferenceBusiness.swift; sourceTree = "<group>"; };
+		A794DC2F1AF1A77900D8743F /* IUserBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IUserBusiness.swift; path = models/bll/interfaces/IUserBusiness.swift; sourceTree = "<group>"; };
+		A794DC311AF1A88E00D8743F /* IVenueBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IVenueBusiness.swift; path = models/bll/interfaces/IVenueBusiness.swift; sourceTree = "<group>"; };
+		A794DC331AF1A8F700D8743F /* LessonBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LessonBusiness.swift; path = models/bll/LessonBusiness.swift; sourceTree = "<group>"; };
+		A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayNotificationPreference.swift; path = models/dao/DayNotificationPreference.swift; sourceTree = "<group>"; };
+		A7BA44ED1AEAEC25008514F5 /* IUserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IUserDAO.swift; path = models/dao/interfaces/IUserDAO.swift; sourceTree = "<group>"; };
+		A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IVenueDAO.swift; path = models/dao/interfaces/IVenueDAO.swift; sourceTree = "<group>"; };
+		A7BA44F11AEAED41008514F5 /* BaseDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseDAO.swift; path = models/dao/BaseDAO.swift; sourceTree = "<group>"; };
+		A7BA44F31AEAEE02008514F5 /* LessonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LessonDAO.swift; path = models/dao/LessonDAO.swift; sourceTree = "<group>"; };
+		A7BD792D1B0556AB00303751 /* DAOFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAOFactory.swift; path = models/dao/DAOFactory.swift; sourceTree = "<group>"; };
+		A7BD792F1B05728F00303751 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		A7BD79321B0579E100303751 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = utils/StringExtension.swift; sourceTree = "<group>"; };
+		A7BD79341B0584BD00303751 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = utils/DateExtension.swift; sourceTree = "<group>"; };
+		A7BD79361B058B2700303751 /* BLLCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BLLCallback.swift; path = models/bll/BLLCallback.swift; sourceTree = "<group>"; };
+		A7C55DAA1B38F0E4005F4445 /* AlarmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmManager.swift; path = services/AlarmManager.swift; sourceTree = "<group>"; };
+		A7C72EDF1B0A5A8F001BA13C /* ProgressForkEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressForkEvent.swift; path = controllers/events/ProgressForkEvent.swift; sourceTree = "<group>"; };
+		A7C72EE11B0A5B9B001BA13C /* ProgressDoneEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressDoneEvent.swift; path = controllers/events/ProgressDoneEvent.swift; sourceTree = "<group>"; };
+		A7C72EE31B0A5BB8001BA13C /* ErrorEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorEvent.swift; path = controllers/events/ErrorEvent.swift; sourceTree = "<group>"; };
+		A7C72EE51B0A5CFB001BA13C /* ConfirmationEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfirmationEvent.swift; path = controllers/events/ConfirmationEvent.swift; sourceTree = "<group>"; };
+		A7C72EE71B0A5D4B001BA13C /* InformationEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InformationEvent.swift; path = controllers/events/InformationEvent.swift; sourceTree = "<group>"; };
+		A7D5CFE91AEACBEC00370F4A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = models/beans/User.swift; sourceTree = "<group>"; };
+		A7D5CFEB1AEAD1C100370F4A /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Venue.swift; path = models/beans/Venue.swift; sourceTree = "<group>"; };
+		A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ILessonDAO.swift; path = models/dao/interfaces/ILessonDAO.swift; sourceTree = "<group>"; };
+		A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPreferenceDAO.swift; path = models/dao/interfaces/IPreferenceDAO.swift; sourceTree = "<group>"; };
+		A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwoHourNotificationPreference.swift; path = models/dao/TwoHourNotificationPreference.swift; sourceTree = "<group>"; };
+		A7F571E81AEED9DD001084D3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		A7F7A5771B1CC192009A3951 /* caravel.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = caravel.min.js; path = Pods/Caravel/caravel/js/caravel.min.js; sourceTree = SOURCE_ROOT; };
+		A7FA76451B3A390B00F4BAA2 /* logo-diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-diamond.png"; path = "views/imgs/logo-diamond.png"; sourceTree = "<group>"; };
+		A7FA76471B3A3B6900F4BAA2 /* SingleClassController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleClassController.swift; path = controllers/SingleClassController.swift; sourceTree = "<group>"; };
+		AB487B39E1ADD18545092D96 /* Pods-rothrock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.release.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.release.xcconfig"; sourceTree = "<group>"; };
+		AEA57EFD32C75B4AEA027CF1 /* Pods_rothrockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rothrockTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEF5C00745E3C29669D778DF /* Pods-rothrockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrockTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rothrockTests/Pods-rothrockTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AFA2A95A21881DDF7AF72F76 /* Pods_Rails_SchoolTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rails_SchoolTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3E5E00603A9C8156E79A2F1 /* Pods-rothrock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rothrock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rothrock/Pods-rothrock.debug.xcconfig"; sourceTree = "<group>"; };
+		B7971C6D6EFEC1DE94196EF9 /* Pods-Rails SchoolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rails SchoolTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rails SchoolTests/Pods-Rails SchoolTests.release.xcconfig"; sourceTree = "<group>"; };
+		E240BDE185A9DEBAA07DC913 /* Pods-Rails School.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rails School.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rails School/Pods-Rails School.release.xcconfig"; sourceTree = "<group>"; };
+		F949D156619DE87823FF4EF3 /* Pods-Rails SchoolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rails SchoolTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rails SchoolTests/Pods-Rails SchoolTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FEC426D7888C49E4BB33AC99 /* Pods-Rails School.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rails School.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rails School/Pods-Rails School.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A746A69E1AE9D6E800AF0FA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18A0992207485A232790F9D8 /* Pods_rothrock.framework in Frameworks */,
+				7D414FDFD9B552D56EC801F5 /* Pods_Rails_School.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A746A6B31AE9D6E800AF0FA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE6FCA9EDDA79A7556DC9E70 /* Pods_rothrockTests.framework in Frameworks */,
+				B83F401BBF6B733618B1A21C /* Pods_Rails_SchoolTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E2E2C2F462101A5B78EBA36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7916A891AEB6A5700E1CD4F /* Realm.framework */,
+				A77DB2D61AEB4F2500471F68 /* Realm.framework */,
+				A77DB2D41AEB4F0500471F68 /* Realm.framework */,
+				A78622271AEA9F69006B0F76 /* libc++.dylib */,
+				3BEF411B36336395668B971F /* Pods.framework */,
+				5575745422AE9B1FB00FA044 /* Pods_rothrock.framework */,
+				AEA57EFD32C75B4AEA027CF1 /* Pods_rothrockTests.framework */,
+				7DE3CF1C86955B730D21346D /* Pods_Rails_School.framework */,
+				AFA2A95A21881DDF7AF72F76 /* Pods_Rails_SchoolTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9AAE8269A34CE9615D03FD9A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DC00F4D646796D935E91B68 /* Pods.debug.xcconfig */,
+				9C8967141C7046423621E252 /* Pods.release.xcconfig */,
+				B3E5E00603A9C8156E79A2F1 /* Pods-rothrock.debug.xcconfig */,
+				AB487B39E1ADD18545092D96 /* Pods-rothrock.release.xcconfig */,
+				AEF5C00745E3C29669D778DF /* Pods-rothrockTests.debug.xcconfig */,
+				3533233ADE0D8A7AE76B5D94 /* Pods-rothrockTests.release.xcconfig */,
+				FEC426D7888C49E4BB33AC99 /* Pods-Rails School.debug.xcconfig */,
+				E240BDE185A9DEBAA07DC913 /* Pods-Rails School.release.xcconfig */,
+				F949D156619DE87823FF4EF3 /* Pods-Rails SchoolTests.debug.xcconfig */,
+				B7971C6D6EFEC1DE94196EF9 /* Pods-Rails SchoolTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A73E628A1B13C85100CAAA8F /* html */ = {
+			isa = PBXGroup;
+			children = (
+				A77BCC5C1B2F5A6E006FCBFE /* main.html */,
+				A7782D881B3B68940001B9BA /* main_single_class.html */,
+				A741CFFA1B166895001C9272 /* settings.html */,
+			);
+			name = html;
+			sourceTree = "<group>";
+		};
+		A73E628B1B13C85500CAAA8F /* imgs */ = {
+			isa = PBXGroup;
+			children = (
+				A716CE481B3340A100420F67 /* main-background-corner.png */,
+				A77BCC5E1B2F81E8006FCBFE /* logo-default.png */,
+				A77BCC4A1B2F54E7006FCBFE /* going-pin.png */,
+				A77BCC4B1B2F54E7006FCBFE /* logo-charlottesville.png */,
+				A77BCC4C1B2F54E7006FCBFE /* logo-sf.png */,
+				A7FA76451B3A390B00F4BAA2 /* logo-diamond.png */,
+				A77BCC4D1B2F54E7006FCBFE /* rsvp-active.png */,
+				A77BCC4E1B2F54E7006FCBFE /* rsvp.png */,
+				A77BCC4F1B2F54E7006FCBFE /* unrsvp-active.png */,
+				A77BCC501B2F54E7006FCBFE /* unrsvp.png */,
+			);
+			name = imgs;
+			sourceTree = "<group>";
+		};
+		A73E628C1B13C85B00CAAA8F /* js */ = {
+			isa = PBXGroup;
+			children = (
+				A77395661B30E4DE00004169 /* hammer.min.js */,
+				A7F7A5771B1CC192009A3951 /* caravel.min.js */,
+				A78CD2A31B14DBA50086EFF8 /* jquery.min.js */,
+				A73E62941B13C8E500CAAA8F /* framework7.min.js */,
+				A7782D841B3B685A0001B9BA /* rothrock-main.js */,
+				A7782D851B3B685A0001B9BA /* rothrock-single-class.js */,
+			);
+			name = js;
+			sourceTree = "<group>";
+		};
+		A73E628D1B13C86100CAAA8F /* css */ = {
+			isa = PBXGroup;
+			children = (
+				A77BCC601B2FB7C8006FCBFE /* font-awesome.min.css */,
+				A73E62901B13C8D100CAAA8F /* framework7.min.css */,
+				A7782D801B3B68500001B9BA /* rothrock-main.css */,
+				A7782D811B3B68500001B9BA /* rothrock-single-class.css */,
+			);
+			name = css;
+			sourceTree = "<group>";
+		};
+		A746A6981AE9D6E800AF0FA5 = {
+			isa = PBXGroup;
+			children = (
+				1E2E2C2F462101A5B78EBA36 /* Frameworks */,
+				9AAE8269A34CE9615D03FD9A /* Pods */,
+				A746A6A21AE9D6E800AF0FA5 /* Products */,
+				A746A6A31AE9D6E800AF0FA5 /* rothrock */,
+				A746A6B91AE9D6E800AF0FA5 /* rothrockTests */,
+			);
+			sourceTree = "<group>";
+		};
+		A746A6A21AE9D6E800AF0FA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A746A6A11AE9D6E800AF0FA5 /* Rails School.app */,
+				A746A6B61AE9D6E800AF0FA5 /* Rails SchoolTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A746A6A31AE9D6E800AF0FA5 /* rothrock */ = {
+			isa = PBXGroup;
+			children = (
+				A746A6A61AE9D6E800AF0FA5 /* AppDelegate.swift */,
+				A7F571E81AEED9DD001084D3 /* Bridging-Header.h */,
+				A7EC14BA1B080B5B001981EB /* controllers */,
+				A746A6AD1AE9D6E800AF0FA5 /* Images.xcassets */,
+				A746A6AF1AE9D6E800AF0FA5 /* LaunchScreen.xib */,
+				A7BD792F1B05728F00303751 /* Localizable.strings */,
+				A746A6AA1AE9D6E800AF0FA5 /* Main.storyboard */,
+				A786222B1AEAA54B006B0F76 /* models */,
+				A7C55DA91B38F0C6005F4445 /* services */,
+				A746A6A41AE9D6E800AF0FA5 /* Supporting Files */,
+				A7BD79311B0579C700303751 /* utils */,
+				A7EC14B91B080B47001981EB /* views */,
+			);
+			path = rothrock;
+			sourceTree = "<group>";
+		};
+		A746A6A41AE9D6E800AF0FA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A746A6A51AE9D6E800AF0FA5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A746A6B91AE9D6E800AF0FA5 /* rothrockTests */ = {
+			isa = PBXGroup;
+			children = (
+				A746A6BC1AE9D6E800AF0FA5 /* rothrockTests.swift */,
+				A746A6BA1AE9D6E800AF0FA5 /* Supporting Files */,
+			);
+			path = rothrockTests;
+			sourceTree = "<group>";
+		};
+		A746A6BA1AE9D6E800AF0FA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A746A6BB1AE9D6E800AF0FA5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A74F044F1AEB1F6000EB8916 /* bll */ = {
+			isa = PBXGroup;
+			children = (
+				A794DC221AF1A19600D8743F /* BaseBusiness.swift */,
+				A7BD79361B058B2700303751 /* BLLCallback.swift */,
+				A772CBC51B0692E90055AF4E /* BusinessFactory.swift */,
+				A794DC331AF1A8F700D8743F /* LessonBusiness.swift */,
+				A772CBBF1B066D390055AF4E /* PreferenceBusiness.swift */,
+				A772CBC11B066EE40055AF4E /* UserBusiness.swift */,
+				A772CBC31B0691960055AF4E /* VenueBusiness.swift */,
+				A794DC1F1AF19FC300D8743F /* interfaces */,
+				A74F04501AEB1FC800EB8916 /* remote */,
+				A74F04581AEB269D00EB8916 /* serializers */,
+				A74F04551AEB259E00EB8916 /* structs */,
+			);
+			name = bll;
+			sourceTree = "<group>";
+		};
+		A74F04501AEB1FC800EB8916 /* remote */ = {
+			isa = PBXGroup;
+			children = (
+				A74F04511AEB208400EB8916 /* IRailsSchoolAPI.swift */,
+				A74F04531AEB20BD00EB8916 /* RailsSchoolAPI.swift */,
+				A794DC241AF1A24100D8743F /* RailsSchoolAPIFactory.swift */,
+				A740521B1AEFFC88003ABBE3 /* RemoteCallback.swift */,
+			);
+			name = remote;
+			sourceTree = "<group>";
+		};
+		A74F04551AEB259E00EB8916 /* structs */ = {
+			isa = PBXGroup;
+			children = (
+				A78410631AEF131A006709ED /* CheckCredentialsRequest.swift */,
+				A74F04561AEB25AD00EB8916 /* SchoolClass.swift */,
+			);
+			name = structs;
+			sourceTree = "<group>";
+		};
+		A74F04581AEB269D00EB8916 /* serializers */ = {
+			isa = PBXGroup;
+			children = (
+				A740521D1AF001AF003ABBE3 /* ArraySerializer.swift */,
+				A794DC1D1AF196BA00D8743F /* BoolSerializer.swift */,
+				A74F045C1AEB274700EB8916 /* IJSONDeserializer.swift */,
+				A78410671AEF14E0006709ED /* IJSONSerializer.swift */,
+				A74F04591AEB271700EB8916 /* LessonSerializer.swift */,
+				A78410691AEF16FC006709ED /* SchoolClassSerializer.swift */,
+				A71A7CC61AF00F440094019E /* SerializerFactory.swift */,
+				A71A7CC41AF00E760094019E /* StringSerializer.swift */,
+				A784106B1AEF1F13006709ED /* UserSerializer.swift */,
+				A784106D1AEF1F96006709ED /* VenueSerializer.swift */,
+			);
+			name = serializers;
+			sourceTree = "<group>";
+		};
+		A7782D8E1B3B7D840001B9BA /* subcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				A77BCC5A1B2F55BB006FCBFE /* SubController.swift */,
+				A77BCC581B2F5573006FCBFE /* ClassListController.swift */,
+				A79486BC1B34DA9E0010D419 /* SettingsController.swift */,
+			);
+			name = subcontrollers;
+			sourceTree = "<group>";
+		};
+		A77BCC621B2FB92E006FCBFE /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A773954A1B30A78A00004169 /* Muli-Italic.eot */,
+				A773954B1B30A78A00004169 /* Muli-Italic.svg */,
+				A773954C1B30A78A00004169 /* Muli-Italic.ttf */,
+				A773954D1B30A78A00004169 /* Muli-Italic.woff */,
+				A773954E1B30A78A00004169 /* Muli-Regular.eot */,
+				A773954F1B30A78A00004169 /* Muli-Regular.svg */,
+				A77395501B30A78A00004169 /* Muli-Regular.ttf */,
+				A77395511B30A78A00004169 /* Muli-Regular.woff */,
+				A77395521B30A78A00004169 /* YanoneKaffeesatz-Regular.eot */,
+				A77395531B30A78A00004169 /* YanoneKaffeesatz-Regular.svg */,
+				A77395541B30A78A00004169 /* YanoneKaffeesatz-Regular.ttf */,
+				A77395551B30A78A00004169 /* YanoneKaffeesatz-Regular.woff */,
+				A77BCC631B2FB93A006FCBFE /* fontawesome-webfont.eot */,
+				A77BCC641B2FB93A006FCBFE /* fontawesome-webfont.svg */,
+				A77BCC651B2FB93A006FCBFE /* fontawesome-webfont.ttf */,
+				A77BCC661B2FB93A006FCBFE /* fontawesome-webfont.woff */,
+				A77BCC671B2FB93A006FCBFE /* fontawesome-webfont.woff2 */,
+				A77BCC681B2FB93A006FCBFE /* FontAwesome.otf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
+		A786222B1AEAA54B006B0F76 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				A74F044F1AEB1F6000EB8916 /* bll */,
+				A7D5CFED1AEAE53500370F4A /* dao */,
+				A786222C1AEAA552006B0F76 /* beans */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		A786222C1AEAA552006B0F76 /* beans */ = {
+			isa = PBXGroup;
+			children = (
+				A786222D1AEAA56E006B0F76 /* Lesson.swift */,
+				A7D5CFE91AEACBEC00370F4A /* User.swift */,
+				A7D5CFEB1AEAD1C100370F4A /* Venue.swift */,
+			);
+			name = beans;
+			sourceTree = "<group>";
+		};
+		A79486BE1B34E28F0010D419 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				A7782D911B3B84490001B9BA /* SharePlugin.swift */,
+				A7782D931B3B84DF0001B9BA /* ISharePluginOwner.swift */,
+				A7782D951B3B87D40001B9BA /* TwitterPlugin.swift */,
+				A7782D971B3B8D830001B9BA /* DeviceInterface.swift */,
+				A7782D991B3B8F3E0001B9BA /* IDeviceInterfaceOwner.swift */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		A794DC1F1AF19FC300D8743F /* interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				A794DC201AF1A09800D8743F /* ILessonBusiness.swift */,
+				A794DC2D1AF1A6CE00D8743F /* IPreferenceBusiness.swift */,
+				A794DC2F1AF1A77900D8743F /* IUserBusiness.swift */,
+				A794DC311AF1A88E00D8743F /* IVenueBusiness.swift */,
+			);
+			name = interfaces;
+			sourceTree = "<group>";
+		};
+		A7BD79311B0579C700303751 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				A7BD79321B0579E100303751 /* StringExtension.swift */,
+				A7BD79341B0584BD00303751 /* DateExtension.swift */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		A7C55DA91B38F0C6005F4445 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				A7C55DAA1B38F0E4005F4445 /* AlarmManager.swift */,
+			);
+			name = services;
+			sourceTree = "<group>";
+		};
+		A7C72EDC1B0A59F1001BA13C /* events */ = {
+			isa = PBXGroup;
+			children = (
+				A7C72EDF1B0A5A8F001BA13C /* ProgressForkEvent.swift */,
+				A7C72EE11B0A5B9B001BA13C /* ProgressDoneEvent.swift */,
+				A7C72EE31B0A5BB8001BA13C /* ErrorEvent.swift */,
+				A7C72EE51B0A5CFB001BA13C /* ConfirmationEvent.swift */,
+				A7C72EE71B0A5D4B001BA13C /* InformationEvent.swift */,
+				A7782D7C1B3B5F640001B9BA /* PresentSingleClassControllerEvent.swift */,
+				A7782D7E1B3B653C0001B9BA /* SingleClassInitEvent.swift */,
+				A7782D8C1B3B7CA40001B9BA /* ClosedSingleClassControllerEvent.swift */,
+			);
+			name = events;
+			sourceTree = "<group>";
+		};
+		A7D5CFED1AEAE53500370F4A /* dao */ = {
+			isa = PBXGroup;
+			children = (
+				A7BA44F11AEAED41008514F5 /* BaseDAO.swift */,
+				A7BD792D1B0556AB00303751 /* DAOFactory.swift */,
+				A7BA44EB1AEAEB75008514F5 /* DayNotificationPreference.swift */,
+				A7BA44F31AEAEE02008514F5 /* LessonDAO.swift */,
+				A74F04491AEB02B700EB8916 /* PreferenceDAO.swift */,
+				A7D5CFF31AEAE5F200370F4A /* TwoHourNotificationPreference.swift */,
+				A74F044B1AEB04FE00EB8916 /* UserDAO.swift */,
+				A74F044D1AEB06DE00EB8916 /* VenueDAO.swift */,
+				A7D5CFEE1AEAE53C00370F4A /* interfaces */,
+			);
+			name = dao;
+			sourceTree = "<group>";
+		};
+		A7D5CFEE1AEAE53C00370F4A /* interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				A7D5CFEF1AEAE54D00370F4A /* ILessonDAO.swift */,
+				A7D5CFF11AEAE5C100370F4A /* IPreferenceDAO.swift */,
+				A7BA44ED1AEAEC25008514F5 /* IUserDAO.swift */,
+				A7BA44EF1AEAECDB008514F5 /* IVenueDAO.swift */,
+			);
+			name = interfaces;
+			sourceTree = "<group>";
+		};
+		A7EC14B91B080B47001981EB /* views */ = {
+			isa = PBXGroup;
+			children = (
+				A77BCC621B2FB92E006FCBFE /* fonts */,
+				A73E628D1B13C86100CAAA8F /* css */,
+				A73E628C1B13C85B00CAAA8F /* js */,
+				A73E628B1B13C85500CAAA8F /* imgs */,
+				A73E628A1B13C85100CAAA8F /* html */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		A7EC14BA1B080B5B001981EB /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A7782D8E1B3B7D840001B9BA /* subcontrollers */,
+				A79486BE1B34E28F0010D419 /* utils */,
+				A7C72EDC1B0A59F1001BA13C /* events */,
+				A746A6A81AE9D6E800AF0FA5 /* MainController.swift */,
+				A7FA76471B3A3B6900F4BAA2 /* SingleClassController.swift */,
+				A7782D8F1B3B7DE80001B9BA /* BaseController.swift */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A746A6A01AE9D6E800AF0FA5 /* Rails School */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A746A6C01AE9D6E800AF0FA5 /* Build configuration list for PBXNativeTarget "Rails School" */;
+			buildPhases = (
+				69A6B10183254A78767F4207 /* Check Pods Manifest.lock */,
+				A746A69D1AE9D6E800AF0FA5 /* Sources */,
+				A746A69E1AE9D6E800AF0FA5 /* Frameworks */,
+				A746A69F1AE9D6E800AF0FA5 /* Resources */,
+				39FB3C5EF10067CCEB458581 /* Copy Pods Resources */,
+				4FEA318EBA4D747AE354EC41 /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Rails School";
+			productName = rothrock;
+			productReference = A746A6A11AE9D6E800AF0FA5 /* Rails School.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A746A6B51AE9D6E800AF0FA5 /* Rails SchoolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A746A6C31AE9D6E800AF0FA5 /* Build configuration list for PBXNativeTarget "Rails SchoolTests" */;
+			buildPhases = (
+				26688C0FF4F5649854054B95 /* Check Pods Manifest.lock */,
+				A746A6B21AE9D6E800AF0FA5 /* Sources */,
+				A746A6B31AE9D6E800AF0FA5 /* Frameworks */,
+				A746A6B41AE9D6E800AF0FA5 /* Resources */,
+				FF1F4BE02E876A4F74BFAE12 /* Copy Pods Resources */,
+				997A655C0B515747BC4036CC /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A746A6B81AE9D6E800AF0FA5 /* PBXTargetDependency */,
+			);
+			name = "Rails SchoolTests";
+			productName = rothrockTests;
+			productReference = A746A6B61AE9D6E800AF0FA5 /* Rails SchoolTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A746A6991AE9D6E800AF0FA5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = RailsSchool;
+				TargetAttributes = {
+					A746A6A01AE9D6E800AF0FA5 = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = YNH9MQQ87M;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					A746A6B51AE9D6E800AF0FA5 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = A746A6A01AE9D6E800AF0FA5;
+					};
+				};
+			};
+			buildConfigurationList = A746A69C1AE9D6E800AF0FA5 /* Build configuration list for PBXProject "Rails School" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A746A6981AE9D6E800AF0FA5;
+			productRefGroup = A746A6A21AE9D6E800AF0FA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A746A6A01AE9D6E800AF0FA5 /* Rails School */,
+				A746A6B51AE9D6E800AF0FA5 /* Rails SchoolTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A746A69F1AE9D6E800AF0FA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A77395561B30A78A00004169 /* Muli-Italic.eot in Resources */,
+				A746A6AC1AE9D6E800AF0FA5 /* Main.storyboard in Resources */,
+				A77BCC521B2F54E7006FCBFE /* logo-charlottesville.png in Resources */,
+				A7BD79301B05728F00303751 /* Localizable.strings in Resources */,
+				A773955C1B30A78A00004169 /* Muli-Regular.ttf in Resources */,
+				A773955A1B30A78A00004169 /* Muli-Regular.eot in Resources */,
+				A716CE491B3340A100420F67 /* main-background-corner.png in Resources */,
+				A77BCC531B2F54E7006FCBFE /* logo-sf.png in Resources */,
+				A773955B1B30A78A00004169 /* Muli-Regular.svg in Resources */,
+				A77395611B30A78A00004169 /* YanoneKaffeesatz-Regular.woff in Resources */,
+				A77395571B30A78A00004169 /* Muli-Italic.svg in Resources */,
+				A7782D871B3B685A0001B9BA /* rothrock-single-class.js in Resources */,
+				A77BCC6C1B2FB93A006FCBFE /* fontawesome-webfont.woff in Resources */,
+				A77BCC551B2F54E7006FCBFE /* rsvp.png in Resources */,
+				A773955D1B30A78A00004169 /* Muli-Regular.woff in Resources */,
+				A77BCC6A1B2FB93A006FCBFE /* fontawesome-webfont.svg in Resources */,
+				A77BCC5F1B2F81E8006FCBFE /* logo-default.png in Resources */,
+				A77395601B30A78A00004169 /* YanoneKaffeesatz-Regular.ttf in Resources */,
+				A746A6B11AE9D6E800AF0FA5 /* LaunchScreen.xib in Resources */,
+				A746A6AE1AE9D6E800AF0FA5 /* Images.xcassets in Resources */,
+				A7782D821B3B68500001B9BA /* rothrock-main.css in Resources */,
+				A73E62911B13C8D100CAAA8F /* framework7.min.css in Resources */,
+				A77BCC571B2F54E7006FCBFE /* unrsvp.png in Resources */,
+				A77BCC691B2FB93A006FCBFE /* fontawesome-webfont.eot in Resources */,
+				A77BCC511B2F54E7006FCBFE /* going-pin.png in Resources */,
+				A773955F1B30A78A00004169 /* YanoneKaffeesatz-Regular.svg in Resources */,
+				A7F7A5781B1CC192009A3951 /* caravel.min.js in Resources */,
+				A77395591B30A78A00004169 /* Muli-Italic.woff in Resources */,
+				A77BCC541B2F54E7006FCBFE /* rsvp-active.png in Resources */,
+				A7782D891B3B68940001B9BA /* main_single_class.html in Resources */,
+				A77395581B30A78A00004169 /* Muli-Italic.ttf in Resources */,
+				A77BCC6D1B2FB93A006FCBFE /* fontawesome-webfont.woff2 in Resources */,
+				A77395671B30E4DE00004169 /* hammer.min.js in Resources */,
+				A77BCC611B2FB7C8006FCBFE /* font-awesome.min.css in Resources */,
+				A7FA76461B3A390B00F4BAA2 /* logo-diamond.png in Resources */,
+				A77BCC6B1B2FB93A006FCBFE /* fontawesome-webfont.ttf in Resources */,
+				A78CD2A41B14DBA50086EFF8 /* jquery.min.js in Resources */,
+				A741CFFB1B166895001C9272 /* settings.html in Resources */,
+				A7782D861B3B685A0001B9BA /* rothrock-main.js in Resources */,
+				A7782D831B3B68500001B9BA /* rothrock-single-class.css in Resources */,
+				A77BCC6E1B2FB93A006FCBFE /* FontAwesome.otf in Resources */,
+				A77BCC561B2F54E7006FCBFE /* unrsvp-active.png in Resources */,
+				A73E62951B13C8E500CAAA8F /* framework7.min.js in Resources */,
+				A773955E1B30A78A00004169 /* YanoneKaffeesatz-Regular.eot in Resources */,
+				A77BCC5D1B2F5A6E006FCBFE /* main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A746A6B41AE9D6E800AF0FA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26688C0FF4F5649854054B95 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		39FB3C5EF10067CCEB458581 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rails School/Pods-Rails School-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4FEA318EBA4D747AE354EC41 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rails School/Pods-Rails School-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69A6B10183254A78767F4207 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		997A655C0B515747BC4036CC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rails SchoolTests/Pods-Rails SchoolTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF1F4BE02E876A4F74BFAE12 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rails SchoolTests/Pods-Rails SchoolTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A746A69D1AE9D6E800AF0FA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A74F04521AEB208400EB8916 /* IRailsSchoolAPI.swift in Sources */,
+				A7782D8D1B3B7CA40001B9BA /* ClosedSingleClassControllerEvent.swift in Sources */,
+				A746A6A91AE9D6E800AF0FA5 /* MainController.swift in Sources */,
+				A74F04541AEB20BD00EB8916 /* RailsSchoolAPI.swift in Sources */,
+				A772CBC41B0691960055AF4E /* VenueBusiness.swift in Sources */,
+				A794DC251AF1A24100D8743F /* RailsSchoolAPIFactory.swift in Sources */,
+				A7C72EE21B0A5B9B001BA13C /* ProgressDoneEvent.swift in Sources */,
+				A78410681AEF14E0006709ED /* IJSONSerializer.swift in Sources */,
+				A7C72EE61B0A5CFB001BA13C /* ConfirmationEvent.swift in Sources */,
+				A71A7CC71AF00F440094019E /* SerializerFactory.swift in Sources */,
+				A794DC2E1AF1A6CE00D8743F /* IPreferenceBusiness.swift in Sources */,
+				A7782D9A1B3B8F3E0001B9BA /* IDeviceInterfaceOwner.swift in Sources */,
+				A7BA44F21AEAED41008514F5 /* BaseDAO.swift in Sources */,
+				A7BD79331B0579E100303751 /* StringExtension.swift in Sources */,
+				A784106E1AEF1F96006709ED /* VenueSerializer.swift in Sources */,
+				A7782D7F1B3B653C0001B9BA /* SingleClassInitEvent.swift in Sources */,
+				A7BA44F41AEAEE02008514F5 /* LessonDAO.swift in Sources */,
+				A794DC1E1AF196BA00D8743F /* BoolSerializer.swift in Sources */,
+				A7782D981B3B8D830001B9BA /* DeviceInterface.swift in Sources */,
+				A772CBC21B066EE40055AF4E /* UserBusiness.swift in Sources */,
+				A7782D961B3B87D40001B9BA /* TwitterPlugin.swift in Sources */,
+				A74F045A1AEB271700EB8916 /* LessonSerializer.swift in Sources */,
+				A7D5CFEC1AEAD1C100370F4A /* Venue.swift in Sources */,
+				A794DC231AF1A19600D8743F /* BaseBusiness.swift in Sources */,
+				A74F04571AEB25AD00EB8916 /* SchoolClass.swift in Sources */,
+				A772CBC01B066D390055AF4E /* PreferenceBusiness.swift in Sources */,
+				A794DC301AF1A77900D8743F /* IUserBusiness.swift in Sources */,
+				A79486BD1B34DA9E0010D419 /* SettingsController.swift in Sources */,
+				A740521C1AEFFC88003ABBE3 /* RemoteCallback.swift in Sources */,
+				A7D5CFF21AEAE5C100370F4A /* IPreferenceDAO.swift in Sources */,
+				A7BD792E1B0556AB00303751 /* DAOFactory.swift in Sources */,
+				A78410641AEF131A006709ED /* CheckCredentialsRequest.swift in Sources */,
+				A7C72EE01B0A5A8F001BA13C /* ProgressForkEvent.swift in Sources */,
+				A7782D901B3B7DE80001B9BA /* BaseController.swift in Sources */,
+				A746A6A71AE9D6E800AF0FA5 /* AppDelegate.swift in Sources */,
+				A794DC321AF1A88E00D8743F /* IVenueBusiness.swift in Sources */,
+				A7C72EE41B0A5BB8001BA13C /* ErrorEvent.swift in Sources */,
+				A7782D7D1B3B5F640001B9BA /* PresentSingleClassControllerEvent.swift in Sources */,
+				A7BA44EE1AEAEC25008514F5 /* IUserDAO.swift in Sources */,
+				A74F045D1AEB274700EB8916 /* IJSONDeserializer.swift in Sources */,
+				A77BCC591B2F5573006FCBFE /* ClassListController.swift in Sources */,
+				A7BD79371B058B2700303751 /* BLLCallback.swift in Sources */,
+				A7D5CFEA1AEACBEC00370F4A /* User.swift in Sources */,
+				A7BA44EC1AEAEB75008514F5 /* DayNotificationPreference.swift in Sources */,
+				A784106C1AEF1F13006709ED /* UserSerializer.swift in Sources */,
+				A7D5CFF01AEAE54D00370F4A /* ILessonDAO.swift in Sources */,
+				A74F044C1AEB04FE00EB8916 /* UserDAO.swift in Sources */,
+				A74F044A1AEB02B700EB8916 /* PreferenceDAO.swift in Sources */,
+				A7782D921B3B84490001B9BA /* SharePlugin.swift in Sources */,
+				A77BCC5B1B2F55BB006FCBFE /* SubController.swift in Sources */,
+				A7D5CFF41AEAE5F200370F4A /* TwoHourNotificationPreference.swift in Sources */,
+				A794DC211AF1A09800D8743F /* ILessonBusiness.swift in Sources */,
+				A7782D941B3B84DF0001B9BA /* ISharePluginOwner.swift in Sources */,
+				A784106A1AEF16FC006709ED /* SchoolClassSerializer.swift in Sources */,
+				A7C55DAB1B38F0E4005F4445 /* AlarmManager.swift in Sources */,
+				A74F044E1AEB06DE00EB8916 /* VenueDAO.swift in Sources */,
+				A740521E1AF001AF003ABBE3 /* ArraySerializer.swift in Sources */,
+				A7BD79351B0584BD00303751 /* DateExtension.swift in Sources */,
+				A7C72EE81B0A5D4B001BA13C /* InformationEvent.swift in Sources */,
+				A71A7CC51AF00E760094019E /* StringSerializer.swift in Sources */,
+				A7BA44F01AEAECDB008514F5 /* IVenueDAO.swift in Sources */,
+				A772CBC61B0692E90055AF4E /* BusinessFactory.swift in Sources */,
+				A786222E1AEAA56E006B0F76 /* Lesson.swift in Sources */,
+				A794DC341AF1A8F700D8743F /* LessonBusiness.swift in Sources */,
+				A7FA76481B3A3B6900F4BAA2 /* SingleClassController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A746A6B21AE9D6E800AF0FA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A746A6BD1AE9D6E800AF0FA5 /* rothrockTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A746A6B81AE9D6E800AF0FA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A746A6A01AE9D6E800AF0FA5 /* Rails School */;
+			targetProxy = A746A6B71AE9D6E800AF0FA5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A746A6AA1AE9D6E800AF0FA5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A746A6AB1AE9D6E800AF0FA5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A746A6AF1AE9D6E800AF0FA5 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A746A6B01AE9D6E800AF0FA5 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A746A6BE1AE9D6E800AF0FA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A746A6BF1AE9D6E800AF0FA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A746A6C11AE9D6E800AF0FA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEC426D7888C49E4BB33AC99 /* Pods-Rails School.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods-rothrock",
+				);
+				INFOPLIST_FILE = rothrock/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_NAME = "Rails School";
+				PROVISIONING_PROFILE = "";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "rothrock/Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
+			};
+			name = Debug;
+		};
+		A746A6C21AE9D6E800AF0FA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E240BDE185A9DEBAA07DC913 /* Pods-Rails School.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods-rothrock",
+				);
+				INFOPLIST_FILE = rothrock/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_NAME = "Rails School";
+				PROVISIONING_PROFILE = "";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "rothrock/Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
+			};
+			name = Release;
+		};
+		A746A6C41AE9D6E800AF0FA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F949D156619DE87823FF4EF3 /* Pods-Rails SchoolTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = rothrockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "Rails SchoolTests";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rothrock.app/rothrock";
+			};
+			name = Debug;
+		};
+		A746A6C51AE9D6E800AF0FA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7971C6D6EFEC1DE94196EF9 /* Pods-Rails SchoolTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = rothrockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "Rails SchoolTests";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rothrock.app/rothrock";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A746A69C1AE9D6E800AF0FA5 /* Build configuration list for PBXProject "Rails School" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A746A6BE1AE9D6E800AF0FA5 /* Debug */,
+				A746A6BF1AE9D6E800AF0FA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A746A6C01AE9D6E800AF0FA5 /* Build configuration list for PBXNativeTarget "Rails School" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A746A6C11AE9D6E800AF0FA5 /* Debug */,
+				A746A6C21AE9D6E800AF0FA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A746A6C31AE9D6E800AF0FA5 /* Build configuration list for PBXNativeTarget "Rails SchoolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A746A6C41AE9D6E800AF0FA5 /* Debug */,
+				A746A6C51AE9D6E800AF0FA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A746A6991AE9D6E800AF0FA5 /* Project object */;
+}

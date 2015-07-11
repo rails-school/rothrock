@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainController" customModule="Rails_School" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,60 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLt-D9-BJE">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fLt-D9-BJE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Rif-E1-ejV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fLt-D9-BJE" secondAttribute="bottom" id="cDy-KM-sX6"/>
+                            <constraint firstItem="fLt-D9-BJE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="uX1-f3-Re0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fLt-D9-BJE" secondAttribute="trailing" constant="-16" id="xGz-5J-fB6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="_webView" destination="fLt-D9-BJE" id="akg-1g-GWp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="127" y="-15"/>
+        </scene>
+        <!--Single Class Controller-->
+        <scene sceneID="BIQ-Mh-SUP">
+            <objects>
+                <viewController storyboardIdentifier="SingleClassController" id="ZAz-8W-tBo" customClass="SingleClassController" customModule="Rails_School" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4CG-Ue-GGe"/>
+                        <viewControllerLayoutGuide type="bottom" id="4qh-6n-Sl6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iaF-bx-I7C">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tp0-Nn-NUI">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tp0-Nn-NUI" firstAttribute="leading" secondItem="iaF-bx-I7C" secondAttribute="leadingMargin" constant="-16" id="07a-Ak-2do"/>
+                            <constraint firstItem="4qh-6n-Sl6" firstAttribute="top" secondItem="Tp0-Nn-NUI" secondAttribute="bottom" id="3Be-jF-vUs"/>
+                            <constraint firstItem="Tp0-Nn-NUI" firstAttribute="top" secondItem="iaF-bx-I7C" secondAttribute="topMargin" id="RBS-No-82T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tp0-Nn-NUI" secondAttribute="trailing" constant="-16" id="m86-Fv-ynt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="_webView" destination="Tp0-Nn-NUI" id="CN7-og-gIm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dWG-lw-ZxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933" y="188"/>
         </scene>
     </scenes>
 </document>

@@ -1,0 +1,36 @@
+@import "base";
+
+$settings-selector: "settings";
+
+.#{$settings-selector} {
+  @include display(flex);
+  @include flex-direction(column);
+  @include justify-content(space-between);
+
+  .log-out {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .footer {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    box-sizing: border-box;
+
+    text-align: center;
+  }
+}
+
+.#{$settings-selector} .item-input input {
+  text-align: right;
+}
+
+.#{$settings-selector} .item-input select {
+  color: $placeholder-color;
+
+  direction: rtl;
+}

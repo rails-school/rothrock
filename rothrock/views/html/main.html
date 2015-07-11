@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Rails School</title>
+    <link rel="stylesheet" href="framework7.min.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="rothrock-main.css">
+  </head>
+  <body>
+    <div class="statusbar-overlay"></div>
+    <div class="views">
+      <div class="view view-main">
+        <div class="navbar hidden"></div>
+        <div class="pages navbar-through toolbar-through">
+          <div data-page="class-list" class="page">
+            <div class="page-content class-list">
+              <header class="js-header">
+                <div class="logo-wrapper"><img src="logo-default.png" class="logo js-logo">
+                  <p class="upcoming-classes js-upcoming-classes"></p>
+                </div>
+                <div class="settings js-settings"><a href="settings.html">
+                    <p class="ic-settings"><i class="fa fa-2x fa-cog"></i></p>
+                    <p class="label">Settings</p></a></div>
+              </header>
+              <section class="js-class-list"></section>
+              <script id="class-card-template" type="text/template7">{{#each classes}}
+                <div data-slug="{{lesson.slug}}" class="class-card-wrapper js-class-card-wrapper">{{#js_compare "this.isAttending == true"}}<img src="going-pin.png" class="class-going-pin js-class-going-pin">
+                  <p class="class-countdown js-class-countdown">{{lesson.countdown}}</p>{{else}}<img src="going-pin.png" class="class-going-pin invisible js-class-going-pin">
+                  <p class="class-countdown js-class-countdown">{{lesson.countdown}}</p>{{/js_compare}}
+                  <div class="class-card js-class-card">
+                    <h1>{{lesson.title}}</h1>
+                    <h2>{{lesson.summary}}</h2>
+                    <ul>
+                      <li>
+                        <p class="ic-ruby"><i class="fa fa-diamond"></i></p>
+                        <p>{{teacher.name}}</p>
+                      </li>
+                      <li class="js-map">
+                        <p class="ic-venue"><i class="fa fa-map-marker"></i></p>
+                        <p>{{venue.name}}</p>
+                      </li>
+                      <li class="js-calendar">
+                        <p class="ic-calendar"><i class="fa fa-calendar-o"></i></p>
+                        <p>{{lesson.date}} ({{lesson.countdown}})</p>
+                      </li>
+                      <li class="js-calendar">
+                        <p class="ic-clock"><i class="fa fa-clock-o"></i></p>
+                        <p>{{lesson.hour}}</p>
+                      </li>
+                    </ul>
+                  </div>{{#js_compare "this.isAttending == true"}}
+                  <div class="class-rsvp-button unrsvp js-class-rsvp-button">unRSVP</div>{{else}}
+                  <div class="class-rsvp-button js-class-rsvp-button">RSVP</div>{{/js_compare}}
+                  <p class="class-attendees js-class-attendees">
+                    {{#js_compare "this.attendees == 0"}} Be the first join to join this class! {{/js_compare}}
+                    {{#js_compare "this.attendees == 1"}} 1 student is going {{/js_compare}}
+                    {{#js_compare "this.attendees > 1"}}{{attendees}} students are going {{/js_compare}}
+                  </p>
+                  <div class="class-share-wrapper js-class-share">
+                    <p class="ic-share"><i class="fa fa-share-alt"></i></p>
+                    <p>Share</p>
+                  </div>
+                </div>{{/each}}
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="framework7.min.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="hammer.min.js"></script>
+    <script type="text/javascript" src="caravel.min.js"></script>
+    <script type="text/javascript" src="rothrock-main.js"></script>
+  </body>
+</html>

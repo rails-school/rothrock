@@ -1,0 +1,169 @@
+@import "base";
+
+$class-list-selector: ".class-list";
+
+#{$class-list-selector} {
+  @include display(flex);
+  @include flex-direction(column);
+
+  @extend %corner-background-wrapper;
+
+  width: 100%;
+  height: 100%;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+#{$class-list-selector} header {
+  @include display(flex);
+  @include flex-direction(row);
+  @include justify-content(space-between);
+  @include align-items(center);
+
+  width: 100%;
+  padding: 20px 20px 15px 20px;
+  box-sizing: border-box;
+
+  .logo-wrapper {
+    max-width: 40%;
+    margin: 0 5px 5px 0;
+
+    .logo {
+      max-width: 100%;
+      margin: 0 0 5px 0;
+    }
+
+    .upcoming-classes {
+      margin: 0;
+
+      font: {
+        family: $body-font;
+        size: $sublabel;
+      }
+      text-align: center;
+      color: $gray;
+    }
+  }
+
+  .settings {
+    margin: 0 0 5px 5px;
+
+    text-align: center;
+
+    a {
+      display: block;
+    }
+
+    p {
+      margin: 0;
+
+      font: {
+        family: $body-font;
+        size: $label;
+      }
+      color: $gray;
+    }
+
+    .ic-settings {
+      margin: 0 0 5px 0;
+    }
+  }
+}
+
+#{$class-list-selector} section {
+  @include flex(1);
+  position: relative; // Change card-wrapper referential to section
+
+  padding: 0 0 0 ($going-pin-size - 20px);
+
+  overflow: hidden;
+
+  .class-card-wrapper {
+    position: absolute;
+
+    width: 80%;
+    height: 100%;
+
+    .class-attendees {
+      @extend %attendees;
+    }
+
+    .class-share-wrapper {
+      @extend %share-wrapper;
+
+      margin: 0 5px 15px 5px;
+    }
+  }
+}
+
+// Class card + floating elements
+#{$class-list-selector} section .class-card-wrapper {
+
+  > * {
+    position: absolute;
+  }
+
+  .class-going-pin {
+    width: $going-pin-size;
+    height: $going-pin-size;
+
+    z-index: 3;
+  }
+
+  .class-countdown {
+    margin: 0;
+    padding: 0 30px 3px 0;
+
+    color: $black;
+    font: {
+      family: $body-font;
+      size: $label;
+    }
+
+    border-bottom: 2px solid $red;
+    z-index: 2;
+
+    &.going {
+      padding-left: ($going-pin-size / 2 + 5px);
+
+      color: $green;
+
+      border-color: $green;
+    }
+  }
+
+  .class-card {
+    padding: 10px 15px 30px 15px;
+    box-sizing: border-box;
+
+    border: 1px solid $soft-gray;
+
+    overflow: auto;
+    z-index: 1;
+  }
+
+  .class-rsvp-button {
+    @extend %rsvp-button;
+
+    z-index: 2;
+  }
+}
+
+// Class card inner content
+#{$class-list-selector} section .class-card-wrapper .class-card {
+  background-color: $white;
+
+  h1 {
+    @extend %headline;
+  }
+
+  h2 {
+    @extend %subheadline;
+
+    color: $black;
+  }
+
+  ul {
+    @extend %icon-list;
+  }
+}
