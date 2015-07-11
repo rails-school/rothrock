@@ -26,6 +26,17 @@ $sublabel: 11px;
   visibility: hidden;
 }
 
+// Common background
+%corner-background-wrapper {
+  background: {
+    color: $white;
+    image: url('main-background-corner.png');
+    position: top right;
+    repeat: no-repeat;
+    size: 30%;
+  }
+}
+
 // RSVP button
 %rsvp-button {
   $rsvp-original-ratio: 290 / 100;

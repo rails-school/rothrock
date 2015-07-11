@@ -6,18 +6,12 @@ $class-list-selector: ".class-list";
   @include display(flex);
   @include flex-direction(column);
 
+  @extend %corner-background-wrapper;
+
   width: 100%;
   height: 100%;
   padding: 0 !important;
   box-sizing: border-box;
-
-  background: {
-    color: $white;
-    image: url('main-background-corner.png');
-    position: top right;
-    repeat: no-repeat;
-    size: 30%;
-  }
 }
 
 #{$class-list-selector} header {
