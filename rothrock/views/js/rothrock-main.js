@@ -249,6 +249,7 @@ ClassListController = (function(superClass) {
   function ClassListController(app) {
     ClassListController.__super__.constructor.call(this, app);
     this.listSelector = '.js-class-list';
+    this.noClassMessageSelector = '.js-no-class-message';
     this.logoSelector = '.js-logo';
     this.upcomingCounterSelector = '.js-upcoming-classes';
     this.settingsSelector = '.js-settings';
@@ -272,6 +273,13 @@ ClassListController = (function(superClass) {
       return function(name, data) {
         _this.fork();
         $(_this.upcomingCounterSelector).text("Upcoming Classes: " + data.length);
+        if (data.length === 0) {
+          $(_this.listSelector).addClass('hidden');
+          $(_this.noClassMessageSelector).removeClass('hidden');
+          return;
+        }
+        $(_this.noClassMessageSelector).addClass('hidden');
+        $(_this.listSelector).removeClass('hidden');
         $(_this.listSelector).html(_this.cardTemplate({
           classes: data
         }));

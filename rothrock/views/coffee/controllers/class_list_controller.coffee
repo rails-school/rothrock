@@ -2,12 +2,13 @@ class ClassListController extends BaseController
   constructor: (app) ->
     super app
     @listSelector = '.js-class-list'
+    @noClassMessageSelector = '.js-no-class-message'
 
     @logoSelector = '.js-logo'
     @upcomingCounterSelector = '.js-upcoming-classes'
 
     @settingsSelector = '.js-settings'
-
+    
     @cardWrapperSelector = '.js-class-card-wrapper'
     @cardSelector = '.js-class-card'
     @mapSelector = '.js-map'
@@ -27,6 +28,14 @@ class ClassListController extends BaseController
     @getBus().register 'ReceiveClasses', (name, data) =>
       @fork()
       $(@upcomingCounterSelector).text("Upcoming Classes: #{data.length}")
+
+      if data.length == 0
+        $(@listSelector).addClass('hidden')
+        $(@noClassMessageSelector).removeClass('hidden')
+        return
+
+      $(@noClassMessageSelector).addClass('hidden')
+      $(@listSelector).removeClass('hidden')
       $(@listSelector).html(@cardTemplate({ classes: data }))
       @slider = new Slider
         slideWrapper: $(@listSelector)

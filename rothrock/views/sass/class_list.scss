@@ -70,6 +70,27 @@ $class-list-selector: ".class-list";
   }
 }
 
+#{$class-list-selector} .no-class-message {
+  @include flex(1);
+  @include display(flex);
+  @include align-items(center);
+  width: 100%;
+
+  p {
+    width: 100%;
+    padding: 15px 30px;
+    margin-top: -100px; // Arbitrary value
+    box-sizing: border-box;
+
+    color: $gray;
+    font: {
+      family: $headline-font;
+      size: $title;
+    }
+    text-align: center;
+  }
+}
+
 #{$class-list-selector} section {
   @include flex(1);
   position: relative; // Change card-wrapper referential to section

@@ -4,18 +4,8 @@
 
 $going-pin-size: 50px;
 
-$title: 32px;
-$subtitle: 18px;
-$body: 15px;
-$label: 13px;
-$sublabel: 11px;
-
-.shown {
-  display: block;
-}
-
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .visible {
