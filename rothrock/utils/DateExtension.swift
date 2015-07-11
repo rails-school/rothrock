@@ -17,6 +17,14 @@ extension NSDate {
         return formatter.dateFromString(string)
     }
     
+    public func toString() -> String {
+        var formatter = NSDateFormatter()
+        
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        
+        return formatter.stringFromDate(self)
+    }
+    
     public func isInInterval(start: NSDate, end: NSDate) -> Bool {
         return self.isLaterThanOrEqualTo(start) && self.isEarlierThanOrEqualTo(end)
     }

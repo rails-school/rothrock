@@ -715,6 +715,11 @@
 					A746A6A01AE9D6E800AF0FA5 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = YNH9MQQ87M;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					A746A6B51AE9D6E800AF0FA5 = {
 						CreatedOnToolsVersion = 6.2;

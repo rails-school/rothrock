@@ -25,5 +25,7 @@ public protocol ILessonBusiness {
     
     func getUpcoming(success: (Lesson?) -> Void)
     
-    func engineAlarms(periodMilli: Int, twoHourAlarm: (Lesson?) -> Void, dayAlarm: (Lesson?) -> Void)
+    func engineAlarms(periodMilli: Int, twoHourAlarm: (Lesson?) -> Void, dayAlarm: (Lesson?) -> Void, completionHandler: () -> Void)
+    
+    func cleanDatabase()
 }

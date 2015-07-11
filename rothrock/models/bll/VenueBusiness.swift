@@ -32,4 +32,14 @@ internal class VenueBusiness: BaseBusiness, IVenueBusiness {
             api.getVenue(id, callback: BLLCallback(base: self, success: { success($1); self._venueDAO.save($1!) }, failure: failure))
         }
     }
+    
+    func cleanDatabase() {
+        if let latestClean = _venueDAO.getLatestClean() {
+            if latestClean.daysAgo() >= 7 {
+                _venueDAO.truncateTable()
+            }
+        } else {
+            _venueDAO.truncateTable()
+        }
+    }
 }

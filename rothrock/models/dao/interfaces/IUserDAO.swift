@@ -30,4 +30,8 @@ public protocol IUserDAO {
     func hasCurrentUser() -> Bool
     
     func logOut()
+    
+    func getLatestClean() -> NSDate?
+    
+    func truncateTable()
 }

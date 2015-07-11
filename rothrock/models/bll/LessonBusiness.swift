@@ -243,7 +243,7 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
         }
     }
     
-    func engineAlarms(periodMilli: Int, twoHourAlarm: (Lesson?) -> Void, dayAlarm: (Lesson?) -> Void) {
+    func engineAlarms(periodMilli: Int, twoHourAlarm: (Lesson?) -> Void, dayAlarm: (Lesson?) -> Void, completionHandler: () -> Void) {
         getUpcoming({
             if let lesson = $0 { // Only if upcoming lesson
                 let failure: (String) -> Void = { NSLog("%@: %@", NSStringFromClass(LessonBusiness.self), $0) }
@@ -295,7 +295,19 @@ internal class LessonBusiness: BaseBusiness, ILessonBusiness {
                         break
                     }
                 }
+                
+                completionHandler()
             }
         })
+    }
+    
+    func cleanDatabase() {
+        if let latestClean = _lessonDAO.getLatestClean() {
+            if latestClean.daysAgo() >= 7 {
+                _lessonDAO.truncateTable()
+            }
+        } else {
+            _lessonDAO.truncateTable()
+        }
     }
 }

@@ -14,4 +14,8 @@ public protocol ILessonDAO {
     func find(slug: String) -> Lesson?
     
     func save(lesson: Lesson)
+    
+    func getLatestClean() -> NSDate?
+    
+    func truncateTable()
 }

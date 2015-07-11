@@ -28,4 +28,6 @@ public protocol IUserBusiness {
     func getCurrentUserSchoolSlug() -> String
     
     func saveDeviceToken(token: NSData)
+    
+    func cleanDatabase()
 }
