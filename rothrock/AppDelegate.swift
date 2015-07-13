@@ -46,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Sets up push notifications
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Badge | .Sound | .Alert, categories: nil))
         application.registerForRemoteNotifications()
-        application.applicationIconBadgeNumber = 0
         
         return true
     }
@@ -74,6 +73,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        // Clear notifications
+        application.applicationIconBadgeNumber = 0
         
         _backgroundThreads = 0
         
