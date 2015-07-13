@@ -15,7 +15,7 @@
   ],
   "devDependencies": {
     "bourbon": "~4.2.3",
-    "framework7": "~1.0.6",
+    "framework7": "~1.0.7",
     "jquery": "~2.1.4",
     "hammer.js": "~2.0.4"
   }
