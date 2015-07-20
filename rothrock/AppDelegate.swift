@@ -126,6 +126,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSLog("%@", error)
     }
     
+    // Periodic background fetch
     func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         if let a = _alarmManager {
             a.trigger() {
