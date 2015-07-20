@@ -70,7 +70,8 @@
 .class-list section .class-card-wrapper .class-card h2 {
   font-family: "Muli";
   font-size: 18px;
-  text-align: left; }
+  text-align: left;
+  word-wrap: break-word; }
 
 .class-list section .class-card-wrapper .class-card h1, .class-list section .class-card-wrapper .class-card h2 {
   margin: 10px 0;
@@ -362,7 +363,8 @@
 .class-list section .class-card-wrapper .class-card h2 {
   font-family: "Muli";
   font-size: 18px;
-  text-align: left; }
+  text-align: left;
+  word-wrap: break-word; }
 
 .class-list section .class-card-wrapper .class-card h1, .class-list section .class-card-wrapper .class-card h2 {
   margin: 10px 0;
