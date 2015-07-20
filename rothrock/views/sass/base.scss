@@ -83,6 +83,7 @@ $going-pin-size: 50px;
     size: $subtitle;
   }
   text-align: left;
+  word-wrap: break-word;
 }
 
 %headline, %subheadline {
